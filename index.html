@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hiromasa Hagino — Independent Researcher (Operator Algebras)</title>
+<meta name="description" content="Hiromasa Hagino, independent researcher in operator algebras and measure theory. Filtration towers, conditional expectations, Galois norms.">
+<meta name="author" content="Hiromasa Hagino">
+<link rel="canonical" href="https://hhagino.github.io/">
+
+<!-- Google が拾う構造化データ。無所属だと Google Scholar のプロフィールが Scholar 検索に載らないため、
+     「自分が所有する、Google に載る著者ページ」はここ1枚だけが頼りになる。 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hiromasa Hagino",
+  "alternateName": "萩野 裕正",
+  "jobTitle": "Independent Researcher",
+  "email": "mailto:hiromasa.hagino@proton.me",
+  "identifier": "https://orcid.org/0009-0005-8190-6481",
+  "sameAs": [
+    "https://orcid.org/0009-0005-8190-6481",
+    "https://github.com/HHagino",
+    "https://doi.org/10.5281/zenodo.21231240"
+  ],
+  "knowsAbout": ["Operator algebras", "von Neumann algebras", "Measure theory", "Filtrations", "Information geometry"]
+}
+</script>
+
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #565656;
+    --rule: #d8d5cf;
+    --paper: #fbfaf7;
+    --accent: #6b4d2e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e6e3dd;
+      --ink-soft: #a09b92;
+      --rule: #3a3733;
+      --paper: #171614;
+      --accent: #c9a678;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 4rem 1.5rem 6rem;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 1.02rem;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 38rem; margin: 0 auto; }
+
+  header { margin-bottom: 3.5rem; }
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 .3rem;
+  }
+  .kanji { font-size: 1rem; color: var(--ink-soft); font-weight: 400; margin-left: .55rem; }
+  .role { color: var(--ink-soft); margin: 0; font-style: italic; }
+
+  h2 {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--rule);
+    margin: 3rem 0 1.4rem;
+  }
+
+  p { margin: 0 0 1.1rem; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+  a:hover { border-bottom-color: var(--accent); }
+
+  .paper { margin-bottom: 2rem; }
+  .paper-title { font-weight: 600; margin: 0 0 .35rem; }
+  .paper-meta { color: var(--ink-soft); font-size: .92rem; margin: 0 0 .7rem; }
+  .paper-abstract { font-size: .96rem; margin: 0 0 .7rem; }
+  .links { font-family: ui-sans-serif, system-ui, sans-serif; font-size: .87rem; margin: 0; }
+  .links a { margin-right: 1.1rem; white-space: nowrap; }
+
+  .note {
+    font-size: .93rem;
+    color: var(--ink-soft);
+    border-left: 2px solid var(--rule);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  dl.contact { margin: 0; font-family: ui-sans-serif, system-ui, sans-serif; font-size: .93rem; }
+  dl.contact div { display: flex; gap: 1rem; padding: .35rem 0; }
+  dl.contact dt { color: var(--ink-soft); min-width: 5.5rem; margin: 0; }
+  dl.contact dd { margin: 0; }
+
+  footer {
+    margin-top: 4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-size: .85rem;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  @media (max-width: 480px) {
+    body { padding: 2.5rem 1.2rem 4rem; }
+    h1 { font-size: 1.55rem; }
+    .kanji { display: block; margin: .2rem 0 0; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>Hiromasa Hagino<span class="kanji">萩野 裕正</span></h1>
+  <p class="role">Independent researcher — operator algebras, measure theory</p>
+</header>
+
+<section>
+  <p>
+    I work on the boundary between measure-theoretic probability and operator algebras: filtrations of
+    σ-algebras read as towers of abelian von Neumann algebras, and conditional expectations read as
+    averaging operators. The question I keep returning to is when an act of coarse-graining is
+    <em>reversible in structure</em> — when a conditional expectation is genuinely the average of a group
+    of symmetries, and what obstruction appears when it is not.
+  </p>
+  <p>
+    I am unaffiliated, and I work in the open: preprints carry a DOI from the day they are finished, and
+    the load-bearing lemmas are machine-checked where I can manage it.
+  </p>
+</section>
+
+<section>
+  <h2>Papers</h2>
+
+  <article class="paper">
+    <p class="paper-title">When is a Conditional Expectation a Galois Norm?<br>A Homogeneity Criterion for Filtration Towers</p>
+    <p class="paper-meta">Preprint, 27 pp. · MSC 46L53, 60A10</p>
+    <p class="paper-abstract">
+      For an atomic filtration, the trace-preserving conditional expectation onto an abelian von Neumann
+      subalgebra coincides with the fixed-point average <span style="white-space:nowrap">(1/|G|) Σ<sub>g</sub> g</span>
+      of a finite group of trace-preserving automorphisms <strong>if and only if</strong> the step is
+      <em>homogeneous</em> — the conditional measure is uniform on every fibre. For rooted towers,
+      homogeneity together with spherical homogeneity characterizes exactly those towers realized as the
+      fixed-point tower of a single profinite group. The failure of homogeneity is quantitative: it is an
+      entropy deficit. Under Stone duality the obstruction acquires a categorical home — the conditional
+      kernel is functorial only along strict morphisms — and a closed-form parametric witness is computed
+      in a two-state model.
+    </p>
+    <p class="links">
+      <a href="https://doi.org/10.5281/zenodo.21231240">Zenodo (DOI)</a>
+      <!-- arXiv に載ったら次の行のコメントを外し、ID を入れる。載る前に書かない。 -->
+      <!-- <a href="https://arxiv.org/abs/XXXX.XXXXX">arXiv:XXXX.XXXXX</a> -->
+      <a href="https://github.com/HHagino/lemma31-galois-norm">Lean formalization</a>
+    </p>
+  </article>
+
+  <p class="note">
+    The algebraic core of the paper's main averaging lemma — that the Reynolds average
+    <span style="white-space:nowrap">(1/|G|) Σ<sub>g</sub> g</span> is the projection onto the fixed-point
+    subspace — is formalized in Lean 4 / Mathlib and machine-checked with no <code>sorry</code>:
+    <a href="https://github.com/HHagino/lemma31-galois-norm">github.com/HHagino/lemma31-galois-norm</a>.
+  </p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <dl class="contact">
+    <div><dt>Email</dt><dd><a href="mailto:hiromasa.hagino@proton.me">hiromasa.hagino@proton.me</a></dd></div>
+    <div><dt>ORCID</dt><dd><a href="https://orcid.org/0009-0005-8190-6481">0009-0005-8190-6481</a></dd></div>
+    <div><dt>Code</dt><dd><a href="https://github.com/HHagino">github.com/HHagino</a></dd></div>
+  </dl>
+  <p class="note" style="margin-top:1.6rem">
+    I am glad to hear from anyone working on subfactors, intermediate subalgebras, sufficiency, or
+    Markov categories — including to be told that something here is already known.
+  </p>
+</section>
+
+<footer>
+  Last updated 2026-07-13.
+</footer>
+
+</main>
+</body>
+</html>
