@@ -1,0 +1,37 @@
+name: FCIG citation backport
+
+on:
+  push:
+    branches:
+      - fcig-citation-backport-2026-09-08
+    paths:
+      - 'fcig/apply_inline_citations.py'
+      - '.github/workflows/fcig-citation-backport.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backport:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fcig-citation-backport-2026-09-08
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply inline citations
+        run: python fcig/apply_inline_citations.py
+      - name: Commit citation backport
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add fcig/research-note.md fcig/elliptic-model.md fcig/modular-holonomy.md
+          if git diff --cached --quiet; then
+            echo 'No citation changes to commit.'
+          else
+            git commit -m 'Backport audited inline citations into FCIG notes'
+            git push origin HEAD:fcig-citation-backport-2026-09-08
+          fi
