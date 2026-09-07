@@ -4,6 +4,13 @@ Research-program notes on local potentials, differential cohomology, derived dir
 
 ## Read
 
+### Citation-audited synthesis
+
+- Source: `fcig/cited-synthesis.md`
+- BibTeX: `fcig/references.bib`
+
+This is the preferred entry point when checking literature provenance. It marks each important statement as **Established**, **Derived here**, or **FCIG interpretation / conjecture**, so a citation to a standard theorem is not accidentally presented as support for a stronger speculative claim.
+
 ### Main research-program note
 
 - Web page: `fcig/index.html`
