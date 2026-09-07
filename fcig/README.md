@@ -1,102 +1,92 @@
 # FCIG — Fibered Cohomological Information Geometry
 
-Research-program notes on local potentials, differential cohomology, derived direct images, determinant-line anomalies, Bergman kernels, modular holonomy, and the gravity closure problem.
+Public research workspace for **Fibered Cohomological Information Geometry (FCIG)**.
 
-## Repository policy
+The repository separates **Established**, **Derived here**, **FCIG interpretation**, **Conjecture**, and **Open problem** claims. See:
 
-This directory is operated as a public research workspace, not just a blog archive.
+- `RESEARCH_POLICY.md` — research and citation policy
+- `ROADMAP.md` — active milestone gates
+- `references.bib` — canonical bibliography
+- `citation-map.md` — citation provenance map
+- `cited-synthesis.md` — citation-audited synthesis
 
-- Research policy: `fcig/RESEARCH_POLICY.md`
-- Active roadmap: `fcig/ROADMAP.md`
-- Canonical bibliography: `fcig/references.bib`
-- Citation provenance map: `fcig/citation-map.md`
-- Citation-audited synthesis: `fcig/cited-synthesis.md`
+`main` is intended to remain readable and independently checkable. Exploratory work is developed on topic branches and merged through pull requests.
 
-`main` is intended to remain readable and checkable. Topic work is developed on branches and merged by pull request. Standard mathematics, FCIG-specific derivations, interpretations, conjectures, and open problems are kept explicitly separate.
-
-## Read
-
-### Citation-audited synthesis
-
-- Source: `fcig/cited-synthesis.md`
-- BibTeX: `fcig/references.bib`
-
-This is the preferred entry point when checking literature provenance. It marks each important statement as **Established**, **Derived here**, or **FCIG interpretation / conjecture**, so a citation to a standard theorem is not accidentally presented as support for a stronger speculative claim.
-
-### Main research-program note
-
-- Web page: `fcig/index.html`
-- Source note: `fcig/research-note.md`
-
-### Explicit Model I — elliptic curves
-
-- Web page: `fcig/elliptic-model.html`
-- Source note: `fcig/elliptic-model.md`
-- Numerical verifier: `fcig/elliptic-bergman.py`
-
-This model computes a level-\(k\) theta basis, its exact \(L^2\) Gram matrix, a Poisson-resummed Bergman density, the Hodge curvature over \(\mathbb H\), and
-
-\[
-F_{\det\mathcal H_k}
-=
--\frac{k}{2}F_{\lambda_H}.
-\]
-
-It separates local curvature asymptotics from exponentially small global lattice corrections.
-
-### Explicit Model II — modular holonomy and metaplectic anomaly
-
-- Web page: `fcig/modular-holonomy.html`
-- Source note: `fcig/modular-holonomy.md`
-- Numerical verifier: `fcig/weil-holonomy.py`
-
-For even level \(k\), the theta basis carries finite Weil matrices with a metaplectic eighth-root phase. Combining the determinant-state line with the Hodge line gives
+## Research sequence
 
 \[
 \boxed{
-\mathscr A_k
-=
-\det\mathcal H_k\otimes\lambda_H^{k/2},
-\qquad
-F_{\mathscr A_k}=0.
+\text{elliptic curves}
+\to
+\text{higher-dimensional abelian varieties}
+\to
+\text{compact hyperbolic curves}
+\to
+\text{Quillen / analytic-torsion refinement}
+\to
+\text{Lorentzian closure}.
 }
 \]
 
-Thus the local curvature contribution can be cancelled while a flat Weil/metaplectic modular multiplier remains. For odd \(k\), the same statement requires the appropriate theta-characteristic/metaplectic refinement.
+The current completed milestones are **v0.2 (elliptic)**, **v0.3 (flat ppav)**, and **v0.4 (curved hyperbolic curves)**. The active target is **v0.5: systematic \(L^2\) vs Quillen / analytic-torsion comparison**.
 
-### Explicit Model III — higher-dimensional abelian varieties
+## Main research-program note
 
-- Web page: `fcig/abelian-model.html`
-- Source note: `fcig/abelian-model.md`
-- Numerical verifier: `fcig/abelian-gram.py`
+- Web page: `index.html`
+- Source: `research-note.md`
 
-For a principally polarized abelian variety
+## Explicit Model I — elliptic curves
+
+- Web: `elliptic-model.html`
+- Source: `elliptic-model.md`
+- Verifier: `elliptic-bergman.py`
+
+For the level-\(k\) theta space on an elliptic curve,
 
 \[
-A_\Omega
-=
-\mathbf C^g/(\mathbf Z^g+\Omega\mathbf Z^g),
-\qquad
-\Omega\in\mathfrak H_g,
+F_{\det\mathcal H_k}
+=-\frac{k}{2}F_{\lambda_H}.
 \]
 
-the level-\(k\) theta state space has rank \(N_k=k^g\), and the exact Gram computation gives
+The exact Bergman density separates a constant local sector from exponentially small lattice corrections.
+
+## Explicit Model II — modular holonomy / metaplectic anomaly
+
+- Web: `modular-holonomy.html`
+- Source: `modular-holonomy.md`
+- Verifier: `weil-holonomy.py`
+
+The finite theta transport exhibits a projective/metaplectic phase. After local curvature cancellation, a flat global multiplier can remain.
+
+## Explicit Model III — principally polarized abelian varieties
+
+- Web: `abelian-model.html`
+- Source: `abelian-model.md`
+- Verifier: `abelian-gram.py`
+
+For
+
+\[
+A_\Omega=\mathbf C^g/(\mathbf Z^g+\Omega\mathbf Z^g),
+\qquad
+N_k=k^g,
+\]
+
+the exact Gram determinant gives
 
 \[
 \boxed{
 F_{\det\mathcal H_k}
-=
--\frac{k^g}{2}F_{\lambda_H}
-=
--\frac{N_k}{2}F_{\lambda_H}.
+=-\frac{k^g}{2}F_{\lambda_H}
+=-\frac{N_k}{2}F_{\lambda_H}.
 }
 \]
 
-### Explicit Model IIIb — multidimensional Bergman lattice formula
+### Model IIIb — exact multidimensional Bergman lattice sector
 
-- Web page: `fcig/abelian-bergman.html`
-- Source note: `fcig/abelian-bergman.md`
-- Numerical verifier: `fcig/abelian-bergman.py`
+- Web: `abelian-bergman.html`
+- Source: `abelian-bergman.md`
+- Verifier: `abelian-bergman.py`
 
 With
 
@@ -105,129 +95,120 @@ Q_\Omega(p,\ell)
 =(\ell-\Omega p)^*(\operatorname{Im}\Omega)^{-1}(\ell-\Omega p),
 \]
 
-the exact Poisson-resummed density is
+one obtains
 
 \[
-\boxed{
-B_{g,k}(x,t;\Omega)
+B_{g,k}
 =
 k^g\sum_{p,\ell\in\mathbf Z^g}
  e^{-\pi kQ_\Omega(p,\ell)/2}
- e^{2\pi ik(p^Tx+\ell^Tt)+\pi ikp^T\ell}.
-}
+ e^{2\pi ik(p^Tx+\ell^Tt)+\pi ikp^T\ell},
 \]
 
-For fixed \(\Omega\), if \(\mu(\Omega)\) is the shortest nonzero value of \(Q_\Omega\), then
+and, for fixed \(\Omega\),
 
 \[
-\boxed{
 B_{g,k}
 =
 k^g\left[1+O_\Omega\left(e^{-\pi k\mu(\Omega)/2}\right)\right].
-}
 \]
 
-### Explicit Model IIIc — higher-dimensional Weil / metaplectic descent
+### Model IIIc — higher-dimensional Weil / metaplectic descent
 
-- Web page: `fcig/abelian-weil.html`
-- Source note: `fcig/abelian-weil.md`
-- Numerical verifier: `fcig/abelian-weil.py`
+- Web: `abelian-weil.html`
+- Source: `abelian-weil.md`
+- Verifier: `abelian-weil.py`
 
-For even \(k\), the elementary finite Weil matrices are
-
-\[
-\boxed{
-\begin{aligned}
-U_k(T_B)_{\mathbf j\mathbf m}
-&=\delta_{\mathbf j\mathbf m}e^{\pi i\mathbf j^TB\mathbf j/k},\\
-U_k(S)_{\mathbf j\boldsymbol\ell}
-&=k^{-g/2}e^{-2\pi i\mathbf j^T\boldsymbol\ell/k},\\
-U_k(R_A)_{\mathbf j\mathbf m}
-&=\delta_{\mathbf m,A^T\mathbf j}.
-\end{aligned}
-}
-\]
-
-They obey
+For even \(k\), the elementary finite Weil matrices satisfy
 
 \[
-\boxed{
 U_k(S)^2=C,
 \qquad
-(U_k(S)U_k(T_{I_g}))^3=e^{\pi i g/4}C.
-}
+(U_k(S)U_k(T_{I_g}))^3=e^{\pi ig/4}C.
 \]
 
-After the Hodge correction,
+The corrected determinant line can be locally flat yet globally nontrivial; for example, the genus-two level-two shear in the note has multiplier \(-1\).
+
+## Explicit Model IV — compact hyperbolic curves
+
+- Web: `hyperbolic-model.html`
+- Source: `hyperbolic-model.md`
+- Sanity checker: `hyperbolic-loop.py`
+
+Let \(X\) be a compact hyperbolic Riemann surface of genus \(g\ge2\), and consider \(H^0(X,K_X^k)\). The established exact hyperbolic Bergman formula [Sun26] gives
 
 \[
-\mathscr A_{g,k}
+\boxed{
+\rho_k(p)
 =
-\det\mathcal H_k\otimes\lambda_H^{k^g/2}
-\]
-
-has zero local curvature for even \(k\), but its descent multiplier need not be trivial. The explicit genus-two, level-two shear
-
-\[
-B_\times=
-\begin{pmatrix}0&1\\1&0\end{pmatrix}
-\]
-
-gives
-
-\[
-\boxed{
-\chi_{2,2}(T_{B_\times})=-1.
+\frac{2k-1}{4\pi}
+\left[
+1+
+\sum_{\gamma\in\mathfrak G_p}
+\cosh^{-2k}\!\left(\frac{\ell(\gamma)}2\right)
+\cos(2\pi k\alpha_\gamma)
+\right].
 }
 \]
 
-Thus the higher-dimensional abelian model contains a flat but globally nontrivial determinant sector. Odd level requires the standard theta-characteristic/metaplectic refinement rather than a forced fixed-characteristic formula.
-
-## v0.3 synthesis
-
-The principally polarized abelian milestone now realizes
+This realizes, in one curved model,
 
 \[
 \boxed{
-\begin{aligned}
-\text{state capacity} &:\quad N_k=k^g,\\
-\text{determinant/Hodge response} &:\quad F_{\det\mathcal H_k}=-\frac{k^g}{2}F_{\lambda_H},\\
-\text{global lattice sector} &:\quad O_\Omega(e^{-\pi k\mu(\Omega)/2}),\\
-\text{global modular sector} &:\quad \chi_{g,k}\text{ from finite Weil/metaplectic descent}.
-\end{aligned}
+\text{nonzero local curvature sector}
+\oplus
+\text{global geodesic/holonomy sector}.
 }
 \]
 
-This closes the flat abelian v0.3 milestone. It is not a derivation of spacetime gravity.
-
-## Core formula
+The local factor integrates exactly to
 
 \[
-\operatorname{ch}(R\pi_*\mathscr L^k)
+\dim H^0(X,K_X^k)=(2k-1)(g-1),
+\]
+
+so the global loop correction redistributes state density while integrating to zero.
+
+For determinant/Hodge geometry, the established Mumford isomorphism gives
+
+\[
+\boxed{
+\lambda_k
+\simeq
+\lambda_1^{\otimes(6k^2-6k+1)}.
+}
+\]
+
+This is a useful no-go result for a naive universal extrapolation of the flat ppav law: the curved canonical-family determinant coefficient is quadratic in \(k\), while the state rank is linear in \(k\) at fixed genus.
+
+The Quillen benchmark is
+
+\[
+\boxed{
+c_1(\lambda_k,\|\cdot\|_Q)
 =
-\pi_*\left(e^{k c_1(\mathscr L)}\operatorname{Td}(T_\pi)\right).
-\]
-
-The project interprets degree zero as the state-capacity sector and degree two as the determinant/anomaly sector, while local Bergman-kernel asymptotics encode curvature information and modular Weil transport encodes a global flat sector.
-
-## Current research order
-
-\[
-\boxed{
-\text{elliptic curves}
-\to
-\text{higher-dimensional abelian varieties}
-\to
-\text{genus }g\ge2\text{ curves}
-\to
-\text{Quillen refinement}
-\to
-\text{Lorentzian closure}.
+\frac{6k^2-6k+1}{12\pi^2}\omega_{\mathrm{WP}}.
 }
 \]
 
-**Current target:** v0.4 — curved genus-\(g\ge2\) test. See `ROADMAP.md` and Issue #8.
+Systematic separation of ordinary \(L^2\) determinant geometry from analytic torsion is deferred to v0.5.
 
-## Status
+## Current synthesis
 
-This is a speculative mathematical-physics research program. Established mathematics, proposed interpretations, explicit calculations, and open gravitational claims are explicitly separated. The current results are not presented as a derivation of spacetime gravity.
+The explicit models now support a hierarchy
+
+\[
+\boxed{
+\text{state counting}
+\oplus
+\text{local curvature asymptotics}
+\oplus
+\text{global lattice/geodesic data}
+\oplus
+\text{connection/holonomy}
+\oplus
+\text{determinant/index geometry}.
+}
+\]
+
+This is a mathematical-physics research program, not a derivation of spacetime gravity. The Lorentzian closure problem remains open and is deliberately downstream of the geometric tests.
