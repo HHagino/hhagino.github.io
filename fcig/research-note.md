@@ -5,6 +5,8 @@
 **Status:** Research note / speculative synthesis  
 **Date:** 2026-09-08
 
+> **Citation policy.** Bracketed keys cite established background only. Statements marked **Derived here** are calculations carried out in these FCIG notes; statements marked **FCIG interpretation/conjecture** are not attributed to the cited literature. Full entries are collected at the end of this note and in [`references.bib`](references.bib).
+
 > **中心命題（研究プログラム）**  
 > 重力を単純に「エントロピーの勾配」と同一視するのではなく、**局所情報ポテンシャルの貼り合わせ、量子化線束の直像、determinant line の anomaly data、Bergman kernel の局所状態密度**を、一つの index-theoretic structure の異なる射影として読む。Lorentzian 重力への最後の写像は独立した **Gravity Closure Problem** として切り出す。
 
@@ -146,6 +148,8 @@ Thus \(\phi_i\) is not a global scalar. Nevertheless
 
 is global (with the chosen standard normalization) and represents \(c_1(\mathscr L)\) in de Rham cohomology.
 
+**Established.** This is standard Hermitian holomorphic line-bundle/Chern-connection geometry; see [Bry93]. The subsequent reading of these local weights as information potentials is an **FCIG interpretation**.
+
 Hence
 
 \[
@@ -191,6 +195,8 @@ is global. The full data
 
 should be regarded as differential-cohomological rather than merely de Rham data. Schematically,
 
+**Established.** Differential/Deligne cohomology provides a model for line bundles with connection and retains curvature together with flat-holonomy data; see [Bry93; ADH21]. Calling the two sectors “local anomaly” and “global anomaly” is **FCIG terminology**.
+
 \[
 [(L,\nabla)]\in\widehat H^2(B;\mathbf Z).
 \]
@@ -228,6 +234,8 @@ This is the precise core behind the phrase **worldline bundle anomaly**.
 ## 5. State spaces as direct images
 
 For \(k\ge1\), define the fiberwise holomorphic state space
+
+**Established background.** Holomorphic sections of a polarized/prequantum line bundle form the standard state space in holomorphic geometric quantization under the usual positivity and polarization hypotheses; see [SW76].
 
 \[
 \mathcal H_{k,b}=H^0(X_b,L_b^k).
@@ -296,6 +304,8 @@ Let
 \]
 
 Relative Grothendieck–Riemann–Roch gives
+
+**Established.** The relative GRR identity for the alternating derived direct image is standard; see [Stacks-GRR]. Reading degree zero as a capacity sector and degree two as an anomaly sector is an **FCIG interpretation**.
 
 \[
 \boxed{
@@ -370,7 +380,9 @@ The cohomological relation is classical; the entropy/anomaly dictionary is the p
 
 ## 8. Determinant-line geometry as local free energy
 
-Equip \(\lambda_k\) with a Hermitian metric, for instance of Quillen type when an appropriate determinant-line construction is available. For a local nonzero section \(\sigma_i\), define
+Equip \(\lambda_k\) with a Hermitian metric, for instance of Quillen type when an appropriate determinant-line construction is available.
+
+**Established background.** Determinant lines and Quillen metrics originate in [Qui85]; natural determinant-bundle connections and their curvature/holonomy for elliptic families are developed in [BF86a; BF86b]. Calling the logarithmic norm below a free-energy potential is an **FCIG interpretation**. For a local nonzero section \(\sigma_i\), define
 
 \[
 \mathcal F_i=-\log\|\sigma_i\|^2.
@@ -446,6 +458,8 @@ Up to the normalization convention for the volume form,
 Thus \(B_k\) refines the global state count into a pointwise density.
 
 For a positive line bundle, the Tian–Catlin–Zelditch–Lu expansion has the schematic form
+
+**Established.** The diagonal Bergman/Szegő asymptotic expansion and its curvature coefficients are standard; see [Zel98; Lu00; MM07]. The coefficient is deliberately kept as \(c_{\mathrm{BK}}\) because it depends on curvature and \(2\pi\) normalization conventions.
 
 \[
 B_k(x)
@@ -566,6 +580,8 @@ and a translation-invariant Kähler metric is flat. Thus a positive quantization
 
 ### 11.3 Abelian variety
 
+**Established background.** Standard line-bundle, polarization, and theta-group theory on abelian varieties is developed in [BL04; Mum83]. The “single-bundle no-go” below is a short consequence **derived here**, not a named result from those sources.
+
 Let \(A\) be a \(g\)-dimensional abelian variety and \(L\) an ample line bundle of polarization type \((d_1,\ldots,d_g)\). Put
 
 \[
@@ -661,6 +677,8 @@ F_{\det D}
 
 This establishes a mathematically controlled direction
 
+**Established background.** Families index theory controls determinant-line curvature and holonomy from geometric/gauge curvature data; see [BF86a; BF86b]. Those references do **not** assert an inverse map from determinant anomaly to spacetime curvature.
+
 \[
 \boxed{\text{geometric/gauge curvature}\longrightarrow\text{determinant-line curvature}.}
 \]
@@ -702,7 +720,9 @@ R^{LC},
 
 where \(\mathcal C\) contains causal/Lorentzian structure.
 
-A more physical alternative is inspired by Jacobson's local horizon thermodynamics. Instead of identifying entropy gradients with forces, seek an FCIG entropy functional satisfying a local Clausius relation
+A more physical alternative is inspired by Jacobson's local horizon thermodynamics.
+
+**Established reference point.** Jacobson derives the Einstein equation as an equation of state from the Clausius relation on local Rindler horizons together with an entropy-area assumption [Jac95]. The FCIG entropy functional sought here is **not** supplied by that paper. Instead of identifying entropy gradients with forces, seek an FCIG entropy functional satisfying a local Clausius relation
 
 \[
 \boxed{\delta Q=T_U\,\delta S_{\mathrm{FCIG}}}
@@ -976,3 +996,24 @@ This note deliberately separates:
 - speculative gravitational closure.
 
 It should therefore be presented as a **research-program note**, not as a completed derivation of quantum gravity.
+
+---
+
+## References cited in this note
+
+Canonical BibTeX entries: [`references.bib`](references.bib).
+
+- **[Bry93]** J.-L. Brylinski, *Loop Spaces, Characteristic Classes and Geometric Quantization*, Birkhäuser (1993).
+- **[ADH21]** A. Amabel, A. Debray & P. J. Haine, *Differential Cohomology: Categories, Characteristic Classes, and Connections* (2021), arXiv:2109.12250.
+- **[SW76]** D. J. Simms & N. M. J. Woodhouse, *Lectures on Geometric Quantization*, Lecture Notes in Physics 53, Springer (1976).
+- **[Stacks-GRR]** The Stacks Project, Tag 02UO, “Grothendieck–Riemann–Roch.”
+- **[Qui85]** D. Quillen, “Determinants of Cauchy–Riemann Operators over a Riemann Surface,” *Functional Analysis and Its Applications* **19**(1) (1985), 31–34.
+- **[BF86a]** J.-M. Bismut & D. S. Freed, “The Analysis of Elliptic Families. I. Metrics and Connections on Determinant Bundles,” *Communications in Mathematical Physics* **106** (1986), 159–176.
+- **[BF86b]** J.-M. Bismut & D. S. Freed, “The Analysis of Elliptic Families. II. Dirac Operators, Eta Invariants, and the Holonomy Theorem,” *Communications in Mathematical Physics* **107** (1986), 103–163.
+- **[Zel98]** S. Zelditch, “Szegő Kernels and a Theorem of Tian,” *International Mathematics Research Notices* **1998**(6), 317–331.
+- **[Lu00]** Z. Lu, “On the Lower Order Terms of the Asymptotic Expansion of Tian–Yau–Zelditch,” *American Journal of Mathematics* **122**(2) (2000), 235–273.
+- **[MM07]** X. Ma & G. Marinescu, *Holomorphic Morse Inequalities and Bergman Kernels*, Progress in Mathematics 254, Birkhäuser (2007).
+- **[BL04]** C. Birkenhake & H. Lange, *Complex Abelian Varieties*, 2nd ed., Springer (2004).
+- **[Mum83]** D. Mumford, *Tata Lectures on Theta I*, Progress in Mathematics 28, Birkhäuser (1983).
+- **[Jac95]** T. Jacobson, “Thermodynamics of Spacetime: The Einstein Equation of State,” *Physical Review Letters* **75**(7) (1995), 1260–1263.
+
