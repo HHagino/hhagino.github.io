@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FCIG Explicit Model IIIc — Higher-Dimensional Weil / Metaplectic Descent</title>
+<meta name="description" content="Higher-dimensional finite Weil matrices, metaplectic phase, determinant character, and flat global holonomy for FCIG.">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},svg:{fontCache:'global'}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{--ink:#1b1b1b;--muted:#686868;--rule:#dedbd4;--paper:#fbfaf7;--accent:#6b4d2e}
+@media(prefers-color-scheme:dark){:root{--ink:#e8e5df;--muted:#aaa49b;--rule:#3a3733;--paper:#171614;--accent:#d3b07f}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.72;padding:3.5rem 1.3rem 6rem}main{max-width:900px;margin:auto}h1,h2,h3{line-height:1.25}h1{font-size:2.25rem;margin-top:0}h2{margin-top:2.8rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem}h3{margin-top:2rem}a{color:var(--accent)}code{font-family:ui-monospace,monospace;background:rgba(127,127,127,.12);padding:.08em .3em;border-radius:4px}pre{overflow:auto;padding:1rem;background:rgba(127,127,127,.09)}blockquote{border-left:3px solid var(--rule);padding:.7rem 1rem;margin:1.5rem 0;color:var(--muted)}table{border-collapse:collapse;width:100%;display:block;overflow:auto}th,td{border:1px solid var(--rule);padding:.55rem .7rem;vertical-align:top}.top{font-family:ui-sans-serif,system-ui,sans-serif;color:var(--muted);font-size:.92rem;margin-bottom:2.2rem}.top a{margin-right:1rem}mjx-container{overflow-x:auto;overflow-y:hidden}
+</style>
+</head>
+<body><main>
+<div class="top"><a href="/fcig/">← FCIG</a><a href="abelian-model.html">Explicit Model III</a><a href="abelian-bergman.html">Model IIIb</a><a href="abelian-weil.md">Markdown source</a><a href="abelian-weil.py">Numerical verifier</a></div>
+<div id="content"><p>Loading Weil/metaplectic note…</p></div>
+<script>
+fetch('abelian-weil.md').then(r=>r.text()).then(md=>{
+  document.getElementById('content').innerHTML=marked.parse(md);
+  if(window.MathJax?.typesetPromise) MathJax.typesetPromise();
+  else window.addEventListener('load',()=>MathJax.typesetPromise());
+}).catch(e=>{document.getElementById('content').innerHTML='<p>Failed to load the note.</p>';console.error(e)});
+</script>
+</main></body></html>
