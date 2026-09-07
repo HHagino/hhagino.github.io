@@ -3,6 +3,8 @@
 **Status:** worked completion of the elliptic FCIG model  
 **Date:** 2026-09-08
 
+> **Citation policy.** Bracketed keys cite established background only. Statements marked **Derived here** are calculations carried out in these FCIG notes; statements marked **FCIG interpretation/conjecture** are not attributed to the cited literature. Full entries are collected at the end of this note and in [`references.bib`](references.bib).
+
 > This note completes the modular part of the elliptic FCIG toy model.  
 > The main point is that the local determinant curvature found in Explicit Model I can be cancelled exactly by a Hodge-line counterterm, after which a genuinely global modular multiplier remains.
 >
@@ -17,6 +19,8 @@
 ---
 
 ## 1. Setup and conventions
+
+**Established background.** Classical theta functions transform under modular \(S\) and \(T\) moves with characteristic permutations and square-root automorphy factors; see [DLMF20; Mum83]. The exact finite matrices used later are derived in this note's convention.
 
 Let
 
@@ -70,15 +74,11 @@ These form a basis of
 
 The classical modular transformations of theta functions follow from Poisson summation; the ordinary Jacobi cases are tabulated, for example, in NIST DLMF §20.7(viii).
 
-References:
-
-- https://dlmf.nist.gov/20.7
-- https://math.berkeley.edu/~fengt/245C_2016.pdf
-- https://math.berkeley.edu/~swshin/AV-Weil.pdf
-
 ---
 
 # 2. The \(S\)-transformation
+
+**Derived here (our convention), with standard background.** The finite Fourier matrix below is obtained directly from Poisson summation for the chosen level-\(k\) theta basis. [Fri85] is cited for the general Weil/metaplectic framework, not for our exact signs and normalizations.
 
 Let
 
@@ -210,6 +210,8 @@ For even \(k\), the chosen theta structure is therefore preserved by both \(S\) 
 
 ## 3.2 Odd \(k\)
 
+**Established background.** The modular \(T\)-move permutes theta-characteristic sectors in the classical theory [DLMF20; Mum83]. The exact level-\(k\) swap formulas and \(T^2\) closure below are **derived here**.
+
 For odd \(k\),
 
 \[
@@ -288,6 +290,8 @@ This is already a concrete global obstruction.
 ---
 
 # 4. Finite Weil matrices at even level
+
+**Derived here (our convention).** The relations among \(U_S\), \(U_T\), charge conjugation, and the Gauss phase are verified from the explicit finite matrices below. [Fri85] supports the general Weil-representation and eighth-root-of-unity phenomenon.
 
 From now through §8 assume \(k\) is even.
 
@@ -459,6 +463,8 @@ F_{\det\mathcal H_k}
 ---
 
 # 7. Hodge curvature and exact cancellation
+
+**Derived here.** The corrected line \(\mathscr A_k=\det\mathcal H_k\otimes\lambda_H^{k/2}\) and its vanishing Chern curvature follow from Explicit Model I. The general principle that flat connection data may retain nontrivial holonomy is standard [Bry93; ADH21]; the phrase “flat anomaly line” is **FCIG terminology**.
 
 Let
 
@@ -835,7 +841,7 @@ Thus “information geometry” in this model is not a single scalar entropy. It
 - Hodge bundles over elliptic moduli;
 - Chern connections of Hermitian holomorphic bundles.
 
-The general Weil-representation structure and its metaplectic nature are standard; see, for example, the notes by Venkatesh/Feng/Ronchetti and Shin cited above.
+The general Weil-representation structure and its metaplectic nature are standard; see [Fri85; Mum83].
 
 ## Exact calculations specific to this note
 
@@ -946,18 +952,21 @@ It is to decide whether the exact elliptic mechanism has a functorial higher-dim
 
 ---
 
-## References
-
-1. NIST Digital Library of Mathematical Functions, §20.7(viii), modular transformations of theta functions: https://dlmf.nist.gov/20.7
-2. A. Venkatesh, notes by T. Feng and N. Ronchetti, lectures including the finite Weil representation: https://math.berkeley.edu/~fengt/245C_2016.pdf
-3. S. W. Shin, *Abelian Varieties and Weil Representations*: https://math.berkeley.edu/~swshin/AV-Weil.pdf
-4. D. S. Freed, *Determinant Line Bundles Revisited*, arXiv:dg-ga/9505002: https://arxiv.org/abs/dg-ga/9505002
-5. D. Quillen, *Determinants of Cauchy–Riemann operators over a Riemann surface*, Functional Analysis and Its Applications 19 (1985).
-
----
-
 ## Research-status statement
 
 This note completes the **explicit elliptic modular toy model** of FCIG, not the proposed theory of gravity.
 
 The modular formulas, Gauss-sum relations, determinant metrics and curvature cancellation are concrete mathematical statements within the stated conventions. The identification of their local/global split with an “information anomaly” is the FCIG interpretation. Any passage from this structure to Lorentzian gravitational dynamics remains conjectural.
+
+---
+
+## References cited in this note
+
+Canonical BibTeX entries: [`references.bib`](references.bib).
+
+- **[DLMF20]** NIST Digital Library of Mathematical Functions, Chapter 20, especially §20.7(viii), transformations of the lattice parameter.
+- **[Mum83]** D. Mumford, *Tata Lectures on Theta I*, Progress in Mathematics 28, Birkhäuser (1983).
+- **[Fri85]** S. Friedberg, “Theta Function Transformation Formulas and the Weil Representation,” *Journal of Number Theory* **20**(2) (1985), 121–127.
+- **[Bry93]** J.-L. Brylinski, *Loop Spaces, Characteristic Classes and Geometric Quantization*, Birkhäuser (1993).
+- **[ADH21]** A. Amabel, A. Debray & P. J. Haine, *Differential Cohomology: Categories, Characteristic Classes, and Connections* (2021), arXiv:2109.12250.
+

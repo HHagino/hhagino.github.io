@@ -3,6 +3,8 @@
 **Status:** worked research note / exact toy model  
 **Date:** 2026-09-08
 
+> **Citation policy.** Bracketed keys cite established background only. Statements marked **Derived here** are calculations carried out in these FCIG notes; statements marked **FCIG interpretation/conjecture** are not attributed to the cited literature. Full entries are collected at the end of this note and in [`references.bib`](references.bib).
+
 > The purpose of this note is to turn the abstract FCIG architecture into one model where essentially every object can be written down explicitly.
 >
 > The central phenomenon is a three-way split:
@@ -68,6 +70,8 @@ This will let us separate local curvature corrections from genuinely global effe
 ---
 
 ## 2. The degree-one theta line
+
+**Established background.** Theta series, quasi-periodicity, theta characteristics, and their relation to line bundles on elliptic/abelian varieties are classical; see [Mum83; BL04; DLMF20].
 
 Take the classical degree-one theta line \(L\to E_\tau\). In the universal cover \(\mathbf C\), a holomorphic section is represented by a function satisfying
 
@@ -153,6 +157,8 @@ S_k^{\mathrm{cap}}=\log k.
 
 No asymptotic Riemann–Roch approximation is needed here.
 
+**Established.** The dimension \(h^0(E_\tau,L^k)=k\) is the standard positive-degree elliptic-curve/abelian-variety case of Riemann–Roch; see [BL04].
+
 ---
 
 ## 3. Hermitian metric and curvature
@@ -206,6 +212,8 @@ This is the fiber quantization sector.
 ---
 
 ## 4. Exact \(L^2\) Gram matrix of the theta basis
+
+**Derived here.** The exact \(L^2\) Gram normalization below is computed in the coordinates and Hermitian metric fixed in this note; it is not attributed to [Mum83], [BL04], or the determinant-line literature.
 
 Use the normalized fiber measure \(\omega_\tau\). Define
 
@@ -338,6 +346,8 @@ What is true is subtler.
 
 ## 6. Poisson-resummed Bergman formula
 
+**Derived here.** The exact lattice Fourier formula below follows directly from the explicit theta basis and Poisson summation. For comparison with the general local Bergman asymptotic theory, see [Zel98; Lu00; MM07].
+
 Write
 
 \[
@@ -404,6 +414,8 @@ The estimate is uniform on compact subsets of moduli where \(\mu(\tau)\) is boun
 ---
 
 ## 7. Local curvature versus global lattice memory
+
+**Derived here.** The exponentially small lattice sector follows from the exact formula in §6. Calling it a “nonperturbative global sector” is **FCIG terminology**. The contrast with local power-series asymptotics uses [Zel98; Lu00; MM07].
 
 The flat metric has
 
@@ -507,6 +519,8 @@ It is a natural quantity to examine in any attempt to connect semiclassical quan
 
 ## 9. Heat equation and the theta-state connection
 
+**Established background.** The classical Jacobi theta heat equation is standard; see [Mum83]. The level-\(k\) rescaling and the FCIG interpretation of moduli variation as state evolution are **derived/interpreted here**.
+
 The Jacobi theta function satisfies the classical heat equation
 
 \[
@@ -555,6 +569,8 @@ The heat connection is naturally flat/projectively flat only after one keeps car
 ---
 
 ## 10. The Hodge line over \(\mathbb H\)
+
+**Established background.** The Hodge bundle is the standard line bundle whose powers encode modular forms in the moduli interpretation; see [Katz73]. The metric normalization \(\|dz\|^2=Y\) and the curvature calculation below are **derived here**.
 
 Let
 
@@ -637,6 +653,8 @@ Thus the fiber may be flat while the moduli Hodge line is positively curved.
 ---
 
 ## 11. Determinant of the theta-state bundle
+
+**Derived here (elliptic normalization).** The determinant/Hodge curvature coefficient \(-k/2\) below follows from the exact Gram determinant in §4. [Qui85; BF86a] provide determinant-line context, not this specific coefficient.
 
 Let
 
@@ -978,21 +996,6 @@ This should reveal whether the elliptic transseries split survives beyond the fl
 
 ---
 
-## References / checkpoints
-
-- Classical theta functions and level-\(k\) bases for elliptic curves: standard theta-function theory; an explicit account is given in expository notes on mirror symmetry of elliptic curves.
-- Wang, X. and Yu, H. P., **Theta function and Bergman metric on Abelian varieties**, *New York Journal of Mathematics* 15 (2009), 19–35.
-- Classical theta heat equation:
-  \[
-  4\pi i\,\partial_\tau\vartheta=\partial_z^2\vartheta.
-  \]
-- Quillen, D., **Determinants of Cauchy–Riemann operators over a Riemann surface**, *Functional Analysis and Its Applications* 19 (1985).
-- Freed, D. S., **Determinant Line Bundles Revisited**, arXiv:dg-ga/9505002.
-- Ma, X. and Marinescu, G., **Holomorphic Morse Inequalities and Bergman Kernels**.
-- Standard modular-form interpretation of the Hodge line: modular forms of weight \(m\) are sections of powers of the Hodge bundle.
-
----
-
 ## Summary formula sheet
 
 \[
@@ -1065,3 +1068,20 @@ The core lesson is therefore:
 \textbf{flat local geometry can coexist with nonperturbative state-density structure and curved moduli geometry.}
 }
 \]
+
+---
+
+## References cited in this note
+
+Canonical BibTeX entries: [`references.bib`](references.bib).
+
+- **[Mum83]** D. Mumford, *Tata Lectures on Theta I*, Progress in Mathematics 28, Birkhäuser (1983).
+- **[BL04]** C. Birkenhake & H. Lange, *Complex Abelian Varieties*, 2nd ed., Springer (2004).
+- **[DLMF20]** NIST Digital Library of Mathematical Functions, Chapter 20, especially §20.7(viii), transformations of the lattice parameter.
+- **[Zel98]** S. Zelditch, “Szegő Kernels and a Theorem of Tian,” *International Mathematics Research Notices* **1998**(6), 317–331.
+- **[Lu00]** Z. Lu, “On the Lower Order Terms of the Asymptotic Expansion of Tian–Yau–Zelditch,” *American Journal of Mathematics* **122**(2) (2000), 235–273.
+- **[MM07]** X. Ma & G. Marinescu, *Holomorphic Morse Inequalities and Bergman Kernels*, Progress in Mathematics 254, Birkhäuser (2007).
+- **[Katz73]** N. M. Katz, “p-adic Properties of Modular Schemes and Modular Forms,” in *Modular Functions of One Variable III*, LNM 350, Springer (1973), 69–190.
+- **[Qui85]** D. Quillen, “Determinants of Cauchy–Riemann Operators over a Riemann Surface,” *Functional Analysis and Its Applications* **19**(1) (1985), 31–34.
+- **[BF86a]** J.-M. Bismut & D. S. Freed, “The Analysis of Elliptic Families. I. Metrics and Connections on Determinant Bundles,” *Communications in Mathematical Physics* **106** (1986), 159–176.
+
