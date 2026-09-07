@@ -127,7 +127,78 @@ k^g\left[1+O_\Omega\left(e^{-\pi k\mu(\Omega)/2}\right)\right].
 }
 \]
 
-This completes the multidimensional Bergman/Poisson gate. The remaining v0.3 gate is the higher-dimensional finite Weil/metaplectic descent.
+### Explicit Model IIIc — higher-dimensional Weil / metaplectic descent
+
+- Web page: `fcig/abelian-weil.html`
+- Source note: `fcig/abelian-weil.md`
+- Numerical verifier: `fcig/abelian-weil.py`
+
+For even \(k\), the elementary finite Weil matrices are
+
+\[
+\boxed{
+\begin{aligned}
+U_k(T_B)_{\mathbf j\mathbf m}
+&=\delta_{\mathbf j\mathbf m}e^{\pi i\mathbf j^TB\mathbf j/k},\\
+U_k(S)_{\mathbf j\boldsymbol\ell}
+&=k^{-g/2}e^{-2\pi i\mathbf j^T\boldsymbol\ell/k},\\
+U_k(R_A)_{\mathbf j\mathbf m}
+&=\delta_{\mathbf m,A^T\mathbf j}.
+\end{aligned}
+}
+\]
+
+They obey
+
+\[
+\boxed{
+U_k(S)^2=C,
+\qquad
+(U_k(S)U_k(T_{I_g}))^3=e^{\pi i g/4}C.
+}
+\]
+
+After the Hodge correction,
+
+\[
+\mathscr A_{g,k}
+=
+\det\mathcal H_k\otimes\lambda_H^{k^g/2}
+\]
+
+has zero local curvature for even \(k\), but its descent multiplier need not be trivial. The explicit genus-two, level-two shear
+
+\[
+B_\times=
+\begin{pmatrix}0&1\\1&0\end{pmatrix}
+\]
+
+gives
+
+\[
+\boxed{
+\chi_{2,2}(T_{B_\times})=-1.
+}
+\]
+
+Thus the higher-dimensional abelian model contains a flat but globally nontrivial determinant sector. Odd level requires the standard theta-characteristic/metaplectic refinement rather than a forced fixed-characteristic formula.
+
+## v0.3 synthesis
+
+The principally polarized abelian milestone now realizes
+
+\[
+\boxed{
+\begin{aligned}
+\text{state capacity} &:\quad N_k=k^g,\\
+\text{determinant/Hodge response} &:\quad F_{\det\mathcal H_k}=-\frac{k^g}{2}F_{\lambda_H},\\
+\text{global lattice sector} &:\quad O_\Omega(e^{-\pi k\mu(\Omega)/2}),\\
+\text{global modular sector} &:\quad \chi_{g,k}\text{ from finite Weil/metaplectic descent}.
+\end{aligned}
+}
+\]
+
+This closes the flat abelian v0.3 milestone. It is not a derivation of spacetime gravity.
 
 ## Core formula
 
@@ -155,7 +226,7 @@ The project interprets degree zero as the state-capacity sector and degree two a
 }
 \]
 
-The current milestone is **v0.3: higher-dimensional abelian generalization**. Gate E (multidimensional Bergman lattice formula) is complete; Gate D (finite Weil/metaplectic descent) remains open. See `ROADMAP.md` and Issues #6–#8.
+**Current target:** v0.4 — curved genus-\(g\ge2\) test. See `ROADMAP.md` and Issue #8.
 
 ## Status
 
