@@ -66,6 +66,7 @@ Thus the local curvature contribution can be cancelled while a flat Weil/metaple
 
 ### Explicit Model III — higher-dimensional abelian varieties
 
+- Web page: `fcig/abelian-model.html`
 - Source note: `fcig/abelian-model.md`
 - Numerical verifier: `fcig/abelian-gram.py`
 
