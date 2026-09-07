@@ -74,12 +74,6 @@ These form a basis of
 
 The classical modular transformations of theta functions follow from Poisson summation; the ordinary Jacobi cases are tabulated, for example, in NIST DLMF §20.7(viii).
 
-References:
-
-- https://dlmf.nist.gov/20.7
-- https://math.berkeley.edu/~fengt/245C_2016.pdf
-- https://math.berkeley.edu/~swshin/AV-Weil.pdf
-
 ---
 
 # 2. The \(S\)-transformation
@@ -847,7 +841,7 @@ Thus “information geometry” in this model is not a single scalar entropy. It
 - Hodge bundles over elliptic moduli;
 - Chern connections of Hermitian holomorphic bundles.
 
-The general Weil-representation structure and its metaplectic nature are standard; see, for example, the notes by Venkatesh/Feng/Ronchetti and Shin cited above.
+The general Weil-representation structure and its metaplectic nature are standard; see [Fri85; Mum83].
 
 ## Exact calculations specific to this note
 
@@ -955,16 +949,6 @@ The next genuinely new steps are:
 The point is that the next step is no longer “make the analogy more beautiful.”
 
 It is to decide whether the exact elliptic mechanism has a functorial higher-dimensional continuation.
-
----
-
-## References
-
-1. NIST Digital Library of Mathematical Functions, §20.7(viii), modular transformations of theta functions: https://dlmf.nist.gov/20.7
-2. A. Venkatesh, notes by T. Feng and N. Ronchetti, lectures including the finite Weil representation: https://math.berkeley.edu/~fengt/245C_2016.pdf
-3. S. W. Shin, *Abelian Varieties and Weil Representations*: https://math.berkeley.edu/~swshin/AV-Weil.pdf
-4. D. S. Freed, *Determinant Line Bundles Revisited*, arXiv:dg-ga/9505002: https://arxiv.org/abs/dg-ga/9505002
-5. D. Quillen, *Determinants of Cauchy–Riemann operators over a Riemann surface*, Functional Analysis and Its Applications 19 (1985).
 
 ---
 

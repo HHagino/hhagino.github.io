@@ -996,21 +996,6 @@ This should reveal whether the elliptic transseries split survives beyond the fl
 
 ---
 
-## References / checkpoints
-
-- Classical theta functions and level-\(k\) bases for elliptic curves: standard theta-function theory; an explicit account is given in expository notes on mirror symmetry of elliptic curves.
-- Wang, X. and Yu, H. P., **Theta function and Bergman metric on Abelian varieties**, *New York Journal of Mathematics* 15 (2009), 19–35.
-- Classical theta heat equation:
-  \[
-  4\pi i\,\partial_\tau\vartheta=\partial_z^2\vartheta.
-  \]
-- Quillen, D., **Determinants of Cauchy–Riemann operators over a Riemann surface**, *Functional Analysis and Its Applications* 19 (1985).
-- Freed, D. S., **Determinant Line Bundles Revisited**, arXiv:dg-ga/9505002.
-- Ma, X. and Marinescu, G., **Holomorphic Morse Inequalities and Bergman Kernels**.
-- Standard modular-form interpretation of the Hodge line: modular forms of weight \(m\) are sections of powers of the Hodge bundle.
-
----
-
 ## Summary formula sheet
 
 \[

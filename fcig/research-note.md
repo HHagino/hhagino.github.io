@@ -974,18 +974,6 @@ The remaining question is mathematical rather than rhetorical:
 
 ---
 
-## References / starting points
-
-- The Stacks Project, **Grothendieck–Riemann–Roch**, Tag 02UO: https://stacks.math.columbia.edu/tag/02UO
-- D. Quillen, *Determinants of Cauchy–Riemann operators over a Riemann surface*, Functional Analysis and Its Applications 19 (1985).
-- D. S. Freed, *Determinant Line Bundles Revisited*, arXiv:dg-ga/9505002: https://arxiv.org/abs/dg-ga/9505002
-- J.-L. Brylinski, *Loop Spaces, Characteristic Classes and Geometric Quantization*, Birkhäuser.
-- X. Ma and G. Marinescu, *Holomorphic Morse Inequalities and Bergman Kernels*, Birkhäuser.
-- N. M. J. Woodhouse, *Geometric Quantization*.
-- T. Jacobson, *Thermodynamics of Spacetime: The Einstein Equation of State*, Phys. Rev. Lett. 75 (1995), 1260–1263: https://doi.org/10.1103/PhysRevLett.75.1260
-
----
-
 ## Research-status statement
 
 This note deliberately separates:
