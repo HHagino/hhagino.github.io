@@ -80,23 +80,7 @@ A_\Omega
 \Omega\in\mathfrak H_g,
 \]
 
-the level-\(k\) theta state space has rank
-
-\[
-N_k=k^g.
-\]
-
-In the conventions of Explicit Model III, the exact Gram computation gives
-
-\[
-\boxed{
-\langle s_{\mathbf j}^{(k)},s_{\mathbf m}^{(k)}\rangle
-=
-\delta_{\mathbf j\mathbf m}\det(2k\,\operatorname{Im}\Omega)^{-1/2}
-}
-\]
-
-and therefore
+the level-\(k\) theta state space has rank \(N_k=k^g\), and the exact Gram computation gives
 
 \[
 \boxed{
@@ -108,7 +92,42 @@ F_{\det\mathcal H_k}
 }
 \]
 
-This is the first exact extension of the elliptic determinant/Hodge cancellation beyond complex dimension one. The global Weil/metaplectic descent and the multidimensional Poisson-resummed Bergman formula remain the next gates.
+### Explicit Model IIIb — multidimensional Bergman lattice formula
+
+- Web page: `fcig/abelian-bergman.html`
+- Source note: `fcig/abelian-bergman.md`
+- Numerical verifier: `fcig/abelian-bergman.py`
+
+With
+
+\[
+Q_\Omega(p,\ell)
+=(\ell-\Omega p)^*(\operatorname{Im}\Omega)^{-1}(\ell-\Omega p),
+\]
+
+the exact Poisson-resummed density is
+
+\[
+\boxed{
+B_{g,k}(x,t;\Omega)
+=
+k^g\sum_{p,\ell\in\mathbf Z^g}
+ e^{-\pi kQ_\Omega(p,\ell)/2}
+ e^{2\pi ik(p^Tx+\ell^Tt)+\pi ikp^T\ell}.
+}
+\]
+
+For fixed \(\Omega\), if \(\mu(\Omega)\) is the shortest nonzero value of \(Q_\Omega\), then
+
+\[
+\boxed{
+B_{g,k}
+=
+k^g\left[1+O_\Omega\left(e^{-\pi k\mu(\Omega)/2}\right)\right].
+}
+\]
+
+This completes the multidimensional Bergman/Poisson gate. The remaining v0.3 gate is the higher-dimensional finite Weil/metaplectic descent.
 
 ## Core formula
 
@@ -136,7 +155,7 @@ The project interprets degree zero as the state-capacity sector and degree two a
 }
 \]
 
-The current milestone is **v0.3: higher-dimensional abelian generalization**. See `ROADMAP.md` for explicit pass/fail gates.
+The current milestone is **v0.3: higher-dimensional abelian generalization**. Gate E (multidimensional Bergman lattice formula) is complete; Gate D (finite Weil/metaplectic descent) remains open. See `ROADMAP.md` and Issues #6–#8.
 
 ## Status
 
