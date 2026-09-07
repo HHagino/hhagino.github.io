@@ -42,11 +42,47 @@ def add_policy(text: str) -> str:
     return text.replace("\n---\n", "\n---\n\n" + POLICY + "\n", 1)
 
 
+def remove_existing_audited_refs(text: str) -> str:
+    # Rebuild the audited reference block deterministically on every run.
+    return re.sub(r"\n---\n\n## References cited in this note\n.*\Z", "\n", text, flags=re.S)
+
+
+def clean_legacy(text: str, kind: str) -> str:
+    if kind == "research":
+        text = re.sub(
+            r"\n---\n\n## References / starting points\n.*?\n---\n\n## Research-status statement",
+            "\n---\n\n## Research-status statement",
+            text,
+            flags=re.S,
+        )
+    elif kind == "elliptic":
+        text = re.sub(
+            r"\n---\n\n## References / checkpoints\n.*?\n---\n\n## Summary formula sheet",
+            "\n---\n\n## Summary formula sheet",
+            text,
+            flags=re.S,
+        )
+    elif kind == "modular":
+        text = re.sub(
+            r"\nReferences:\n\n(?:- [^\n]+\n)+\n---\n",
+            "\n---\n",
+            text,
+        )
+        text = re.sub(
+            r"\n---\n\n## References\n.*?\n---\n\n## Research-status statement",
+            "\n---\n\n## Research-status statement",
+            text,
+            flags=re.S,
+        )
+        text = text.replace(
+            "The general Weil-representation structure and its metaplectic nature are standard; see, for example, the notes by Venkatesh/Feng/Ronchetti and Shin cited above.",
+            "The general Weil-representation structure and its metaplectic nature are standard; see [Fri85; Mum83].",
+        )
+    return text
+
+
 def append_refs(text: str, keys: list[str]) -> str:
-    marker = "## References cited in this note"
-    if marker in text:
-        return text
-    block = ["\n---\n", marker, "", "Canonical BibTeX entries: [`references.bib`](references.bib).", ""]
+    block = ["\n---\n", "## References cited in this note", "", "Canonical BibTeX entries: [`references.bib`](references.bib).", ""]
     for key in keys:
         block.append(f"- **[{key}]** {REFS[key]}")
     block.append("")
@@ -54,6 +90,7 @@ def append_refs(text: str, keys: list[str]) -> str:
 
 
 def research_note(text: str) -> str:
+    text = remove_existing_audited_refs(clean_legacy(text, "research"))
     text = add_policy(text)
     text = insert_after(text, "is global (with the chosen standard normalization) and represents \\(c_1(\\mathscr L)\\) in de Rham cohomology.", "**Established.** This is standard Hermitian holomorphic line-bundle/Chern-connection geometry; see [Bry93]. The subsequent reading of these local weights as information potentials is an **FCIG interpretation**.", "research hermitian weights")
     text = insert_after(text, "should be regarded as differential-cohomological rather than merely de Rham data. Schematically,", "**Established.** Differential/Deligne cohomology provides a model for line bundles with connection and retains curvature together with flat-holonomy data; see [Bry93; ADH21]. Calling the two sectors “local anomaly” and “global anomaly” is **FCIG terminology**.", "research differential cohomology")
@@ -68,6 +105,7 @@ def research_note(text: str) -> str:
 
 
 def elliptic_model(text: str) -> str:
+    text = remove_existing_audited_refs(clean_legacy(text, "elliptic"))
     text = add_policy(text)
     text = insert_after(text, "## 2. The degree-one theta line", "**Established background.** Theta series, quasi-periodicity, theta characteristics, and their relation to line bundles on elliptic/abelian varieties are classical; see [Mum83; BL04; DLMF20].", "elliptic theta")
     text = insert_after(text, "No asymptotic Riemann–Roch approximation is needed here.", "**Established.** The dimension \\(h^0(E_\\tau,L^k)=k\\) is the standard positive-degree elliptic-curve/abelian-variety case of Riemann–Roch; see [BL04].", "elliptic h0")
@@ -81,6 +119,7 @@ def elliptic_model(text: str) -> str:
 
 
 def modular_holonomy(text: str) -> str:
+    text = remove_existing_audited_refs(clean_legacy(text, "modular"))
     text = add_policy(text)
     text = insert_after(text, "## 1. Setup and conventions", "**Established background.** Classical theta functions transform under modular \\(S\\) and \\(T\\) moves with characteristic permutations and square-root automorphy factors; see [DLMF20; Mum83]. The exact finite matrices used later are derived in this note's convention.", "modular setup")
     text = insert_after(text, "# 2. The \\(S\\)-transformation", "**Derived here (our convention), with standard background.** The finite Fourier matrix below is obtained directly from Poisson summation for the chosen level-\\(k\\) theta basis. [Fri85] is cited for the general Weil/metaplectic framework, not for our exact signs and normalizations.", "modular S")
