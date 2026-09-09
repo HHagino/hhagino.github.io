@@ -1,53 +1,31 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.8 — canonical-coupling / factorized-pushforward test  
+**Current target:** v0.9 — non-factorized MMM / Deligne--Riemann--Roch test  
 **Updated:** 2026-09-09
 
-The roadmap is ordered so that each mathematical mechanism is tested before it is used in a gravitational interpretation. Failed extrapolations are recorded as no-go results rather than repaired by changing definitions after the fact.
+The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations are kept as explicit no-go results.
 
 ---
 
-## Milestone v0.3 — principally polarized abelian varieties — COMPLETE
+## v0.3 — principally polarized abelian varieties — COMPLETE
 
-The flat ppav laboratory established
-
-\[
-\dim H^0(A_\Omega,L^k)=k^g,
-\qquad
-F_{\det\mathcal H_k}=-\frac{k^g}{2}F_{\lambda_H},
-\]
-
-an exact Poisson-resummed Bergman lattice formula with exponential shortest-vector suppression, and finite Weil/metaplectic descent with explicit nontrivial flat holonomy.
+The flat ppav laboratory established exact state counting, determinant/Hodge response, a Poisson-resummed Bergman lattice sector, and finite Weil/metaplectic holonomy.
 
 Sources: `abelian-model.md`, `abelian-bergman.md`, `abelian-weil.md`.
 
 ---
 
-## Milestone v0.4 — compact hyperbolic curves — COMPLETE
+## v0.4 — compact hyperbolic curves — COMPLETE
 
-For a compact hyperbolic curve
-
-\[
-X=\Gamma\backslash\mathbb H,
-\qquad
-\mathcal H_k=H^0(X,K_X^k),
-\]
-
-the model exhibits a nonzero local Bergman-curvature sector and an independent global geodesic/holonomy sector. The determinant comparison gives
-
-\[
-\lambda_k\simeq\lambda_1^{\otimes(6k^2-6k+1)},
-\]
-
-which is a no-go for a universal flat-ppav rank/2 law.
+The curved model exhibits a nonzero local Bergman-curvature sector and an independent global geodesic/holonomy sector. The Mumford determinant relation gives a no-go for a universal flat-ppav rank/2 law.
 
 Sources: `hyperbolic-model.md`, `hyperbolic-loop.py`.
 
 ---
 
-## Milestone v0.5 — Quillen / analytic torsion — COMPLETE
+## v0.5 — Quillen / analytic torsion — COMPLETE
 
-On the same determinant line \(\lambda_k\), ordinary \(L^2\) and Quillen metrics satisfy, in the fixed convention,
+On the same determinant line,
 
 \[
 \boxed{
@@ -57,164 +35,197 @@ F_Q-F_{L^2}=-\partial\bar\partial\mathcal T_k.
 }
 \]
 
-The Quillen curvature is fixed by the family local-index theorem, while the torsion factor is globally spectral and is related on hyperbolic surfaces to Selberg-zeta / closed-geodesic data. The pointwise Bergman-loop correction and analytic torsion are not literally the same functional.
+The Quillen/family-index curvature and the elementary \(L^2\) determinant curvature are therefore related by analytic torsion but are not interchangeable.
 
 Sources: `quillen-refinement.md`, `quillen-refinement.py`.
 
 ---
 
-## Milestone v0.6 — differential cohomology / determinant holonomy — COMPLETE
+## v0.6 — differential cohomology / determinant holonomy — COMPLETE
 
-A Hermitian line with unitary connection defines
+A line with unitary connection is encoded by
 
 \[
 \widehat c_1(L,\nabla)\in\widehat H^2(B;\mathbf Z),
 \]
 
-with characteristic class, curvature and loop holonomy. The curvature exact sequence
-
-\[
-\boxed{
-0\to H^1(B;\mathbf R/\mathbf Z)
-\to\widehat H^2(B;\mathbf Z)
-\xrightarrow{R}\Omega^2_{\mathbf Z}(B)\to0
-}
-\]
-
-makes precise why curvature zero does not imply trivial global holonomy. The flat ppav corrected line and the curved Quillen determinant line lie in the same category of line-with-connection data but are not the same class or the same model.
+with topology, curvature and holonomy in one object. The flat kernel of the curvature map explains how nontrivial global holonomy can survive when local curvature vanishes.
 
 Sources: `differential-holonomy.md`, `differential-holonomy.py`.
 
 ---
 
-## Milestone v0.7 — response / transgression bridge — COMPLETE
+## v0.7 — response / transgression bridge — COMPLETE
 
-### Gate R — spaces and maps — PASS
-
-Every response operation is stated using explicit source and target spaces. In particular, for the free loop space
-
-\[
-LB=C^\infty(S^1,B),
-\qquad
-\operatorname{ev}:LB\times S^1\to B,
-\]
-
-there is no identification of the parameter base \(B\) with another geometric space by analogy.
-
-### Gate S — genuine differential-cohomology operations — PASS
-
-Differential-character transgression is
+Loop-space transgression gives
 
 \[
 \boxed{
-\tau_{S^1}
-=\widehat\pi_!\operatorname{ev}^*:
-\widehat H^2(B;\mathbf Z)
-\longrightarrow
-\widehat H^1(LB;\mathbf Z).
+\tau_{S^1}:\widehat H^2(B;\mathbf Z)
+\to\widehat H^1(LB;\mathbf Z),
 }
 \]
 
-For a line bundle with connection,
+whose value is the determinant holonomy function. More generally, real \(d\)-dimensional pushforward lowers degree by \(d\), so a degree-two line cannot be transported through a positive-dimensional fiber without additional degree-restoring data.
 
-\[
-\boxed{
-\tau_{S^1}(\widehat{\mathcal A})(\gamma)
-=\operatorname{Hol}_{\widehat{\mathcal A}}(\gamma).
-}
-\]
-
-This is a genuine response map: the determinant differential character produces the holonomy function on loop space. Standard fiber integration, product and transgression are cited to Bär--Becker; the determinant holonomy input is cited to Bismut--Freed / Dai--Freed.
-
-### Gate T — degree and structure-group audit — PASS WITH NO-GO
-
-For a correspondence
-
-\[
-M\xleftarrow{p}Z\xrightarrow{q}B
-\]
-
-with closed oriented real \(d\)-dimensional fibers,
-
-\[
-\boxed{
-p_!q^*\widehat{\mathcal A}
-\in\widehat H^{2-d}(M;\mathbf Z).
-}
-\]
-
-Hence a positive-dimensional pushforward does **not** by itself produce another degree-two line-with-connection class. In particular, circle transgression lands in degree one, i.e. a \(U(1)\)-valued function rather than a new line bundle.
-
-A degree-preserving template must contain an additional class
-
-\[
-\widehat u\in\widehat H^d(Z;\mathbf Z),
-\]
-
-so that
-
-\[
-\boxed{
-\widehat{\mathcal R}_{p,q,\widehat u}
-=p_!(q^*\widehat{\mathcal A}\cup\widehat u)
-\in\widehat H^2(M;\mathbf Z).
-}
-\]
-
-Even then the target is still an abelian \(U(1)\) line with connection; no tangent/frame connection has been produced.
-
-### Gate U — explicit response example — PASS
-
-For a loop \(c:S^1\to B\), the pullback \(c^*\widehat{\mathcal A}\in\widehat H^2(S^1;\mathbf Z)\) is necessarily flat because \(S^1\) has no nonzero 2-forms, while its holonomy is exactly the original determinant holonomy on \(c\). For a Bismut--Freed determinant connection, the latter is governed by the adiabatic eta-invariant holonomy theorem.
-
-Source and degree checker: `response-transgression.md`, `response-transgression.py`.
-
-### v0.7 conclusion
-
-\[
-\boxed{
-\text{response maps exist, but differential-cohomology degree and structure group sharply constrain their targets.}
-}
-\]
+Sources: `response-transgression.md`, `response-transgression.py`.
 
 ---
 
-## Milestone v0.8 — canonical coupling / factorized pushforward — ACTIVE
+## v0.8 — canonical coupling / factorized pushforward — COMPLETE
 
-The next test asks whether the degree-restoring class can be chosen canonically from geometry already present in a family, instead of being introduced ad hoc.
-
-For a smooth proper family of genus-\(g\ge2\) curves
+Let
 
 \[
-\pi:X\to B,
+p:Z\to M
 \]
 
-the natural first candidate is
+be a smooth proper oriented real \(d\)-dimensional family, let
 
 \[
-\widehat u=\widehat c_1(K_{X/B})\in\widehat H^2(X;\mathbf Z).
+\widehat{\mathcal A}\in\widehat H^2(M;\mathbf Z),
+\qquad
+\widehat u\in\widehat H^d(Z;\mathbf Z).
 \]
 
-The first pass condition is to apply the standard projection formula to
+### Gate V — projection formula — PASS
+
+The standard differential-cohomology projection formula gives
 
 \[
-\pi_!\bigl(\pi^*\widehat{\mathcal A}\cup\widehat u\bigr)
+\boxed{
+p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
+=
+\widehat{\mathcal A}\cup p_!(\widehat u).
+}
 \]
 
-and determine whether this produces new response geometry or only a scalar multiple of the original differential character.
+### Gate W — factorized-pushforward no-go — PASS
 
-A stronger general test will treat arbitrary \(\widehat u\in\widehat H^2(X)\). If the projection formula forces every factorized ansatz of this type to be an integer multiple of \(\widehat{\mathcal A}\) on a connected base, that will be recorded as a structural no-go theorem.
+Since
+
+\[
+p_!(\widehat u)\in\widehat H^0(M;\mathbf Z),
+\]
+
+on a connected base it is an integer \(n\). Hence
+
+\[
+\boxed{
+p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
+=
+n\widehat{\mathcal A}.
+}
+\]
+
+Thus every factorized degree-restored response is only integer multiplication of the original differential character. It cannot generate an independent degree-two response direction.
+
+### Gate X — canonical curve-family coupling — PASS WITH NO-GO
+
+For a smooth genus-\(g\) curve family
+
+\[
+\pi:X\to B
+\]
+
+and
+
+\[
+\widehat u=\widehat c_1(K_{X/B}),
+\]
+
+standard curve theory gives
+
+\[
+\pi_!\widehat c_1(K_{X/B})=2g-2.
+\]
+
+Therefore
+
+\[
+\boxed{
+\pi_!\left(
+\pi^*\widehat{\mathcal A}\cup\widehat c_1(K_{X/B})
+\right)
+=
+(2g-2)\widehat{\mathcal A}.
+}
+\]
+
+The canonical line restores degree exactly but creates no new independent response geometry.
+
+### Gate Y — flat/curved preservation — PASS
+
+If \(R(\widehat{\mathcal A})=0\), the factorized response stays flat. If \(R(\widehat{\mathcal A})\neq0\), the curvature is only multiplied by \(n\). Likewise loop holonomy is raised to the \(n\)-th power. No new tensor type or structure group appears.
+
+Sources: `factorized-pushforward.md`, `factorized-pushforward.py`.
+
+### v0.8 conclusion
+
+\[
+\boxed{
+\text{degree restoration by a factorized coupling}
+\neq
+\text{generation of new response geometry}.
+}
+\]
+
+This rules out an entire class of FCIG response ansätze.
+
+---
+
+## v0.9 — non-factorized MMM / Deligne--Riemann--Roch test — ACTIVE
+
+To escape v0.8, use a total-space class that is not of the form
+
+\[
+p^*\widehat{\mathcal A}\cup\widehat u.
+\]
+
+For a curve family the first canonical candidate is a differential refinement of
+
+\[
+\boxed{
+c_1(K_{X/B})^2\in H^4(X;\mathbf Z),
+}
+\]
+
+whose ordinary fiber integral gives the first Mumford--Morita--Miller direction.
+
+### Gate Z1 — ordinary cohomology normalization
+
+Fix the convention for
+
+\[
+\kappa_1=\pi_*\bigl(c_1(K_{X/B})^2\bigr)
+\in H^2(B;\mathbf Z)
+\]
+
+and audit its relation to the Hodge class on the smooth moduli locus, including all normalization and boundary qualifications.
+
+### Gate Z2 — differential refinement
+
+Construct or cite a differential refinement
+
+\[
+\widehat\kappa_1
+=
+\pi_!\bigl(\widehat c_1(K_{X/B})^2\bigr)
+\in\widehat H^2(B;\mathbf Z)
+\]
+
+with the required fiber-integration orientation and connection conventions.
+
+### Gate Z3 — compare with Quillen / Deligne--RR
+
+Determine whether \(\widehat\kappa_1\) agrees with a multiple of the Quillen determinant differential character, differs by a flat class, or requires an explicit secondary correction. No equality will be stated until the metric/connection normalization is fixed from the literature.
+
+### Gate Z4 — response audit
+
+Even if a genuinely new degree-two \(U(1)\) class is obtained, record that it still does not supply a Lorentzian frame connection without further structure.
 
 ---
 
 ## Gravity Closure gate — NOT ACTIVE
 
-No claim that FCIG derives gravity should be made at this stage. A successful closure would still have to specify:
-
-1. the physical spacetime object;
-2. a mathematically defined map from parameter/moduli data to spacetime variables;
-3. tensor-type and structure-group matching;
-4. Lorentzian causal structure;
-5. the entropy/information functional varied;
-6. a limit reproducing established gravitational dynamics;
-7. a falsification route.
+No derivation of gravity is claimed. A future closure would still need explicit base-space, tensor-type, structure-group, causal, entropy-functional and falsification maps.
