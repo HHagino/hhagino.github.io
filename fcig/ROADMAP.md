@@ -1,6 +1,6 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.6 — differential-cohomology / determinant-holonomy synthesis  
+**Current target:** v0.7 — response / transgression bridge test  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mathematical mechanism is tested before it is used in a gravitational interpretation. A failed extrapolation is recorded as a no-go result rather than repaired by changing definitions after the fact.
@@ -9,91 +9,43 @@ The roadmap is ordered so that each mathematical mechanism is tested before it i
 
 ## Milestone v0.3 — principally polarized abelian varieties — COMPLETE
 
-The flat ppav laboratory established:
+The flat ppav laboratory established
 
 \[
-\boxed{
 \dim H^0(A_\Omega,L^k)=k^g,
-}
-\]
-
-\[
-\boxed{
-F_{\det\mathcal H_k}
-=-\frac{k^g}{2}F_{\lambda_H},
-}
+\qquad
+F_{\det\mathcal H_k}=-\frac{k^g}{2}F_{\lambda_H},
 \]
 
 an exact Poisson-resummed Bergman lattice formula with exponential shortest-vector suppression, and finite Weil/metaplectic descent with explicit nontrivial flat holonomy.
 
-Sources and derivations:
+Sources:
 
 - `abelian-model.md`
 - `abelian-bergman.md`
 - `abelian-weil.md`
 
-The v0.3 conclusion is specific to the flat polarized-abelian laboratory and its metric conventions.
-
 ---
 
 ## Milestone v0.4 — compact hyperbolic genus-\(g\ge2\) curves — COMPLETE
 
-Work with a compact hyperbolic Riemann surface
+For
 
 \[
 X=\Gamma\backslash\mathbb H,
-\qquad g\ge2,
-\]
-
-and the canonical polarization \(K_X^k\).
-
-### Gate F — explicit curved family — PASS
-
-\[
-\mathcal H_k(X)=H^0(X,K_X^k),
 \qquad
-\dim\mathcal H_k=(2k-1)(g-1).
+\mathcal H_k=H^0(X,K_X^k),
 \]
 
-### Gate G — nonzero local curvature sector — PASS
+the curved model exhibits a nonzero local Bergman-curvature sector and an independent global geodesic/holonomy sector. The determinant comparison gives
 
 \[
-\boxed{
-\rho_k^{\mathrm{loc}}
-=
-\frac{2k-1}{4\pi}
-=
-\frac{k}{2\pi}-\frac1{4\pi}.
-}
+\lambda_k\simeq\lambda_1^{\otimes(6k^2-6k+1)},
 \]
 
-### Gate H — independent global sector — PASS
+which is a no-go for a universal flat-ppav rank/2 law.
 
-The exact hyperbolic Bergman formula contains
-
-\[
-\boxed{
-\sum_{\gamma\in\mathfrak G_p}
-\cosh^{-2k}\!\left(\frac{\ell(\gamma)}2\right)
-\cos(2\pi k\alpha_\gamma),
-}
-\]
-
-which depends on geodesic-loop lengths and Chern holonomy rather than local constant curvature alone.
-
-### Gate I — determinant/Hodge comparison — PASS WITH NO-GO
-
-\[
-\boxed{
-\lambda_k
-\simeq
-\lambda_1^{\otimes(6k^2-6k+1)}.
-}
-\]
-
-Hence the flat ppav rank/2 determinant coefficient is not universal.
-
-Source and sanity checker:
+Sources:
 
 - `hyperbolic-model.md`
 - `hyperbolic-loop.py`
@@ -102,193 +54,154 @@ Source and sanity checker:
 
 ## Milestone v0.5 — Quillen / analytic-torsion refinement — COMPLETE
 
-Work on the same determinant-of-cohomology line
-
-\[
-\lambda_k=\det R\pi_*K^k
-\]
-
-with two metrics: ordinary \(L^2\) and Quillen.
-
-### Gate J — same line, two metrics — PASS
-
-With holomorphic analytic torsion
-
-\[
-\mathcal T_k
-=
-\sum_{q=0}^{1}(-1)^q q\log\det{}'\Delta_{0,q}^{(k)},
-\]
-
-fix the convention
+On the same determinant line \(\lambda_k\), ordinary \(L^2\) and Quillen metrics are separated by holomorphic analytic torsion:
 
 \[
 \boxed{
-h_Q=e^{\mathcal T_k}h_{L^2}.
+h_Q=e^{\mathcal T_k}h_{L^2},
+\qquad
+F_Q-F_{L^2}=-\partial\bar\partial\mathcal T_k.
 }
 \]
 
-Equivalently,
+The Quillen curvature is fixed by the family local-index theorem, while the torsion factor is globally spectral and, on hyperbolic surfaces, related to Selberg-zeta / geodesic data. The pointwise Bergman-loop correction and analytic torsion are not literally the same functional.
 
-\[
-\|\cdot\|_Q=e^{\mathcal T_k/2}\|\cdot\|_{L^2}.
-\]
-
-Primary background: Quillen; Bismut–Gillet–Soulé.
-
-### Gate K — curvature decomposition — PASS
-
-For \(F_h=-\partial\bar\partial\log h\),
-
-\[
-\boxed{
-F_Q-F_{L^2}
-=-\partial\bar\partial\mathcal T_k.
-}
-\]
-
-Using the established compact-curve local index theorem,
-
-\[
-\boxed{
-c_1(\lambda_k,h_Q)
-=
-\frac{6k^2-6k+1}{12\pi^2}\omega_{\mathrm{WP}},
-}
-\]
-
-so
-
-\[
-\boxed{
-c_1(\lambda_k,h_{L^2})
-=
-\frac{6k^2-6k+1}{12\pi^2}\omega_{\mathrm{WP}}
-+
-\frac{i}{2\pi}\partial\bar\partial\mathcal T_k.
-}
-\]
-
-Thus elementary \(L^2\) determinant curvature and Quillen curvature are related by an explicit torsion correction and must not be conflated.
-
-### Gate L — global spectral/geodesic expression — PASS
-
-For compact hyperbolic surfaces, zeta-regularized Laplacian determinants are expressed through Selberg-zeta data. A convention-safe scalar benchmark is
-
-\[
-\boxed{
-\det{}'\Delta_0=C_g Z_X'(1),
-}
-\]
-
-while D'Hoker–Phong give tensor/spinor-weight determinant formulas in terms of special Selberg-zeta values. Their operator conventions are kept explicit rather than silently identified with the FCIG \(\bar\partial\)-Laplacian.
-
-### Gate M — compare with Bergman global sector — PASS WITH NO-GO
-
-The v0.4 Bergman correction is a pointwise based-loop functional on \(X\). Analytic torsion is a global regularized spectral functional on the family/moduli parameter. They share hyperbolic geodesic/trace input but are not literally the same functional.
-
-\[
-\boxed{
-\text{common geodesic geometry}
-\not\Rightarrow
-\text{identical global functional}.
-}
-\]
-
-Source and sanity checker:
+Sources:
 
 - `quillen-refinement.md`
 - `quillen-refinement.py`
 
-### v0.5 synthesis
+---
 
-The determinant sector is now separated as
+## Milestone v0.6 — differential-cohomology / determinant-holonomy synthesis — COMPLETE
 
-\[
-\boxed{
-\lambda_k
-\oplus
-h_{L^2}
-\oplus
-\mathcal T_k
-\oplus
-h_Q,
-}
-\]
-
-with
+A Hermitian line with unitary connection is represented by
 
 \[
 \boxed{
-h_Q=e^{\mathcal T_k}h_{L^2}.
+\widehat c_1(L,\nabla)
+\in\widehat H^2(B;\mathbf Z).
 }
 \]
 
-This closes the metric-refinement ambiguity left open in earlier FCIG drafts.
+### Gate N — differential-cohomology object — PASS
+
+The convention is fixed so that
+
+\[
+I(\widehat c_1)=c_1(L),
+\qquad
+R(\widehat c_1)=\frac{F_\nabla}{2\pi i},
+\]
+
+and the Cheeger--Simons character evaluates on one-cycles to give \(U(1)\) holonomy.
+
+The curvature exact sequence is
+
+\[
+\boxed{
+0\to H^1(B;\mathbf R/\mathbf Z)
+\to\widehat H^2(B;\mathbf Z)
+\xrightarrow{R}\Omega^2_{\mathbf Z}(B)\to0.
+}
+\]
+
+Thus curvature-zero classes can retain nontrivial global holonomy.
+
+### Gate O — Quillen/Bismut--Freed connection — PASS
+
+The determinant line with its natural Quillen/Bismut--Freed connection defines a differential character. Its curvature is the family-index curvature, while loop holonomy is governed, in the Dirac-family setting, by the Bismut--Freed adiabatic eta-invariant holonomy theorem.
+
+For the hyperbolic canonical family,
+
+\[
+R(\widehat c_1(\lambda_k,\nabla^Q))
+=
+\frac{6k^2-6k+1}{12\pi^2}\omega_{\mathrm{WP}}.
+\]
+
+### Gate P — flat/curved anomaly comparison — PASS WITH NON-IDENTIFICATION
+
+On the appropriate theta/metaplectic quotient or cover, the corrected ppav line is a flat differential character:
+
+\[
+R=0,
+\qquad
+\operatorname{Hol}\neq1
+\]
+
+in explicit examples. The curved Quillen determinant character instead has nonzero curvature and eta-invariant holonomy.
+
+The two models share the same **category of line-with-connection data**, not the same base, class, or monodromy mechanism.
+
+### Gate Q — pre-gravity no-go audit — PASS
+
+Remaining mismatches are explicit:
+
+1. parameter/moduli base \(B\) versus physical spacetime \(M\);
+2. \(U(1)\) determinant connection versus tangent/frame connection;
+3. Euclidean/Kähler geometry versus Lorentzian causal structure;
+4. state-count/Bergman information versus horizon entropy;
+5. forward family-index map versus the unproved inverse response to spacetime dynamics.
+
+Sources:
+
+- `differential-holonomy.md`
+- `differential-holonomy.py`
+
+The v0.6 conclusion is:
+
+\[
+\boxed{
+\text{determinant anomaly data}
+=
+\text{one differential character carrying topology + curvature + holonomy}.
+}
+\]
+
+This solves the curvature-only anomaly ambiguity, not the gravity closure.
 
 ---
 
-## Milestone v0.6 — differential-cohomology / determinant-holonomy synthesis — ACTIVE
+## Milestone v0.7 — response / transgression bridge test — ACTIVE
 
-The next task is to package curvature and global holonomy into one geometric object rather than treating them as unrelated outputs.
+The next question is whether the determinant differential character can participate in a **mathematically specified response map** to another geometric connection, rather than being verbally identified with one.
 
-The natural target is a determinant line with connection represented in differential cohomology,
+### Gate R — specify the correspondence of spaces
 
-\[
-\boxed{
-(\lambda,\nabla)
-\rightsquigarrow
-\widehat c_1(\lambda,\nabla)
-\in
-\widehat H^2(B;\mathbf Z).
-}
-\]
-
-### Gate N — fix the differential-cohomology object
-
-Choose a precise model for degree-two differential cohomology and state the maps to
+Any proposed response must begin with explicit maps, for example a correspondence
 
 \[
-c_1(\lambda)\in H^2(B;\mathbf Z),
-\qquad
-F_\nabla\in\Omega^2_{\mathrm{cl}}(B),
-\qquad
-\operatorname{Hol}_\nabla:\text{loops}\to U(1).
+M\xleftarrow{\;p\;}Z\xrightarrow{\;q\;}B
 \]
 
-**Pass condition:** one convention is fixed and cited; no informal identification of curvature with the whole anomaly class.
+or a family \(\pi:Z\to B\), instead of silently treating moduli space as spacetime.
 
-### Gate O — Quillen/Bismut–Freed connection
+**Pass condition:** source, target, and base of every differential class are explicit.
 
-Place the Quillen determinant connection of the curved family into the chosen differential-cohomology model.
+### Gate S — use a genuine differential-cohomology operation
 
-**Pass condition:** curvature is matched to the family index theorem, while loop holonomy is matched to the established Bismut–Freed/eta-invariant framework where applicable.
+Test a pullback, transgression, or differential-cohomology pushforward where its orientation hypotheses are satisfied.
 
-### Gate P — compare flat and curved anomaly sectors
+**Pass condition:** the operation exists as a standard mathematical construction and its degree shift is correct. An analogy is not enough.
 
-Compare:
+### Gate T — tensor/structure-group audit at the target
 
-1. flat metaplectic holonomy from v0.2–v0.3;
-2. curved Quillen/determinant holonomy from v0.4–v0.5.
+If the target remains \(U(1)\), record that it is still an abelian response line. If a tangent/frame connection is desired, construct an actual map of geometric structures rather than equating two curvature forms.
 
-**Pass condition:** determine what is genuinely common at the level of differential characters and what is model-specific.
+**Pass condition:** no equation identifies \(i\mathbf R\)-valued curvature with \(\mathfrak{so}(1,d-1)\)-valued curvature without an explicit homomorphism/coupling.
 
-### Gate Q — pre-closure no-go audit
+### Gate U — one explicit response example or a no-go
 
-Before any gravitational interpretation, list all remaining type mismatches:
+Produce one model in which a standard pullback/transgression/pushforward maps the determinant differential character to a new, well-defined geometric observable. If no nontrivial map with the desired type exists, record that as a no-go.
 
-- moduli-base curvature vs spacetime curvature;
-- determinant-line \(U(1)\) data vs tangent/frame-bundle curvature;
-- Euclidean/Kähler data vs Lorentzian causal structure;
-- state-count entropy vs horizon entropy functional.
-
-**Pass condition:** the repository contains a precise map or an explicit unresolved obstruction for every mismatch.
+**Pass condition:** a checkable example with references and fixed conventions.
 
 ---
 
 ## Gravity Closure gate — NOT ACTIVE
 
-No claim that FCIG derives gravity should be made until v0.6 passes.
+No claim that FCIG derives gravity should be made until at least the v0.7 response bridge exists and the Lorentzian/causal mismatch is separately addressed.
 
 The closure target remains
 
@@ -307,8 +220,8 @@ The closure target remains
 A successful closure must specify:
 
 1. the physical spacetime object;
-2. the map from Kähler/moduli data to Lorentzian variables;
-3. tensor-type matching;
+2. the map from parameter/moduli data to spacetime variables;
+3. tensor-type and structure-group matching;
 4. the entropy/information functional varied;
 5. the limit reproducing established gravitational dynamics;
 6. a falsification route.
