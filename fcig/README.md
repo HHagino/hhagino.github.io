@@ -16,32 +16,18 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \[
 \boxed{
 \text{theta / ppav}
-\to
-\text{curved curves}
-\to
-\text{Quillen / differential cohomology}
-\to
-\text{transgression / pushforward}
-\to
-\text{Deligne--RR closure}
-\to
-\text{structure-group audit}
-\to
-\text{mixed anomaly polynomial}
-\to
-\text{descent / inflow}
-\to
-\text{functional-response no-go}
-\to
-\text{semiclassical closure audit}
-\to
-\text{heat-kernel effective-action bridge}
-\to
-\text{realization-map dynamics}.
+\to\text{curved curves}
+\to\text{Quillen / differential cohomology}
+\to\text{Deligne--RR closure}
+\to\text{anomaly / response audits}
+\to\text{semiclassical closure audit}
+\to\text{heat-kernel bridge}
+\to\text{realization-map dynamics}
+\to\text{induced determinant metric}.
 }
 \]
 
-Completed milestones: **v0.2–v0.17**. No derivation of Einstein dynamics from FCIG alone is claimed.
+Completed milestones: **v0.2–v0.18**. No derivation of Einstein dynamics from FCIG alone is claimed.
 
 ## Models I–X — geometric / determinant foundation
 
@@ -74,10 +60,7 @@ With independent line and frame connections,
 and
 
 \[
-\boxed{
-[\widehat A(TM)\operatorname{ch}(L)]_{(6)}
-=\frac16c_1^3-\frac1{24}c_1p_1.
-}
+\boxed{[\widehat A(TM)\operatorname{ch}(L)]_{(6)}=\frac16c_1^3-\frac1{24}c_1p_1.}
 \]
 
 Local descent gives a five-dimensional secondary/inflow form; global fermionic quantization is controlled by the Dirac index / Dai--Freed anomaly theory.
@@ -87,9 +70,7 @@ Local descent gives a five-dimensional secondary/inflow form; global fermionic q
 For invariant \(S_{\rm inv}\), \(W'=W+S_{\rm inv}\) has the same anomaly while first functional derivatives may differ:
 
 \[
-\boxed{
-\text{same anomaly class}\not\Rightarrow\text{same }W,J,T_{\mu\nu}.
-}
+\boxed{\text{same anomaly class}\not\Rightarrow\text{same }W,J,T_{\mu\nu}.}
 \]
 
 ## Model XV — constitutive / semiclassical closure audit
@@ -100,161 +81,125 @@ Supplying independent renormalized gravitational and effective actions gives the
 \mathcal E^{\rm grav}_{\mu\nu}=T_{\mu\nu}^{\rm ren},
 \]
 
-but the action principle, renormalized couplings and any Jacobson-style Lorentzian horizon data are additional inputs.
+but the action principle, renormalized couplings and Jacobson-style Lorentzian horizon data remain additional inputs.
 
 ## Model XVI — explicit operator / heat-kernel effective-action bridge
 
-- `heat-kernel-bridge.md`
-- `heat-kernel-bridge.py`
-- `heat-kernel-bridge.bib`
-
-Supply a four-dimensional Euclidean background and a realization map
+For a supplied realization map \(\Phi:M\to\mathcal B_{\rm FCIG}\), the pulled-back line curvature
 
 \[
-\Phi:M\to\mathcal B_{\rm FCIG}.
+\Omega=\Phi^*F_{\rm FCIG}
 \]
 
-Pulling back an FCIG line gives
+enters a physical Laplace-type operator. Standard heat-kernel geometry gives
 
 \[
-\Omega=\Phi^*F_{\rm FCIG}.
+\boxed{b_4\supset\frac1{12}\Omega_{\mu\nu}\Omega^{\mu\nu}},
 \]
 
-For
-
-\[
-P=-\left(g^{\mu\nu}\nabla_\mu\nabla_\nu+E\right),
-\]
-
-standard heat-kernel geometry gives
-
-\[
-b_0=I,
-\qquad
-b_2=E+\frac16R,
-\qquad
-\boxed{b_4\supset\frac1{12}\Omega_{\mu\nu}\Omega^{\mu\nu}}.
-\]
-
-Thus
-
-\[
-\boxed{
-b_4^{\rm FCIG}\supset
-\frac1{12}(\Phi^*F_{\rm FCIG})_{\mu\nu}(\Phi^*F_{\rm FCIG})^{\mu\nu}.}
-\]
-
-This is an operator-level local spacetime effective-action invariant built from FCIG line curvature without identifying it with Riemann curvature. Divergent local coefficients renormalize couplings and are not parameter-free FCIG predictions.
+so the FCIG line curvature contributes to a one-loop spacetime effective action without being identified with Riemann curvature. Divergent local coefficients renormalize couplings and are not parameter-free predictions.
 
 References: Vassilevich (2003); Gilkey (1995); Birrell--Davies (1982); Wald (1993); Iyer--Wald (1994).
 
 ## Model XVII — realization-map / sigma-model dynamics
 
-- Web: `realization-sigma.html`
-- Source: `realization-sigma.md`
-- Checker: `realization-sigma.py`
-- Milestone bibliography: `realization-sigma.bib`
+- `realization-sigma.md`
+- `realization-sigma.py`
+- `realization-sigma.bib`
 
-Use the pre-existing elliptic FCIG target
+Use the pre-existing elliptic target
 
 \[
 \mathbb H=\{\tau=u+iY\mid Y>0\},
-\qquad
- ds^2_{\mathbb H}=\frac{du^2+dY^2}{Y^2}.
+\qquad ds^2_{\mathbb H}=\frac{du^2+dY^2}{Y^2}.
 \]
 
-Promote
+Promote \(\Phi=(u,Y)\) to a harmonic-map field,
 
 \[
-\boxed{\Phi(x)=\tau(x)=u(x)+iY(x)}
+S_\Phi=\frac{Z_\Phi}{2}\int_M\sqrt g\,\frac{(\partial u)^2+(\partial Y)^2}{Y^2},
 \]
 
-to a spacetime field with the standard harmonic-map action
+with the standard equations and stress tensor. The Hodge curvature pullback is bilinear in first derivatives, so the Model-XVI \(\Omega^2\) term is four-derivative in \(\Phi\) and does not determine the two-derivative coefficient \(Z_\Phi\).
+
+References: Eells--Sampson (1964); Mumford (1983); Birkenhake--Lange (2004); Vassilevich (2003).
+
+## Model XVIII — induced realization-map metric from determinants
+
+- Web: `induced-metric.html`
+- Source: `induced-metric.md`
+- Checker: `induced-metric.py`
+- Milestone bibliography: `induced-metric.bib`
+
+For independent heavy real scalars
 
 \[
-\boxed{
-S_\Phi=\frac{Z_\Phi}{2}
-\int_M\sqrt g\,
-\frac{(\partial u)^2+(\partial Y)^2}{Y^2}.
-}
+P_i(\Phi)=-\partial^2+V_i(\Phi),\qquad V_i>0,
 \]
 
-The explicit equations are
+define the induced two-derivative response operationally by the \(p^2\) coefficient of the one-loop 1PI two-point function around a constant background. In the fixed Euclidean bubble convention,
 
 \[
-\boxed{
-\Box u-\frac2Y\partial u\cdot\partial Y=0,
-\qquad
-\Box Y+\frac{(\partial u)^2-(\partial Y)^2}{Y}=0.
-}
+I(p)=I(0)-\frac{p^2}{96\pi^2V}+O(p^4),
 \]
 
-and the stress tensor is
+so
 
 \[
-\boxed{
-T^{(\Phi)}_{\mu\nu}
-=\frac{Z_\Phi}{Y^2}
-\left[
-\partial_\mu u\partial_\nu u+
-\partial_\mu Y\partial_\nu Y
--\frac12g_{\mu\nu}\big((\partial u)^2+(\partial Y)^2\big)
-\right].
-}
+\boxed{G^{\rm ind}_{AB}=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}.}
 \]
 
-The Hodge line supplies a second target-geometric structure. In the existing elliptic convention,
+Writing \(s_i=\sqrt{V_i}\) gives the structural identity
 
 \[
-\mathfrak f_H:=\frac{i}{2\pi}F_{\lambda_H}
-=\frac{1}{4\pi}\omega_{\rm hyp},
-\qquad
-\omega_{\rm hyp}=\frac{du\wedge dY}{Y^2}.
+\boxed{G^{\rm ind}=\frac1{48\pi^2}\sum_i ds_i^2=\frac1{48\pi^2}s^*\delta_{\mathbb R^N}.}
 \]
 
-Therefore
+This yields exact obstructions:
 
 \[
 \boxed{
-(\Phi^*\mathfrak f_H)_{\mu\nu}
-=\frac{1}{4\pi Y^2}
-(\partial_\mu u\partial_\nu Y-
-\partial_\nu u\partial_\mu Y).
-}
+\begin{aligned}
+N=1&:\ \operatorname{rank}G^{\rm ind}\le1,\\
+N=2&:\ G^{\rm ind}\text{ is degenerate or locally flat},\\
+N=3&:\ \text{local hyperbolic fitting is possible, but complete }\mathbb H\to\mathbb R^3\text{ is forbidden by Hilbert.}
+\end{aligned}}
 \]
 
-This feeds the Model-XVI heat-kernel \(\Omega^2\) sector. Crucially, it is quartic in first derivatives after squaring, whereas \(S_\Phi\) is quadratic. Hence
+Hence two diagonal species can restore rank but can never reproduce the Poincare curvature \(K=-1\). This remains true under modular invariance. An explicit invariant witness uses Klein's modular invariant \(J\):
+
+\[
+V_1=M^2e^{2a\Re J(\tau)},\qquad V_2=M^2e^{2a\Im J(\tau)}.
+\]
+
+At regular points it has rank two, but the induced metric is still locally flat.
+
+The main predictivity result is therefore:
 
 \[
 \boxed{
-\Omega^2\text{ heat-kernel term}
-\not\Rightarrow
-\text{two-derivative sigma normalization }Z_\Phi.
+\text{a determinant induces a target metric only after a microscopic mass/operator map is supplied;}
+\quad
+\text{arbitrary spectral data can encode the desired metric by inverse design.}
 }
 \]
 
-The normalization \(Z_\Phi\) remains constitutive input unless a further microscopic/determinant calculation derives it.
+The one-loop coefficient above is intentionally tied to the constant-background 1PI two-point definition. Chan and modern covariant derivative-expansion methods provide the standard context, while Canevarolo--Prokopec document that off-shell gradient-expansion prescriptions require care.
 
-Two explicit witnesses sharpen the separation:
-
-1. **Vertical geodesic:** \(u=u_0,\ Y=e^\varphi\) reduces to \(\Box\varphi=0\), but \(\Phi^*F_H=0\). Thus nonzero sigma stress can coexist with zero pulled-back line curvature.
-2. **Hyperbolic identity-map sector:** an identity map on a hyperbolic two-dimensional factor is harmonic and has \(\Phi^*\omega_{\rm hyp}\neq0\), activating the curvature-squared determinant coupling.
-
-On the true modular target \([\mathbb H/SL(2,\mathbf Z)]\), the local Poincare sigma density descends, while Hodge/theta lines can retain modular/metaplectic holonomy. Global nontrivial sectors require orbifold/stack patching.
-
-References: Eells--Sampson (1964); Mumford (1983); Birkenhake--Lange (2004); Vassilevich (2003) for the heat-kernel insertion.
+References: Chan (1986); Henning--Lu--Murayama (2018); Canevarolo--Prokopec (2024); NIST DLMF Chapter 23; do Carmo (1976); Hilbert (1901).
 
 ## Current controlled frontier
 
-The realization map is now typed and dynamical, but its two-derivative normalization is not yet derived. The active target is **v0.18 — induced realization-map dynamics from determinants**.
+The remaining bottleneck is no longer whether a determinant **can** make a metric. It can. The question is whether FCIG fixes the microscopic operator family without reverse-engineering the answer.
 
-The key question is whether an explicit slowly varying operator family \(P(\Phi)\) generates
+The next target is **v0.19 — intrinsic elliptic spectral metric**: use the actual modular-covariant spectrum already present in the elliptic FCIG laboratory (flat-torus Laplacian / theta / Quillen data), rather than arbitrary functions \(V_i(\tau)\), and compute its moduli response.
+
+A particularly concrete test is the area-normalized torus spectrum
 
 \[
-\frac12\int_M\sqrt g\,G^{\rm ind}_{AB}(\Phi)
-\partial_\mu\Phi^A\partial^\mu\Phi^B
+\lambda_{m,n}(\tau)\propto\frac{|m\tau-n|^2}{\Im\tau},
 \]
 
-inside \(\tfrac12\log\det P(\Phi)\), and whether the induced spectral metric \(G^{\rm ind}\) coincides with, is proportional to, or differs from the pre-existing Fisher/Hodge/Poincare metric.
+whose multiset is modular invariant. The goal is to determine whether its zeta/determinant or adiabatic two-point response produces the Poincare/Hodge metric with a fixed coefficient, or merely another scheme-dependent/constitutive structure.
 
-Only such a calculation can turn \(Z_\Phi\) from external constitutive data into a derived quantity. Lorentzian/horizon closure remains separate.
+Lorentzian/horizon closure remains separate.
