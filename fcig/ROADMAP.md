@@ -1,51 +1,38 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.10 — metric-compatible Deligne--Riemann--Roch / global holonomy audit  
+**Current target:** v0.11 — target-structure / nonabelian bridge audit  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations are kept as explicit no-go results.
 
 ---
 
-## v0.3 — principally polarized abelian varieties — COMPLETE
+## v0.3–v0.6 — geometry, determinants and differential characters — COMPLETE
 
-The flat ppav laboratory established exact state counting, determinant/Hodge response, a Poisson-resummed Bergman lattice sector, and finite Weil/metaplectic holonomy.
+The completed flat and curved laboratories establish:
+
+- exact theta/state-count models and global lattice corrections;
+- a curved hyperbolic local/global Bergman split;
+- Quillen versus \(L^2\) determinant metrics and analytic torsion;
+- degree-two differential characters as the correct package for line topology, curvature and holonomy.
 
 ---
 
-## v0.4 — compact hyperbolic curves — COMPLETE
+## v0.7 — response / transgression — COMPLETE
 
-The curved model exhibits a nonzero local Bergman-curvature sector and an independent global geodesic/holonomy sector. The Mumford determinant relation gives a no-go for a universal flat-ppav rank/2 law.
-
----
-
-## v0.5 — Quillen / analytic torsion — COMPLETE
-
-On the same determinant line,
+Loop transgression is a genuine standard response operation,
 
 \[
-h_Q=e^{\mathcal T_k}h_{L^2},
-\qquad
-F_Q-F_{L^2}=-\partial\bar\partial\mathcal T_k.
+\tau_{S^1}:\widehat H^2(B;\mathbf Z)\to\widehat H^1(LB;\mathbf Z),
 \]
 
----
-
-## v0.6 — differential cohomology / determinant holonomy — COMPLETE
-
-A unitary line with connection is encoded by a degree-two differential character carrying topology, curvature and loop holonomy.
-
----
-
-## v0.7 — response / transgression bridge — COMPLETE
-
-Loop transgression is a genuine standard response operation, while positive-dimensional pushforward exposes a degree obstruction.
+while positive-dimensional pushforward lowers degree.
 
 ---
 
 ## v0.8 — factorized pushforward — COMPLETE WITH NO-GO
 
-For a smooth proper oriented real \(d\)-dimensional family \(p:Z\to M\), a base class \(\widehat{\mathcal A}\in\widehat H^2(M;\mathbf Z)\), and \(\widehat u\in\widehat H^d(Z;\mathbf Z)\),
+For a smooth proper oriented real \(d\)-dimensional family \(p:Z\to M\),
 
 \[
 \boxed{
@@ -61,193 +48,164 @@ on each connected component. Factorized degree restoration cannot generate an in
 
 ## v0.9 — non-factorized \(\widehat\kappa_1\) / Quillen comparison — COMPLETE
 
-Let
+For a smooth family of curves, \(\omega=K_{X/B}\),
 
 \[
-\pi:X\to B,
-\qquad
-\omega=K_{X/B},
+\widehat\kappa_1
+:=
+\pi_!\bigl(\widehat c_1(\omega)^2\bigr).
 \]
 
-and define
+GRR and the Quillen local-index theorem give
+
+\[
+I(\widehat\kappa_1)=12I(\widehat\lambda_Q),
+\qquad
+R(\widehat\kappa_1)=12R(\widehat\lambda_Q).
+\]
+
+Thus the only possible discrepancy at this stage is a topologically trivial flat character.
+
+---
+
+## v0.10 — global metrized Deligne--Riemann--Roch closure — COMPLETE
+
+### Gate AA — Deligne-pairing realization — PASS
+
+Fix the standard geometric realization
+
+\[
+\boxed{
+\pi_!\left(
+\widehat c_1(L)\cup\widehat c_1(M)
+\right)
+=
+\widehat c_1(\langle L,M\rangle_\pi,\nabla^{\mathrm{Del}})
+}
+\]
+
+under the canonical equivalence of differential-cohomology models. The product/fiber-integration structure is standard; the Hermitian Deligne cup-product is realized by the metrized Deligne pairing.
+
+### Gate AB — metrized Deligne--RR — PASS
+
+For a family of curves, Deligne's determinant isomorphism gives
+
+\[
+\det R\pi_*L^{\otimes12}
+\simeq
+\langle\omega,\omega\rangle_\pi
+\otimes
+\langle L,L\otimes\omega^{-1}\rangle_\pi^{\otimes6}.
+\]
+
+At \(L=\omega\), the second pairing is canonically trivial, so
+
+\[
+\boxed{
+\lambda^{\otimes12}
+\simeq
+\langle\omega,\omega\rangle_\pi.
+}
+\]
+
+With Quillen and Deligne metrics, the established theorem is an isometry up to an overall topological/base-independent constant. Such a constant does not change the Chern connection.
+
+### Gate AC — global holonomy — PASS
+
+Consequently the isomorphism is connection-preserving and
 
 \[
 \boxed{
 \widehat\kappa_1
-:=
-\pi_!\bigl(\widehat c_1(\omega)^2\bigr)
-\in\widehat H^2(B;\mathbf Z).
-}
-\]
-
-### Gate Z1 — ordinary cohomology normalization — PASS
-
-GRR on the smooth locus gives
-
-\[
-\boxed{
-\kappa_1
-:=
-\pi_*\bigl(c_1(\omega)^2\bigr)
 =
-12c_1(\lambda),
+12\widehat\lambda_Q
 }
 \]
 
-where \(\lambda=\det R\pi_*\omega\). Boundary corrections on compactified moduli are not part of this statement.
-
-### Gate Z2 — differential refinement — PASS
-
-Standard differential-character product and fiber integration give the canonical class \(\widehat\kappa_1\), with
+globally in the fixed convention. Hence for every loop \(\gamma\),
 
 \[
-I(\widehat\kappa_1)=\kappa_1,
-\qquad
-R(\widehat\kappa_1)
+\boxed{
+\operatorname{Hol}_{\widehat\kappa_1}(\gamma)
 =
-\pi_*\left(R(\widehat c_1(\omega))^2\right).
+\operatorname{Hol}_{\widehat\lambda_Q}(\gamma)^{12}.
+}
 \]
 
-### Gate Z3 — Quillen comparison — PASS UP TO A FLAT CLASS
+The flat residual of v0.9 therefore vanishes once the full metrized Deligne--RR identification is included.
 
-Let
+Sources:
+
+- `global-deligne-rr.md`
+- Deligne (1987)
+- Freixas i Montplet--Wentworth (2020)
+- Aldrovandi (2005)
+- Bär--Becker (2014)
+- Bismut--Freed / Dai--Freed for determinant holonomy context
+
+### v0.10 conclusion
 
 \[
-\widehat\lambda_Q
+\boxed{
+\text{MMM/Deligne self-intersection differential character}
 =
-\widehat c_1(\lambda,\nabla^Q).
-\]
-
-The Bismut--Gillet--Soulé local family index theorem, in the same normalized Chern-form convention, gives
-
-\[
-\boxed{
-R(\widehat\kappa_1)
-=
-12R(\widehat\lambda_Q).
+12\times
+\text{Quillen determinant differential character}
 }
 \]
 
-Together with Gate Z1,
+at topology, curvature **and global holonomy** levels.
 
-\[
-\boxed{
-\widehat\delta_{\mathrm{DR}}
-:=
-\widehat\kappa_1-12\widehat\lambda_Q
-}
-\]
-
-satisfies
-
-\[
-\boxed{
-I(\widehat\delta_{\mathrm{DR}})=0,
-\qquad
-R(\widehat\delta_{\mathrm{DR}})=0.
-}
-\]
-
-Hence the only possible discrepancy is a topologically trivial flat differential character.
-
-### Gate Z4 — local/global audit — PASS
-
-If
-
-\[
-H^1(B;\mathbf R)=0,
-\]
-
-then the residual group vanishes and
-
-\[
-\boxed{
-\widehat\kappa_1=12\widehat\lambda_Q.
-}
-\]
-
-In particular this holds on simply connected parameter bases. On a non-simply-connected quotient, global equality is equivalent to triviality of the residual flat holonomy and is **not** asserted yet.
-
-Sources and checker:
-
-- `kappa1-quillen.md`
-- `kappa1-quillen.py`
-- Stacks GRR
-- Bär--Becker
-- Bismut--Gillet--Soulé
-- Eriksson / Deligne--Riemann--Roch
-- Harris--Morrison
-
-### v0.9 conclusion
-
-\[
-\boxed{
-\text{first canonical non-factorized class}
-=
-12\times\text{Quillen/Hodge class}
-+
-\text{possible flat global secondary class}.
-}
-\]
-
-The local and topological ambiguity is closed; only global flat holonomy remains.
+This closes the canonical smooth curve-family determinant/intersection sector.
 
 ---
 
-## v0.10 — metric-compatible Deligne--Riemann--Roch / global holonomy audit — ACTIVE
+## v0.11 — target-structure / nonabelian bridge audit — ACTIVE
 
-The remaining target is the flat residual
+The next problem cannot be solved by another identity in \(\widehat H^2(-;\mathbf Z)\). A proposed physical/geometric response must name an actual target bundle and structure group.
 
-\[
-\widehat\delta_{\mathrm{DR}}
-=
-\widehat\kappa_1-12\widehat\lambda_Q.
-\]
+### Gate AD — explicit target geometry
 
-### Gate AA — Deligne pairing identification
-
-Fix the differential/metric convention identifying the differential pushforward of
+Specify
 
 \[
-\widehat c_1(\omega)^2
+P\to M,
+\qquad
+G=\operatorname{StructureGroup}(P),
 \]
 
-with the Chern class of the metrized Deligne self-pairing
+before comparing any determinant curvature with a target curvature.
+
+### Gate AE — base-space map/correspondence
+
+Give an explicit map or correspondence relating the parameter/moduli base carrying the determinant character to the target base \(M\). No identification \(B=M\) by analogy is allowed.
+
+### Gate AF — structure-group map
+
+If a fixed homomorphism
 
 \[
-\langle\omega,\omega\rangle.
+\varphi:U(1)\to G
 \]
 
-### Gate AB — metric-compatible Deligne--RR
+is proposed, audit the image of its Lie algebra map. A one-dimensional abelian source can only produce curvature in a one-dimensional abelian subalgebra of \(\mathfrak g\); it cannot by itself determine a generic nonabelian connection.
 
-Audit the theorem relating
+### Gate AG — Lorentzian/causal data
 
-\[
-\lambda^{\otimes12}
-\]
+If the target is a spacetime frame bundle, separately specify the Lorentzian metric/causal structure. A \(U(1)\) differential character contains no such data by itself.
 
-and
-
-\[
-\langle\omega,\omega\rangle
-\]
-
-with Quillen and Deligne metrics. Track any genus-dependent constant and verify whether it affects the Chern connection.
-
-### Gate AC — global holonomy
-
-Determine whether the resulting connection-preserving isomorphism forces
-
-\[
-\widehat\delta_{\mathrm{DR}}=0
-\]
-
-globally, or whether a residual flat character survives on the quotient.
-
-No global equality will be claimed until these connection/holonomy conventions are audited from the literature.
+**Pass condition:** either an explicit additional geometric structure is supplied, or the attempted bridge is recorded as a no-go.
 
 ---
 
 ## Gravity Closure gate — NOT ACTIVE
 
-Even a complete Deligne--RR equality remains an equality of \(U(1)\) differential characters on a parameter/moduli base. No Lorentzian tangent/frame connection or gravitational field equation has been derived.
+The determinant sector is no longer the bottleneck. A future gravitational closure would still need:
+
+1. an actual physical spacetime/base object;
+2. a map/correspondence from the FCIG parameter geometry;
+3. structure-group and tensor-type matching;
+4. Lorentzian causal structure;
+5. a horizon/thermodynamic entropy functional;
+6. an established or testable dynamical limit;
+7. a falsification route.
