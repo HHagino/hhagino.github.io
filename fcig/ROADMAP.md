@@ -1,6 +1,6 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.9 — non-factorized MMM / Deligne--Riemann--Roch test  
+**Current target:** v0.10 — metric-compatible Deligne--Riemann--Roch / global holonomy audit  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations are kept as explicit no-go results.
@@ -11,15 +11,11 @@ The roadmap is ordered so that each mechanism is tested before any gravitational
 
 The flat ppav laboratory established exact state counting, determinant/Hodge response, a Poisson-resummed Bergman lattice sector, and finite Weil/metaplectic holonomy.
 
-Sources: `abelian-model.md`, `abelian-bergman.md`, `abelian-weil.md`.
-
 ---
 
 ## v0.4 — compact hyperbolic curves — COMPLETE
 
 The curved model exhibits a nonzero local Bergman-curvature sector and an independent global geodesic/holonomy sector. The Mumford determinant relation gives a no-go for a universal flat-ppav rank/2 law.
-
-Sources: `hyperbolic-model.md`, `hyperbolic-loop.py`.
 
 ---
 
@@ -28,204 +24,230 @@ Sources: `hyperbolic-model.md`, `hyperbolic-loop.py`.
 On the same determinant line,
 
 \[
-\boxed{
 h_Q=e^{\mathcal T_k}h_{L^2},
 \qquad
 F_Q-F_{L^2}=-\partial\bar\partial\mathcal T_k.
-}
 \]
-
-The Quillen/family-index curvature and the elementary \(L^2\) determinant curvature are therefore related by analytic torsion but are not interchangeable.
-
-Sources: `quillen-refinement.md`, `quillen-refinement.py`.
 
 ---
 
 ## v0.6 — differential cohomology / determinant holonomy — COMPLETE
 
-A line with unitary connection is encoded by
-
-\[
-\widehat c_1(L,\nabla)\in\widehat H^2(B;\mathbf Z),
-\]
-
-with topology, curvature and holonomy in one object. The flat kernel of the curvature map explains how nontrivial global holonomy can survive when local curvature vanishes.
-
-Sources: `differential-holonomy.md`, `differential-holonomy.py`.
+A unitary line with connection is encoded by a degree-two differential character carrying topology, curvature and loop holonomy.
 
 ---
 
 ## v0.7 — response / transgression bridge — COMPLETE
 
-Loop-space transgression gives
-
-\[
-\boxed{
-\tau_{S^1}:\widehat H^2(B;\mathbf Z)
-\to\widehat H^1(LB;\mathbf Z),
-}
-\]
-
-whose value is the determinant holonomy function. More generally, real \(d\)-dimensional pushforward lowers degree by \(d\), so a degree-two line cannot be transported through a positive-dimensional fiber without additional degree-restoring data.
-
-Sources: `response-transgression.md`, `response-transgression.py`.
+Loop transgression is a genuine standard response operation, while positive-dimensional pushforward exposes a degree obstruction.
 
 ---
 
-## v0.8 — canonical coupling / factorized pushforward — COMPLETE
+## v0.8 — factorized pushforward — COMPLETE WITH NO-GO
+
+For a smooth proper oriented real \(d\)-dimensional family \(p:Z\to M\), a base class \(\widehat{\mathcal A}\in\widehat H^2(M;\mathbf Z)\), and \(\widehat u\in\widehat H^d(Z;\mathbf Z)\),
+
+\[
+\boxed{
+p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
+=
+n\widehat{\mathcal A}
+}
+\]
+
+on each connected component. Factorized degree restoration cannot generate an independent degree-two response direction.
+
+---
+
+## v0.9 — non-factorized \(\widehat\kappa_1\) / Quillen comparison — COMPLETE
 
 Let
 
 \[
-p:Z\to M
-\]
-
-be a smooth proper oriented real \(d\)-dimensional family, let
-
-\[
-\widehat{\mathcal A}\in\widehat H^2(M;\mathbf Z),
+\pi:X\to B,
 \qquad
-\widehat u\in\widehat H^d(Z;\mathbf Z).
+\omega=K_{X/B},
 \]
 
-### Gate V — projection formula — PASS
-
-The standard differential-cohomology projection formula gives
+and define
 
 \[
 \boxed{
-p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
-=
-\widehat{\mathcal A}\cup p_!(\widehat u).
+\widehat\kappa_1
+:=
+\pi_!\bigl(\widehat c_1(\omega)^2\bigr)
+\in\widehat H^2(B;\mathbf Z).
 }
 \]
 
-### Gate W — factorized-pushforward no-go — PASS
+### Gate Z1 — ordinary cohomology normalization — PASS
 
-Since
-
-\[
-p_!(\widehat u)\in\widehat H^0(M;\mathbf Z),
-\]
-
-on a connected base it is an integer \(n\). Hence
+GRR on the smooth locus gives
 
 \[
 \boxed{
-p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
+\kappa_1
+:=
+\pi_*\bigl(c_1(\omega)^2\bigr)
 =
-n\widehat{\mathcal A}.
+12c_1(\lambda),
 }
 \]
 
-Thus every factorized degree-restored response is only integer multiplication of the original differential character. It cannot generate an independent degree-two response direction.
+where \(\lambda=\det R\pi_*\omega\). Boundary corrections on compactified moduli are not part of this statement.
 
-### Gate X — canonical curve-family coupling — PASS WITH NO-GO
+### Gate Z2 — differential refinement — PASS
 
-For a smooth genus-\(g\) curve family
+Standard differential-character product and fiber integration give the canonical class \(\widehat\kappa_1\), with
 
 \[
-\pi:X\to B
+I(\widehat\kappa_1)=\kappa_1,
+\qquad
+R(\widehat\kappa_1)
+=
+\pi_*\left(R(\widehat c_1(\omega))^2\right).
+\]
+
+### Gate Z3 — Quillen comparison — PASS UP TO A FLAT CLASS
+
+Let
+
+\[
+\widehat\lambda_Q
+=
+\widehat c_1(\lambda,\nabla^Q).
+\]
+
+The Bismut--Gillet--Soulé local family index theorem, in the same normalized Chern-form convention, gives
+
+\[
+\boxed{
+R(\widehat\kappa_1)
+=
+12R(\widehat\lambda_Q).
+}
+\]
+
+Together with Gate Z1,
+
+\[
+\boxed{
+\widehat\delta_{\mathrm{DR}}
+:=
+\widehat\kappa_1-12\widehat\lambda_Q
+}
+\]
+
+satisfies
+
+\[
+\boxed{
+I(\widehat\delta_{\mathrm{DR}})=0,
+\qquad
+R(\widehat\delta_{\mathrm{DR}})=0.
+}
+\]
+
+Hence the only possible discrepancy is a topologically trivial flat differential character.
+
+### Gate Z4 — local/global audit — PASS
+
+If
+
+\[
+H^1(B;\mathbf R)=0,
+\]
+
+then the residual group vanishes and
+
+\[
+\boxed{
+\widehat\kappa_1=12\widehat\lambda_Q.
+}
+\]
+
+In particular this holds on simply connected parameter bases. On a non-simply-connected quotient, global equality is equivalent to triviality of the residual flat holonomy and is **not** asserted yet.
+
+Sources and checker:
+
+- `kappa1-quillen.md`
+- `kappa1-quillen.py`
+- Stacks GRR
+- Bär--Becker
+- Bismut--Gillet--Soulé
+- Eriksson / Deligne--Riemann--Roch
+- Harris--Morrison
+
+### v0.9 conclusion
+
+\[
+\boxed{
+\text{first canonical non-factorized class}
+=
+12\times\text{Quillen/Hodge class}
++
+\text{possible flat global secondary class}.
+}
+\]
+
+The local and topological ambiguity is closed; only global flat holonomy remains.
+
+---
+
+## v0.10 — metric-compatible Deligne--Riemann--Roch / global holonomy audit — ACTIVE
+
+The remaining target is the flat residual
+
+\[
+\widehat\delta_{\mathrm{DR}}
+=
+\widehat\kappa_1-12\widehat\lambda_Q.
+\]
+
+### Gate AA — Deligne pairing identification
+
+Fix the differential/metric convention identifying the differential pushforward of
+
+\[
+\widehat c_1(\omega)^2
+\]
+
+with the Chern class of the metrized Deligne self-pairing
+
+\[
+\langle\omega,\omega\rangle.
+\]
+
+### Gate AB — metric-compatible Deligne--RR
+
+Audit the theorem relating
+
+\[
+\lambda^{\otimes12}
 \]
 
 and
 
 \[
-\widehat u=\widehat c_1(K_{X/B}),
+\langle\omega,\omega\rangle
 \]
 
-standard curve theory gives
+with Quillen and Deligne metrics. Track any genus-dependent constant and verify whether it affects the Chern connection.
+
+### Gate AC — global holonomy
+
+Determine whether the resulting connection-preserving isomorphism forces
 
 \[
-\pi_!\widehat c_1(K_{X/B})=2g-2.
+\widehat\delta_{\mathrm{DR}}=0
 \]
 
-Therefore
+globally, or whether a residual flat character survives on the quotient.
 
-\[
-\boxed{
-\pi_!\left(
-\pi^*\widehat{\mathcal A}\cup\widehat c_1(K_{X/B})
-\right)
-=
-(2g-2)\widehat{\mathcal A}.
-}
-\]
-
-The canonical line restores degree exactly but creates no new independent response geometry.
-
-### Gate Y — flat/curved preservation — PASS
-
-If \(R(\widehat{\mathcal A})=0\), the factorized response stays flat. If \(R(\widehat{\mathcal A})\neq0\), the curvature is only multiplied by \(n\). Likewise loop holonomy is raised to the \(n\)-th power. No new tensor type or structure group appears.
-
-Sources: `factorized-pushforward.md`, `factorized-pushforward.py`.
-
-### v0.8 conclusion
-
-\[
-\boxed{
-\text{degree restoration by a factorized coupling}
-\neq
-\text{generation of new response geometry}.
-}
-\]
-
-This rules out an entire class of FCIG response ansätze.
-
----
-
-## v0.9 — non-factorized MMM / Deligne--Riemann--Roch test — ACTIVE
-
-To escape v0.8, use a total-space class that is not of the form
-
-\[
-p^*\widehat{\mathcal A}\cup\widehat u.
-\]
-
-For a curve family the first canonical candidate is a differential refinement of
-
-\[
-\boxed{
-c_1(K_{X/B})^2\in H^4(X;\mathbf Z),
-}
-\]
-
-whose ordinary fiber integral gives the first Mumford--Morita--Miller direction.
-
-### Gate Z1 — ordinary cohomology normalization
-
-Fix the convention for
-
-\[
-\kappa_1=\pi_*\bigl(c_1(K_{X/B})^2\bigr)
-\in H^2(B;\mathbf Z)
-\]
-
-and audit its relation to the Hodge class on the smooth moduli locus, including all normalization and boundary qualifications.
-
-### Gate Z2 — differential refinement
-
-Construct or cite a differential refinement
-
-\[
-\widehat\kappa_1
-=
-\pi_!\bigl(\widehat c_1(K_{X/B})^2\bigr)
-\in\widehat H^2(B;\mathbf Z)
-\]
-
-with the required fiber-integration orientation and connection conventions.
-
-### Gate Z3 — compare with Quillen / Deligne--RR
-
-Determine whether \(\widehat\kappa_1\) agrees with a multiple of the Quillen determinant differential character, differs by a flat class, or requires an explicit secondary correction. No equality will be stated until the metric/connection normalization is fixed from the literature.
-
-### Gate Z4 — response audit
-
-Even if a genuinely new degree-two \(U(1)\) class is obtained, record that it still does not supply a Lorentzian frame connection without further structure.
+No global equality will be claimed until these connection/holonomy conventions are audited from the literature.
 
 ---
 
 ## Gravity Closure gate — NOT ACTIVE
 
-No derivation of gravity is claimed. A future closure would still need explicit base-space, tensor-type, structure-group, causal, entropy-functional and falsification maps.
+Even a complete Deligne--RR equality remains an equality of \(U(1)\) differential characters on a parameter/moduli base. No Lorentzian tangent/frame connection or gravitational field equation has been derived.

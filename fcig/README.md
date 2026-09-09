@@ -30,89 +30,36 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to
 \text{factorized-pushforward no-go}
 \to
-\text{non-factorized MMM/Deligne--RR test}.
+\widehat\kappa_1/\text{Quillen comparison}
+\to
+\text{global Deligne--RR holonomy audit}.
 }
 \]
 
-Completed milestones: **v0.2–v0.8**. Gravity closure remains inactive.
+Completed milestones: **v0.2–v0.9**. Gravity closure remains inactive.
 
 ## Main research-program note
 
 - Web: `index.html`
 - Source: `research-note.md`
 
-## Model I — elliptic curves
+## Models I–III — elliptic and flat abelian laboratories
 
-- `elliptic-model.html`
-- `elliptic-model.md`
-- `elliptic-bergman.py`
-
-For the level-\(k\) theta space,
+The elliptic and ppav models establish exact theta-state counting, explicit Gram determinants, Poisson-resummed Bergman lattice sectors, and finite Weil/metaplectic holonomy. In the ppav conventions,
 
 \[
-F_{\det\mathcal H_k}=-\frac{k}{2}F_{\lambda_H},
+F_{\det\mathcal H_k}=-\frac{k^g}{2}F_{\lambda_H},
 \]
 
-while the exact Bergman density separates the constant local sector from exponentially small lattice corrections.
+while flat corrected determinant lines can retain nontrivial global holonomy.
 
-## Model II — modular holonomy / metaplectic anomaly
+Sources and verifiers:
 
-- `modular-holonomy.html`
-- `modular-holonomy.md`
-- `weil-holonomy.py`
-
-Finite theta transport exhibits a projective/metaplectic phase. Local curvature can cancel while flat global holonomy remains.
-
-## Model III — principally polarized abelian varieties
-
-- `abelian-model.html`
-- `abelian-model.md`
-- `abelian-gram.py`
-
-For
-
-\[
-A_\Omega=\mathbf C^g/(\mathbf Z^g+\Omega\mathbf Z^g),
-\qquad N_k=k^g,
-\]
-
-one obtains
-
-\[
-F_{\det\mathcal H_k}=-\frac{k^g}{2}F_{\lambda_H}.
-\]
-
-### IIIb — exact multidimensional Bergman lattice sector
-
-- `abelian-bergman.html`
-- `abelian-bergman.md`
-- `abelian-bergman.py`
-
-\[
-B_{g,k}
-=
-k^g\sum_{p,\ell\in\mathbf Z^g}
- e^{-\pi kQ_\Omega(p,\ell)/2}
- e^{2\pi ik(p^Tx+\ell^Tt)+\pi ikp^T\ell},
-\]
-
-with exponential shortest-vector suppression for fixed \(\Omega\).
-
-### IIIc — higher-dimensional Weil / metaplectic descent
-
-- `abelian-weil.html`
-- `abelian-weil.md`
-- `abelian-weil.py`
-
-The finite matrices satisfy, in the fixed convention,
-
-\[
-U_k(S)^2=C,
-\qquad
-(U_k(S)U_k(T_{I_g}))^3=e^{\pi ig/4}C.
-\]
-
-The corrected determinant line may be locally flat but globally nontrivial.
+- `elliptic-model.md`, `elliptic-bergman.py`
+- `modular-holonomy.md`, `weil-holonomy.py`
+- `abelian-model.md`, `abelian-gram.py`
+- `abelian-bergman.md`, `abelian-bergman.py`
+- `abelian-weil.md`, `abelian-weil.py`
 
 ## Model IV — compact hyperbolic curves
 
@@ -120,7 +67,7 @@ The corrected determinant line may be locally flat but globally nontrivial.
 - `hyperbolic-model.md`
 - `hyperbolic-loop.py`
 
-The exact hyperbolic Bergman formula realizes simultaneously
+The curved model realizes
 
 \[
 \text{nonzero local curvature sector}
@@ -128,13 +75,13 @@ The exact hyperbolic Bergman formula realizes simultaneously
 \text{global geodesic/holonomy sector}.
 \]
 
-The Mumford relation
+The Mumford determinant relation
 
 \[
 \lambda_k\simeq\lambda_1^{\otimes(6k^2-6k+1)}
 \]
 
-gives a no-go for a universal extrapolation of the flat-ppav rank/2 coefficient.
+is a no-go for a universal extrapolation of the flat-ppav rank/2 coefficient.
 
 ## Model V — Quillen / analytic torsion
 
@@ -142,7 +89,7 @@ gives a no-go for a universal extrapolation of the flat-ppav rank/2 coefficient.
 - `quillen-refinement.md`
 - `quillen-refinement.py`
 
-With the fixed holomorphic analytic-torsion convention,
+With the fixed convention,
 
 \[
 \boxed{
@@ -152,7 +99,7 @@ F_Q-F_{L^2}=-\partial\bar\partial\mathcal T_k.
 }
 \]
 
-The pointwise Bergman-loop correction and global analytic torsion share hyperbolic trace geometry but are not literally the same functional.
+The elementary \(L^2\) determinant metric and the Quillen/family-index metric are related but not interchangeable.
 
 ## Model VI — differential cohomology / determinant holonomy
 
@@ -160,21 +107,13 @@ The pointwise Bergman-loop correction and global analytic torsion share hyperbol
 - `differential-holonomy.md`
 - `differential-holonomy.py`
 
-A line with unitary connection defines
+A unitary line with connection defines
 
 \[
 \widehat c_1(L,\nabla)\in\widehat H^2(B;\mathbf Z),
 \]
 
-carrying characteristic class, curvature and loop holonomy. The flat kernel
-
-\[
-0\to H^1(B;\mathbf R/\mathbf Z)
-\to\widehat H^2(B;\mathbf Z)
-\xrightarrow{R}\Omega^2_{\mathbf Z}(B)\to0
-\]
-
-makes precise why zero curvature need not imply trivial global anomaly data.
+carrying topology, curvature, and loop holonomy. The curvature exact sequence makes precise why zero local curvature can coexist with nontrivial global holonomy.
 
 ## Model VII — response / transgression bridge
 
@@ -182,94 +121,117 @@ makes precise why zero curvature need not imply trivial global anomaly data.
 - `response-transgression.md`
 - `response-transgression.py`
 
-Loop-space transgression gives the genuine standard response
+Loop transgression gives
 
 \[
 \tau_{S^1}:\widehat H^2(B;\mathbf Z)\to\widehat H^1(LB;\mathbf Z),
 \]
 
-whose value is the determinant holonomy function. Positive-dimensional pushforward lowers degree, so another degree-two line requires additional coupling data.
+whose value is the determinant holonomy function. Positive-dimensional pushforward lowers degree, so another degree-two line requires additional degree-restoring data.
 
-## Model VIII — canonical coupling / factorized-pushforward no-go
+## Model VIII — factorized-pushforward no-go
 
 - `factorized-pushforward.html`
 - `factorized-pushforward.md`
 - `factorized-pushforward.py`
 
-For a smooth proper oriented real \(d\)-dimensional family
-
-\[
-p:Z\to M,
-\]
-
-a base differential character \(\widehat{\mathcal A}\in\widehat H^2(M;\mathbf Z)\), and any degree-restoring class \(\widehat u\in\widehat H^d(Z;\mathbf Z)\), the standard projection formula gives
+For a smooth proper oriented real \(d\)-dimensional family \(p:Z\to M\),
 
 \[
 \boxed{
 p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
 =
-\widehat{\mathcal A}\cup p_!(\widehat u).
+n\widehat{\mathcal A},
+\qquad n\in\mathbf Z
 }
 \]
 
-Since
+on a connected base, for every degree-restoring \(\widehat u\in\widehat H^d(Z;\mathbf Z)\). Thus factorized degree restoration cannot create an independent response direction.
+
+For a genus-\(g\) curve family and \(\widehat u=\widehat c_1(K_{X/B})\),
 
 \[
-p_!(\widehat u)\in\widehat H^0(M;\mathbf Z),
+\pi_!\left(\pi^*\widehat{\mathcal A}\cup\widehat c_1(K_{X/B})\right)
+=(2g-2)\widehat{\mathcal A}.
 \]
 
-on a connected base this is an integer \(n\). Therefore
+## Model IX — non-factorized \(\widehat\kappa_1\) and Quillen comparison
+
+- `kappa1-quillen.html`
+- `kappa1-quillen.md`
+- `kappa1-quillen.py`
+
+For a smooth family of curves \(\pi:X\to B\) with \(\omega=K_{X/B}\), define
 
 \[
 \boxed{
-p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
-=
-n\widehat{\mathcal A}.
+\widehat\kappa_1
+:=
+\pi_!\left(\widehat c_1(\omega)^2\right)
+\in\widehat H^2(B;\mathbf Z).
 }
 \]
 
-Thus **every factorized degree-restored response is only integer multiplication of the original differential character**.
-
-For a genus-\(g\) curve family and the canonical coupling
-
-\[
-\widehat u=\widehat c_1(K_{X/B}),
-\]
-
-one has
+GRR fixes the smooth-locus characteristic-class normalization
 
 \[
 \boxed{
-\pi_!\left(
-\pi^*\widehat{\mathcal A}
-\cup
-\widehat c_1(K_{X/B})
-\right)
+I(\widehat\kappa_1)
 =
-(2g-2)\widehat{\mathcal A}.
+\kappa_1
+=
+12c_1(\lambda).
 }
 \]
 
-This restores degree but creates no new independent response geometry.
+Using the Bismut--Gillet--Soulé Quillen local-index formula with the same normalized Chern form gives
+
+\[
+\boxed{
+R(\widehat\kappa_1)
+=
+12R(\widehat\lambda_Q).
+}
+\]
+
+Therefore the residual
+
+\[
+\boxed{
+\widehat\delta_{\mathrm{DR}}
+:=
+\widehat\kappa_1-12\widehat\lambda_Q
+}
+\]
+
+satisfies
+
+\[
+\boxed{
+I(\widehat\delta_{\mathrm{DR}})=0,
+\qquad
+R(\widehat\delta_{\mathrm{DR}})=0.
+}
+\]
+
+Thus the only remaining discrepancy is a **topologically trivial flat differential character**. If \(H^1(B;\mathbf R)=0\), in particular on a simply connected base,
+
+\[
+\boxed{
+\widehat\kappa_1=12\widehat\lambda_Q.
+}
+\]
+
+Globally on a non-simply-connected moduli quotient, the residual loop holonomy is deliberately left for the next metric-compatible Deligne--Riemann--Roch / Deligne-pairing audit.
 
 ## Current controlled frontier
 
-To escape Model VIII, a new degree-two base class must come from something **non-factorized**, for example
+The next exact question is no longer whether the local forms match: they do. It is whether the globally defined metric/connection-refined Deligne--Riemann--Roch identification forces
 
 \[
-\widehat W\in\widehat H^{d+2}(Z;\mathbf Z),
-\qquad
-p_!\widehat W\in\widehat H^2(M;\mathbf Z),
+\widehat\delta_{\mathrm{DR}}=0
 \]
 
-rather than \(p^*\widehat{\mathcal A}\cup\widehat u\).
+on the relevant quotient, or leaves a genuine flat secondary character.
 
-For curve families the next canonical prototype is the differential refinement of
-
-\[
-c_1(K_{X/B})^2,
-\]
-
-whose ordinary pushforward leads to the first Mumford--Morita--Miller direction. The exact differential/Quillen normalization is the next literature-audited milestone.
-
-No Lorentzian or gravitational closure is claimed.
+Even a positive answer remains a statement about \(U(1)\) differential characters on a parameter/moduli base. No Lorentzian tangent/frame connection or gravitational field equation has been derived.
