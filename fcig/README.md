@@ -2,19 +2,19 @@
 
 Public research workspace for **Fibered Cohomological Information Geometry (FCIG)**.
 
-The repository distinguishes **Established**, **Derived here**, **FCIG interpretation**, **Conjecture**, and **Open problem** claims. `main` is intended to stay readable and independently checkable.
+The repository distinguishes **Established**, **Derived here**, **FCIG interpretation**, **Conjecture**, and **Open problem** claims. `main` is intended to remain readable and independently checkable.
 
 - `RESEARCH_POLICY.md` — research/citation policy
 - `ROADMAP.md` — active gates and completed milestones
 - `references.bib` — general bibliography
 - milestone `.bib` files — source sets for individual models
-- `citation-map.md` / `cited-synthesis.md` — citation provenance and synthesis
+- `citation-map.md` / `cited-synthesis.md` — citation provenance and audited synthesis
 
 ## Status
 
-Completed milestones: **v0.2–v0.22**.
+Completed milestones: **v0.2–v0.23**.
 
-The current controlled chain is
+The controlled chain is
 
 \[
 \boxed{
@@ -26,15 +26,15 @@ The current controlled chain is
 \to\text{operator / heat-kernel bridge}
 \to\text{intrinsic elliptic spectrum}
 \to\text{adiabatic KK response}
-\to\text{spin-dependent automorphic thresholds}.
+\to\text{spin/multiplet automorphic thresholds}.
 }
 \]
 
 No derivation of Einstein dynamics or horizon thermodynamics from FCIG alone is claimed.
 
-## Geometric / determinant foundation — Models I–X
+## Models I–X — determinant / cohomological foundation
 
-The elliptic, ppav and curved-curve laboratories establish exact theta-state counting, Bergman local/global sectors, determinant/Quillen geometry, differential characters, transgression, pushforward no-gos and the metrized Deligne--Riemann--Roch closure
+The elliptic, ppav and curved-curve laboratories establish exact theta-state counting, Bergman local/global sectors, determinant/Quillen geometry, differential characters, transgression, pushforward no-gos and the metrized Deligne--Riemann--Roch identity
 
 \[
 \boxed{\widehat\kappa_1=12\widehat\lambda_Q}
@@ -42,9 +42,9 @@ The elliptic, ppav and curved-curve laboratories establish exact theta-state cou
 
 in the canonical smooth curve-family model.
 
-## Structure-group and anomaly audits — Models XI–XV
+## Models XI–XV — structure-group, anomaly and response audits
 
-The determinant line retains only the trace/Ricci part of a generic \(U(n)\) connection:
+The determinant line retains only the trace/Ricci sector of a generic \(U(n)\) connection,
 
 \[
 1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1,
@@ -59,7 +59,7 @@ Independent line and frame connections can enter the same index/anomaly polynomi
 =\frac16c_1^3-\frac1{24}c_1p_1,
 \]
 
-but anomaly data do not determine a unique effective action or first response:
+but anomaly data alone do not fix the effective action or its first response:
 
 \[
 \boxed{\text{same anomaly class}\not\Rightarrow\text{same }W,J,T_{\mu\nu}.}
@@ -67,15 +67,9 @@ but anomaly data do not determine a unique effective action or first response:
 
 A gravitational equation appears only after an independent renormalized variational principle is supplied.
 
-## Operator and realization bridge — Models XVI–XVIII
+## Models XVI–XVIII — operator / realization bridge
 
-A supplied realization map \(\Phi:M\to\mathcal B_{\rm FCIG}\) puts FCIG line curvature into an ordinary Laplace-type operator,
-
-\[
-b_4\supset\frac1{12}(\Phi^*F_{\rm FCIG})_{\mu\nu}(\Phi^*F_{\rm FCIG})^{\mu\nu}.
-\]
-
-For arbitrary heavy scalar masses, the one-loop two-derivative target metric is
+A supplied realization map \(\Phi:M\to\mathcal B_{\rm FCIG}\) puts pulled-back FCIG line curvature into an ordinary Laplace-type operator. Arbitrary heavy scalar masses induce
 
 \[
 G^{\rm ind}_{AB}
@@ -83,7 +77,7 @@ G^{\rm ind}_{AB}
 =\frac1{48\pi^2}s^*\delta_{\mathbb R^N},
 \]
 
-so unconstrained masses turn metric matching into inverse design rather than prediction.
+so freely chosen masses turn target-metric matching into inverse design rather than prediction.
 
 ## Model XIX — intrinsic spectral--Hodge identity
 
@@ -95,7 +89,7 @@ For the area-one elliptic torus,
 \det{}'\Delta_\tau=Y|\eta(\tau)|^4,
 \]
 
-and therefore
+and
 
 \[
 \boxed{
@@ -131,99 +125,106 @@ G^{\rm fin}_{\rm scalar}
 }
 \]
 
-Thus Model XIX and Model XX are different spectral projections: finite \((1,1)\) moduli curvature versus finite trace-free spacetime threshold.
-
 Sources: `adiabatic-elliptic.md`, `adiabatic-elliptic.py`, `adiabatic-elliptic.bib`.
 
-## Model XXI — field-content audit
+## Models XXI–XXII — field-content and spin thresholds
 
-The six-dimensional local \(R_6\) response, normalized to one real minimal scalar, is
+The local six-dimensional \(R_6\) response, normalized to one real scalar, is
 
 \[
 \boxed{\text{real scalar : complex Dirac : Maxwell+ghost}=1:4:-2.}
 \]
 
-Hence the local response is not a naive signed physical-polarization count. A 6d \(\mathcal N=(1,0)\) vector multiplet gives the parity-even local cancellation
+True spin fields carry Lorentz connections and curvature endomorphisms. Model XXII derives
 
 \[
-\boxed{-2+2=0.}
-\]
-
-True spinors/vectors nevertheless carry spin connections and curvature endomorphisms, so their finite threshold cannot be obtained from the scalar answer by component counting alone.
-
-Sources: `field-content-supertrace.md`, `field-content-supertrace.py`, `field-content-supertrace.bib`.
-
-## Model XXII — spin-connection automorphic thresholds
-
-- Web: `spin-threshold.html`
-- Source: `spin-threshold.md`
-- Checker: `spin-threshold.py`
-- Milestone bibliography: `spin-threshold.bib`
-
-For winding \(\lambda=(p,q)\) with
-
-\[
-Q_\lambda=\lambda^TG(\tau)\lambda,
-\]
-
-the elliptic Levi-Civita connection obeys the exact vector-representation identity
-
-\[
-\boxed{
-\operatorname{tr}_{\rm vec}[(\lambda\cdot\omega)^2]
-=\frac{L^2}{2}Q_\lambda\,
-\frac{(\partial u)^2+(\partial Y)^2}{Y^2}.
-}
-\]
-
-With Lorentz Dynkin index \(C_R\) and \(\operatorname{tr}_R E=e_RR_6\), the finite representation-dependent Poincare-trace correction is
-
-\[
-\boxed{
 \Delta G_{\rm tr}^{(R)}
 =\frac{(-1)^F(2C_R-e_R)}{16\pi^3L^2}
-Z_\tau(2)\,g_{\rm hyp}.
-}
+Z_\tau(2)g_{\rm hyp}.
 \]
 
-In the fixed parity-even conventions:
+For a specified 6d \(\mathcal N=(1,0)\) vector multiplet, local and weight-four terms cancel while a positive finite trace term survives:
 
 \[
 \boxed{
-\begin{aligned}
-G_D^{\rm fin}
-&=\frac1{2\pi^3L^2}\operatorname{Re}[\mathcal G_4(d\tau)^2]
--\frac1{8\pi^3L^2}Z_\tau(2)g_{\rm hyp},\\[1mm]
-G_{A+gh}^{\rm fin}
-&=-\frac1{4\pi^3L^2}\operatorname{Re}[\mathcal G_4(d\tau)^2]
-+\frac3{16\pi^3L^2}Z_\tau(2)g_{\rm hyp},\\[1mm]
-G_{W}^{\rm fin}
-&=\frac1{4\pi^3L^2}\operatorname{Re}[\mathcal G_4(d\tau)^2]
--\frac1{16\pi^3L^2}Z_\tau(2)g_{\rm hyp}.
-\end{aligned}}
-\]
-
-For a specified 6d \(\mathcal N=(1,0)\) vector multiplet, the weight-four trace-free terms cancel while the spin-transport trace term survives:
-
-\[
-\boxed{
-G_{\rm vm}^{\rm fin}
-=\frac{Z_\tau(2)}{8\pi^3L^2}\,g_{\rm hyp}.
+G_{\rm vector}^{\rm fin}
+=\frac{Z_\tau(2)}{8\pi^3L^2}g_{\rm hyp}.
 }
 \]
 
-Since \(Z_\tau(2)>0\), this finite parity-even threshold is positive definite in the controlled interior region. It does not imply chiral-anomaly cancellation or a supersymmetric completion of an arbitrary \(\tau(x)\) background.
+Sources: `field-content-supertrace.*`, `spin-threshold.*`.
+
+## Model XXIII — hyper/tensor multiplet completion
+
+- Web: `hyper-tensor-threshold.html`
+- Source: `hyper-tensor-threshold.md`
+- Checker: `hyper-tensor-threshold.py`
+- Milestone bibliography: `hyper-tensor-threshold.bib`
+
+For the parity-even nonzero-tower sector, a non-chiral real two-form has
+
+\[
+(C_{\rm local},A_{\mathcal G_4},B_{Z_2})_{B,\rm nonch}
+=\left(-6,-\frac38,\frac38\right).
+\]
+
+Using the standard holomorphic-factorization / determinant-norm prescription for the self-dual field magnitude gives
+
+\[
+(C_{\rm local},A,B)_{B^+}
+=\left(-3,-\frac3{16},\frac3{16}\right),
+\]
+
+with theta characteristics, zero modes and chiral/global phases kept separate.
+
+The completed 6d \(\mathcal N=(1,0)\) multiplet table is
+
+\[
+\boxed{
+\begin{array}{c|ccc}
+\text{multiplet}&C_{\rm local}&A_{\mathcal G_4}&B_{Z_2}\\ \hline
+\text{vector}&0&0&\frac18\\
+\text{hyper}&6&0&-\frac1{16}\\
+\text{tensor}&0&0&\frac18
+\end{array}}
+\]
+
+so
+
+\[
+\boxed{
+G_{\rm vector}^{\rm fin}=G_{\rm tensor}^{\rm fin}
+=\frac{Z_\tau(2)}{8\pi^3L^2}g_{\rm hyp},
+\qquad
+G_{\rm hyper}^{\rm fin}
+=-\frac{Z_\tau(2)}{16\pi^3L^2}g_{\rm hyp}.
+}
+\]
+
+All three multiplets cancel the finite weight-four trace-free tensor in this restricted background. For independently fixed multiplicities,
+
+\[
+\boxed{
+G_{VHT}^{\rm fin}
+=\frac{2n_V-n_H+2n_T}{16\pi^3L^2}
+Z_\tau(2)g_{\rm hyp}.
+}
+\]
+
+This coefficient is a kinetic threshold, not an anomaly coefficient. Multiplicities may not be chosen merely to engineer a desired sign or cancellation.
 
 ## Current frontier
 
-The active target is **v0.23 — multiplet completion beyond the vector multiplet**. The next controlled tests are the 6d \(\mathcal N=(1,0)\) hypermultiplet and tensor multiplet, with self-dual/chiral determinants treated carefully rather than inferred by degree counting.
-
-The goal is to determine whether the surviving positive
+The next controlled question is to compare the completed vector/hyper/tensor threshold table with **independently specified 6d multiplet combinations and their anomaly polynomials**, while retaining the strict distinction
 
 \[
-Z_\tau(2)g_{\rm hyp}
+\boxed{
+\text{anomaly polynomial}
+\neq
+\text{local counterterm}
+\neq
+\text{finite automorphic kinetic threshold}.
+}
 \]
 
-sector is universal, multiplet-dependent, or canceled only in larger independently specified field contents.
-
-Lorentzian/horizon closure remains separate.
+Self-dual global phases, nontrivial torus bundles, background gauge fields and the cusp/EFT breakdown remain separate extensions. Lorentzian/horizon closure remains inactive.
