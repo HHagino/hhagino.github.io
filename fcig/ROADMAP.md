@@ -1,6 +1,6 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.12 — mixed characteristic-class / anomaly-polynomial degree audit  
+**Current target:** v0.13 — explicit descent / anomaly-inflow realization  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations are retained as explicit no-go results.
@@ -27,8 +27,6 @@ while positive-dimensional fiber integration lowers degree.
 
 ## v0.8 — factorized pushforward — COMPLETE WITH NO-GO
 
-For a smooth proper oriented real \(d\)-dimensional family \(p:Z\to M\),
-
 \[
 \boxed{
 p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
@@ -40,206 +38,214 @@ on each connected component. Factorized degree restoration cannot generate an in
 
 ---
 
-## v0.9 — non-factorized \(\widehat\kappa_1\) / Quillen comparison — COMPLETE
+## v0.9–v0.10 — \(\widehat\kappa_1\), Quillen, and global Deligne--RR — COMPLETE
 
-For a smooth family of curves, \(\omega=K_{X/B}\),
-
-\[
-\widehat\kappa_1:=\pi_!\bigl(\widehat c_1(\omega)^2\bigr),
-\]
-
-and GRR plus the Quillen local-index theorem give
+For a smooth curve family,
 
 \[
-I(\widehat\kappa_1)=12I(\widehat\lambda_Q),
-\qquad
-R(\widehat\kappa_1)=12R(\widehat\lambda_Q).
+\widehat\kappa_1:=\pi_!\bigl(\widehat c_1(K_{X/B})^2\bigr),
 \]
 
----
-
-## v0.10 — global metrized Deligne--Riemann--Roch closure — COMPLETE
-
-The metrized Deligne-pairing realization closes the remaining flat ambiguity:
+and the metrized Deligne-pairing realization closes the comparison globally:
 
 \[
 \boxed{
-\widehat\kappa_1=12\widehat\lambda_Q
+\widehat\kappa_1=12\widehat\lambda_Q.
 }
 \]
 
-globally in the fixed convention, hence
-
-\[
-\operatorname{Hol}_{\widehat\kappa_1}(\gamma)
-=
-\operatorname{Hol}_{\widehat\lambda_Q}(\gamma)^{12}.
-\]
-
-Source: `global-deligne-rr.md`.
+Thus topology, curvature and loop holonomy satisfy the same connection-level identity.
 
 ---
 
 ## v0.11 — target-structure / nonabelian bridge audit — COMPLETE
 
-Source and checker:
-
-- `structure-group-bridge.md`
-- `structure-group-bridge.py`
-
-### Gate AD — determinant trace bridge — PASS
-
-The standard exact sequence
+The determinant sequence
 
 \[
-\boxed{
 1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1
-}
 \]
 
 induces
 
 \[
-\boxed{
 F_{\det E}=\operatorname{Tr}F_E.
-}
 \]
 
-Thus a nonabelian unitary connection canonically determines a determinant/trace \(U(1)\) connection.
-
-### Gate AE — lift nonuniqueness — PASS WITH NO-GO
-
-For two unitary connections on the same Hermitian bundle,
+But fixing the determinant connection leaves an affine space over
 
 \[
-\boxed{
-\det\nabla'=\det\nabla
-\iff
-\nabla'-\nabla\in\Omega^1(M;\mathfrak{su}(E)).
-}
+\Omega^1(M;\mathfrak{su}(E)),
 \]
 
-Hence fixing the determinant connection leaves an affine space of traceless nonabelian connection data. For \(n>1\), determinant data cannot reconstruct a generic \(U(n)\) connection.
+so determinant data cannot reconstruct a generic nonabelian connection for \(n>1\). Kähler tangent geometry identifies the determinant curvature with Ricci/trace curvature; Ricci-flat K3 geometry gives an explicit loss-of-information witness. Spin\(^c\) gives a positive extension bridge only when the frame connection is supplied independently.
 
-The exceptional case \(n=1\) has \(SU(1)=\{1\}\). This explains why complex one-dimensional curve models can close much more completely in the determinant sector.
-
-### Gate AF — Kähler canonical test — PASS WITH NO-GO
-
-For Kähler tangent geometry,
-
-\[
-\det T^{1,0}M=K_M^{-1},
-\qquad
-c_1(T^{1,0}M,\nabla)=\frac{\rho_\omega}{2\pi}
-\]
-
-in the fixed convention. Thus determinant curvature is Ricci/trace curvature, not full Riemann curvature.
-
-Ricci-flat K3 geometry gives an explicit witness: the determinant/canonical curvature can vanish while the full tangent curvature and \(SU(2)\) holonomy remain nontrivial.
-
-### Gate AG — Spin\(^c\) extension bridge — PASS WITH NON-IDENTIFICATION
-
-The standard group
-
-\[
-\operatorname{Spin}^c(n)
-=\bigl(\operatorname{Spin}(n)\times U(1)\bigr)/\{\pm1\}
-\]
-
-combines frame and determinant-line data. A frame connection together with a determinant \(U(1)\) connection gives a \(Spin^c\) connection. The determinant line alone does not determine the frame connection.
-
-### Gate AH — fixed-homomorphism audit — PASS WITH NO-GO
-
-For any fixed homomorphism
-
-\[
-\varphi:U(1)\to G,
-\]
-
-the image of
-
-\[
-d\varphi:i\mathbf R\to\mathfrak g
-\]
-
-is at most one-dimensional and abelian. A connection induced from one \(U(1)\) field therefore cannot reproduce generic noncommuting curvature in a nonabelian frame group.
-
-### v0.11 conclusion
-
-\[
-\boxed{
-\begin{aligned}
-\text{nonabelian connection}&\to\text{determinant/trace }U(1)&&\text{canonical},\\
-\text{determinant }U(1)&\not\to\text{full nonabelian connection}&&\text{without extra data}.
-\end{aligned}
-}
-\]
-
-The FCIG determinant sector may constrain a trace/Ricci sector of target geometry, but the traceless frame sector must be supplied or dynamically determined independently.
-
-References: Hall; Huybrechts; Lawson--Michelsohn; Yamashita; Yau; Huybrechts on K3 surfaces.
+Source: `structure-group-bridge.md`.
 
 ---
 
-## v0.12 — mixed characteristic-class / anomaly-polynomial degree audit — ACTIVE
+## v0.12 — mixed characteristic-class / anomaly-polynomial degree audit — COMPLETE
 
-The next test **assumes the frame connection is an independent geometric field**. The objective is no longer to reconstruct it from \(U(1)\), but to determine which standard gauge-invariant characteristic classes can couple the two sectors without identifying their structure groups.
+Source and checker:
 
-Let \(M\) carry
+- `mixed-characteristic.md`
+- `mixed-characteristic.py`
+- `mixed-characteristic.bib`
+
+### Gate AI — independent-field setup — PASS
+
+On a common base \(M\), keep
 
 \[
-\widehat a:=\widehat c_1(L,\nabla^L)\in\widehat H^2(M;\mathbf Z)
+\widehat a:=\widehat c_1(L,\nabla^L)
+\in\widehat H^2(M;\mathbf Z)
 \]
 
-and an independent oriented/spin/frame connection with differential Pontryagin class
+and an independent frame connection with
 
 \[
-\widehat p_1(TM,\nabla^{\mathrm{fr}})\in\widehat H^4(M;\mathbf Z).
+\widehat p_1(TM,\nabla^{\mathrm{fr}})
+\in\widehat H^4(M;\mathbf Z).
 \]
 
-### Gate AI — independent-field setup
+No structure-group identification is used.
 
-Require an explicit common base \(M\), a line connection, and a frame connection. No structure-group identification is permitted.
+### Gate AJ — mixed characteristic class — PASS
 
-### Gate AJ — Chern--Weil degree audit
-
-Audit the first mixed product
+Differential-cohomology multiplication gives
 
 \[
 \boxed{
 \widehat a\cup\widehat p_1(TM)
-\in
-\widehat H^6(M;\mathbf Z).
+\in\widehat H^6(M;\mathbf Z).
 }
 \]
 
-Its curvature is a degree-six form proportional, in the chosen normalization, to
+This is a genuine mixed invariant of the independent line and frame sectors.
+
+### Gate AK — index/anomaly polynomial — PASS
+
+Standard index theory gives
 
 \[
-F_L\wedge p_1(\Omega_{\mathrm{fr}}).
+\widehat A(TM)=1-\frac{p_1}{24}+\cdots,
+\qquad
+\operatorname{ch}(L)=e^{c_1},
 \]
 
-No coefficient will be fixed until the anomaly-polynomial convention is audited from primary literature.
+hence
 
-### Gate AK — four-dimensional no-go / descent alternatives
+\[
+\boxed{
+\left[\widehat A(TM)\operatorname{ch}(L)\right]_{(6)}
+=
+\frac16c_1^3
+-
+\frac1{24}c_1p_1.
+}
+\]
 
-On a four-dimensional spacetime, a degree-six mixed characteristic class is not itself a local top-degree action density. A legitimate use must specify a descent/transgression, anomaly inflow from a higher-dimensional bulk, a boundary term, or an explicitly metric-dependent non-topological construction.
+Classic gauge/gravitational anomaly theory identifies the corresponding degree-six gauge and mixed gauge--gravitational structures as anomaly-polynomial data, with physical signs and \(2\pi\) conventions handled separately.
 
-### Gate AL — gravitational degree-two no-go
+References: Alvarez-Gaumé--Witten; Zumino--Wu--Zee; Bardeen--Zumino; Alvarez-Gaumé--Ginsparg; Freed; Lawson--Michelsohn.
 
-Audit that an \(SO(n)\) frame connection has no canonical first Chern-type degree-two Chern--Weil class analogous to \(c_1(L)\); its first standard Pontryagin class appears in degree four. This blocks a naive degree-two equality between a determinant Chern form and a generic orthogonal gravitational characteristic class.
+### Gate AL — four-dimensional dimensional audit — PASS WITH NO-GO
 
-### Gate AM — anomaly-polynomial provenance
+\[
+\boxed{
+\deg(c_1p_1)=6>4.
+}
+\]
 
-Compare the allowed mixed classes with established gauge/gravitational anomaly-polynomial formulas. Cite primary sources and keep exact numerical coefficients convention-dependent until checked.
+A degree-six anomaly polynomial is not itself a local four-form action density on a four-manifold. Its four-dimensional role requires descent/transgression, anomaly inflow, a boundary/extension geometry, or another explicitly specified construction.
 
-**Pass condition:** identify at least one mathematically standard mixed invariant together with its correct degree and one explicit dimensional obstruction. No field equation is inferred from the existence of the invariant.
+### Gate AM — gravitational degree-two audit — PASS WITH QUALIFIED NO-GO
+
+For generic semisimple higher-rank orthogonal frame algebras there is no nonzero invariant linear Chern--Weil polynomial analogous to \(c_1\). The first Pontryagin class occurs in degree four. The abelian exception
+
+\[
+SO(2)\cong U(1)
+\]
+
+has a degree-two Euler/first-Chern class and is recorded explicitly.
+
+### v0.12 conclusion
+
+\[
+\boxed{
+\text{independent }U(1)\text{ connection}
++
+\text{independent frame connection}
+\longrightarrow
+\text{mixed degree-six characteristic/anomaly class}
+}
+\]
+
+is mathematically legitimate. It couples the two sectors at the invariant level without reconstructing one from the other.
+
+But
+
+\[
+\boxed{
+\text{anomaly polynomial}\neq\text{gravitational field equation}.
+}
+\]
+
+---
+
+## v0.13 — explicit descent / anomaly-inflow realization — ACTIVE
+
+The next task is to make the degree-six class act on four-dimensional boundary data through a specified higher-dimensional geometry.
+
+### Gate AN — five-dimensional secondary form
+
+For an abelian normalized curvature \(c=dA\) and closed \(p_1\), construct a local secondary form for
+
+\[
+I_6=\frac16c^3-\frac1{24}cp_1.
+\]
+
+Locally one expects
+
+\[
+I_5^{(0)}
+=A\wedge\left(\frac16c^2-\frac1{24}p_1\right),
+\qquad
+dI_5^{(0)}=I_6,
+\]
+
+with the normalization and global differential-cohomology meaning audited from anomaly-descent literature.
+
+### Gate AO — boundary variation
+
+Under the abelian transformation \(A\mapsto A+d\alpha\), audit
+
+\[
+\delta I_5^{(0)}
+=d\left[\alpha\left(\frac16c^2-\frac1{24}p_1\right)\right].
+\]
+
+This supplies a four-dimensional boundary anomaly form, not an Einstein equation.
+
+### Gate AP — global refinement
+
+Replace the local potential-dependent Chern--Simons expression by the appropriate global differential character / anomaly-inflow datum when the line bundle is topologically nontrivial.
+
+### Gate AQ — response-type audit
+
+Separate:
+
+1. gauge variation/anomaly response;
+2. stress-energy response to metric variation;
+3. horizon/thermodynamic response.
+
+No equality among them is assumed.
 
 ---
 
 ## Gravity Closure gate — NOT ACTIVE
 
-The determinant sector and the inverse structure-group problem are no longer the bottleneck. A future gravitational closure would still require:
+A future gravitational closure still requires:
 
 1. an actual physical spacetime/base object;
 2. a map/correspondence from FCIG parameter geometry;
