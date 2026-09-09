@@ -1,6 +1,6 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.21 — field-content / supertrace completion audit  
+**Current target:** v0.22 — spin-connection automorphic threshold  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations are retained as explicit no-go results.
@@ -13,275 +13,219 @@ Earlier milestones establish the determinant/differential-cohomology foundation,
 
 ---
 
-## v0.18 — induced realization-map metric from determinants — COMPLETE WITH SPECTRAL-INPUT NO-GO
+## v0.18 — induced realization-map metric — COMPLETE WITH SPECTRAL-INPUT NO-GO
 
-For diagonal heavy species,
+For diagonal heavy scalars,
 
 \[
-G^{\rm ind}_{AB}=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}
-=\frac1{48\pi^2}s^*\delta_{\mathbb R^N},
-\qquad s_i=\sqrt{V_i}.
+G^{\rm ind}_{AB}
+=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}
+=\frac1{48\pi^2}s^*\delta_{\mathbb R^N}.
 \]
 
-Thus one species has rank at most one, two species are degenerate or locally flat, and unconstrained higher-dimensional mass maps turn metric matching into inverse design. FCIG prediction requires an intrinsic operator/spectrum.
-
-Sources: `induced-metric.md`, `induced-metric.py`, `induced-metric.bib`.
+Arbitrary masses turn target-metric matching into inverse design; prediction requires an intrinsic operator/spectrum.
 
 ---
 
-## v0.19 — intrinsic elliptic spectral metric — COMPLETE WITH EXACT SPECTRAL--HODGE IDENTITY
+## v0.19 — intrinsic elliptic spectral metric — COMPLETE
 
 For the area-one torus,
 
 \[
-\lambda_{m,n}(\tau)=\frac{4\pi^2}{Y}|m\tau-n|^2,
+\lambda_{m,n}=\frac{4\pi^2}{Y}|m\tau-n|^2,
 \qquad
-\det{}'\Delta_\tau=Y|\eta(\tau)|^4.
+\det{}'\Delta_\tau=Y|\eta(\tau)|^4,
 \]
 
-Hence
+and
 
 \[
-\boxed{
--\partial\bar\partial\log\det{}'\Delta_\tau
-=F_{\lambda_H}
-=\frac1{4Y^2}d\tau\wedge d\bar\tau.
-}
+\boxed{-\partial\bar\partial\log\det{}'\Delta_\tau=F_{\lambda_H}.}
 \]
 
-This is a finite moduli-space Chern-curvature identity, not yet a spacetime kinetic term.
-
-Sources: `intrinsic-spectral.md`, `intrinsic-spectral.py`, `intrinsic-spectral.bib`.
+This is a finite moduli-space Chern-curvature identity.
 
 ---
 
-## v0.20 — adiabatic elliptic family / Kaluza--Klein response — COMPLETE IN THE RESTRICTED SCALAR MODEL
+## v0.20 — adiabatic elliptic / KK response — COMPLETE IN THE RESTRICTED REAL-SCALAR MODEL
 
-Sources:
-
-- `adiabatic-elliptic.md`
-- `adiabatic-elliptic.py`
-- `adiabatic-elliptic.bib`
-
-### Gate CD — total-space geometry — PASS
-
-For
+For the fixed-volume elliptic family,
 
 \[
- ds_6^2=g_{\mu\nu}dx^\mu dx^\nu+L^2G_{ab}(\tau(x))dy^ady^b,
+R_6=R_4-\frac1{2Y^2}\partial_\mu\tau\partial^\mu\bar\tau,
 \qquad
-\det G=1,
+M_{m,n}^2=\frac{4\pi^2}{L^2Y}|m\tau-n|^2.
 \]
 
-with
-
-\[
-G(\tau)=\frac1Y
-\begin{pmatrix}
-1&u\\
-u&u^2+Y^2
-\end{pmatrix},
-\]
-
-one finds
-
-\[
-\boxed{
-R_6=R_4-\frac1{2Y^2}\partial_\mu\tau\partial^\mu\bar\tau.
-}
-\]
-
-The Poincare tensor shape is intrinsic to the fixed-volume torus geometry.
-
-### Gate CE — mode decomposition — PASS WITH CORRECTION
-
-In the locally trivial block-diagonal scalar model, the coordinate Fourier basis is \(\tau\)-independent. Hence there is no local Berry/off-diagonal mode mixing and
-
-\[
-\boxed{
-M_{m,n}^2(\tau)=\frac{4\pi^2}{L^2Y}|m\tau-n|^2.
-}
-\]
-
-Global modular monodromy and nontrivial torus bundles remain separate extensions.
-
-### Gate CF — local one-loop response — PASS WITH RENORMALIZATION NO-GO
-
-The six-dimensional heat kernel gives
-
-\[
-W_{\rm div}^{(\tau)}
-=\frac{\Lambda^4L^2}{48(4\pi)^3}
-\int\sqrt{g_4}\,
-\frac{\partial_\mu\tau\partial^\mu\bar\tau}{Y^2}
-\]
-
-in the fixed sharp proper-time convention. This Poincare-shaped normalization is a local Einstein--Hilbert/shape-modulus counterterm and is not parameter-free.
-
-### Gate CG — Epstein finite-part tower — PASS
-
-Let
-
-\[
-Q_{m,n}=\frac{|m\tau-n|^2}{Y},
-\qquad
-Z_\tau(s)=\sum{}'Q_{m,n}^{-s}.
-\]
-
-For the hyperbolic metric \(g_{\rm hyp}\), every lattice form satisfies
-
-\[
-\boxed{
-\nabla^2Q=Qg_{\rm hyp},
-\qquad
-|dQ|_{g_{\rm hyp}}^2=Q^2.
-}
-\]
-
-The determinant-one Epstein functional equation gives
-
-\[
-Z_\tau(-1)=0,
-\qquad
-Z_\tau'(-1)=-\frac1{\pi^3}Z_\tau(2).
-\]
-
-Therefore the analytically subtracted tower tensor is
-
-\[
-\boxed{
-\mathcal T^{\rm fin}_{AB}
-=\frac1{\pi^3}
-\left(\nabla_A\nabla_BZ_\tau(2)-Z_\tau(2)g^{\rm hyp}_{AB}\right).
-}
-\]
-
-### Gate CH — finite modular threshold — PASS WITH TRACE-FREE THEOREM
-
-Since
-
-\[
-\Delta_{\rm hyp}Z_\tau(2)=2Z_\tau(2),
-\]
-
-\[
-\boxed{
-\operatorname{tr}_{g_{\rm hyp}}\mathcal T^{\rm fin}=0.
-}
-\]
-
-Thus the finite nonlocal two-derivative threshold is not another constant multiple of the Poincare metric. The Poincare trace sector is the local renormalization sector.
-
-### Gate CI — holomorphic weight-four form — PASS
-
-Define
-
-\[
-\mathcal G_4(\tau)=\sum{}'(m\tau-n)^{-4}.
-\]
-
-Then
-
-\[
-\boxed{
-\mathcal T^{\rm fin}
-=-\frac3{\pi^3}\operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2],
-}
-\]
-
-and the physical one-real-scalar finite threshold is
+The local Poincare-shaped two-derivative normalization is UV/counterterm sensitive. Epstein analytic continuation gives the finite one-real-scalar response
 
 \[
 \boxed{
 G^{\rm fin}_{(2)}
 =-\frac1{16\pi^3L^2}
+\operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2],
+\qquad
+\operatorname{tr}_{g_{\rm hyp}}G^{\rm fin}_{(2)}=0.
+}
+\]
+
+The finite threshold is modular, trace-free and not a positive sigma metric by itself.
+
+---
+
+## v0.21 — field-content / supertrace audit — COMPLETE WITH SPIN-CONNECTION OBSTRUCTION
+
+Sources:
+
+- `field-content-supertrace.md`
+- `field-content-supertrace.py`
+- `field-content-supertrace.bib`
+
+### Gate CM — determinant/statistics normalization — PASS
+
+Use
+
+\[
+W_0=\frac12\log\det\Delta_0,
+\qquad
+W_{1/2}^{\rm even}=-\frac12\log\det\slashed D^2,
+\qquad
+W_1=\frac12\log\det\Delta_1-\log\det\Delta_0.
+\]
+
+Fermion phases/chiral anomalies remain separate.
+
+### Gate CN — local Laplace-type operators — PASS
+
+With
+
+\[
+P=-(\nabla^2+E),
+\qquad b_2=E+\frac16R,
+\]
+
+- real scalar: \(E=0\);
+- Dirac: \(\slashed D^2=-\nabla^2+R/4\), hence \(E=-R/4\);
+- one-form: \(\Delta_1=-\nabla^2+\mathrm{Ric}\), hence \(E=-\mathrm{Ric}\), plus the complex scalar FP ghost.
+
+### Gate CO — exact local supertrace — PASS WITH DEGREE-COUNT NO-GO
+
+In six dimensions, normalized to one real minimal scalar,
+
+\[
+\boxed{
+\text{real scalar : complex Dirac : Maxwell+ghost}=1:4:-2.
+}
+\]
+
+Therefore
+
+\[
+\boxed{C_{\rm loc}=N_{\rm real\ scalar}+4N_{\rm Dirac}-2N_{\rm Maxwell}.}
+\]
+
+The result is not the naive signed count of physical polarizations; curvature endomorphisms and ghosts matter.
+
+### Gate CP — physical local multiplet witness — PASS
+
+A 6d \(\mathcal N=(1,0)\) vector multiplet contains Maxwell plus one symplectic-Majorana-Weyl gaugino. Its parity-even local coefficient is
+
+\[
+\boxed{-2+2=0.}
+\]
+
+Thus the local \(R_6\)/Poincare-trace one-loop coefficient cancels in this specified multiplet. This does not imply anomaly or finite-threshold cancellation.
+
+### Gate CQ — scalar-type finite multiplicity — PASS
+
+For a trivial spectator bundle with quadratic operator exactly \(-\Delta_6\otimes I_r\), determinant powers scale the Model-XX finite result exactly. With scalar-equivalent multiplicity \(\nu\),
+
+\[
+\boxed{
+G^{\rm fin}_{\nu}
+=-\frac{\nu}{16\pi^3L^2}
 \operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2].
 }
 \]
 
-Because \(\mathcal G_4\) has modular weight four and \((d\tau)^2\) weight minus four, the tensor is modular invariant.
+### Gate CR — true spin-field finite audit — PASS WITH STRUCTURAL NO-GO
 
-### Gate CJ — positivity / type audit — PASS WITH NO-GO
+A genuine spinor/vector operator contains nontrivial bundle connection and curvature endomorphism:
 
-A nonzero trace-free symmetric tensor in two real dimensions is indefinite. Therefore the finite threshold alone is not a positive sigma metric. The renormalized kinetic tensor is
+\[
+\slashed D^2=-(\nabla_{\rm spin})^2+\frac14R,
+\qquad
+\Delta_1=-\nabla_{T^*}^2+\mathrm{Ric}.
+\]
+
+The periodic/winding heat kernel therefore depends on spin parallel transport and Lorentz-representation invariants such as \(\operatorname{tr}(\Sigma\Sigma)\). Hence
 
 \[
 \boxed{
-G^{\rm ren}=Z_Rg_{\rm hyp}+G^{\rm fin}_{(2)}+\cdots,
+G^{\rm fin}_{\rm spin>0}
+\neq(\text{signed component count})G^{\rm fin}_{\rm scalar}
+\quad\text{in general}.
 }
 \]
 
-where \(Z_R\) is an independently renormalized local coupling.
+### Gate CS — original full-supertrace pass condition — FAILS AS STATED / REFACTORED
 
-### Gate CK — Model XIX versus XX — PASS WITH STRICT DISTINCTION
+The original idea of fixing the full finite multiplet threshold by a species supertrace is false. The remaining calculation is representation-theoretic and is promoted to v0.22 rather than guessed.
 
-\[
-\boxed{
-\begin{array}{ll}
-\text{Model XIX:}&-\partial\bar\partial\log\det{}'\Delta=F_{\lambda_H}\quad\text{finite }(1,1)\text{ moduli curvature},\\
-\text{Model XX:}&G^{\rm fin}_{(2)}\propto\operatorname{Re}[\mathcal G_4(d\tau)^2]\quad\text{finite trace-free spacetime threshold}.
-\end{array}}
-\]
-
-They are different tensor projections of the same elliptic spectral family, not objects to be identified.
-
-### Gate CL — cusp / EFT validity — PASS
-
-As \(Y\to\infty\), \(M_{0,n}^2\to0\), so integrating out the whole nonzero tower fails uniformly. The cusp is an explicit EFT validity boundary.
-
-### v0.20 conclusion
+### v0.21 conclusion
 
 \[
 \boxed{
-\text{local: }Z_Rg_{\rm hyp}
-\quad\oplus\quad
-\text{finite: }-\frac1{16\pi^3L^2}\operatorname{Re}[\mathcal G_4(d\tau)^2].
+\text{local field-content response is fixed,}
+\qquad
+\text{finite spin response requires spin-connection data.}
 }
 \]
 
-References: Maharana--Schwarz (1993); Vassilevich (2003); von Gersdorff (2008); Terras (1980, 2013); Apostol (1990).
+References: Vassilevich (2003); Lawson--Michelsohn (1989); von Gersdorff (2008); Ferrara--Riccioni--Sagnotti (1998); Ohmori--Shimizu--Tachikawa--Yonekura (2014).
 
 ---
 
-## v0.21 — field-content / supertrace completion audit — ACTIVE
+## v0.22 — spin-connection automorphic threshold — ACTIVE
 
-The scalar result is now exact enough to ask the next physical question: what happens for a **fixed microscopic multiplet** rather than one real scalar?
+The next milestone computes the representation-dependent finite threshold for genuine spin fields on the same elliptic family.
 
-### Gate CM — determinant/statistics normalization
+### Gate CT — internal spin connection
 
-Fix the one-loop signs and multiplicities for real/complex scalars, Dirac/Weyl fermions, vectors and ghosts. Do not infer fermionic or vector answers by multiplying the scalar result unless the squared operators and connection/endormorphism terms justify it.
-
-### Gate CN — intrinsic torus operators by spin
-
-Write the actual torus/Kaluza--Klein spectra and Laplace-type operators for each field representation in the same fixed-volume elliptic background. Track spin connection, bundle curvature and gauge-fixing/ghost operators explicitly.
-
-### Gate CO — local supertrace sector
-
-Compute the combined heat-kernel two-derivative trace sector. Determine when the Poincare-shaped local divergence cancels or renormalizes a residual coupling.
-
-### Gate CP — finite weight-four threshold
-
-Compute the coefficient multiplying
+Choose an explicit orthonormal frame for
 
 \[
-\operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2]
+G(\tau)=\frac1Y
+\begin{pmatrix}1&u\\u&u^2+Y^2\end{pmatrix}
 \]
 
-for the specified field content. Determine whether statistics/spin cancel the scalar threshold, rescale it, or introduce additional automorphic tensors.
+and derive all base/fiber spin-connection components generated by \(\partial_\mu\tau\). Keep local SO(2) frame-gauge dependence separate from invariant traces.
 
-### Gate CQ — positivity and EFT interpretation
+### Gate CU — periodic spinor heat kernel
 
-Determine whether the complete renormalized target-space kinetic tensor can be positive and whether positivity constrains the local coefficient \(Z_R\). A trace-free threshold cannot supply positivity by itself.
+For the Dirac Laplace-type operator, compute the winding Wilson line / parallel transport and the curvature endomorphism contribution to quadratic order in \(\partial\tau\). Reduce all representation traces to fixed Spin(6) generator invariants.
 
-### Gate CR — anomaly / determinant-line consistency
+### Gate CV — Maxwell plus ghost heat kernel
 
-Compare the same field content with its determinant/anomaly line and index polynomial. Kinetic threshold, anomaly and Quillen curvature remain distinct observables even when generated by the same microscopic fields.
+Repeat for the one-form Hodge Laplacian and combine the gauge field with its FP ghost before extracting any finite coefficient.
 
-### Gate CS — no multiplet fitting
+### Gate CW — automorphic decomposition
 
-The field content must be specified independently by a geometric or physical model. Choosing boson/fermion multiplicities merely to cancel or reproduce a desired tensor is not an FCIG prediction.
+After Epstein analytic subtraction, decompose the finite tensor into allowed modular structures, including possible Poincare-trace terms proportional to nonholomorphic Eisenstein functions and trace-free weight-four terms.
 
-**Pass condition:** an explicit field-content supertrace calculation that fixes the local and finite two-derivative elliptic response and states all remaining renormalized inputs.
+### Gate CX — vector-multiplet test
+
+Combine Maxwell+ghost with a symplectic-Majorana-Weyl gaugino and determine whether the local cancellation extends, fails, or partially survives in the finite automorphic sector.
+
+### Gate CY — gauge/frame independence
+
+Verify that the final tensor is independent of gauge-fixing and local internal-frame choices, up to allowed local counterterms.
+
+### Gate CZ — no gravity overclaim
+
+Even a fully fixed multiplet threshold remains a moduli/matter effective response and is not an Einstein equation or horizon law.
+
+**Pass condition:** explicit Dirac and Maxwell+ghost finite coefficients/tensors with a checked physical vector-multiplet combination.
 
 ---
 
