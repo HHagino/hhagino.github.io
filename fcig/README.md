@@ -12,7 +12,7 @@ The repository distinguishes **Established**, **Derived here**, **FCIG interpret
 
 ## Status
 
-Completed milestones: **v0.2–v0.24**.
+Completed milestones: **v0.2–v0.25**.
 
 The controlled chain is
 
@@ -27,7 +27,8 @@ The controlled chain is
 \to\text{intrinsic elliptic spectrum}
 \to\text{adiabatic KK response}
 \to\text{spin/multiplet thresholds}
-\to\text{threshold/anomaly coefficient-space audit}.
+\to\text{threshold/anomaly audit}
+\to\text{Green--Schwarz / anomaly-lattice audit}.
 }
 \]
 
@@ -88,7 +89,7 @@ G^{\rm fin}_{\rm scalar}
 \operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2].
 \]
 
-True spin fields generate an additional finite Poincare-trace sector. After completing standard 6d \(\mathcal N=(1,0)\) vector, hyper and tensor multiplets, the restricted parity-even table is
+After completing standard 6d \(\mathcal N=(1,0)\) vector, hyper and tensor multiplets, the restricted parity-even table is
 
 \[
 \boxed{
@@ -105,19 +106,15 @@ and therefore
 \[
 \boxed{
 G_{VHT}^{\rm fin}
-=\frac{2n_V-n_H+2n_T}{16\pi^3L^2}
-Z_\tau(2)g_{\rm hyp}.
+=\frac{K}{16\pi^3L^2}Z_\tau(2)g_{\rm hyp},
+\qquad
+K:=2n_V-n_H+2n_T.
 }
 \]
 
 Self-dual zero modes, theta characteristics and global anomaly phases remain separate from this parity-even determinant magnitude.
 
 ## Model XXIV — threshold versus anomaly polynomial
-
-- Web: `threshold-anomaly.html`
-- Source: `threshold-anomaly.md`
-- Checker: `threshold-anomaly.py`
-- Milestone bibliography: `threshold-anomaly.bib`
 
 Using the standard free-multiplet anomaly convention, define
 
@@ -129,83 +126,126 @@ P_1=-7n_V+7n_H+23n_T,
 P_2=4n_V-4n_H-116n_T.
 \]
 
-Then
+The independent anomaly coefficient matrix has
 
 \[
-I_8^{VHT}
-=\frac{R}{24}c_2(R)^2
-+\frac{R}{48}c_2(R)p_1(T)
-+\frac{P_1}{5760}p_1(T)^2
-+\frac{P_2}{5760}p_2(T).
+\boxed{\det M_\mathcal A=720},
 \]
 
-The independent anomaly coefficient matrix is
-
-\[
-M_\mathcal A=
-\begin{pmatrix}
--1&0&1\\
--7&7&23\\
-4&-4&-116
-\end{pmatrix},
-\qquad
-\boxed{\det M_\mathcal A=720}.
-\]
-
-Thus the full three-component one-loop anomaly coefficient vector reconstructs the three multiplet counts. The finite threshold functional
-
-\[
-K=2n_V-n_H+2n_T
-\]
-
-is consequently reconstructible as
+so the full one-loop coefficient vector reconstructs the three multiplet counts and hence
 
 \[
 \boxed{
-K=-R-\frac8{45}P_1-\frac{11}{180}P_2,
+K=-R-\frac8{45}P_1-\frac{11}{180}P_2.
 }
 \]
 
-but this is coefficient-space linear algebra, not a physical identification of anomaly and kinetic response.
-
-Their natural cancellation conditions are different:
+This is coefficient-space reconstruction only. The cancellation kernels are different:
 
 \[
-(1,2,0):\quad K=0\ \text{but}\ I_8\neq0,
+(1,2,0):\ K=0\text{ but }I_8\neq0,
+\qquad
+(1,1,0):\ P_1=P_2=0\text{ but }K=1.
 \]
 
-while
+Sources: `threshold-anomaly.*`.
+
+## Model XXV — Green--Schwarz / anomaly-lattice audit
+
+- Web: `green-schwarz-lattice.html`
+- Source: `green-schwarz-lattice.md`
+- Checker: `green-schwarz-lattice.py`
+- Milestone bibliography: `green-schwarz-lattice.bib`
+
+The standard six-dimensional Green--Schwarz data contain a tensor charge lattice \(\Lambda_S\) of signature \((1,T)\), gravitational coefficient \(a\), gauge coefficients \(b_i\), and global quantization / characteristic conditions.
+
+Imposing the irreducible gravitational-anomaly relation
 
 \[
-(1,1,0):\quad P_1=P_2=0\ \text{but}\ K=1.
+H-V+29T=273
+\]
+
+on the Model-XXIII threshold gives
+
+\[
+\boxed{
+K=2V-H+2T=V+31T-273.
+}
+\]
+
+Thus at fixed \((V,T)\), the threshold is blind to refinements of
+
+\[
+a,\quad b_i,\quad
+\Lambda_S\text{ embedding},\quad
+G_{\rm global},\quad
+\text{quadratic / characteristic data}.
+\]
+
+This blindness is physical rather than merely formal. On the even unimodular lattice
+
+\[
+U=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\]
+
+both
+
+\[
+a=(2,2),\qquad a=(4,1)
+\]
+
+have \(a^2=8\) for \(T=1\), but only \((2,2)\) is characteristic. The Monnier--Moore--Park \((4,1)\) candidate has the same
+
+\[
+(V,H,T)=(0,244,1),\qquad K=-242,
+\]
+
+as a standard elliptic \(\mathbb F_0\) model, yet fails the global characteristic test.
+
+Green--Schwarz/F-theory consistency also does not fix the sign of \(K\):
+
+\[
+\boxed{
+K_{\mathbb F_0}=-242<0,
+\qquad
+K_{gdP_9,U(1)^8}=14>0.
+}
 \]
 
 Hence
 
 \[
 \boxed{
-\text{threshold cancellation}
-\not\Longleftrightarrow
-\text{anomaly cancellation}.
+\text{GS/lattice consistency}
+\not\Rightarrow
+K\ge0,\ K\le0,\ \text{or }K=0.
 }
 \]
+
+The new lattice data are nevertheless genuine quantum-consistency information; they can accept or reject theories without changing the finite gauge-blind elliptic threshold.
 
 ## Current frontier
 
-The active target is **v0.25 — Green--Schwarz factorization / anomaly-lattice response audit**.
+The active target is **v0.26 — charged elliptic / Jacobi threshold**.
 
-The next question is whether adding genuinely new anomaly data — Green--Schwarz four-forms, the tensor charge lattice and factorization coefficients — imposes any nontrivial constraint on the finite automorphic threshold beyond reconstructing microscopic field counts.
+Model XXV explains why the current threshold cannot see \(b_i\): Models XX–XXIII switched off background gauge holonomies. The next controlled extension introduces an elliptic gauge variable
 
-The key rule remains:
+\[
+z=\alpha\tau+\beta
+\]
+
+so charged KK modes see shifted lattices and the determinant becomes theta/Jacobi-like. Only then is there an explicit channel through which charge lattices, representation weights and Green--Schwarz gauge data might constrain a finite spectral response.
+
+The rule remains
 
 \[
 \boxed{
-\text{anomaly polynomial}
+\text{anomaly / lattice data}
 \neq
-\text{Green--Schwarz factorization data}
-\neq
-\text{finite kinetic threshold}.
+\text{finite response}
 }
 \]
+
+unless an explicit spectral map is constructed.
 
 Lorentzian/horizon closure remains inactive.
