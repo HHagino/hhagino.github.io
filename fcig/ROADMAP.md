@@ -1,6 +1,6 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.13 — explicit descent / anomaly-inflow realization  
+**Current target:** v0.14 — background-field functional response audit  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations are retained as explicit no-go results.
@@ -13,19 +13,15 @@ The flat and curved laboratories established exact theta/state-count models, loc
 
 ---
 
-## v0.7 — response / transgression — COMPLETE
+## v0.7–v0.8 — transgression and factorized pushforward — COMPLETE
 
-Loop transgression gives a genuine standard response
+Loop transgression is a genuine response operation,
 
 \[
 \tau_{S^1}:\widehat H^2(B;\mathbf Z)\to\widehat H^1(LB;\mathbf Z),
 \]
 
-while positive-dimensional fiber integration lowers degree.
-
----
-
-## v0.8 — factorized pushforward — COMPLETE WITH NO-GO
+while factorized degree-restoring pushforwards satisfy
 
 \[
 \boxed{
@@ -34,7 +30,7 @@ p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
 }
 \]
 
-on each connected component. Factorized degree restoration cannot generate an independent degree-two response direction.
+and therefore cannot generate a new independent degree-two response direction.
 
 ---
 
@@ -46,7 +42,7 @@ For a smooth curve family,
 \widehat\kappa_1:=\pi_!\bigl(\widehat c_1(K_{X/B})^2\bigr),
 \]
 
-and the metrized Deligne-pairing realization closes the comparison globally:
+and the metrized Deligne-pairing realization gives the global connection-level identity
 
 \[
 \boxed{
@@ -54,192 +50,191 @@ and the metrized Deligne-pairing realization closes the comparison globally:
 }
 \]
 
-Thus topology, curvature and loop holonomy satisfy the same connection-level identity.
-
 ---
 
 ## v0.11 — target-structure / nonabelian bridge audit — COMPLETE
 
-The determinant sequence
-
 \[
-1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1
-\]
-
-induces
-
-\[
+1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1,
+\qquad
 F_{\det E}=\operatorname{Tr}F_E.
 \]
 
-But fixing the determinant connection leaves an affine space over
-
-\[
-\Omega^1(M;\mathfrak{su}(E)),
-\]
-
-so determinant data cannot reconstruct a generic nonabelian connection for \(n>1\). Kähler tangent geometry identifies the determinant curvature with Ricci/trace curvature; Ricci-flat K3 geometry gives an explicit loss-of-information witness. Spin\(^c\) gives a positive extension bridge only when the frame connection is supplied independently.
+Fixing the determinant connection leaves an affine space over \(\Omega^1(M;\mathfrak{su}(E))\), so determinant data cannot reconstruct generic nonabelian frame geometry for \(n>1\). Kähler/Ricci, K3, and Spin\(^c\) tests make the loss explicit.
 
 Source: `structure-group-bridge.md`.
 
 ---
 
-## v0.12 — mixed characteristic-class / anomaly-polynomial degree audit — COMPLETE
+## v0.12 — mixed characteristic-class / anomaly-polynomial audit — COMPLETE
 
-Source and checker:
-
-- `mixed-characteristic.md`
-- `mixed-characteristic.py`
-- `mixed-characteristic.bib`
-
-### Gate AI — independent-field setup — PASS
-
-On a common base \(M\), keep
-
-\[
-\widehat a:=\widehat c_1(L,\nabla^L)
-\in\widehat H^2(M;\mathbf Z)
-\]
-
-and an independent frame connection with
-
-\[
-\widehat p_1(TM,\nabla^{\mathrm{fr}})
-\in\widehat H^4(M;\mathbf Z).
-\]
-
-No structure-group identification is used.
-
-### Gate AJ — mixed characteristic class — PASS
-
-Differential-cohomology multiplication gives
+With independent line and frame connections,
 
 \[
 \boxed{
-\widehat a\cup\widehat p_1(TM)
-\in\widehat H^6(M;\mathbf Z).
+\widehat c_1(L)\cup\widehat p_1(TM)
+\in\widehat H^6(M;\mathbf Z)
 }
 \]
 
-This is a genuine mixed invariant of the independent line and frame sectors.
-
-### Gate AK — index/anomaly polynomial — PASS
-
-Standard index theory gives
-
-\[
-\widehat A(TM)=1-\frac{p_1}{24}+\cdots,
-\qquad
-\operatorname{ch}(L)=e^{c_1},
-\]
-
-hence
+is a standard mixed invariant. The line-twisted Dirac index gives
 
 \[
 \boxed{
+I_6
+=
 \left[\widehat A(TM)\operatorname{ch}(L)\right]_{(6)}
 =
-\frac16c_1^3
--
-\frac1{24}c_1p_1.
+\frac16c_1^3-rac1{24}c_1p_1.
 }
 \]
 
-Classic gauge/gravitational anomaly theory identifies the corresponding degree-six gauge and mixed gauge--gravitational structures as anomaly-polynomial data, with physical signs and \(2\pi\) conventions handled separately.
+The class has degree six, so it is not itself a local four-form action density in four dimensions. The generic semisimple orthogonal frame sector also has no first-Chern-type real degree-two Chern--Weil polynomial; \(SO(2)\cong U(1)\) is the explicit abelian exception.
 
-References: Alvarez-Gaumé--Witten; Zumino--Wu--Zee; Bardeen--Zumino; Alvarez-Gaumé--Ginsparg; Freed; Lawson--Michelsohn.
-
-### Gate AL — four-dimensional dimensional audit — PASS WITH NO-GO
-
-\[
-\boxed{
-\deg(c_1p_1)=6>4.
-}
-\]
-
-A degree-six anomaly polynomial is not itself a local four-form action density on a four-manifold. Its four-dimensional role requires descent/transgression, anomaly inflow, a boundary/extension geometry, or another explicitly specified construction.
-
-### Gate AM — gravitational degree-two audit — PASS WITH QUALIFIED NO-GO
-
-For generic semisimple higher-rank orthogonal frame algebras there is no nonzero invariant linear Chern--Weil polynomial analogous to \(c_1\). The first Pontryagin class occurs in degree four. The abelian exception
-
-\[
-SO(2)\cong U(1)
-\]
-
-has a degree-two Euler/first-Chern class and is recorded explicitly.
-
-### v0.12 conclusion
-
-\[
-\boxed{
-\text{independent }U(1)\text{ connection}
-+
-\text{independent frame connection}
-\longrightarrow
-\text{mixed degree-six characteristic/anomaly class}
-}
-\]
-
-is mathematically legitimate. It couples the two sectors at the invariant level without reconstructing one from the other.
-
-But
-
-\[
-\boxed{
-\text{anomaly polynomial}\neq\text{gravitational field equation}.
-}
-\]
+Source: `mixed-characteristic.md`.
 
 ---
 
-## v0.13 — explicit descent / anomaly-inflow realization — ACTIVE
+## v0.13 — explicit descent / anomaly inflow — COMPLETE
 
-The next task is to make the degree-six class act on four-dimensional boundary data through a specified higher-dimensional geometry.
+Sources:
 
-### Gate AN — five-dimensional secondary form
+- `descent-inflow.md`
+- `descent-inflow.py`
+- `descent-inflow.bib`
 
-For an abelian normalized curvature \(c=dA\) and closed \(p_1\), construct a local secondary form for
+### Gate AN — local five-dimensional secondary form — PASS
 
-\[
-I_6=\frac16c^3-\frac1{24}cp_1.
-\]
-
-Locally one expects
+On a local trivialization with normalized \(da=c\),
 
 \[
+\boxed{
 I_5^{(0)}
-=A\wedge\left(\frac16c^2-\frac1{24}p_1\right),
+=
+a\wedge\left(\frac16c^2-\frac1{24}p_1\right),
 \qquad
-dI_5^{(0)}=I_6,
+dI_5^{(0)}=I_6.
+}
 \]
 
-with the normalization and global differential-cohomology meaning audited from anomaly-descent literature.
+### Gate AO — boundary gauge descent — PASS
 
-### Gate AO — boundary variation
-
-Under the abelian transformation \(A\mapsto A+d\alpha\), audit
+Under \(a\mapsto a+d\alpha\),
 
 \[
-\delta I_5^{(0)}
-=d\left[\alpha\left(\frac16c^2-\frac1{24}p_1\right)\right].
+\boxed{
+\delta_\alpha I_5^{(0)}
+=
+d\left[
+\alpha\left(\frac16c^2-\frac1{24}p_1\right)
+\right].
+}
 \]
 
-This supplies a four-dimensional boundary anomaly form, not an Einstein equation.
+Thus the five-dimensional bulk variation reduces to a four-dimensional boundary anomaly form.
 
-### Gate AP — global refinement
+### Gate AP — global refinement / quantization — PASS WITH QUALIFICATION
 
-Replace the local potential-dependent Chern--Simons expression by the appropriate global differential character / anomaly-inflow datum when the line bundle is topologically nontrivial.
+The integral product
 
-### Gate AQ — response-type audit
+\[
+\widehat c_1\cup\widehat p_1
+\]
 
-Separate:
+is an ordinary degree-six differential character. By contrast,
 
-1. gauge variation/anomaly response;
-2. stress-energy response to metric variation;
-3. horizon/thermodynamic response.
+\[
+\frac16c_1^3-rac1{24}c_1p_1
+\]
 
-No equality among them is assumed.
+has rational coefficients and must not be declared an arbitrary integral differential character term-by-term.
+
+For a closed spin six-manifold with line twist,
+
+\[
+\boxed{
+\int_Z[\widehat A(TZ)\operatorname{ch}(L)]_{(6)}
+=
+\operatorname{Index}(D_L)
+\in\mathbf Z.
+}
+\]
+
+Therefore the global fermionic anomaly/inflow phase is correctly quantized by the Dirac index / Dai--Freed anomaly theory. Local Chern--Simons potentials are only secondary representatives.
+
+### Gate AQ — response-type audit — PASS WITH NO-GO
+
+\[
+\boxed{
+\text{anomaly descent}
+\neq
+\text{stress-energy response}
+\neq
+\text{horizon thermodynamics}.
+}
+\]
+
+The anomaly polynomial controls symmetry/anomaly response. It does not reconstruct the full metric dependence of an effective action or supply a Clausius/horizon law.
+
+References: Zumino--Wu--Zee; Bardeen--Zumino; Alvarez-Gaumé--Ginsparg; Cheeger--Simons; Bär--Becker; Dai--Freed; Freed.
+
+### v0.13 conclusion
+
+\[
+\boxed{
+\text{index polynomial}
+\to
+\text{5D secondary/inflow data}
+\to
+\text{4D symmetry anomaly}
+}
+\]
+
+is now explicit and globally audited. No Einstein equation follows from it.
+
+---
+
+## v0.14 — background-field functional response audit — ACTIVE
+
+The next bottleneck is dynamical rather than topological.
+
+Let \(\mathcal B\) denote a space of background gauge and metric/frame fields. The anomaly/determinant line over \(\mathcal B\) carries connection curvature and holonomy, but a physical effective action \(W[A,g]\) contains additional functional information.
+
+### Gate AR — background-space geometry
+
+Specify the background space \(\mathcal B\), the determinant/anomaly line over it, and the meaning of tangent directions corresponding to \(\delta A\) and \(\delta g\).
+
+### Gate AS — current response
+
+Audit the distinction between anomaly-line connection data and the functional derivative
+
+\[
+J^\mu
+\sim
+\frac{\delta W}{\delta A_\mu}.
+\]
+
+An anomaly determines a failure of symmetry/conservation, not the full current functional.
+
+### Gate AT — stress-energy response
+
+Audit
+
+\[
+T_{\mu\nu}
+\sim
+\frac{\delta W}{\delta g^{\mu\nu}}
+\]
+
+and determine which parts of the determinant/Quillen data constrain metric variation. Do not infer \(T_{\mu\nu}\) from the anomaly polynomial alone.
+
+### Gate AU — trace / diffeomorphism anomaly distinction
+
+Separate gauge anomalies, diffeomorphism anomalies, and trace/Weyl anomalies. Their Ward identities and dimensions differ.
+
+### Gate AV — pre-thermodynamic no-go
+
+Record explicitly what extra constitutive/effective-action information is still missing before any Jacobson-style local horizon argument can be tested.
 
 ---
 
@@ -247,10 +242,10 @@ No equality among them is assumed.
 
 A future gravitational closure still requires:
 
-1. an actual physical spacetime/base object;
-2. a map/correspondence from FCIG parameter geometry;
-3. an independently specified frame/tangent connection;
-4. Lorentzian causal structure;
-5. a horizon/thermodynamic entropy functional;
-6. a controlled dynamical principle or variational law;
-7. a known gravitational limit and falsification route.
+1. an actual Lorentzian spacetime/base object;
+2. an independently specified frame/tangent connection;
+3. a controlled effective or constitutive dynamical principle;
+4. causal horizons and temperature;
+5. a justified entropy functional;
+6. a known gravitational limit;
+7. a falsification route.
