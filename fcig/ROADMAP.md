@@ -1,9 +1,154 @@
 # FCIG Research Roadmap
 
 **Current target:** v0.27 — full charged multiplet / quartic holonomy response  
-**Updated:** 2026-09-09
+**Updated:** 2026-09-10
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations remain explicit no-go results.
+
+---
+
+## Parallel mathematical track — Fisher–Bergman–Quillen Information Closure — ACTIVE RESEARCH NOTE
+
+Sources:
+
+- `fisher-bergman-quillen.md`
+- `fisher-bergman-quillen.html`
+- `fisher-bergman-quillen.bib`
+
+This track does **not** replace the v0.27 charged/Jacobi program. It isolates a mathematical question that was previously implicit in the phrase “information geometry”: how the Fisher response of the Bergman determinantal process is related to direct-image and Quillen determinant geometry.
+
+### Gate FI-A — event/probability typing — PASS WITH CORRECTION
+
+The event sigma-algebra can be regarded as a Boolean ring and hence by Stone duality through its spectrum. The null events form an ideal, so almost-everywhere identification is the quotient by the null ideal.
+
+Because every Boolean ring is reduced,
+
+\[
+\boxed{\text{null ideal}\neq\text{nilradical}.}
+\]
+
+The project term “measured Stone scheme” means the Stone spectrum plus an additional probability valuation; sigma-additivity is not claimed to follow from ordinary scheme structure alone.
+
+### Gate FI-B — exact fixed-complex score — DERIVED HERE
+
+For the Bergman DPP associated with \(H^0(X,L^k)\), varying the Hermitian/Kähler potential by \(\psi\) gives
+
+\[
+\boxed{
+D_\psi\log q_{k,\phi}
+=
+\sum_a(\Delta_\phi-k)\psi(x_a).
+}
+\]
+
+The normalized score is the centered linear statistic of
+
+\[
+A_{k,\phi}\psi=(\Delta_\phi-k)\psi.
+\]
+
+### Gate FI-C — exact Fisher–Bergman energy — DERIVED HERE
+
+Using the standard covariance identity for projection DPPs,
+
+\[
+\boxed{
+\begin{aligned}
+\mathcal I_{k,\phi}(\psi,\eta)
+&=\frac12\iint
+\bigl(A_k\psi(x)-A_k\psi(y)\bigr)
+\bigl(A_k\eta(x)-A_k\eta(y)\bigr)
+\\
+&\qquad\qquad\times |K_k(x,y)|^2dV_xdV_y.
+\end{aligned}
+}
+\]
+
+This is the current exact Fisher–Bergman side of the triangle.
+
+### Gate FI-D — moving-Kähler Hessian defect — DERIVED HERE
+
+The naive exponential-family identity \(\mathcal I_k=\operatorname{Hess}\log Z_k\) fails because \(\Delta_\phi\) moves with \(\phi\). The exact correction is
+
+\[
+\boxed{
+\mathcal I_k
+=
+\operatorname{Hess}\log Z_k
++
+\mathfrak D_k^{\rm met},
+}
+\]
+
+with
+
+\[
+\boxed{
+\mathfrak D_k^{\rm met}(\psi,\eta)
+=
+\int_X\rho_k
+\langle i\partial\bar\partial\psi,
+i\partial\bar\partial\eta\rangle dV.
+}
+\]
+
+This explicit defect replaces the earlier over-strong expectation of exact Hessian closure.
+
+### Gate FI-E — Quillen bookkeeping — PASS AS A TYPED IDENTITY
+
+Using the Quillen convention already fixed in `quillen-refinement.md`,
+
+\[
+h_Q=e^{\mathcal T_k}h_{L^2},
+\qquad
+h_{L^2}(\Sigma,\Sigma)=Z_k,
+\]
+
+so on the real Kähler-potential space
+
+\[
+\boxed{
+\mathcal I_k
+=
+\operatorname{Hess}\log h_Q
+-
+\operatorname{Hess}\mathcal T_k
++
+\mathfrak D_k^{\rm met}.
+}
+\]
+
+This is a functional-Hessian identity, not yet a Chern-form equality on a complex base. Dualization and curvature signs must remain explicit.
+
+### Gate FI-F — moving complex structure / Kodaira--Spencer channel — OPEN
+
+Berndtsson direct-image curvature and the Wan--Zhang high-power expansion already contain the geodesic-curvature and Kodaira--Spencer sectors on the determinant side. The missing statistical statement is to define a canonical fiber-to-fiber transport of the Bergman DPP and derive its complex-structure score.
+
+**Information Closure Conjecture:** after conventions and horizontal transport are fixed, the fibered Fisher response decomposes schematically as
+
+\[
+\boxed{
+\mathcal I_k
+=
+\mathcal R_k^Q
++
+\mathfrak D_k^{\rm met}
++
+\mathfrak D_k^{KS}
++
+\mathfrak D_k^{\rm tors}.
+}
+\]
+
+No exact formula for \(\mathfrak D_k^{KS}\) is claimed yet.
+
+### Gate FI-G — genus \(g\ge2\) Weil--Petersson test — OPEN
+
+The first falsifiable moving-family laboratory is a compact hyperbolic curve family. Determine, without fitting constants, whether the leading normalized Fisher form of the Bergman DPP in complex-structure directions is proportional to the Weil--Petersson form.
+
+**Pass condition:** define the statistical transport, derive the Kodaira--Spencer score, determine the leading coefficient, and reconcile it with the already established Quillen/Weil--Petersson formulas.
+
+**Scope rule:** this track remains Euclidean/Kähler. It does not activate the Lorentzian Gravity Closure gate.
 
 ---
 
