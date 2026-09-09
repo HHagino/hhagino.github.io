@@ -12,7 +12,7 @@ The repository distinguishes **Established**, **Derived here**, **FCIG interpret
 
 ## Status
 
-Completed milestones: **v0.2–v0.23**.
+Completed milestones: **v0.2–v0.24**.
 
 The controlled chain is
 
@@ -26,7 +26,8 @@ The controlled chain is
 \to\text{operator / heat-kernel bridge}
 \to\text{intrinsic elliptic spectrum}
 \to\text{adiabatic KK response}
-\to\text{spin/multiplet automorphic thresholds}.
+\to\text{spin/multiplet thresholds}
+\to\text{threshold/anomaly coefficient-space audit}.
 }
 \]
 
@@ -34,7 +35,7 @@ No derivation of Einstein dynamics or horizon thermodynamics from FCIG alone is 
 
 ## Models I–X — determinant / cohomological foundation
 
-The elliptic, ppav and curved-curve laboratories establish exact theta-state counting, Bergman local/global sectors, determinant/Quillen geometry, differential characters, transgression, pushforward no-gos and the metrized Deligne--Riemann--Roch identity
+The elliptic, ppav and curved-curve laboratories establish theta-state counting, Bergman local/global sectors, determinant/Quillen geometry, differential characters, transgression, pushforward no-gos and the metrized Deligne--Riemann--Roch identity
 
 \[
 \boxed{\widehat\kappa_1=12\widehat\lambda_Q}
@@ -42,42 +43,22 @@ The elliptic, ppav and curved-curve laboratories establish exact theta-state cou
 
 in the canonical smooth curve-family model.
 
-## Models XI–XV — structure-group, anomaly and response audits
+## Models XI–XVIII — structure-group, anomaly and operator audits
 
 The determinant line retains only the trace/Ricci sector of a generic \(U(n)\) connection,
 
 \[
 1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1,
-\qquad
-F_{\det E}=\operatorname{Tr}F_E.
+\qquad F_{\det E}=\operatorname{Tr}F_E,
 \]
 
-Independent line and frame connections can enter the same index/anomaly polynomial,
-
-\[
-[\widehat A(TM)\operatorname{ch}(L)]_{(6)}
-=\frac16c_1^3-\frac1{24}c_1p_1,
-\]
-
-but anomaly data alone do not fix the effective action or its first response:
+and anomaly data alone do not fix the effective action or first response:
 
 \[
 \boxed{\text{same anomaly class}\not\Rightarrow\text{same }W,J,T_{\mu\nu}.}
 \]
 
-A gravitational equation appears only after an independent renormalized variational principle is supplied.
-
-## Models XVI–XVIII — operator / realization bridge
-
-A supplied realization map \(\Phi:M\to\mathcal B_{\rm FCIG}\) puts pulled-back FCIG line curvature into an ordinary Laplace-type operator. Arbitrary heavy scalar masses induce
-
-\[
-G^{\rm ind}_{AB}
-=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}
-=\frac1{48\pi^2}s^*\delta_{\mathbb R^N},
-\]
-
-so freely chosen masses turn target-metric matching into inverse design rather than prediction.
+A realization map can put FCIG curvature into an ordinary Laplace-type operator, but arbitrary heavy masses turn target-metric matching into inverse design rather than prediction.
 
 ## Model XIX — intrinsic spectral--Hodge identity
 
@@ -92,92 +73,22 @@ For the area-one elliptic torus,
 and
 
 \[
-\boxed{
--\partial\bar\partial\log\det{}'\Delta_\tau
-=F_{\lambda_H}
-=\frac1{4Y^2}d\tau\wedge d\bar\tau.
-}
+\boxed{-\partial\bar\partial\log\det{}'\Delta_\tau=F_{\lambda_H}.}
 \]
 
 This is the first no-fit spectral regeneration of the pre-existing elliptic Hodge curvature.
 
-Sources: `intrinsic-spectral.md`, `intrinsic-spectral.py`, `intrinsic-spectral.bib`.
+## Models XX–XXIII — adiabatic and multiplet thresholds
 
-## Model XX — adiabatic elliptic / KK response
-
-For the fixed-volume local torus family,
+For one real scalar, the finite two-derivative threshold is trace-free,
 
 \[
-M_{m,n}^2=\frac{4\pi^2}{L^2Y}|m\tau-n|^2,
-\qquad
-R_6=R_4-\frac1{2Y^2}\partial_\mu\tau\partial^\mu\bar\tau.
-\]
-
-The local Poincare-shaped kinetic normalization is UV/counterterm sensitive. Epstein analytic continuation gives the finite one-real-scalar threshold
-
-\[
-\boxed{
 G^{\rm fin}_{\rm scalar}
 =-\frac1{16\pi^3L^2}
-\operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2],
-\qquad
-\operatorname{tr}_{g_{\rm hyp}}G^{\rm fin}_{\rm scalar}=0.
-}
+\operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2].
 \]
 
-Sources: `adiabatic-elliptic.md`, `adiabatic-elliptic.py`, `adiabatic-elliptic.bib`.
-
-## Models XXI–XXII — field-content and spin thresholds
-
-The local six-dimensional \(R_6\) response, normalized to one real scalar, is
-
-\[
-\boxed{\text{real scalar : complex Dirac : Maxwell+ghost}=1:4:-2.}
-\]
-
-True spin fields carry Lorentz connections and curvature endomorphisms. Model XXII derives
-
-\[
-\Delta G_{\rm tr}^{(R)}
-=\frac{(-1)^F(2C_R-e_R)}{16\pi^3L^2}
-Z_\tau(2)g_{\rm hyp}.
-\]
-
-For a specified 6d \(\mathcal N=(1,0)\) vector multiplet, local and weight-four terms cancel while a positive finite trace term survives:
-
-\[
-\boxed{
-G_{\rm vector}^{\rm fin}
-=\frac{Z_\tau(2)}{8\pi^3L^2}g_{\rm hyp}.
-}
-\]
-
-Sources: `field-content-supertrace.*`, `spin-threshold.*`.
-
-## Model XXIII — hyper/tensor multiplet completion
-
-- Web: `hyper-tensor-threshold.html`
-- Source: `hyper-tensor-threshold.md`
-- Checker: `hyper-tensor-threshold.py`
-- Milestone bibliography: `hyper-tensor-threshold.bib`
-
-For the parity-even nonzero-tower sector, a non-chiral real two-form has
-
-\[
-(C_{\rm local},A_{\mathcal G_4},B_{Z_2})_{B,\rm nonch}
-=\left(-6,-\frac38,\frac38\right).
-\]
-
-Using the standard holomorphic-factorization / determinant-norm prescription for the self-dual field magnitude gives
-
-\[
-(C_{\rm local},A,B)_{B^+}
-=\left(-3,-\frac3{16},\frac3{16}\right),
-\]
-
-with theta characteristics, zero modes and chiral/global phases kept separate.
-
-The completed 6d \(\mathcal N=(1,0)\) multiplet table is
+True spin fields generate an additional finite Poincare-trace sector. After completing standard 6d \(\mathcal N=(1,0)\) vector, hyper and tensor multiplets, the restricted parity-even table is
 
 \[
 \boxed{
@@ -189,19 +100,7 @@ The completed 6d \(\mathcal N=(1,0)\) multiplet table is
 \end{array}}
 \]
 
-so
-
-\[
-\boxed{
-G_{\rm vector}^{\rm fin}=G_{\rm tensor}^{\rm fin}
-=\frac{Z_\tau(2)}{8\pi^3L^2}g_{\rm hyp},
-\qquad
-G_{\rm hyper}^{\rm fin}
-=-\frac{Z_\tau(2)}{16\pi^3L^2}g_{\rm hyp}.
-}
-\]
-
-All three multiplets cancel the finite weight-four trace-free tensor in this restricted background. For independently fixed multiplicities,
+and therefore
 
 \[
 \boxed{
@@ -211,20 +110,102 @@ Z_\tau(2)g_{\rm hyp}.
 }
 \]
 
-This coefficient is a kinetic threshold, not an anomaly coefficient. Multiplicities may not be chosen merely to engineer a desired sign or cancellation.
+Self-dual zero modes, theta characteristics and global anomaly phases remain separate from this parity-even determinant magnitude.
+
+## Model XXIV — threshold versus anomaly polynomial
+
+- Web: `threshold-anomaly.html`
+- Source: `threshold-anomaly.md`
+- Checker: `threshold-anomaly.py`
+- Milestone bibliography: `threshold-anomaly.bib`
+
+Using the standard free-multiplet anomaly convention, define
+
+\[
+R=-n_V+n_T,
+\quad
+P_1=-7n_V+7n_H+23n_T,
+\quad
+P_2=4n_V-4n_H-116n_T.
+\]
+
+Then
+
+\[
+I_8^{VHT}
+=\frac{R}{24}c_2(R)^2
++\frac{R}{48}c_2(R)p_1(T)
++\frac{P_1}{5760}p_1(T)^2
++\frac{P_2}{5760}p_2(T).
+\]
+
+The independent anomaly coefficient matrix is
+
+\[
+M_\mathcal A=
+\begin{pmatrix}
+-1&0&1\\
+-7&7&23\\
+4&-4&-116
+\end{pmatrix},
+\qquad
+\boxed{\det M_\mathcal A=720}.
+\]
+
+Thus the full three-component one-loop anomaly coefficient vector reconstructs the three multiplet counts. The finite threshold functional
+
+\[
+K=2n_V-n_H+2n_T
+\]
+
+is consequently reconstructible as
+
+\[
+\boxed{
+K=-R-\frac8{45}P_1-\frac{11}{180}P_2,
+}
+\]
+
+but this is coefficient-space linear algebra, not a physical identification of anomaly and kinetic response.
+
+Their natural cancellation conditions are different:
+
+\[
+(1,2,0):\quad K=0\ \text{but}\ I_8\neq0,
+\]
+
+while
+
+\[
+(1,1,0):\quad P_1=P_2=0\ \text{but}\ K=1.
+\]
+
+Hence
+
+\[
+\boxed{
+\text{threshold cancellation}
+\not\Longleftrightarrow
+\text{anomaly cancellation}.
+}
+\]
 
 ## Current frontier
 
-The next controlled question is to compare the completed vector/hyper/tensor threshold table with **independently specified 6d multiplet combinations and their anomaly polynomials**, while retaining the strict distinction
+The active target is **v0.25 — Green--Schwarz factorization / anomaly-lattice response audit**.
+
+The next question is whether adding genuinely new anomaly data — Green--Schwarz four-forms, the tensor charge lattice and factorization coefficients — imposes any nontrivial constraint on the finite automorphic threshold beyond reconstructing microscopic field counts.
+
+The key rule remains:
 
 \[
 \boxed{
 \text{anomaly polynomial}
 \neq
-\text{local counterterm}
+\text{Green--Schwarz factorization data}
 \neq
-\text{finite automorphic kinetic threshold}.
+\text{finite kinetic threshold}.
 }
 \]
 
-Self-dual global phases, nontrivial torus bundles, background gauge fields and the cusp/EFT breakdown remain separate extensions. Lorentzian/horizon closure remains inactive.
+Lorentzian/horizon closure remains inactive.
