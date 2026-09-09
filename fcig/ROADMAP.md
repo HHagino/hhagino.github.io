@@ -1,202 +1,197 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.17 — realization-map / sigma-model dynamics audit  
+**Current target:** v0.18 — induced realization-map dynamics from determinants  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations are retained as explicit no-go results.
 
 ---
 
-## v0.3–v0.15 — geometry through conditional semiclassical closure — COMPLETE
+## v0.3–v0.16 — geometry through explicit operator realization — COMPLETE
 
-Earlier milestones establish the geometric/determinant foundation, differential-cohomology local/global anomaly structure, transgression and pushforward no-gos, Deligne--RR closure, nonabelian reconstruction no-go, mixed anomaly polynomial and descent, the anomaly-to-first-response no-go, and the requirement that any gravitational dynamics enter through an explicit additional variational/constitutive principle.
+Earlier milestones establish the determinant/differential-cohomology foundation, local/global anomaly hierarchy, pushforward and reconstruction no-gos, mixed anomaly descent, functional-response ambiguity, conditional semiclassical closure, and the explicit operator bridge
 
-The clean semiclassical insertion point is a derived physical functional \(W_{\rm FCIG}^{\rm ren}[g,\ldots]\), not the anomaly class by itself.
+\[
+(\mathscr L_{\rm FCIG},\nabla^{\rm FCIG})+\Phi
+\to P_\Phi
+\to\operatorname{Tr}e^{-tP_\Phi}
+\to W_{1\text{-loop}}^{\rm ren}[g,\Phi].
+\]
+
+At heat-kernel order \(b_4\), pulled-back FCIG line curvature enters as an ordinary bundle-curvature invariant, without being identified with Riemann curvature.
 
 ---
 
-## v0.16 — explicit operator / heat-kernel effective-action bridge — COMPLETE WITH CONDITIONAL REALIZATION
+## v0.17 — realization-map / sigma-model dynamics audit — COMPLETE WITH CONSTITUTIVE NO-GO
 
 Sources:
 
-- `heat-kernel-bridge.md`
-- `heat-kernel-bridge.py`
-- `heat-kernel-bridge.bib`
+- `realization-sigma.md`
+- `realization-sigma.py`
+- `realization-sigma.bib`
 
-### Gate BC — explicit operator/background map — PASS WITH ADDITIONAL DATA
+### Gate BI — target metric provenance — PASS
 
-Let \(M\) be a compact four-dimensional Euclidean background and supply
-
-\[
-\boxed{\Phi:M\to\mathcal B_{\rm FCIG}}.
-\]
-
-For an FCIG line with connection,
+Use the actual elliptic FCIG target
 
 \[
-L_M=\Phi^*\mathscr L_{\rm FCIG},
+\mathbb H=\{u+iY\mid Y>0\},
 \qquad
-\Omega=F_{L_M}=\Phi^*F_{\rm FCIG}.
+ ds^2=\frac{du^2+dY^2}{Y^2}.
 \]
 
-The realization map \(\Phi\) is additional data and is not derived by the current FCIG construction.
+This Poincare/Hodge geometry already belongs to Models I--II; no new target metric is invented.
 
-Use the Laplace-type operator
+### Gate BJ — harmonic-map dynamics — PASS
+
+Promote \(\Phi=(u,Y):M\to\mathbb H\) with
 
 \[
-P=-\left(g^{\mu\nu}\nabla_\mu\nabla_\nu+E\right)
+S_\Phi=\frac{Z_\Phi}{2}\int_M\sqrt g\,
+\frac{(\partial u)^2+(\partial Y)^2}{Y^2}.
 \]
 
-on the pulled-back bundle.
-
-### Gate BD — heat-kernel coefficient audit — PASS
-
-In the fixed convention,
+The field equations are
 
 \[
-\operatorname{Tr}(e^{-tP})
-\sim(4\pi t)^{-2}\int_M\sqrt g\,\operatorname{tr}(b_0+t b_2+t^2b_4+\cdots),
-\]
-
-with
-
-\[
-b_0=I,
+\boxed{
+\Box u-\frac2Y\partial u\cdot\partial Y=0,
 \qquad
-b_2=E+\frac16R,
-\]
-
-and
-
-\[
-\begin{aligned}
-b_4=\frac1{360}\Big(&60\nabla^2E+60RE+180E^2+12\nabla^2R\\
-&+5R^2-2R_{\mu\nu}R^{\mu\nu}+2R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
-+30\Omega_{\mu\nu}\Omega^{\mu\nu}\Big).
-\end{aligned}
-\]
-
-These are standard Vassilevich/Gilkey heat-kernel coefficients.
-
-### Gate BE — determinant / proper-time bridge — PASS
-
-For a Gaussian one-loop determinant,
-
-\[
-W_{1\text{-loop}}=-\sigma\int_0^\infty\frac{dt}{t}\,\operatorname{Tr}(e^{-tP}).
-\]
-
-In four dimensions the UV local divergences are controlled by \(b_0,b_2,b_4\): quartic/volume, quadratic/Einstein--Hilbert-type, and logarithmic/curvature-squared sectors respectively.
-
-### Gate BF — gravitational interpretation — PASS WITH RENORMALIZATION QUALIFICATION
-
-The local UV hierarchy is
-
-\[
-\boxed{
-b_0\to\text{volume/cosmological},\quad
-b_2\to\text{Einstein--Hilbert},\quad
-b_4\to\text{curvature-squared / bundle-curvature}.}
-\]
-
-Their divergent coefficients renormalize gravitational/matter couplings and are not parameter-free predictions.
-
-### Gate BG — FCIG-specific comparison — PASS WITH NON-IDENTIFICATION
-
-Since
-
-\[
-\Omega=\Phi^*F_{\rm FCIG},
-\]
-
-the local coefficient contains
-
-\[
-\boxed{
-b_4^{\rm FCIG}\supset\frac1{12}(\Phi^*F_{\rm FCIG})_{\mu\nu}(\Phi^*F_{\rm FCIG})^{\mu\nu}.}
-\]
-
-This is a genuine operator/effective-action insertion of FCIG line curvature, but it does not identify FCIG curvature with frame/Riemann curvature.
-
-Bergman and heat-kernel coefficient hierarchies remain distinct unless a further operator/functorial identification is supplied.
-
-### Gate BH — metric variation / Wald test — PASS
-
-After renormalization, local effective-action terms have ordinary metric variations and contribute to stress energy. Local curvature-dependent gravitational terms also possess the corresponding Wald/Iyer--Wald stationary-horizon entropy corrections.
-
-A pure pulled-back \(\Omega^2\) term, when \(\Omega\) is independent of Riemann curvature, contributes to stress/backreaction but not directly to the Wald curvature derivative.
-
-### Local/global check — PASS
-
-If \(F_{\rm FCIG}=0\) but the line has nontrivial flat holonomy, then all local \(\Omega\)-polynomial heat coefficients vanish while the global determinant/spectrum may still retain holonomy dependence. The earlier FCIG local/global decomposition therefore survives the explicit physical-operator realization.
-
-### v0.16 conclusion
-
-\[
-\boxed{
-(\mathscr L_{\rm FCIG},\nabla^{\rm FCIG})+\Phi
-\to P_\Phi
-\to \operatorname{Tr}e^{-tP_\Phi}
-\to W_{1\text{-loop}}^{\rm ren}[g,\Phi]
+\Box Y+\frac{(\partial u)^2-(\partial Y)^2}{Y}=0.
 }
 \]
 
-is now an explicit conditional operator bridge.
+They are the standard harmonic-map/tension equations for the upper-half-plane metric.
 
-References: Vassilevich (2003); Gilkey (1995); Birrell--Davies (1982); Wald (1993); Iyer--Wald (1994).
+### Gate BK — stress tensor — PASS
+
+\[
+\boxed{
+T^{(\Phi)}_{\mu\nu}
+=\frac{Z_\Phi}{Y^2}
+\left[
+\partial_\mu u\partial_\nu u+
+\partial_\mu Y\partial_\nu Y-
+\frac12g_{\mu\nu}((\partial u)^2+(\partial Y)^2)
+\right].
+}
+\]
+
+This is an ordinary matter/realization-field stress tensor, not anomaly-line curvature and not frame curvature.
+
+### Gate BL — pulled-back Hodge-line coupling — PASS
+
+Using the existing elliptic normalization,
+
+\[
+\mathfrak f_H=\frac{i}{2\pi}F_{\lambda_H}
+=\frac1{4\pi}\frac{du\wedge dY}{Y^2},
+\]
+
+so
+
+\[
+\boxed{
+(\Phi^*\mathfrak f_H)_{\mu\nu}
+=\frac{1}{4\pi Y^2}
+(\partial_\mu u\partial_\nu Y-
+\partial_\nu u\partial_\mu Y).
+}
+\]
+
+The corresponding unitary curvature enters the Model-XVI \(b_4\) bundle-curvature term.
+
+### Gate BM — constitutive-input audit — PASS WITH NO-GO
+
+The pulled-back curvature is bilinear in first derivatives of \(\Phi\); its square is quartic. The sigma kinetic action is quadratic. Therefore
+
+\[
+\boxed{
+\Omega^2\text{ heat-kernel term}
+\not\Rightarrow
+Z_\Phi\text{ or the two-derivative sigma kinetic term}.
+}
+\]
+
+The normalization \(Z_\Phi\) remains external unless a further microscopic/determinant calculation generates it.
+
+### Gate BN — modular quotient/global audit — PASS WITH STACK/ORBIFOLD REQUIREMENT
+
+The Poincare metric and area form descend under the modular group, so the local sigma density is well-defined on the modular quotient. Hodge/theta lines can nevertheless retain modular/metaplectic holonomy; global nontrivial sectors require orbifold/stack patching rather than a single global \(\tau\) coordinate.
+
+### Gate BO — explicit witness/falsification — PASS
+
+1. **Vertical geodesic:** \(u=u_0,\ Y=e^\varphi\) gives \(\Box\varphi=0\) and nontrivial sigma stress but \(\Phi^*F_H=0\).
+2. **Hyperbolic identity map:** on a hyperbolic two-dimensional factor, the identity map is harmonic and has nonzero pulled-back area/Hodge curvature.
+
+Hence realization-map dynamics and line-curvature coupling are independent structures. Any proposal equating the sigma stress tensor with Hodge curvature is explicitly falsified.
+
+### v0.17 conclusion
+
+\[
+\boxed{
+\text{FCIG target metric}\to S_\Phi\to T^{(\Phi)}_{\mu\nu},
+\qquad
+\text{FCIG Hodge connection}\to\Phi^*F_H\to W_{1\text{-loop}}
+}
+\]
+
+is now a fully typed coupled construction.
+
+References: Eells--Sampson (1964); Mumford (1983); Birkenhake--Lange (2004); Vassilevich (2003).
 
 ---
 
-## v0.17 — realization-map / sigma-model dynamics audit — ACTIVE
+## v0.18 — induced realization-map dynamics from determinants — ACTIVE
 
-The remaining new object is
+The next target is to determine whether \(Z_\Phi\) itself can be induced rather than postulated.
 
-\[
-\Phi:M\to\mathcal B_{\rm FCIG}.
-\]
-
-The next milestone tests whether \(\Phi\) can be promoted from an arbitrary realization map to a controlled dynamical field using geometry genuinely present on the FCIG target.
-
-### Gate BI — target metric provenance
-
-Identify an actual positive/nondegenerate target metric \(G_{AB}\) on the relevant \(\mathcal B_{\rm FCIG}\) — e.g. a Fisher/Hessian/Kähler or moduli metric already established in a specific model. Do not invent a metric solely to write a sigma model.
-
-### Gate BJ — sigma-model action and harmonic-map equation
-
-Audit the candidate
+Take an explicit slowly varying operator family
 
 \[
-S_\Phi=\frac{Z_\Phi}{2}\int_M\sqrt g\,G_{AB}(\Phi)\,\partial_\mu\Phi^A\partial^\mu\Phi^B
+P(\Phi)
 \]
 
-and derive its Euler--Lagrange/tension-field equation using the Levi--Civita connection of \(G\).
-
-### Gate BK — stress tensor
-
-Compute the ordinary spacetime stress tensor of \(\Phi\) and distinguish it from the FCIG anomaly-line curvature.
-
-### Gate BL — coupling to the pulled-back line
-
-Determine how \(\Phi\) simultaneously controls
+and study
 
 \[
-\Omega=\Phi^*F_{\rm FCIG}
+W[\Phi]=\frac12\log\det P(\Phi).
 \]
 
-inside the v0.16 heat-kernel operator and whether the sigma-model equation couples consistently to that determinant sector.
+### Gate BP — explicit parameter-dependent operator
 
-### Gate BM — constitutive-input audit
+Choose a concrete mass/endormorphism/connection dependence on \(\Phi\), with all dimensions and symmetries fixed.
 
-Determine whether \(Z_\Phi\) and the sigma-model term are derived from prior FCIG spectral/index data or are independent EFT couplings. If independent, record that explicitly.
+### Gate BQ — derivative expansion
 
-### Gate BN — explicit model / falsification
+Compute the two-derivative term
 
-Use at least one concrete target, preferably the elliptic upper-half-plane/Hodge model or another target with explicit metric and line curvature. A proposal fails if its target metric, normalization or physical map is arbitrary in a way that defeats prediction.
+\[
+W[\Phi]\supset\frac12\int_M\sqrt g\,
+G^{\rm ind}_{AB}(\Phi)
+\partial_\mu\Phi^A\partial^\mu\Phi^B.
+\]
 
-**Pass condition:** a complete, typed sigma-model realization with a concrete target, equations of motion, stress tensor and coupling to the pulled-back FCIG line, together with a clear statement of which constants/data remain external.
+### Gate BR — induced metric comparison
+
+Compare \(G^{\rm ind}_{AB}\) with the pre-existing Poincare/Hodge/Fisher metric. Equality, proportionality, and inequivalence are all allowed outcomes; no identification is assumed.
+
+### Gate BS — positivity / signature audit
+
+Determine when the induced kinetic metric is positive in the Euclidean effective theory and how analytic continuation affects the statement.
+
+### Gate BT — renormalization audit
+
+Separate divergent wave-function renormalization from finite threshold/nonlocal contributions and identify which normalization is physical.
+
+### Gate BU — explicit falsification
+
+The proposed derivation fails if the induced metric depends arbitrarily on an unmotivated operator parametrization, has the wrong symmetry, or cannot reproduce the target metric even in the simplest elliptic model.
+
+**Pass condition:** derive an actual two-derivative coefficient from a specified determinant and compare it quantitatively with the existing FCIG target metric.
 
 ---
 
 ## Gravity Closure gate — NOT ACTIVE
 
-A sigma-model realization, even if successful, supplies an additional matter/response sector. It is not by itself a derivation of spacetime gravity. Lorentzian/horizon closure remains separate.
+Even an induced sigma model is an additional dynamical sector. A Lorentzian gravitational/horizon closure remains a separate later gate.
