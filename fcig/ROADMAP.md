@@ -1,199 +1,229 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.19 — intrinsic elliptic spectral metric  
+**Current target:** v0.20 — adiabatic elliptic family / Kaluza--Klein response  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations are retained as explicit no-go results.
 
 ---
 
-## v0.3–v0.16 — geometry through explicit operator realization — COMPLETE
+## v0.3–v0.17 — geometry through realization-map dynamics — COMPLETE
 
-Earlier milestones establish the determinant/differential-cohomology foundation, local/global anomaly hierarchy, pushforward and reconstruction no-gos, mixed anomaly descent, functional-response ambiguity, conditional semiclassical closure, and the explicit operator bridge
-
-\[
-(\mathscr L_{\rm FCIG},\nabla^{\rm FCIG})+\Phi
-\to P_\Phi
-\to\operatorname{Tr}e^{-tP_\Phi}
-\to W_{1\text{-loop}}^{\rm ren}[g,\Phi].
-\]
-
-At heat-kernel order \(b_4\), pulled-back FCIG line curvature enters as an ordinary bundle-curvature invariant, without being identified with Riemann curvature.
-
----
-
-## v0.17 — realization-map / sigma-model dynamics audit — COMPLETE WITH CONSTITUTIVE NO-GO
-
-Use the actual elliptic FCIG target
-
-\[
-\mathbb H=\{u+iY\mid Y>0\},
-\qquad ds^2=\frac{du^2+dY^2}{Y^2}.
-\]
-
-The harmonic-map action and stress tensor are standard and explicit. The pulled-back Hodge curvature enters the Model-XVI four-derivative \(\Omega^2\) sector, but it does not determine the two-derivative sigma normalization \(Z_\Phi\).
-
-Sources: `realization-sigma.md`, `realization-sigma.py`, `realization-sigma.bib`.
+Earlier milestones establish the determinant/differential-cohomology foundation, local/global anomaly hierarchy, pushforward and reconstruction no-gos, mixed anomaly descent, functional-response ambiguity, conditional semiclassical closure, the explicit heat-kernel operator bridge, and harmonic-map realization dynamics on the elliptic target.
 
 ---
 
 ## v0.18 — induced realization-map metric from determinants — COMPLETE WITH SPECTRAL-INPUT NO-GO
 
-Sources:
-
-- `induced-metric.md`
-- `induced-metric.py`
-- `induced-metric.bib`
-
-### Gate BP — two-point derivative calculation — PASS IN FIXED 1PI BUBBLE CONVENTION
-
-For one heavy real scalar
+For diagonal heavy species,
 
 \[
-P(\Phi)=-\partial^2+V(\Phi),\qquad V>0,
+G^{\rm ind}_{AB}=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}
+=\frac1{48\pi^2}s^*\delta_{\mathbb R^N},
+\qquad s_i=\sqrt{V_i}.
 \]
 
-the one-loop quadratic bubble obeys
+Thus one species has rank at most one, two species are degenerate or locally flat, and sufficiently free higher-dimensional mass maps turn local metric matching into inverse design. FCIG prediction requires an intrinsic operator/spectrum fixed independently of the desired target metric.
 
-\[
-I(p)=I(0)-\frac{p^2}{96\pi^2V}+O(p^4),
-\]
-
-so the induced two-derivative response is
-
-\[
-\boxed{G^{\rm ind}_{AB}=\frac1{192\pi^2}\frac{V_{,A}V_{,B}}{V}.}
-\]
-
-The definition is operational: it is the constant-background 1PI two-point \(p^2\) coefficient. It is not asserted to be the unique global off-shell derivative-expanded functional; Chan, Henning--Lu--Murayama, and Canevarolo--Prokopec are used to document the derivative-expansion context and caveat.
-
-### Gate BQ — multi-species induced metric — PASS
-
-For independent diagonal species,
-
-\[
-\boxed{
-G^{\rm ind}_{AB}=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}.
-}
-\]
-
-With \(s_i=\sqrt{V_i}\),
-
-\[
-\boxed{
-G^{\rm ind}=\frac1{48\pi^2}\sum_i ds_i^2
-=\frac1{48\pi^2}s^*\delta_{\mathbb R^N}.
-}
-\]
-
-Thus the determinant metric is the Euclidean pullback of the mass map.
-
-### Gate BR — rank / curvature audit — PASS WITH EXACT NO-GOS
-
-1. **One species:** \(\operatorname{rank}G^{\rm ind}\le1\).
-2. **Two species:** if nondegenerate, \((s_1,s_2)\) are local coordinates and
-   \[
-   G^{\rm ind}=\frac1{48\pi^2}(ds_1^2+ds_2^2),
-   \]
-   so \(K=0\). Therefore two species can never reproduce the Poincare metric \(K=-1\) on an open set.
-3. **Three species:** exact matching is an isometric immersion into \(\mathbb R^3\). Local negative-curvature fitting is possible, but Hilbert's theorem forbids a complete regular immersion of the full hyperbolic plane into \(\mathbb R^3\).
-
-### Gate BS — method / reparametrization audit — PASS WITH QUALIFICATION
-
-All rank and curvature statements refer to the explicitly defined 1PI bubble metric above. Off-shell gradient-expanded effective actions have additional prescription issues; Model XVIII does not erase that distinction.
-
-### Gate BT — modular symmetry — PASS WITH TWO-SPECIES NO-GO
-
-Klein's complete invariant obeys \(J(\gamma\tau)=J(\tau)\). The positive modular-invariant masses
-
-\[
-V_1=M^2e^{2a\Re J(\tau)},\qquad
-V_2=M^2e^{2a\Im J(\tau)}
-\]
-
-produce a rank-two metric at regular points, but by the two-species theorem it is locally flat rather than hyperbolic. At elliptic branch points the explicit metric loses rank.
-
-### Gate BU — constitutive-input no-go — PASS
-
-If the mass functions are chosen freely, the problem becomes an inverse-design problem. Since
-
-\[
-G^{\rm ind}\propto s^*\delta,
-\]
-
-choosing the spectrum is equivalent to choosing Euclidean embedding coordinates for the desired target geometry. A local hyperbolic match can be engineered with sufficiently unconstrained spectral functions and therefore is not, by itself, an FCIG prediction.
-
-### Gate BV — explicit witness — PASS
-
-\[
-V_1=e^{2au},\qquad V_2=e^{2aY}
-\]
-
-restores rank two but gives
-
-\[
-G^{\rm ind}=\frac{a^2}{48\pi^2}
-\left(e^{2au}du^2+e^{2aY}dY^2\right),
-\]
-
-which is Euclidean after the coordinate changes \(U=e^{au}\), \(W=e^{aY}\).
-
-### v0.18 conclusion
-
-\[
-\boxed{
-\text{determinant}\to G^{\rm ind}\text{ is real, but }
-\text{FCIG prediction requires FCIG to fix the microscopic operator spectrum.}
-}
-\]
-
-References: Chan (1986); Henning--Lu--Murayama (2018); Canevarolo--Prokopec (2024); NIST DLMF Chapter 23; do Carmo (1976); Hilbert (1901).
+Sources: `induced-metric.md`, `induced-metric.py`, `induced-metric.bib`.
 
 ---
 
-## v0.19 — intrinsic elliptic spectral metric — ACTIVE
+## v0.19 — intrinsic elliptic spectral metric — COMPLETE WITH EXACT SPECTRAL--HODGE IDENTITY
 
-Arbitrary mass functions are no longer allowed. Use the **actual modular-covariant spectrum** of the elliptic FCIG laboratory.
+Sources:
 
-### Initial spectral object
+- `intrinsic-spectral.md`
+- `intrinsic-spectral.py`
+- `intrinsic-spectral.bib`
 
-For an area-normalized flat torus \(E_\tau\), use the scalar Laplacian spectrum schematically
+### Gate BW — exact spectral normalization — PASS
+
+For
 
 \[
-\lambda_{m,n}(\tau)\propto\frac{|m\tau-n|^2}{Y},
-\qquad (m,n)\neq(0,0),
+E_\tau=\mathbb C/(\mathbb Z+\tau\mathbb Z),
+\qquad
+ ds_\tau^2=\frac{|dz|^2}{Y},
+\qquad \tau=u+iY,
 \]
 
-whose multiset is modular invariant.
+the metric has unit area. With \(z=x+\tau t\),
 
-### Gate BW — exact spectral normalization
+\[
+\boxed{
+\lambda_{m,n}(\tau)=\frac{4\pi^2}{Y}|m\tau-n|^2,
+\qquad (m,n)\in\mathbb Z^2.
+}
+\]
 
-Fix the area-one metric/Laplacian convention and derive the exact eigenvalue normalization rather than using proportionality.
+Only \((0,0)\) is a zero mode.
 
-### Gate BX — zeta determinant / Kronecker audit
+### Gate BX — spectral zeta / Kronecker audit — PASS
 
-Use the spectral zeta function and Kronecker limit formula to recover the known flat-torus determinant, including the \(Y|\eta(\tau)|^4\) dependence in the fixed convention.
+The nonzero spectral zeta function is
 
-### Gate BY — moduli Hessian / curvature response
+\[
+\zeta_{\Delta_\tau}(s)
+=(4\pi^2)^{-s}
+\sum_{(m,n)\ne(0,0)}\frac{Y^s}{|m\tau-n|^{2s}}.
+\]
 
-Compute the \(\partial_\tau\partial_{\bar\tau}\) response of the zeta determinant/Quillen quantity. Determine precisely whether the non-holomorphic \(\log Y\) term gives the Poincare/Hodge metric and what coefficient is fixed.
+The Kronecker limit formula yields
 
-### Gate BZ — spacetime adiabatic versus moduli Hessian
+\[
+\boxed{
+\det{}'\Delta_\tau=Y|\eta(\tau)|^4.
+}
+\]
 
-Do **not** identify a moduli-space Hessian with a spacetime sigma kinetic term automatically. Derive, or explicitly fail to derive, the adiabatic \((\partial\tau)^2\) term for a slowly varying family \(\tau(x)\).
+The normalization is fixed by the area-one metric and zeta regularization; no adjustable mass functions occur.
 
-### Gate CA — theta / Quillen consistency
+### Gate BY — intrinsic moduli curvature — PASS WITH EXACT IDENTITY
 
-Compare the result with Models I, II, V, and X: theta-state Gram determinants, Hodge curvature, Quillen metric, and the existing determinant/Hodge identities must use compatible normalizations.
+Since \(\eta\) is holomorphic and nonvanishing on \(\mathbb H\),
 
-### Gate CB — no-fit prediction test
+\[
+\partial\bar\partial\log|\eta|^4=0.
+\]
 
-No adjustable \(V_i(\tau)\) are allowed. The spectrum, regularization, and modular transformation law must be fixed before the target metric is compared.
+Therefore
 
-**Pass condition:** an intrinsic spectral calculation either yields a fixed Poincare/Hodge response from the actual elliptic spectrum or gives a clean no-go separating spectral determinant curvature from spacetime realization dynamics.
+\[
+\boxed{
+-\partial\bar\partial\log\det{}'\Delta_\tau
+=-\partial\bar\partial\log Y
+=\frac1{4Y^2}d\tau\wedge d\bar\tau.
+}
+\]
+
+Model I fixed
+
+\[
+F_{\lambda_H}=-\partial\bar\partial\log Y
+=\frac1{4Y^2}d\tau\wedge d\bar\tau,
+\]
+
+hence
+
+\[
+\boxed{
+-\partial\bar\partial\log\det{}'\Delta_\tau
+=F_{\lambda_H}.
+}
+\]
+
+This is the exact intrinsic spectral--Hodge identity of Model XIX.
+
+### Gate BZ — modular/global audit — PASS
+
+The spectrum is modular invariant as a multiset by the lattice relabeling
+
+\[
+(m,n)\mapsto(am-cn,\;dn-bm)
+\]
+
+for \(\gamma=\left(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\right)\in SL(2,\mathbb Z)\).
+
+The Dedekind eta transformation law and
+
+\[
+Y\mapsto\frac{Y}{|c\tau+d|^2}
+\]
+
+imply
+
+\[
+\boxed{Y'|\eta(\tau')|^4=Y|\eta(\tau)|^4.}
+\]
+
+The zeta determinant therefore descends as a modular invariant scalar.
+
+### Gate CA — Quillen/Hodge consistency — PASS WITH OBJECT DISTINCTION
+
+The spectral determinant curvature matches the Hodge-line curvature in the genus-one convention already fixed by Models I--II. This is a spectral consistency closure inside the Ray--Singer/Quillen determinant framework; it does not identify every determinant line or every scalar Laplacian determinant appearing elsewhere in FCIG.
+
+### Gate CB — Hessian versus spacetime kinetic term — PASS WITH TYPE NO-GO
+
+The derived object is a \((1,1)\) curvature/Hessian on the moduli space of **constant** elliptic structures. It does not by itself imply
+
+\[
+\int_M\sqrt g\,\frac{\partial_\mu\tau\partial^\mu\bar\tau}{Y^2}.
+\]
+
+A spacetime kinetic coefficient requires a genuine family \(\tau=\tau(x)\), a total-space/fibered physical operator and an adiabatic derivative expansion. The full real Hessian of \(\log|\eta|^4\) also contains harmonic trace-free information, so the canonical equality is the Chern/mixed-complex one above.
+
+### Gate CC — no-fit prediction test — PASS
+
+The area-one metric, lattice, operator, spectrum, zeta prescription and modular transformation law are all fixed before comparison with the Hodge curvature. The equality is therefore not obtained by inverse-designing spectral masses.
+
+### v0.19 conclusion
+
+\[
+\boxed{
+\text{actual elliptic lattice spectrum}
+\to\det{}'\Delta_\tau
+\to-\partial\bar\partial\log\det{}'\Delta_\tau
+=F_{\lambda_H}.
+}
+\]
+
+This is the first FCIG model where a pre-existing target curvature is regenerated exactly from the intrinsic full spectrum with no adjustable spectral map.
+
+References: Ray--Singer (1973); Quillen (1985); Osgood--Phillips--Sarnak (1988); Faulhuber (2020/2021); NIST DLMF Chapter 23.
+
+---
+
+## v0.20 — adiabatic elliptic family / Kaluza--Klein response — ACTIVE
+
+The remaining problem is to turn the constant-modulus spectral identity into a genuine spacetime/base response for \(\tau=\tau(x)\).
+
+### Gate CD — total-space family geometry
+
+Specify a base \(M\), an elliptic fiber with area-one metric depending on \(\tau(x)\), and a total-space metric/operator. The construction must state whether horizontal distributions, Kaluza--Klein gauge fields and fiber-volume modes are frozen or dynamical.
+
+### Gate CE — mode-basis connection and mixing
+
+The instantaneous Fourier/eigenmode basis varies with \(x\). Derive the induced Berry/adiabatic connection and off-diagonal mode mixing rather than replacing the tower by independent scalar masses \(\lambda_{m,n}(\tau(x))\) by fiat.
+
+### Gate CF — modular-covariant tower regularization
+
+Regularize the infinite KK/spectral tower by a prescription compatible with the modular lattice symmetry. Track local counterterms separately from finite threshold/nonlocal terms.
+
+### Gate CG — genuine two-derivative spacetime response
+
+Compute the coefficient of
+
+\[
+\int_M\sqrt g\,
+G^{\rm ad}_{\tau\bar\tau}(\tau)
+\partial_\mu\tau\partial^\mu\bar\tau
+\]
+
+from the total family operator. Determine whether \(G^{\rm ad}\) is a fixed multiple of the Poincare metric.
+
+### Gate CH — compare three geometries
+
+Keep distinct and compare:
+
+1. Model XVII's postulated harmonic-map target metric;
+2. Model XIX's intrinsic moduli Chern curvature;
+3. Model XX's derived spacetime adiabatic kinetic metric.
+
+Equality of any two is a theorem to prove, not a convention.
+
+### Gate CI — cusp / degeneration test
+
+Study \(Y\to\infty\), where the elliptic torus degenerates and light KK modes appear. A trustworthy adiabatic expansion must state its domain of validity and failure scale.
+
+### Gate CJ — no-gravity-overclaim gate
+
+Even if a Poincare kinetic metric is induced exactly, it is a moduli/matter sector. It does not by itself derive an Einstein equation or local horizon entropy law.
+
+**Pass condition:** a modularly controlled total-space calculation that produces a spacetime two-derivative modulus response and cleanly relates or distinguishes it from the exact Model-XIX spectral-Hodge curvature.
 
 ---
 
 ## Gravity Closure gate — NOT ACTIVE
 
-Even a successful intrinsic spectral metric remains a matter/moduli response sector. Lorentzian gravitational/horizon closure is separate.
+Lorentzian gravitational/horizon closure remains separate until an independently justified causal/dynamical bridge is supplied.
