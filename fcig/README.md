@@ -28,11 +28,13 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to
 \text{response / transgression test}
 \to
+\text{canonical coupling-class test}
+\to
 \text{Lorentzian closure?}
 }
 \]
 
-Completed milestones: **v0.2 (elliptic)**, **v0.3 (flat ppav)**, **v0.4 (curved hyperbolic curves)**, **v0.5 (Quillen / analytic torsion)**, and **v0.6 (differential cohomology / determinant holonomy)**. The next controlled target is a response/transgression test; the gravity closure remains inactive.
+Completed milestones: **v0.2 (elliptic)**, **v0.3 (flat ppav)**, **v0.4 (curved hyperbolic curves)**, **v0.5 (Quillen / analytic torsion)**, **v0.6 (differential cohomology / determinant holonomy)**, and **v0.7 (response / transgression)**. Gravity closure remains inactive.
 
 ## Main research-program note
 
@@ -255,9 +257,71 @@ The curvature exact sequence
 
 makes the earlier local/global distinction precise. The flat ppav corrected line lies in the flat sector when it descends on the chosen theta/metaplectic cover, while the curved Quillen determinant line has nonzero local-index curvature and eta-invariant holonomy.
 
-For a Dirac family, the Bismut–Freed holonomy theorem supplies the loop datum through the adiabatic reduced eta invariant. Hence curvature and global holonomy are two compatible evaluations of one differential character, not independent anomaly labels.
+## Explicit Model VII — response / transgression bridge
 
-The same synthesis also sharpens the no-go boundary: this determinant class lives on a parameter/moduli base and is \(U(1)\)-valued; it is not the Lorentzian tangent/frame curvature of spacetime.
+- Web: `response-transgression.html`
+- Source: `response-transgression.md`
+- Degree checker: `response-transgression.py`
+
+Loop-space transgression is the standard map
+
+\[
+\boxed{
+\tau_{S^1}
+=
+\widehat\pi_!\operatorname{ev}^*:
+\widehat H^2(B;\mathbf Z)
+\to
+\widehat H^1(LB;\mathbf Z).
+}
+\]
+
+For a line with connection, the resulting degree-one differential character is exactly its holonomy function:
+
+\[
+\boxed{
+\tau_{S^1}(\widehat{\mathcal A})(\gamma)
+=
+\operatorname{Hol}_{\widehat{\mathcal A}}(\gamma).
+}
+\]
+
+This is a genuine response map, but it also exposes a degree obstruction. For a correspondence
+
+\[
+M\xleftarrow{p}Z\xrightarrow{q}B
+\]
+
+with real \(d\)-dimensional fibers,
+
+\[
+\boxed{
+p_!q^*\widehat{\mathcal A}
+\in
+\widehat H^{2-d}(M;\mathbf Z),
+}
+\]
+
+so a positive-dimensional pushforward does not by itself yield another degree-two line with connection.
+
+A degree-preserving template requires an additional class
+
+\[
+\widehat u\in\widehat H^d(Z;\mathbf Z),
+\]
+
+leading to
+
+\[
+\boxed{
+\widehat{\mathcal R}_{p,q,\widehat u}
+=
+p_!(q^*\widehat{\mathcal A}\cup\widehat u)
+\in\widehat H^2(M;\mathbf Z).
+}
+\]
+
+The operation is standard once \(p,q,\widehat u\) are supplied; FCIG has not yet derived a canonical physical choice of \(\widehat u\). The same note also makes explicit that any resulting degree-two class is still a \(U(1)\) connection, not automatically a tangent/frame connection.
 
 ## Current synthesis
 
@@ -273,8 +337,10 @@ The explicit models now support
 \oplus
 \text{determinant metric / analytic torsion}
 \oplus
-\text{differential-character curvature + holonomy}.
+\text{differential-character curvature + holonomy}
+\oplus
+\text{functorial response with a degree/type audit}.
 }
 \]
 
-The next mathematically controlled question is whether there exists a genuine **response/transgression map** from this determinant differential character to another geometrically specified connection, with the base spaces and tensor types made explicit. No Lorentzian/gravitational closure is claimed at this stage.
+The next controlled question is whether the **existing geometry of the family** supplies a canonical degree-restoring coupling class, rather than inventing one solely to force a desired response. No Lorentzian/gravitational closure is claimed at this stage.
