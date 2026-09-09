@@ -20,29 +20,27 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to
 \text{Quillen / differential cohomology}
 \to
-\text{transgression}
-\to
-\text{pushforward no-go}
+\text{transgression / pushforward}
 \to
 \text{Deligne--RR closure}
 \to
-\text{structure-group no-go}
+\text{structure-group audit}
 \to
-\text{mixed anomaly polynomial}.
+\text{mixed anomaly polynomial}
+\to
+\text{descent / inflow}.
 }
 \]
 
-Completed milestones: **v0.2–v0.12**. No Lorentzian/gravitational closure is claimed.
+Completed milestones: **v0.2–v0.13**. No Lorentzian/gravitational closure is claimed.
 
 ## Models I–III — flat theta / abelian laboratories
 
 The elliptic and ppav models establish exact theta-state counting, exact Gram determinants, Poisson-resummed Bergman lattice sectors, and finite Weil/metaplectic holonomy. In the ppav conventions,
 
 \[
-F_{\det\mathcal H_k}=-\frac{k^g}{2}F_{\lambda_H},
+F_{\det\mathcal H_k}=-\frac{k^g}{2}F_{\lambda_H}.
 \]
-
-while flat corrected determinant lines can retain nontrivial global holonomy.
 
 Main files: `elliptic-model.md`, `modular-holonomy.md`, `abelian-model.md`, `abelian-bergman.md`, `abelian-weil.md` and their Python checkers.
 
@@ -64,8 +62,6 @@ F_Q-F_{L^2}=-\partial\bar\partial\mathcal T_k.
 }
 \]
 
-The elementary \(L^2\) determinant metric and Quillen/family-index metric are related but not interchangeable.
-
 ## Model VI — differential cohomology / determinant holonomy
 
 `differential-holonomy.md` / `differential-holonomy.py`
@@ -86,13 +82,11 @@ carrying topology, curvature and loop holonomy in one object.
 \tau_{S^1}:\widehat H^2(B;\mathbf Z)\to\widehat H^1(LB;\mathbf Z)
 \]
 
-is a genuine response map whose value is the determinant holonomy function. Positive-dimensional pushforward lowers degree.
+is a genuine response map whose value is the determinant holonomy function.
 
 ## Model VIII — factorized-pushforward no-go
 
 `factorized-pushforward.md` / `factorized-pushforward.py`
-
-For a smooth proper oriented real \(d\)-dimensional family,
 
 \[
 \boxed{
@@ -102,53 +96,35 @@ p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)
 }
 \]
 
-on a connected base. Factorized degree restoration cannot create an independent degree-two response direction.
+so factorized degree restoration cannot create an independent degree-two response direction.
 
-## Model IX — non-factorized \(\widehat\kappa_1\) / Quillen comparison
+## Models IX–X — \(\widehat\kappa_1\), Quillen, and global Deligne--RR
 
-`kappa1-quillen.md` / `kappa1-quillen.py`
+`kappa1-quillen.md` / `global-deligne-rr.md`
 
-For \(\pi:X\to B\), \(\omega=K_{X/B}\),
+For \(\omega=K_{X/B}\),
 
 \[
 \widehat\kappa_1:=\pi_!\bigl(\widehat c_1(\omega)^2\bigr),
 \]
 
-and GRR plus the Quillen local-index theorem give equality with \(12\widehat\lambda_Q\) at characteristic-class and curvature levels, leaving only a possible flat residual.
-
-## Model X — global Deligne--Riemann--Roch closure
-
-`global-deligne-rr.md` / `global-deligne-rr.py`
-
-The metrized Deligne-pairing model closes the residual globally:
+and the metrized Deligne-pairing realization closes the comparison globally:
 
 \[
 \boxed{
-\widehat\kappa_1=12\widehat\lambda_Q,
+\widehat\kappa_1=12\widehat\lambda_Q.
 }
 \]
 
-hence
-
-\[
-\operatorname{Hol}_{\widehat\kappa_1}(\gamma)
-=
-\operatorname{Hol}_{\widehat\lambda_Q}(\gamma)^{12}.
-\]
+Thus topology, local curvature and loop holonomy satisfy the same connection-level identity in the canonical smooth curve-family determinant sector.
 
 ## Model XI — determinant trace / Spin\(^c\) / reconstruction no-go
 
 `structure-group-bridge.md` / `structure-group-bridge.py`
 
-The exact sequence
-
 \[
-1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1
-\]
-
-induces
-
-\[
+1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1,
+\qquad
 F_{\det E}=\operatorname{Tr}F_E.
 \]
 
@@ -158,16 +134,16 @@ For fixed determinant connection, unitary lifts form an affine space over
 \Omega^1(M;\mathfrak{su}(E)).
 \]
 
-Thus determinant data fixes only the trace sector for \(n>1\). In Kähler tangent geometry it sees Ricci curvature; a Ricci-flat K3 is an explicit witness that determinant curvature may vanish while nonabelian tangent curvature remains. A Spin\(^c\) connection positively combines an independently supplied frame connection with determinant-line data, but the line alone does not reconstruct the frame connection.
+Hence determinant data fixes only the trace sector for \(n>1\). Kähler geometry identifies this trace with Ricci curvature; Ricci-flat K3 geometry is an explicit witness that determinant curvature can vanish while nonabelian tangent curvature remains. Spin\(^c\) gives a positive extension bridge only when the frame connection is supplied independently.
 
 ## Model XII — mixed characteristic classes / degree-six anomaly bridge
 
-- Web: `mixed-characteristic.html`
-- Source: `mixed-characteristic.md`
-- Checker: `mixed-characteristic.py`
-- Milestone bibliography: `mixed-characteristic.bib`
+- `mixed-characteristic.html`
+- `mixed-characteristic.md`
+- `mixed-characteristic.py`
+- `mixed-characteristic.bib`
 
-Now treat the line and frame connections as **independent fields on the same base**. The first canonical mixed differential characteristic class is
+Treat the line and frame connections as independent fields on the same base. The first canonical mixed differential characteristic class is
 
 \[
 \boxed{
@@ -176,48 +152,94 @@ Now treat the line and frame connections as **independent fields on the same bas
 }
 \]
 
-For a line-twisted Dirac index, standard index theory gives
+For a line-twisted Dirac index,
 
 \[
 \boxed{
 \left[\widehat A(TM)\operatorname{ch}(L)\right]_{(6)}
 =
-\frac16c_1(L)^3
--
-\frac1{24}c_1(L)p_1(TM).
+\frac16c_1^3-rac1{24}c_1p_1.
 }
 \]
 
-This is a genuine mixed gauge/frame invariant without any structure-group identification. Classic gauge/gravitational anomaly theory uses precisely such higher-degree characteristic polynomials and descent.
+This is a genuine mixed gauge/frame invariant, but its degree is six, so it is not itself a local four-form action density in four dimensions.
 
-The degree audit is equally important:
+## Model XIII — five-dimensional descent / global anomaly inflow
+
+- Web: `descent-inflow.html`
+- Source: `descent-inflow.md`
+- Checker: `descent-inflow.py`
+- Milestone bibliography: `descent-inflow.bib`
+
+On a patch with normalized local potential \(a\), \(da=c\), define
 
 \[
 \boxed{
-\deg(c_1p_1)=6>4.
+I_5^{(0)}
+=a\wedge\left(\frac16c^2-\frac1{24}p_1\right).
 }
 \]
 
-Therefore this polynomial is **not** itself a local four-form action density in four dimensions; descent, transgression/inflow, an extension manifold, or additional non-topological structure is required.
+Then
 
-For generic semisimple higher-rank orthogonal frame algebras there is also no nonzero invariant linear Chern--Weil polynomial analogous to \(c_1\). The first Pontryagin class is degree four. The abelian \(SO(2)\cong U(1)\) Euler/\(c_1\) exception is recorded explicitly.
+\[
+\boxed{
+dI_5^{(0)}
+=
+I_6
+=
+\frac16c^3-\frac1{24}cp_1.
+}
+\]
 
-References: Alvarez-Gaumé--Witten (1984), Zumino--Wu--Zee (1984), Bardeen--Zumino (1984), Alvarez-Gaumé--Ginsparg (1985), Freed (2014), Lawson--Michelsohn.
+Under \(a\mapsto a+d\alpha\),
+
+\[
+\boxed{
+\delta_\alpha I_5^{(0)}
+=
+d\left[
+\alpha\left(\frac16c^2-\frac1{24}p_1\right)
+\right],
+}
+\]
+
+so the five-dimensional variation becomes a four-dimensional boundary anomaly term.
+
+The global audit is crucial. The integral product
+
+\[
+\widehat c_1\cup\widehat p_1
+\]
+
+is an ordinary differential character, but the full fermionic index polynomial contains rational coefficients. Its global quantization is therefore justified by the spin Dirac index / Dai--Freed anomaly theory, not by simply declaring the fractional polynomial to be an arbitrary integral \(\widehat H^6\) class.
+
+This gives the controlled chain
+
+\[
+\boxed{
+\text{index polynomial}
+\to
+\text{5D secondary/inflow datum}
+\to
+\text{4D symmetry anomaly}.
+}
+\]
+
+It does **not** identify anomaly response with stress-energy response or horizon thermodynamics.
+
+References: Zumino--Wu--Zee; Bardeen--Zumino; Alvarez-Gaumé--Ginsparg; Cheeger--Simons; Bär--Becker; Dai--Freed; Freed.
 
 ## Current controlled frontier
 
-The program now has a mathematically valid way for FCIG line data and an independent frame connection to occur in one invariant:
+The characteristic-class and anomaly-descent bridges are now explicit. The next bottleneck is **dynamical response**, not topology.
 
-\[
-\boxed{
-U(1)\text{ line}
-+
-\text{frame connection}
-\longrightarrow
-\text{mixed degree-six characteristic/anomaly class}.
-}
-\]
+The active target is **v0.14: background-field functional response audit**. It will distinguish:
 
-The next target is **v0.13: explicit descent / anomaly-inflow realization**. Starting from the degree-six polynomial, the task is to construct a five-dimensional secondary/Chern--Simons datum and its four-dimensional boundary variation, then keep that anomaly response sharply separated from stress-energy or Einstein dynamics.
+1. curvature/holonomy of the anomaly line over a space of backgrounds;
+2. gauge-current variation of an effective action;
+3. metric/frame variation producing stress-energy;
+4. trace/diffeomorphism anomalies;
+5. any additional constitutive or thermodynamic law required for gravitational dynamics.
 
-No Lorentzian metric, causal structure, horizon entropy law, or gravitational field equation has yet been derived.
+No Lorentzian metric, causal structure, horizon entropy law, or Einstein equation has yet been derived.
