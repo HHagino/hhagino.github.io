@@ -24,11 +24,12 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to\text{heat-kernel bridge}
 \to\text{realization-map dynamics}
 \to\text{induced determinant metric}
-\to\text{intrinsic elliptic spectral curvature}.
+\to\text{intrinsic elliptic spectral curvature}
+\to\text{adiabatic KK response}.
 }
 \]
 
-Completed milestones: **v0.2–v0.19**. No derivation of Einstein dynamics from FCIG alone is claimed.
+Completed milestones: **v0.2–v0.20**. No derivation of Einstein dynamics from FCIG alone is claimed.
 
 ## Models I–X — geometric / determinant foundation
 
@@ -56,11 +57,7 @@ With independent line and frame connections,
 
 \[
 \widehat c_1(L)\cup\widehat p_1(TM)\in\widehat H^6(M;\mathbf Z),
-\]
-
-and
-
-\[
+\qquad
 \boxed{[\widehat A(TM)\operatorname{ch}(L)]_{(6)}=\frac16c_1^3-\frac1{24}c_1p_1.}
 \]
 
@@ -84,7 +81,7 @@ Supplying independent renormalized gravitational and effective actions gives the
 
 but the action principle, renormalized couplings and Jacobson-style Lorentzian horizon data remain additional inputs.
 
-## Model XVI — explicit operator / heat-kernel effective-action bridge
+## Model XVI — explicit operator / heat-kernel bridge
 
 For a supplied realization map \(\Phi:M\to\mathcal B_{\rm FCIG}\), the pulled-back line curvature
 
@@ -98,83 +95,43 @@ enters a physical Laplace-type operator. Standard heat-kernel geometry gives
 \boxed{b_4\supset\frac1{12}\Omega_{\mu\nu}\Omega^{\mu\nu}},
 \]
 
-so the FCIG line curvature contributes to a one-loop spacetime effective action without being identified with Riemann curvature. Divergent local coefficients renormalize couplings and are not parameter-free predictions.
+so FCIG line curvature enters a one-loop spacetime effective action without being identified with Riemann curvature.
 
-References: Vassilevich (2003); Gilkey (1995); Birrell--Davies (1982); Wald (1993); Iyer--Wald (1994).
+## Model XVII — realization-map dynamics
 
-## Model XVII — realization-map / sigma-model dynamics
-
-Use the pre-existing elliptic target
+On the elliptic target
 
 \[
 \mathbb H=\{\tau=u+iY\mid Y>0\},
-\qquad ds^2_{\mathbb H}=\frac{du^2+dY^2}{Y^2}.
+\qquad ds^2_{\mathbb H}=\frac{du^2+dY^2}{Y^2},
 \]
 
-Promote \(\Phi=(u,Y)\) to a harmonic-map field,
-
-\[
-S_\Phi=\frac{Z_\Phi}{2}\int_M\sqrt g\,\frac{(\partial u)^2+(\partial Y)^2}{Y^2},
-\]
-
-with the standard equations and stress tensor. The Hodge curvature pullback is bilinear in first derivatives, so the Model-XVI \(\Omega^2\) term is four-derivative in \(\Phi\) and does not determine the two-derivative coefficient \(Z_\Phi\).
+promote \(\Phi=(u,Y)\) to a harmonic-map field. The Hodge-curvature pullback is four-derivative after squaring, so it does not determine the two-derivative sigma normalization.
 
 Sources: `realization-sigma.md`, `realization-sigma.py`, `realization-sigma.bib`.
 
-## Model XVIII — induced realization-map metric from determinants
+## Model XVIII — induced determinant metric no-gos
 
-For independent heavy scalars with \(P_i=-\partial^2+V_i(\Phi)\), the constant-background one-loop 1PI \(p^2\) response gives
-
-\[
-\boxed{G^{\rm ind}_{AB}=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}.}
-\]
-
-Writing \(s_i=\sqrt{V_i}\),
+For diagonal heavy scalars,
 
 \[
-\boxed{G^{\rm ind}=\frac1{48\pi^2}s^*\delta_{\mathbb R^N}.}
+\boxed{G^{\rm ind}_{AB}=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}}
+=\frac1{48\pi^2}s^*\delta_{\mathbb R^N},
+\qquad s_i=\sqrt{V_i}.
 \]
 
-Hence one species has rank at most one; two species are degenerate or locally flat; three species can fit local negative-curvature patches but cannot give a complete regular immersion of all \(\mathbb H\) into \(\mathbb R^3\) by Hilbert's theorem. Arbitrary mass functions therefore turn metric matching into inverse design rather than prediction.
+One species has rank at most one; two species are degenerate or locally flat; unconstrained higher-dimensional mass maps turn target-metric matching into inverse design.
 
 Sources: `induced-metric.md`, `induced-metric.py`, `induced-metric.bib`.
 
-## Model XIX — intrinsic elliptic spectral metric
+## Model XIX — intrinsic spectral--Hodge identity
 
-- Web: `intrinsic-spectral.html`
-- Source: `intrinsic-spectral.md`
-- Checker: `intrinsic-spectral.py`
-- Milestone bibliography: `intrinsic-spectral.bib`
-
-Model XIX removes the arbitrary mass-map freedom. On
+For the area-one elliptic torus,
 
 \[
-E_\tau=\mathbb C/(\mathbb Z+\tau\mathbb Z),
-\qquad \tau=u+iY,
-\]
-
-use the area-one flat metric
-
-\[
-\boxed{ds^2_\tau=\frac{|dz|^2}{Y}}.
-\]
-
-With \(z=x+\tau t\), the Fourier modes \(e^{2\pi i(mx+nt)}\) have the exact spectrum
-
-\[
-\boxed{\lambda_{m,n}(\tau)=\frac{4\pi^2}{Y}|m\tau-n|^2.}
-\]
-
-The spectrum is modular invariant as a multiset by an integral lattice relabeling. Its zeta function is the nonholomorphic Epstein/Eisenstein lattice sum, and the Kronecker limit formula yields
-
-\[
-\boxed{\det{}'\Delta_\tau=Y|\eta(\tau)|^4.}
-\]
-
-Because \(\eta\) is holomorphic and nonvanishing on \(\mathbb H\),
-
-\[
-\partial\bar\partial\log|\eta|^4=0.
+\lambda_{m,n}(\tau)=\frac{4\pi^2}{Y}|m\tau-n|^2,
+\qquad
+\det{}'\Delta_\tau=Y|\eta(\tau)|^4.
 \]
 
 Therefore
@@ -187,24 +144,122 @@ Therefore
 }
 \]
 
-This is an exact **intrinsic spectral--Hodge identity** in the same elliptic convention used by Model I. Unlike Model XVIII, the target curvature is regenerated from the fixed full torus spectrum with no adjustable \(V_i(\tau)\).
+The actual full torus spectrum regenerates the pre-existing Hodge curvature with the same coefficient and no adjustable spectral map.
 
-The statement is deliberately at the moduli-space Chern-curvature level. It does **not** yet derive a spacetime kinetic term for a slowly varying modulus \(\tau(x)\). The full real Hessian also contains harmonic trace-free information from \(\eta\); the canonical equality is the mixed \((1,1)\) curvature identity above.
+Sources: `intrinsic-spectral.md`, `intrinsic-spectral.py`, `intrinsic-spectral.bib`.
 
-References: Ray--Singer (1973); Quillen (1985); Osgood--Phillips--Sarnak (1988); Faulhuber (2020/2021); NIST DLMF Chapter 23.
+## Model XX — adiabatic elliptic / Kaluza--Klein response
 
-## Current controlled frontier
+- Web: `adiabatic-elliptic.html`
+- Source: `adiabatic-elliptic.md`
+- Checker: `adiabatic-elliptic.py`
+- Milestone bibliography: `adiabatic-elliptic.bib`
 
-The elliptic target geometry now has two independent realizations:
+Let \(\tau=\tau(x)\) vary over a four-dimensional base and take the locally trivial fixed-volume torus metric
+
+\[
+ ds_6^2=g_{\mu\nu}dx^\mu dx^\nu+L^2G_{ab}(\tau(x))dy^ady^b,
+\qquad \det G=1.
+\]
+
+The coordinate Fourier basis is \(\tau\)-independent in this restricted scalar model, so there is no local Berry/off-diagonal mode mixing and
+
+\[
+\boxed{M_{m,n}^2=\frac{4\pi^2}{L^2Y}|m\tau-n|^2.}
+\]
+
+The total-space curvature contains
 
 \[
 \boxed{
-\text{Hodge metric/line geometry}
-\quad\leftrightarrow\quad
-\text{intrinsic zeta-spectral curvature}.
+R_6=R_4-\frac1{2Y^2}\partial_\mu\tau\partial^\mu\bar\tau,
 }
 \]
 
-The remaining bottleneck is dynamical rather than purely moduli-geometric. The next target is **v0.20 — adiabatic elliptic family / Kaluza--Klein response**: let \(\tau=\tau(x)\) vary over a spacetime/base, construct the corresponding total-space/fibered operator, include mode-basis connection and off-diagonal mixing, and derive the genuine spacetime two-derivative coefficient instead of identifying it with the moduli Hessian by analogy.
+so the local two-derivative tensor shape is intrinsically Poincare. Its one-loop coefficient is UV-sensitive and renormalizes the local six-dimensional Einstein--Hilbert term.
+
+For the finite nonlocal tower response, define
+
+\[
+Q_{m,n}=\frac{|m\tau-n|^2}{Y},
+\qquad
+Z_\tau(s)=\sum{}'Q_{m,n}^{-s}.
+\]
+
+Epstein analytic continuation and the self-dual functional equation give
+
+\[
+Z_\tau(-1)=0,
+\qquad
+Z_\tau'(-1)=-\frac1{\pi^3}Z_\tau(2).
+\]
+
+Using the exact hyperbolic identities
+
+\[
+\nabla^2Q=Qg_{\rm hyp},
+\qquad
+|dQ|_{g_{\rm hyp}}^2=Q^2,
+\]
+
+the analytically subtracted tower tensor is
+
+\[
+\boxed{
+\mathcal T^{\rm fin}_{AB}
+=\frac1{\pi^3}
+\left(\nabla_A\nabla_BZ_\tau(2)-Z_\tau(2)g^{\rm hyp}_{AB}\right),
+\qquad
+\operatorname{tr}_{g_{\rm hyp}}\mathcal T^{\rm fin}=0.
+}
+\]
+
+Equivalently, with
+
+\[
+\mathcal G_4(\tau)=\sum{}'(m\tau-n)^{-4},
+\]
+
+\[
+\boxed{
+G^{\rm fin}_{(2)}
+=-\frac1{16\pi^3L^2}
+\operatorname{Re}\left[\mathcal G_4(\tau)(d\tau)^2\right].
+}
+\]
+
+This finite threshold is modular and trace-free. It is **not** a positive Poincare sigma metric by itself. The full renormalized kinetic tensor has the form
+
+\[
+\boxed{
+G^{\rm ren}=Z_Rg_{\rm hyp}+G^{\rm fin}_{(2)}+\cdots,
+}
+\]
+
+where \(Z_R\) remains a renormalized local coupling.
+
+Thus Models XIX and XX are genuinely different spectral projections:
+
+\[
+\boxed{
+\text{Model XIX: finite }(1,1)\text{ Chern curvature}\propto g_{\rm hyp},
+\qquad
+\text{Model XX: finite spacetime threshold is trace-free weight }4.
+}
+\]
+
+References: Maharana--Schwarz (1993); Vassilevich (2003); von Gersdorff (2008); Terras (1980, 2013); Apostol (1990).
+
+## Current controlled frontier
+
+The single-scalar elliptic adiabatic problem is now closed at two derivatives in the stated analytic-subtraction convention. The next target is **v0.21 — field-content / supertrace completion audit**.
+
+The question is whether the finite automorphic threshold
+
+\[
+\operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2]
+\]
+
+survives, cancels or changes tensor structure when the microscopic determinant contains a physically specified combination of scalars, fermions, vectors, ghosts and bundle connections. Species/statistics may not be chosen merely to obtain a desired metric.
 
 No Lorentzian/horizon closure is claimed.
