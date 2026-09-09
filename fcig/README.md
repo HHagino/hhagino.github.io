@@ -28,11 +28,13 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to
 \widehat\kappa_1/\text{Quillen}
 \to
-\text{global Deligne--RR closure}.
+\text{global Deligne--RR closure}
+\to
+\text{structure-group bridge audit}.
 }
 \]
 
-Completed milestones: **v0.2–v0.10**. No Lorentzian/gravitational closure is claimed.
+Completed milestones: **v0.2–v0.11**. No Lorentzian/gravitational closure is claimed.
 
 ## Models I–III — flat theta / abelian laboratories
 
@@ -185,10 +187,58 @@ Equivalently, for every loop \(\gamma\subset B\),
 }
 \]
 
-Thus the flat residual isolated in Model IX vanishes once the global metrized Deligne-pairing model is included. Topology, local curvature and global holonomy are three evaluations of the same connection-level identity in this canonical curve-family determinant sector.
+Thus the flat residual isolated in Model IX vanishes once the global metrized Deligne-pairing model is included.
+
+## Model XI — determinant trace / Spin\(^c\) / nonabelian reconstruction no-go
+
+- `structure-group-bridge.html`
+- `structure-group-bridge.md`
+- `structure-group-bridge.py`
+
+The standard sequence
+
+\[
+\boxed{
+1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1
+}
+\]
+
+induces the forward connection map
+
+\[
+\boxed{
+F_{\det E}=\operatorname{Tr}F_E.
+}
+\]
+
+For fixed determinant connection, the space of unitary lifts is affine over
+
+\[
+\boxed{
+\Omega^1(M;\mathfrak{su}(E)).
+}
+\]
+
+Hence determinant data fixes only the trace sector for \(n>1\). In Kähler tangent geometry this is the Ricci form; a Ricci-flat K3 provides an explicit witness that determinant curvature can vanish while full nonabelian tangent curvature remains nonzero.
+
+The Spin\(^c\) audit gives a positive extension bridge but not an inverse reconstruction: frame connection plus determinant-line connection determines a Spin\(^c\) connection, while the determinant line alone does not determine the frame connection.
+
+Finally, any fixed homomorphism \(U(1)\to G\) has at most one-dimensional abelian Lie-algebra image, so a single \(U(1)\) connection cannot generate generic noncommuting curvature in a nonabelian frame group.
+
+References added for this milestone: Hall (2015), Huybrechts (2005), Lawson--Michelsohn (1989), Yamashita (2020), Yau (1978), and Huybrechts' *Lectures on K3 Surfaces* (2016).
 
 ## Current controlled frontier
 
-The determinant/intersection \(U(1)\) sector is now closed for this smooth canonical curve-family direction. The next meaningful test must change the **target geometric structure**, not derive another identity among determinant lines.
+The direct inverse problem is now closed:
 
-In particular, an actual spacetime/frame response would require explicit maps of base spaces and an explicit passage from abelian \(U(1)\) line-connection data to the relevant nonabelian tangent/frame structure. That bridge is not supplied by Deligne--RR, GRR, Quillen theory, or differential cohomology alone.
+\[
+\boxed{
+\text{determinant }U(1)
+\not\Rightarrow
+\text{full nonabelian frame connection}.
+}
+\]
+
+The next controlled target is therefore **v0.12: mixed characteristic-class / anomaly-polynomial degree audit**. It will assume the frame connection is an independent field and ask which standard gauge-invariant characteristic classes can couple the FCIG \(U(1)\) sector to frame curvature without identifying their structure groups.
+
+No Lorentzian metric, causal structure, horizon entropy law, or gravitational field equation is supplied by Models I–XI.
