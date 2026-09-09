@@ -23,11 +23,12 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to\text{semiclassical closure audit}
 \to\text{heat-kernel bridge}
 \to\text{realization-map dynamics}
-\to\text{induced determinant metric}.
+\to\text{induced determinant metric}
+\to\text{intrinsic elliptic spectral curvature}.
 }
 \]
 
-Completed milestones: **v0.2–v0.18**. No derivation of Einstein dynamics from FCIG alone is claimed.
+Completed milestones: **v0.2–v0.19**. No derivation of Einstein dynamics from FCIG alone is claimed.
 
 ## Models I–X — geometric / determinant foundation
 
@@ -103,10 +104,6 @@ References: Vassilevich (2003); Gilkey (1995); Birrell--Davies (1982); Wald (199
 
 ## Model XVII — realization-map / sigma-model dynamics
 
-- `realization-sigma.md`
-- `realization-sigma.py`
-- `realization-sigma.bib`
-
 Use the pre-existing elliptic target
 
 \[
@@ -122,84 +119,92 @@ S_\Phi=\frac{Z_\Phi}{2}\int_M\sqrt g\,\frac{(\partial u)^2+(\partial Y)^2}{Y^2},
 
 with the standard equations and stress tensor. The Hodge curvature pullback is bilinear in first derivatives, so the Model-XVI \(\Omega^2\) term is four-derivative in \(\Phi\) and does not determine the two-derivative coefficient \(Z_\Phi\).
 
-References: Eells--Sampson (1964); Mumford (1983); Birkenhake--Lange (2004); Vassilevich (2003).
+Sources: `realization-sigma.md`, `realization-sigma.py`, `realization-sigma.bib`.
 
 ## Model XVIII — induced realization-map metric from determinants
 
-- Web: `induced-metric.html`
-- Source: `induced-metric.md`
-- Checker: `induced-metric.py`
-- Milestone bibliography: `induced-metric.bib`
-
-For independent heavy real scalars
-
-\[
-P_i(\Phi)=-\partial^2+V_i(\Phi),\qquad V_i>0,
-\]
-
-define the induced two-derivative response operationally by the \(p^2\) coefficient of the one-loop 1PI two-point function around a constant background. In the fixed Euclidean bubble convention,
-
-\[
-I(p)=I(0)-\frac{p^2}{96\pi^2V}+O(p^4),
-\]
-
-so
+For independent heavy scalars with \(P_i=-\partial^2+V_i(\Phi)\), the constant-background one-loop 1PI \(p^2\) response gives
 
 \[
 \boxed{G^{\rm ind}_{AB}=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}.}
 \]
 
-Writing \(s_i=\sqrt{V_i}\) gives the structural identity
+Writing \(s_i=\sqrt{V_i}\),
 
 \[
-\boxed{G^{\rm ind}=\frac1{48\pi^2}\sum_i ds_i^2=\frac1{48\pi^2}s^*\delta_{\mathbb R^N}.}
+\boxed{G^{\rm ind}=\frac1{48\pi^2}s^*\delta_{\mathbb R^N}.}
 \]
 
-This yields exact obstructions:
+Hence one species has rank at most one; two species are degenerate or locally flat; three species can fit local negative-curvature patches but cannot give a complete regular immersion of all \(\mathbb H\) into \(\mathbb R^3\) by Hilbert's theorem. Arbitrary mass functions therefore turn metric matching into inverse design rather than prediction.
+
+Sources: `induced-metric.md`, `induced-metric.py`, `induced-metric.bib`.
+
+## Model XIX — intrinsic elliptic spectral metric
+
+- Web: `intrinsic-spectral.html`
+- Source: `intrinsic-spectral.md`
+- Checker: `intrinsic-spectral.py`
+- Milestone bibliography: `intrinsic-spectral.bib`
+
+Model XIX removes the arbitrary mass-map freedom. On
+
+\[
+E_\tau=\mathbb C/(\mathbb Z+\tau\mathbb Z),
+\qquad \tau=u+iY,
+\]
+
+use the area-one flat metric
+
+\[
+\boxed{ds^2_\tau=\frac{|dz|^2}{Y}}.
+\]
+
+With \(z=x+\tau t\), the Fourier modes \(e^{2\pi i(mx+nt)}\) have the exact spectrum
+
+\[
+\boxed{\lambda_{m,n}(\tau)=\frac{4\pi^2}{Y}|m\tau-n|^2.}
+\]
+
+The spectrum is modular invariant as a multiset by an integral lattice relabeling. Its zeta function is the nonholomorphic Epstein/Eisenstein lattice sum, and the Kronecker limit formula yields
+
+\[
+\boxed{\det{}'\Delta_\tau=Y|\eta(\tau)|^4.}
+\]
+
+Because \(\eta\) is holomorphic and nonvanishing on \(\mathbb H\),
+
+\[
+\partial\bar\partial\log|\eta|^4=0.
+\]
+
+Therefore
 
 \[
 \boxed{
-\begin{aligned}
-N=1&:\ \operatorname{rank}G^{\rm ind}\le1,\\
-N=2&:\ G^{\rm ind}\text{ is degenerate or locally flat},\\
-N=3&:\ \text{local hyperbolic fitting is possible, but complete }\mathbb H\to\mathbb R^3\text{ is forbidden by Hilbert.}
-\end{aligned}}
-\]
-
-Hence two diagonal species can restore rank but can never reproduce the Poincare curvature \(K=-1\). This remains true under modular invariance. An explicit invariant witness uses Klein's modular invariant \(J\):
-
-\[
-V_1=M^2e^{2a\Re J(\tau)},\qquad V_2=M^2e^{2a\Im J(\tau)}.
-\]
-
-At regular points it has rank two, but the induced metric is still locally flat.
-
-The main predictivity result is therefore:
-
-\[
-\boxed{
-\text{a determinant induces a target metric only after a microscopic mass/operator map is supplied;}
-\quad
-\text{arbitrary spectral data can encode the desired metric by inverse design.}
+-\partial\bar\partial\log\det{}'\Delta_\tau
+=\frac1{4Y^2}d\tau\wedge d\bar\tau
+=F_{\lambda_H}.
 }
 \]
 
-The one-loop coefficient above is intentionally tied to the constant-background 1PI two-point definition. Chan and modern covariant derivative-expansion methods provide the standard context, while Canevarolo--Prokopec document that off-shell gradient-expansion prescriptions require care.
+This is an exact **intrinsic spectral--Hodge identity** in the same elliptic convention used by Model I. Unlike Model XVIII, the target curvature is regenerated from the fixed full torus spectrum with no adjustable \(V_i(\tau)\).
 
-References: Chan (1986); Henning--Lu--Murayama (2018); Canevarolo--Prokopec (2024); NIST DLMF Chapter 23; do Carmo (1976); Hilbert (1901).
+The statement is deliberately at the moduli-space Chern-curvature level. It does **not** yet derive a spacetime kinetic term for a slowly varying modulus \(\tau(x)\). The full real Hessian also contains harmonic trace-free information from \(\eta\); the canonical equality is the mixed \((1,1)\) curvature identity above.
+
+References: Ray--Singer (1973); Quillen (1985); Osgood--Phillips--Sarnak (1988); Faulhuber (2020/2021); NIST DLMF Chapter 23.
 
 ## Current controlled frontier
 
-The remaining bottleneck is no longer whether a determinant **can** make a metric. It can. The question is whether FCIG fixes the microscopic operator family without reverse-engineering the answer.
-
-The next target is **v0.19 — intrinsic elliptic spectral metric**: use the actual modular-covariant spectrum already present in the elliptic FCIG laboratory (flat-torus Laplacian / theta / Quillen data), rather than arbitrary functions \(V_i(\tau)\), and compute its moduli response.
-
-A particularly concrete test is the area-normalized torus spectrum
+The elliptic target geometry now has two independent realizations:
 
 \[
-\lambda_{m,n}(\tau)\propto\frac{|m\tau-n|^2}{\Im\tau},
+\boxed{
+\text{Hodge metric/line geometry}
+\quad\leftrightarrow\quad
+\text{intrinsic zeta-spectral curvature}.
+}
 \]
 
-whose multiset is modular invariant. The goal is to determine whether its zeta/determinant or adiabatic two-point response produces the Poincare/Hodge metric with a fixed coefficient, or merely another scheme-dependent/constitutive structure.
+The remaining bottleneck is dynamical rather than purely moduli-geometric. The next target is **v0.20 — adiabatic elliptic family / Kaluza--Klein response**: let \(\tau=\tau(x)\) vary over a spacetime/base, construct the corresponding total-space/fibered operator, include mode-basis connection and off-diagonal mixing, and derive the genuine spacetime two-derivative coefficient instead of identifying it with the moduli Hessian by analogy.
 
-Lorentzian/horizon closure remains separate.
+No Lorentzian/horizon closure is claimed.
