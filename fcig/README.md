@@ -12,7 +12,7 @@ The repository distinguishes **Established**, **Derived here**, **FCIG interpret
 
 ## Status
 
-Completed milestones: **v0.2–v0.25**.
+Completed milestones: **v0.2–v0.26**.
 
 The controlled chain is
 
@@ -22,44 +22,27 @@ The controlled chain is
 \to\text{curved curves}
 \to\text{Quillen / differential cohomology}
 \to\text{Deligne--RR}
-\to\text{anomaly / response no-gos}
+\to\text{response no-gos}
 \to\text{operator / heat-kernel bridge}
 \to\text{intrinsic elliptic spectrum}
 \to\text{adiabatic KK response}
 \to\text{spin/multiplet thresholds}
-\to\text{threshold/anomaly audit}
-\to\text{Green--Schwarz / anomaly-lattice audit}.
+\to\text{anomaly / GS lattice audits}
+\to\text{charged Jacobi spectrum}.
 }
 \]
 
 No derivation of Einstein dynamics or horizon thermodynamics from FCIG alone is claimed.
 
-## Models I–X — determinant / cohomological foundation
+## Models I–XVIII — determinant, cohomological and response foundation
 
-The elliptic, ppav and curved-curve laboratories establish theta-state counting, Bergman local/global sectors, determinant/Quillen geometry, differential characters, transgression, pushforward no-gos and the metrized Deligne--Riemann--Roch identity
-
-\[
-\boxed{\widehat\kappa_1=12\widehat\lambda_Q}
-\]
-
-in the canonical smooth curve-family model.
-
-## Models XI–XVIII — structure-group, anomaly and operator audits
-
-The determinant line retains only the trace/Ricci sector of a generic \(U(n)\) connection,
+These models establish theta-state counting, Bergman local/global sectors, determinant/Quillen geometry, differential characters, transgression, pushforward no-gos, the metrized Deligne--Riemann--Roch identity
 
 \[
-1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1,
-\qquad F_{\det E}=\operatorname{Tr}F_E,
+\boxed{\widehat\kappa_1=12\widehat\lambda_Q},
 \]
 
-and anomaly data alone do not fix the effective action or first response:
-
-\[
-\boxed{\text{same anomaly class}\not\Rightarrow\text{same }W,J,T_{\mu\nu}.}
-\]
-
-A realization map can put FCIG curvature into an ordinary Laplace-type operator, but arbitrary heavy masses turn target-metric matching into inverse design rather than prediction.
+structure-group type constraints, anomaly descent, functional-response ambiguity and the conditional heat-kernel/realization-map bridge.
 
 ## Model XIX — intrinsic spectral--Hodge identity
 
@@ -81,15 +64,7 @@ This is the first no-fit spectral regeneration of the pre-existing elliptic Hodg
 
 ## Models XX–XXIII — adiabatic and multiplet thresholds
 
-For one real scalar, the finite two-derivative threshold is trace-free,
-
-\[
-G^{\rm fin}_{\rm scalar}
-=-\frac1{16\pi^3L^2}
-\operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2].
-\]
-
-After completing standard 6d \(\mathcal N=(1,0)\) vector, hyper and tensor multiplets, the restricted parity-even table is
+After the adiabatic KK and spin-connection audits, the restricted parity-even 6d \(\mathcal N=(1,0)\) table is
 
 \[
 \boxed{
@@ -101,7 +76,7 @@ After completing standard 6d \(\mathcal N=(1,0)\) vector, hyper and tensor multi
 \end{array}}
 \]
 
-and therefore
+so
 
 \[
 \boxed{
@@ -114,138 +89,117 @@ K:=2n_V-n_H+2n_T.
 
 Self-dual zero modes, theta characteristics and global anomaly phases remain separate from this parity-even determinant magnitude.
 
-## Model XXIV — threshold versus anomaly polynomial
+## Models XXIV–XXV — anomaly / Green--Schwarz audits
 
-Using the standard free-multiplet anomaly convention, define
-
-\[
-R=-n_V+n_T,
-\quad
-P_1=-7n_V+7n_H+23n_T,
-\quad
-P_2=4n_V-4n_H-116n_T.
-\]
-
-The independent anomaly coefficient matrix has
+The free-multiplet anomaly map reconstructs \((n_V,n_H,n_T)\) but its natural cancellation kernels differ from the threshold kernel. After the irreducible gravitational anomaly condition,
 
 \[
-\boxed{\det M_\mathcal A=720},
+\boxed{K=V+31T-273.}
 \]
 
-so the full one-loop coefficient vector reconstructs the three multiplet counts and hence
+Green--Schwarz lattice refinements \(a,b_i\), lattice embeddings and global gauge-group data can change quantum admissibility without changing this gauge-blind threshold. Explicit F-theory witnesses occur with both signs of \(K\).
+
+Sources: `threshold-anomaly.*`, `green-schwarz-lattice.*`.
+
+## Model XXVI — charged elliptic / Jacobi spectral determinant
+
+- Web: `charged-jacobi.html`
+- Source: `charged-jacobi.md`
+- Checker: `charged-jacobi.py`
+- Milestone bibliography: `charged-jacobi.bib`
+
+Introduce flat gauge holonomies by
 
 \[
-\boxed{
-K=-R-\frac8{45}P_1-\frac{11}{180}P_2.
-}
+z=\alpha\tau+\beta.
 \]
 
-This is coefficient-space reconstruction only. The cancellation kernels are different:
-
-\[
-(1,2,0):\ K=0\text{ but }I_8\neq0,
-\qquad
-(1,1,0):\ P_1=P_2=0\text{ but }K=1.
-\]
-
-Sources: `threshold-anomaly.*`.
-
-## Model XXV — Green--Schwarz / anomaly-lattice audit
-
-- Web: `green-schwarz-lattice.html`
-- Source: `green-schwarz-lattice.md`
-- Checker: `green-schwarz-lattice.py`
-- Milestone bibliography: `green-schwarz-lattice.bib`
-
-The standard six-dimensional Green--Schwarz data contain a tensor charge lattice \(\Lambda_S\) of signature \((1,T)\), gravitational coefficient \(a\), gauge coefficients \(b_i\), and global quantization / characteristic conditions.
-
-Imposing the irreducible gravitational-anomaly relation
-
-\[
-H-V+29T=273
-\]
-
-on the Model-XXIII threshold gives
+For integral charge \(q\), the exact shifted spectrum is
 
 \[
 \boxed{
-K=2V-H+2T=V+31T-273.
+\lambda^{(q)}_{m,n}(\tau,z)
+=\frac{4\pi^2}{Y}|m\tau-n+qz|^2.
 }
 \]
 
-Thus at fixed \((V,T)\), the threshold is blind to refinements of
-
-\[
-a,\quad b_i,\quad
-\Lambda_S\text{ embedding},\quad
-G_{\rm global},\quad
-\text{quadratic / characteristic data}.
-\]
-
-This blindness is physical rather than merely formal. On the even unimodular lattice
-
-\[
-U=\begin{pmatrix}0&1\\1&0\end{pmatrix},
-\]
-
-both
-
-\[
-a=(2,2),\qquad a=(4,1)
-\]
-
-have \(a^2=8\) for \(T=1\), but only \((2,2)\) is characteristic. The Monnier--Moore--Park \((4,1)\) candidate has the same
-
-\[
-(V,H,T)=(0,244,1),\qquad K=-242,
-\]
-
-as a standard elliptic \(\mathbb F_0\) model, yet fails the global characteristic test.
-
-Green--Schwarz/F-theory consistency also does not fix the sign of \(K\):
+The second Kronecker limit formula gives
 
 \[
 \boxed{
-K_{\mathbb F_0}=-242<0,
-\qquad
-K_{gdP_9,U(1)^8}=14>0.
+D_q(\tau,z)
+=\det\Delta_{q,z}
+=e^{-2\pi q^2(\operatorname{Im}z)^2/Y}
+\left|\frac{\theta_1(qz|\tau)}{\eta(\tau)}\right|^2.
 }
 \]
 
-Hence
+This is invariant under modular transformations and the allowed elliptic large-gauge shifts. Its zero-mode limit reproduces Model XIX:
 
 \[
 \boxed{
-\text{GS/lattice consistency}
-\not\Rightarrow
-K\ge0,\ K\le0,\ \text{or }K=0.
+\lim_{z\to0}\frac{D_q(\tau,z)}{\lambda^{(q)}_{0,0}}
+=Y|\eta(\tau)|^4.
 }
 \]
 
-The new lattice data are nevertheless genuine quantum-consistency information; they can accept or reject theories without changing the finite gauge-blind elliptic threshold.
+Away from the zero divisor,
+
+\[
+\boxed{
+-\partial\bar\partial\log D_q
+=
+\frac{\pi q^2}{Y}
+\left(dz-\frac{\operatorname{Im}z}{Y}d\tau\right)
+\wedge
+\left(d\bar z-\frac{\operatorname{Im}z}{Y}d\bar\tau\right).
+}
+\]
+
+Thus the holomorphic factor has Jacobi index \(q^2/2\), and for many charges the quadratic spectral response is controlled by
+
+\[
+\boxed{\mathcal Q_2=\sum_a\nu_a q_a^2.}
+\]
+
+This is the first direct microscopic overlap with the six-dimensional abelian anomaly relation
+
+\[
+a\cdot\widetilde b=-\frac16\sum_qx_qq^2,
+\]
+
+while the quartic moment
+
+\[
+\widetilde b\cdot\widetilde b=\frac13\sum_qx_qq^4
+\]
+
+is not determined by the quadratic Jacobi curvature.
+
+The common \(\sum q^2\) is a shared microscopic invariant, not an equality between anomaly and spectral observables.
 
 ## Current frontier
 
-The active target is **v0.26 — charged elliptic / Jacobi threshold**.
+The active target is **v0.27 — full charged multiplet / quartic holonomy response**.
 
-Model XXV explains why the current threshold cannot see \(b_i\): Models XX–XXIII switched off background gauge holonomies. The next controlled extension introduces an elliptic gauge variable
+The next task is to compute charged vector/hyper/tensor multiplet determinants on the same \((\tau,z)\) background and separate
 
 \[
-z=\alpha\tau+\beta
+\sum q^2
+\quad\text{from}\quad
+\sum q^4
 \]
 
-so charged KK modes see shifted lattices and the determinant becomes theta/Jacobi-like. Only then is there an explicit channel through which charge lattices, representation weights and Green--Schwarz gauge data might constrain a finite spectral response.
+as genuine second- versus fourth-order holonomy response. Only after that can the full Green--Schwarz pairings \(a\cdot b_i\) and \(b_i\cdot b_j\) be compared through one microscopic spectral model.
 
 The rule remains
 
 \[
 \boxed{
-\text{anomaly / lattice data}
+\text{common charge invariant}
 \neq
-\text{finite response}
+\text{physical identification of observables}.
 }
 \]
-
-unless an explicit spectral map is constructed.
 
 Lorentzian/horizon closure remains inactive.
