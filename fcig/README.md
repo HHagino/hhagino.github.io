@@ -26,11 +26,13 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to
 \text{differential-cohomology / holonomy synthesis}
 \to
+\text{response / transgression test}
+\to
 \text{Lorentzian closure?}
 }
 \]
 
-Completed milestones: **v0.2 (elliptic)**, **v0.3 (flat ppav)**, **v0.4 (curved hyperbolic curves)**, and **v0.5 (Quillen / analytic torsion)**. The active target is **v0.6: determinant-connection holonomy and differential-cohomology synthesis**.
+Completed milestones: **v0.2 (elliptic)**, **v0.3 (flat ppav)**, **v0.4 (curved hyperbolic curves)**, **v0.5 (Quillen / analytic torsion)**, and **v0.6 (differential cohomology / determinant holonomy)**. The next controlled target is a response/transgression test; the gravity closure remains inactive.
 
 ## Main research-program note
 
@@ -213,11 +215,53 @@ c_1(\lambda_k,h_{L^2})
 
 Thus the elementary \(L^2\) determinant curvature and the Quillen/family-index curvature are related but not interchangeable.
 
-The spectral determinant is globally encoded by Selberg-zeta / closed-geodesic data. However, the pointwise Bergman loop correction from Model IV is **not** literally analytic torsion: one is a pointwise based-loop functional, the other a global regularized spectral functional. Their coexistence reflects shared hyperbolic trace geometry, not equality.
+The spectral determinant is globally encoded by Selberg-zeta / closed-geodesic data. The pointwise Bergman loop correction from Model IV is nevertheless **not** literally analytic torsion; shared geodesic input does not imply equality of the two functionals.
+
+## Explicit Model VI — differential cohomology / determinant holonomy
+
+- Web: `differential-holonomy.html`
+- Source: `differential-holonomy.md`
+- Sanity checker: `differential-holonomy.py`
+
+A Hermitian line with unitary connection defines
+
+\[
+\boxed{
+\widehat c_1(L,\nabla)
+\in
+\widehat H^2(B;\mathbf Z).
+}
+\]
+
+Its standard outputs are
+
+\[
+\boxed{
+I(\widehat c_1)=c_1(L),
+\qquad
+R(\widehat c_1)=\frac{F_\nabla}{2\pi i},
+\qquad
+\operatorname{Hol}_\nabla(\gamma)=e^{2\pi i h(\gamma)}.
+}
+\]
+
+The curvature exact sequence
+
+\[
+0\to H^1(B;\mathbf R/\mathbf Z)
+\to\widehat H^2(B;\mathbf Z)
+\xrightarrow{R}\Omega^2_{\mathbf Z}(B)\to0
+\]
+
+makes the earlier local/global distinction precise. The flat ppav corrected line lies in the flat sector when it descends on the chosen theta/metaplectic cover, while the curved Quillen determinant line has nonzero local-index curvature and eta-invariant holonomy.
+
+For a Dirac family, the Bismut–Freed holonomy theorem supplies the loop datum through the adiabatic reduced eta invariant. Hence curvature and global holonomy are two compatible evaluations of one differential character, not independent anomaly labels.
+
+The same synthesis also sharpens the no-go boundary: this determinant class lives on a parameter/moduli base and is \(U(1)\)-valued; it is not the Lorentzian tangent/frame curvature of spacetime.
 
 ## Current synthesis
 
-The explicit models now support the hierarchy
+The explicit models now support
 
 \[
 \boxed{
@@ -227,12 +271,10 @@ The explicit models now support the hierarchy
 \oplus
 \text{global lattice/geodesic data}
 \oplus
-\text{connection/holonomy}
+\text{determinant metric / analytic torsion}
 \oplus
-\text{determinant line}
-\oplus
-\text{metric refinement by analytic torsion}.
+\text{differential-character curvature + holonomy}.
 }
 \]
 
-The next task is to package curvature and holonomy together as a differential-cohomological determinant-connection class. The Lorentzian/gravity closure remains deliberately inactive until that synthesis is tested.
+The next mathematically controlled question is whether there exists a genuine **response/transgression map** from this determinant differential character to another geometrically specified connection, with the base spaces and tensor types made explicit. No Lorentzian/gravitational closure is claimed at this stage.
