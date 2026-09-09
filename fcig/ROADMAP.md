@@ -1,6 +1,6 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.24 — multiplet threshold / anomaly-polynomial comparison audit  
+**Current target:** v0.25 — Green--Schwarz factorization / anomaly-lattice response audit  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations remain explicit no-go results.
@@ -9,192 +9,40 @@ The roadmap is ordered so that each mechanism is tested before any gravitational
 
 ## v0.3–v0.17 — geometric, determinant and response foundation — COMPLETE
 
-Established milestones include theta/ppav state counting, curved-curve Bergman and Quillen sectors, differential cohomology, determinant holonomy, global metrized Deligne--Riemann--Roch, structure-group and pushforward no-gos, anomaly descent, functional-response ambiguity, the conditional semiclassical bridge, heat-kernel operators and elliptic realization-map dynamics.
+Established milestones include theta/ppav state counting, curved-curve Bergman and Quillen sectors, differential cohomology, determinant holonomy, global metrized Deligne--Riemann--Roch, structure-group and pushforward no-gos, anomaly descent, functional-response ambiguity, conditional semiclassical closure, heat-kernel operators and elliptic realization-map dynamics.
 
 No Einstein equation is derived from these data alone.
 
 ---
 
-## v0.18 — arbitrary-mass induced metric — COMPLETE WITH NO-GO
+## v0.18–v0.20 — induced and intrinsic elliptic geometry — COMPLETE
+
+Arbitrary heavy masses induce a pullback-Euclidean target metric and therefore do not predict the FCIG metric without an intrinsic operator. The actual area-one elliptic Laplacian then gives
 
 \[
-G^{\rm ind}_{AB}
-=\frac1{192\pi^2}\sum_i\frac{\partial_AV_i\partial_BV_i}{V_i}
-=\frac1{48\pi^2}s^*\delta_{\mathbb R^N}.
+\boxed{-\partial\bar\partial\log\det{}'\Delta_\tau=F_{\lambda_H}},
 \]
 
-Unconstrained masses turn target-metric matching into inverse design; prediction requires an intrinsic operator/spectrum.
-
----
-
-## v0.19 — intrinsic elliptic spectral metric — COMPLETE
-
-\[
-\lambda_{m,n}=\frac{4\pi^2}{Y}|m\tau-n|^2,
-\qquad
-\det{}'\Delta_\tau=Y|\eta(\tau)|^4,
-\]
-
-\[
-\boxed{-\partial\bar\partial\log\det{}'\Delta_\tau=F_{\lambda_H}.}
-\]
-
-This is a finite moduli-space Chern-curvature identity.
-
----
-
-## v0.20 — adiabatic elliptic / KK response — COMPLETE
-
-For the fixed-volume elliptic family,
-
-\[
-R_6=R_4-\frac1{2Y^2}\partial_\mu\tau\partial^\mu\bar\tau,
-\qquad
-M_{m,n}^2=\frac{4\pi^2}{L^2Y}|m\tau-n|^2.
-\]
-
-The local Poincare-shaped coefficient is UV/counterterm sensitive. The finite one-real-scalar threshold is
+while the adiabatic spacetime calculation separates a UV-sensitive local Poincare term from the finite real-scalar threshold
 
 \[
 \boxed{
 G^{\rm fin}_{\rm scalar}
-=-\frac1{16\pi^3L^2}
-\operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2],
-\qquad
-\operatorname{tr}_{g_{\rm hyp}}G^{\rm fin}_{\rm scalar}=0.
+=-\frac1{16\pi^3L^2}\operatorname{Re}[\mathcal G_4(\tau)(d\tau)^2].
 }
 \]
 
 ---
 
-## v0.21 — field-content audit — COMPLETE WITH SPIN-CONNECTION OBSTRUCTION
+## v0.21–v0.23 — field-content and multiplet thresholds — COMPLETE
 
-The local six-dimensional \(R_6\) sector obeys
+The six-dimensional local \(R_6\) response is not a naive signed degree count:
 
 \[
 \boxed{\text{real scalar : complex Dirac : Maxwell+ghost}=1:4:-2.}
 \]
 
-A 6d \(\mathcal N=(1,0)\) vector multiplet has local parity-even cancellation \(-2+2=0\), but finite spin responses cannot be obtained by signed component counting.
-
----
-
-## v0.22 — spin-connection automorphic thresholds — COMPLETE
-
-For Lorentz representation \(R\),
-
-\[
-\boxed{
-\Delta G_{\rm tr}^{(R)}
-=\frac{(-1)^F(2C_R-e_R)}{16\pi^3L^2}
-Z_\tau(2)g_{\rm hyp}.
-}
-\]
-
-For a specified 6d \(\mathcal N=(1,0)\) vector multiplet, the local and finite weight-four terms cancel while
-
-\[
-\boxed{
-G_{\rm vector}^{\rm fin}
-=\frac{Z_\tau(2)}{8\pi^3L^2}g_{\rm hyp}>0
-}
-\]
-
-in the controlled interior region.
-
-Sources: `spin-threshold.md`, `spin-threshold.py`, `spin-threshold.bib`.
-
----
-
-## v0.23 — hyper/tensor multiplet automorphic thresholds — COMPLETE
-
-Sources:
-
-- `hyper-tensor-threshold.md`
-- `hyper-tensor-threshold.py`
-- `hyper-tensor-threshold.bib`
-- `hyper-tensor-threshold.html`
-
-### Gate DC — hypermultiplet — PASS
-
-A 6d \(\mathcal N=(1,0)\) hypermultiplet contains four real scalars and one SMW fermion. Therefore
-
-\[
-\boxed{
-(C_{\rm local},A_{\mathcal G_4},B_{Z_2})_{\rm hyper}
-=\left(6,0,-\frac1{16}\right)
-}
-\]
-
-and
-
-\[
-\boxed{
-G_{\rm hyper}^{\rm fin}
-=-\frac{Z_\tau(2)}{16\pi^3L^2}g_{\rm hyp}.
-}
-\]
-
-The isolated hypermultiplet contribution is negative definite in this parity-even one-loop convention.
-
-### Gate DD — non-chiral two-form determinant — PASS
-
-The standard reducible-gauge determinant is
-
-\[
-W_{B,\rm nonch}
-=\frac12\log\det{}'\Delta_2
--\log\det{}'\Delta_1
-+\frac32\log\det{}'\Delta_0.
-\]
-
-Using the Model-XXII \(p\)-form Lorentz-index reduction gives
-
-\[
-\boxed{
-(C_{\rm local},A,B)_{B,\rm nonch}
-=\left(-6,-\frac38,\frac38\right).
-}
-\]
-
-### Gate DE — self-dual magnitude prescription — PASS WITH GLOBAL CAVEAT
-
-Holomorphic factorization / self-dual determinant-line literature justifies taking one half of the non-chiral logarithmic response for the parity-even nonzero-mode magnitude, while zero modes, theta characteristics and chiral/global phases remain separate.
-
-Thus
-
-\[
-\boxed{
-(C_{\rm local},A,B)_{B^+}
-=\left(-3,-\frac3{16},\frac3{16}\right).
-}
-\]
-
-This is not a claim that the full global chiral partition function is a literal positive square root of the non-chiral function.
-
-### Gate DF — tensor multiplet — PASS
-
-A tensor multiplet contains one self-dual/anti-self-dual two-form, one real scalar and one SMW fermion. Hence
-
-\[
-\boxed{
-(C_{\rm local},A,B)_{\rm tensor}
-=\left(0,0,\frac18\right)
-}
-\]
-
-and
-
-\[
-\boxed{
-G_{\rm tensor}^{\rm fin}
-=\frac{Z_\tau(2)}{8\pi^3L^2}g_{\rm hyp}.
-}
-\]
-
-The parity-even tensor-multiplet threshold exactly equals the vector-multiplet threshold in the restricted model.
-
-### Gate DG — completed multiplet table — PASS
+Spin connections add a finite modular Poincare-trace sector. Completing standard \(\mathcal N=(1,0)\) vector, hyper and tensor multiplets gives
 
 \[
 \boxed{
@@ -206,77 +54,192 @@ The parity-even tensor-multiplet threshold exactly equals the vector-multiplet t
 \end{array}}
 \]
 
-All three supersymmetric multiplets cancel the finite weight-four trace-free sector in this background.
-
-For independently fixed multiplicities,
+and
 
 \[
 \boxed{
 G_{VHT}^{\rm fin}
-=\frac{2n_V-n_H+2n_T}{16\pi^3L^2}
-Z_\tau(2)g_{\rm hyp}.
+=\frac{2n_V-n_H+2n_T}{16\pi^3L^2}Z_\tau(2)g_{\rm hyp}.
 }
 \]
 
-This is bookkeeping only; multiplicities may not be chosen merely to engineer a desired sign.
-
-### Gate DH — anomaly consistency — PASS WITH STRICT DISTINCTION
-
-The multiplet anomaly polynomials are separate observables from the local and finite kinetic coefficients above:
-
-\[
-\boxed{
-I_8
-\neq
-C_{\rm local}
-\neq
-(A_{\mathcal G_4},B_{Z_2}).
-}
-\]
-
-No anomaly cancellation is inferred from the threshold table, and no threshold cancellation is inferred from an anomaly-free field content.
-
-### Scope
-
-The result is restricted to the locally trivial, fixed-volume, block-diagonal elliptic family, nonzero KK/winding tower and parity-even determinant magnitudes. Self-dual global phases, nontrivial torus bundles, background gauge fields and the cusp/EFT breakdown remain separate.
-
-References: Ferrara--Riccioni--Sagnotti (1998); Ohmori--Shimizu--Tachikawa--Yonekura (2014); Henningson--Nilsson--Salomonson (1999); Gustavsson (2002); Witten (1997); Belov--Moore (2006); Monnier (2014); Huang--Roiban--Tseytlin (2018); Model XXII references.
+Self-dual zero modes/global phases remain separate from the parity-even magnitude used here.
 
 ---
 
-## v0.24 — multiplet threshold / anomaly-polynomial comparison — ACTIVE
+## v0.24 — multiplet threshold / anomaly-polynomial comparison — COMPLETE
 
-The next task is not to fit more field multiplicities. It is to compare, for the **same independently specified multiplets**, the kinetic-response coefficients above with their established 6d anomaly polynomials.
+Sources:
 
-### Gate DI — canonical anomaly-polynomial table
+- `threshold-anomaly.md`
+- `threshold-anomaly.py`
+- `threshold-anomaly.bib`
+- `threshold-anomaly.html`
 
-Record vector, hyper and tensor multiplet contributions to the purely gravitational and any relevant background-gauge pieces of \(I_8\), with conventions fixed to one primary source.
+### Gate DI — canonical anomaly table — PASS
 
-### Gate DJ — coefficient-space comparison
-
-Compare the linear functionals on multiplet number space:
+Using the standard free-multiplet convention,
 
 \[
-(n_V,n_H,n_T)
-\mapsto
-2n_V-n_H+2n_T
+I_8^H=\frac{7p_1^2-4p_2}{5760},
 \]
 
-for the finite elliptic kinetic threshold and the independent anomaly-polynomial combinations. Determine their kernels/intersections without identifying them.
+\[
+I_8^V=-\frac{c_2(R)^2}{24}-\frac{c_2(R)p_1}{48}-\frac{7p_1^2-4p_2}{5760},
+\]
 
-### Gate DK — independently motivated combinations
+\[
+I_8^T=\frac{c_2(R)^2}{24}+\frac{c_2(R)p_1}{48}+\frac{23p_1^2-116p_2}{5760}.
+\]
 
-Only test combinations coming from an external 6d model or standard anomaly-cancellation condition. Do not choose multiplicities to force a preferred kinetic sign.
+Define
 
-### Gate DL — self-dual global phase audit
+\[
+R=-n_V+n_T,
+\qquad
+P_1=-7n_V+7n_H+23n_T,
+\qquad
+P_2=4n_V-4n_H-116n_T.
+\]
 
-For tensor-containing combinations, keep the Monnier/Witten global self-dual phase/anomaly data distinct from the parity-even determinant magnitude.
+### Gate DJ — coefficient-space rank — PASS
 
-### Gate DM — scope/no-gravity rule
+The independent anomaly coefficient matrix is
 
-Even simultaneous anomaly cancellation and a positive finite moduli metric do not constitute an Einstein equation, horizon law or UV completion.
+\[
+M_\mathcal A=
+\begin{pmatrix}
+-1&0&1\\
+-7&7&23\\
+4&-4&-116
+\end{pmatrix},
+\qquad
+\boxed{\det M_\mathcal A=720\neq0}.
+\]
 
-**Pass condition:** a citation-audited anomaly-polynomial table and an exact comparison of the anomaly and kinetic linear conditions on fixed multiplet content.
+Thus the three independent one-loop anomaly coefficients reconstruct \((n_V,n_H,n_T)\).
+
+### Gate DK — threshold/anomaly kernels — PASS WITH NO-GO
+
+The finite threshold is
+
+\[
+K=2n_V-n_H+2n_T.
+\]
+
+Its kernel differs from every individual anomaly kernel. Explicitly,
+
+\[
+(1,2,0):\quad K=0,\qquad(R,P_1,P_2)=(-1,7,-4),
+\]
+
+so threshold cancellation does not imply anomaly cancellation.
+
+Conversely,
+
+\[
+(1,1,0):\quad P_1=P_2=0,\qquad K=1,
+\]
+
+so pure-gravitational one-loop cancellation does not imply threshold cancellation.
+
+The pure-gravitational anomaly kernel is
+
+\[
+\boxed{\ker(P_1,P_2)=\operatorname{span}\{(1,1,0)\}},
+\]
+
+while
+
+\[
+\boxed{\ker K=\{n_H=2n_V+2n_T\}}.
+\]
+
+Their intersection is trivial over \(\mathbb Q\).
+
+### Gate DL — supergravity irreducible condition — PASS WITH HYPOTHESIS
+
+The standard six-dimensional supergravity condition
+
+\[
+\boxed{n_H-n_V+29n_T=273}
+\]
+
+is an independently motivated necessary irreducible gravitational-anomaly condition once the gravity multiplet is included. It does not determine \(K\): for example \((0,244,1)\) satisfies the arithmetic condition but gives \(K=-242\).
+
+This is not asserted to satisfy the remaining gauge/factorization/global consistency conditions.
+
+### Gate DM — algebraic reconstruction — PASS WITH INTERPRETATION BOUNDARY
+
+Because the anomaly map is invertible,
+
+\[
+\boxed{
+K=-R-\frac8{45}P_1-\frac{11}{180}P_2.
+}
+\]
+
+This is exact coefficient-space reconstruction, not a physical identification:
+
+\[
+\boxed{
+\text{reconstructibility from field counts}
+\neq
+\text{equality of observables}.
+}
+\]
+
+### Gate DN — scope — PASS
+
+The comparison concerns the one-loop free-multiplet polynomial and the restricted parity-even finite threshold. Green--Schwarz data, anomaly lattices, gauge-representation anomalies, global self-dual phases and interacting SCFT sectors are not absorbed into \(K\).
+
+References: Ohmori--Shimizu--Tachikawa--Yonekura (2014); Andrianopoli--Ferrara--Lledó (2004); milestone bibliography `threshold-anomaly.bib`.
+
+---
+
+## v0.25 — Green--Schwarz factorization / anomaly-lattice response audit — ACTIVE
+
+v0.24 shows that the one-loop anomaly coefficient vector can reconstruct field counts, but its cancellation conditions are not the finite-threshold condition. The next step adds genuinely new anomaly data rather than more field-count algebra.
+
+### Gate DO — Green--Schwarz data model
+
+Fix the standard six-dimensional factorization form
+
+\[
+I_8^{\rm 1-loop}+I_8^{\rm GS}=0,
+\qquad
+I_8^{\rm GS}=\frac12\Omega_{\alpha\beta}X_4^\alpha X_4^\beta,
+\]
+
+with tensor charge lattice \(\Omega\) and four-forms \(X_4^\alpha\) in one cited convention.
+
+### Gate DP — new-data test
+
+Determine exactly which pieces of \((\Omega,X_4)\) are not reconstructible from \((n_V,n_H,n_T)\). Treat these as genuinely additional structure rather than rewriting multiplet counts.
+
+### Gate DQ — threshold constraint audit
+
+Ask whether anomaly factorization imposes any necessary relation on
+
+\[
+K=2n_V-n_H+2n_T
+\]
+
+for independently specified theories. Produce explicit counterexamples if factorization and threshold sign/vanishing remain independent.
+
+### Gate DR — anomaly-lattice geometry versus FCIG metric
+
+Compare the signature/integrality structure of the tensor charge lattice with the positive elliptic Poincare metric without identifying them. Any bridge must be an explicit map, not analogy.
+
+### Gate DS — self-dual/global sector
+
+Keep global anomaly phases and quadratic refinements separate from the parity-even determinant magnitude.
+
+### Gate DT — scope/no-gravity rule
+
+Even simultaneous Green--Schwarz consistency and a positive finite automorphic kinetic metric do not imply a UV completion, Einstein dynamics or a horizon law.
+
+**Pass condition:** a citation-audited Green--Schwarz/anomaly-lattice model and an exact statement of whether it constrains the finite FCIG threshold beyond field-count reconstruction.
 
 ---
 
