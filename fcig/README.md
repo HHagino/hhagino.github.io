@@ -22,13 +22,15 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to
 \text{compact hyperbolic curves}
 \to
-\text{Quillen / analytic-torsion refinement}
+\text{Quillen / analytic torsion}
 \to
-\text{Lorentzian closure}.
+\text{differential-cohomology / holonomy synthesis}
+\to
+\text{Lorentzian closure?}
 }
 \]
 
-The current completed milestones are **v0.2 (elliptic)**, **v0.3 (flat ppav)**, and **v0.4 (curved hyperbolic curves)**. The active target is **v0.5: systematic \(L^2\) vs Quillen / analytic-torsion comparison**.
+Completed milestones: **v0.2 (elliptic)**, **v0.3 (flat ppav)**, **v0.4 (curved hyperbolic curves)**, and **v0.5 (Quillen / analytic torsion)**. The active target is **v0.6: determinant-connection holonomy and differential-cohomology synthesis**.
 
 ## Main research-program note
 
@@ -161,15 +163,7 @@ This realizes, in one curved model,
 }
 \]
 
-The local factor integrates exactly to
-
-\[
-\dim H^0(X,K_X^k)=(2k-1)(g-1),
-\]
-
-so the global loop correction redistributes state density while integrating to zero.
-
-For determinant/Hodge geometry, the established Mumford isomorphism gives
+For determinant/Hodge geometry,
 
 \[
 \boxed{
@@ -179,23 +173,51 @@ For determinant/Hodge geometry, the established Mumford isomorphism gives
 }
 \]
 
-This is a useful no-go result for a naive universal extrapolation of the flat ppav law: the curved canonical-family determinant coefficient is quadratic in \(k\), while the state rank is linear in \(k\) at fixed genus.
+This gives a no-go for a universal extrapolation of the flat ppav rank/2 law.
 
-The Quillen benchmark is
+## Explicit Model V — Quillen / analytic-torsion refinement
+
+- Web: `quillen-refinement.html`
+- Source: `quillen-refinement.md`
+- Sanity checker: `quillen-refinement.py`
+
+On the same determinant line \(\lambda_k\), fix the holomorphic analytic-torsion convention
+
+\[
+\mathcal T_k
+=
+\sum_{q=0}^{1}(-1)^q q\log\det{}'\Delta_{0,q}^{(k)}.
+\]
+
+Then
 
 \[
 \boxed{
-c_1(\lambda_k,\|\cdot\|_Q)
-=
-\frac{6k^2-6k+1}{12\pi^2}\omega_{\mathrm{WP}}.
+h_Q=e^{\mathcal T_k}h_{L^2},
+\qquad
+F_Q-F_{L^2}=-\partial\bar\partial\mathcal T_k.
 }
 \]
 
-Systematic separation of ordinary \(L^2\) determinant geometry from analytic torsion is deferred to v0.5.
+Combining this with the established Zograf–Takhtajan formula gives
+
+\[
+\boxed{
+c_1(\lambda_k,h_{L^2})
+=
+\frac{6k^2-6k+1}{12\pi^2}\omega_{\mathrm{WP}}
++
+\frac{i}{2\pi}\partial\bar\partial\mathcal T_k.
+}
+\]
+
+Thus the elementary \(L^2\) determinant curvature and the Quillen/family-index curvature are related but not interchangeable.
+
+The spectral determinant is globally encoded by Selberg-zeta / closed-geodesic data. However, the pointwise Bergman loop correction from Model IV is **not** literally analytic torsion: one is a pointwise based-loop functional, the other a global regularized spectral functional. Their coexistence reflects shared hyperbolic trace geometry, not equality.
 
 ## Current synthesis
 
-The explicit models now support a hierarchy
+The explicit models now support the hierarchy
 
 \[
 \boxed{
@@ -207,8 +229,10 @@ The explicit models now support a hierarchy
 \oplus
 \text{connection/holonomy}
 \oplus
-\text{determinant/index geometry}.
+\text{determinant line}
+\oplus
+\text{metric refinement by analytic torsion}.
 }
 \]
 
-This is a mathematical-physics research program, not a derivation of spacetime gravity. The Lorentzian closure problem remains open and is deliberately downstream of the geometric tests.
+The next task is to package curvature and holonomy together as a differential-cohomological determinant-connection class. The Lorentzian/gravity closure remains deliberately inactive until that synthesis is tested.
