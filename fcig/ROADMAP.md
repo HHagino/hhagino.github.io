@@ -1,49 +1,21 @@
 # FCIG Research Roadmap
 
-**Current target:** v0.15 — constitutive / semiclassical closure audit  
+**Current target:** v0.16 — local heat-kernel / effective-action bridge  
 **Updated:** 2026-09-09
 
 The roadmap is ordered so that each mechanism is tested before any gravitational interpretation. Failed extrapolations are retained as explicit no-go results.
 
 ---
 
-## v0.3–v0.6 — geometry, determinants and differential characters — COMPLETE
+## v0.3–v0.10 — geometric, determinant, and differential-cohomology sector — COMPLETE
 
-The flat and curved laboratories established exact theta/state-count models, local/global Bergman sectors, determinant lines, Quillen versus \(L^2\) metrics, analytic torsion, and degree-two differential characters carrying topology, curvature, and holonomy.
-
----
-
-## v0.7–v0.8 — transgression and factorized pushforward — COMPLETE
-
-Loop transgression is a genuine response operation,
+The flat/curved laboratories establish theta/state-count models, Bergman local/global sectors, determinant/Quillen geometry, differential characters, transgression, pushforward no-gos, and the global metrized Deligne--RR identity
 
 \[
-\tau_{S^1}:\widehat H^2(B;\mathbf Z)\to\widehat H^1(LB;\mathbf Z),
-\]
-
-while factorized degree-restoring pushforwards satisfy
-
-\[
-\boxed{
-p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)=n\widehat{\mathcal A}
-}
-\]
-
-and therefore cannot generate a new independent degree-two response direction.
-
----
-
-## v0.9–v0.10 — \(\widehat\kappa_1\), Quillen, and global Deligne--RR — COMPLETE
-
-For a smooth curve family,
-
-\[
-\widehat\kappa_1:=\pi_!\bigl(\widehat c_1(K_{X/B})^2\bigr),
-\qquad
 \boxed{\widehat\kappa_1=12\widehat\lambda_Q}
 \]
 
-in the fixed metrized Deligne-pairing convention.
+for the canonical smooth curve-family model.
 
 ---
 
@@ -55,85 +27,39 @@ in the fixed metrized Deligne-pairing convention.
 F_{\det E}=\operatorname{Tr}F_E.
 \]
 
-Fixing the determinant connection leaves an affine space over \(\Omega^1(M;\mathfrak{su}(E))\). Therefore determinant data cannot reconstruct generic nonabelian frame geometry for \(n>1\). Kähler/Ricci, K3, and Spin\(^c\) tests make the information loss explicit.
+The determinant sector fixes trace/Ricci data but not a generic nonabelian frame connection for \(n>1\).
 
 ---
 
-## v0.12 — mixed characteristic-class / anomaly-polynomial audit — COMPLETE
+## v0.12–v0.13 — mixed anomaly polynomial and descent/inflow — COMPLETE
 
 With independent line and frame connections,
 
 \[
-\widehat c_1(L)\cup\widehat p_1(TM)\in\widehat H^6(M;\mathbf Z)
+\widehat c_1(L)\cup\widehat p_1(TM)\in\widehat H^6(M;\mathbf Z),
 \]
 
-is a standard mixed invariant, and
+and
 
 \[
-\boxed{
 [\widehat A(TM)\operatorname{ch}(L)]_{(6)}
 =\frac16c_1^3-\frac1{24}c_1p_1.
-}
 \]
 
-Its degree-six nature blocks a direct interpretation as a local 4D action density.
+Locally,
+
+\[
+I_5^{(0)}=a\wedge\left(\frac16c^2-\frac1{24}p_1\right),
+\qquad dI_5^{(0)}=I_6,
+\]
+
+with standard four-dimensional boundary descent. Global quantization is controlled by the Dirac index / Dai--Freed anomaly theory.
 
 ---
 
-## v0.13 — explicit descent / anomaly inflow — COMPLETE
+## v0.14 — background-field functional response audit — COMPLETE WITH NO-GO
 
-On a local trivialization with \(da=c\),
-
-\[
-I_5^{(0)}
-=a\wedge\left(\frac16c^2-\frac1{24}p_1\right),
-\qquad
-dI_5^{(0)}=I_6,
-\]
-
-and under \(a\mapsto a+d\alpha\),
-
-\[
-\delta I_5^{(0)}
-=d\left[\alpha\left(\frac16c^2-\frac1{24}p_1\right)\right].
-\]
-
-The global fermionic anomaly phase is quantized by the spin Dirac index / Dai--Freed theory; local Chern--Simons forms are secondary representatives.
-
----
-
-## v0.14 — background-field functional response audit — COMPLETE
-
-Sources:
-
-- `functional-response.md`
-- `functional-response.py`
-- `functional-response.bib`
-
-Let \(\mathcal B\) be a background-field space carrying gauge and metric/frame data, and
-
-\[
-(\mathscr L_{\rm an},\nabla^{\rm an})\to\mathcal B
-\]
-
-the anomaly line. A partition function is a section \(Z\), and only after a local trivialization may one write \(Z=e^{-W}\).
-
-### Gate AR — background-field hierarchy — PASS
-
-\[
-\boxed{
-(\mathscr L_{\rm an},\nabla)
-\to Z
-\to W\text{ locally}
-\to (J,T)
-}
-\]
-
-is the controlled hierarchy. The line/connection alone does not specify the section or local effective action.
-
-### Gate AS — invariant-functional no-go — PASS WITH NO-GO
-
-For any globally defined gauge/diffeomorphism-invariant functional \(S_{\rm inv}\),
+For invariant \(S_{\rm inv}\),
 
 \[
 W'=W+S_{\rm inv}
@@ -142,149 +68,184 @@ W'=W+S_{\rm inv}
 has the same gauge/diffeomorphism anomaly while
 
 \[
-\boxed{
 J'^\mu-J^\mu
 =\frac1{\sqrt{|g|}}\frac{\delta S_{\rm inv}}{\delta A_\mu},
 \qquad
 T'_{\mu\nu}-T_{\mu\nu}
 =-\frac2{\sqrt{|g|}}\frac{\delta S_{\rm inv}}{\delta g^{\mu\nu}}.
-}
 \]
-
-Thus effective actions realizing a fixed anomaly class form an affine family under invariant functionals.
-
-### Gate AT — explicit Maxwell witness — PASS
-
-In four dimensions take
-
-\[
-S_\beta=-\frac\beta4\int\sqrt{|g|}\,F_{\mu\nu}F^{\mu\nu}.
-\]
-
-It is gauge and diffeomorphism invariant and classically Weyl invariant. Yet
-
-\[
-\Delta J^\nu=\beta\nabla_\mu F^{\mu\nu},
-\]
-
-and
-
-\[
-\boxed{
-\Delta T_{\mu\nu}
-=\beta\left(F_{\mu\rho}F_\nu{}^\rho-\frac14g_{\mu\nu}F^2\right)
-}
-\]
-
-are generically nonzero. In \(d=4\), \(\Delta T^\mu{}_{\mu}=0\).
-
-Therefore even equal gauge, diffeomorphism and Weyl anomaly data do not fix the full current or stress tensor.
-
-### Gate AU — consistent/covariant current audit — PASS
-
-The consistent current is obtained from one effective action,
-
-\[
-J_{\rm cons}\sim\frac{\delta W}{\delta A},
-\]
-
-while Bardeen--Zumino improvement gives
-
-\[
-J_{\rm cov}=J_{\rm cons}+J_{\rm BZ}.
-\]
-
-The two notions have different integrability/covariance properties. Local counterterms can change representatives without changing the underlying anomaly class.
-
-### Gate AV — anomaly-line curvature versus first response — PASS WITH NO-GO
-
-For fixed \((\mathscr L_{\rm an},\nabla)\),
-
-\[
-Z' = e^{-S_{\rm inv}}Z
-\]
-
-is a different section of the same line. The line curvature and holonomy are unchanged, but the first functional derivatives of \(-\log Z\) change.
 
 Hence
 
 \[
 \boxed{
-\text{same anomaly-line topology, curvature and holonomy}
+\text{same anomaly class}
 \not\Rightarrow
-\text{same }J\text{ or }T.
+\text{same }W,J,T_{\mu\nu}.
 }
 \]
 
-### Gate AW — response-type separation — PASS
-
-The following remain distinct:
-
-1. gauge anomaly;
-2. diffeomorphism anomaly;
-3. Weyl/trace anomaly;
-4. current response;
-5. stress-energy response;
-6. horizon/thermodynamic response.
-
-### v0.14 conclusion
-
-\[
-\boxed{
-\text{anomaly geometry constrains symmetry/integrability data,}
-\quad
-\text{but dynamics requires additional functional information.}
-}
-\]
-
-The direct anomaly-to-Einstein route is therefore closed.
-
-References: Wess--Zumino (1971); Bardeen--Zumino (1984); Osborn (1991); Freed (2014); Dai--Freed (1994); Birrell--Davies (1982).
+The direct anomaly-to-Einstein route is closed.
 
 ---
 
-## v0.15 — constitutive / semiclassical closure audit — ACTIVE
+## v0.15 — constitutive / semiclassical closure audit — COMPLETE WITH CONDITIONAL BRIDGE
 
-The next milestone must **add** a dynamical principle instead of trying to reconstruct it from anomaly data.
+Sources:
 
-### Gate AX — explicit dynamical input
+- `semiclassical-closure.md`
+- `semiclassical-closure.py`
+- `semiclassical-closure.bib`
 
-Choose and state one independent closure mechanism. Candidate mathematical forms include
+### Gate AX — explicit dynamical input — PASS WITH CONDITIONAL BRIDGE
+
+Supply independently
 
 \[
-\delta_g\bigl(S_{\rm grav}[g]+W[A,g]\bigr)=0
+S_{\rm grav}^{\rm ren}[g],
+\qquad
+W_{\rm ren}[A,g],
 \]
 
-for a supplied gravitational action, or a separately justified local horizon/thermodynamic constitutive law.
+and impose
 
-No such input may be inferred from the anomaly class by analogy.
+\[
+\delta_g\bigl(S_{\rm grav}^{\rm ren}+W_{\rm ren}\bigr)=0.
+\]
 
-### Gate AY — FCIG insertion point
+With
 
-Identify exactly which FCIG quantity enters the chosen closure: state-count density, determinant/anomaly response, a renormalized effective-action term, or another derived observable. Do not identify these quantities with one another.
+\[
+\mathcal E^{\rm grav}_{\mu\nu}
+:=\frac{2}{\sqrt{|g|}}\frac{\delta S_{\rm grav}^{\rm ren}}{\delta g^{\mu\nu}},
+\qquad
+T_{\mu\nu}^{\rm ren}
+:=-\frac{2}{\sqrt{|g|}}\frac{\delta W_{\rm ren}}{\delta g^{\mu\nu}},
+\]
 
-### Gate AZ — ambiguity propagation
+stationarity gives
 
-Track the invariant-counterterm freedom of v0.14 through the proposed closure. A candidate gravitational prediction must either be invariant under the allowed scheme freedom or state how that freedom is fixed physically.
+\[
+\boxed{\mathcal E^{\rm grav}_{\mu\nu}=T_{\mu\nu}^{\rm ren}}.
+\]
 
-### Gate BA — Lorentzian/horizon data
+The gravitational variational principle is additional input; it is not reconstructed from the anomaly class.
 
-If using a Jacobson-type route, independently specify local causal horizons, temperature/acceleration input, heat flux, and entropy functional before testing any Clausius relation.
+### Gate AY — FCIG insertion point — PASS WITH RESTRICTION
 
-### Gate BB — falsification / known limit
+The legitimate semiclassical insertion point is a derived physical spacetime functional
 
-A closure proposal must produce a calculable limit or model that can fail. Recovering an Einstein-like equation by symbol matching is not a pass condition.
+\[
+\boxed{W_{\rm FCIG}^{\rm ren}[A,g]}
+\]
+
+or, in a local derivative expansion, a local diffeomorphism-invariant term \(\Delta L_{\rm FCIG}\).
+
+Then
+
+\[
+T_{\mu\nu}^{\rm FCIG}
+=-\frac{2}{\sqrt{|g|}}
+\frac{\delta W_{\rm FCIG}^{\rm ren}}{\delta g^{\mu\nu}}
+\]
+
+is an ordinary controlled contribution. Existing FCIG anomaly/state-count data do not yet determine this functional uniquely.
+
+### Gate AZ — ambiguity propagation — PASS
+
+Finite local curvature counterterms shift the renormalized stress tensor and the gravitational couplings. Scheme-independent predictions require fixed renormalization conditions/couplings or a separately justified scheme-fixing principle.
+
+A transfer
+
+\[
+W\to W+S_{\rm ct},
+\qquad
+S_{\rm grav}\to S_{\rm grav}-S_{\rm ct}
+\]
+
+leaves the total action and stationarity condition invariant.
+
+### Gate BA — Lorentzian / horizon data — PASS WITH CURRENT-FCIG NO-GO
+
+Jacobson's 1995 route independently assumes local Rindler causal horizons, Unruh temperature, matter heat flux, an area-proportional entropy variation and the Clausius relation.
+
+Current FCIG quantities
+
+\[
+S_k^{\rm cap}=\log h^0(X,L^k),
+\qquad
+s_k=\log B_k-d\log k
+\]
+
+do not yet define a canonical local Lorentz-covariant codimension-two horizon entropy density. A new horizon map/local limit is required.
+
+### Gate BB — known limit / falsification — PASS
+
+A semiclassical FCIG model must reduce to ordinary semiclassical gravity when its FCIG contribution is switched off.
+
+A proposed FCIG horizon entropy map fails if arbitrary polarization/quantization-level dependence survives the physical horizon limit or if no local Lorentz-covariant entropy density emerges.
+
+### Positive horizon bridge retained
+
+If FCIG derives a local diffeomorphism-invariant spacetime term \(\Delta L_{\rm FCIG}\), then the same term contributes both to metric equations by variation and to stationary-horizon entropy through the Wald/Iyer--Wald Noether-charge construction.
+
+This is a controlled bridge from a **derived local Lagrangian**, not from anomaly data alone.
+
+References: Jacobson (1995); Wald (1993); Iyer--Wald (1994); Wald (1978); Hollands--Wald (2001, 2005); Birrell--Davies (1982).
+
+### v0.15 conclusion
+
+\[
+\boxed{
+\text{FCIG data}
+\xrightarrow{\text{explicit spacetime realization}}
+W_{\rm FCIG}\text{ or }\Delta L_{\rm FCIG}
+\xrightarrow{\text{independent closure principle}}
+\text{dynamical/horizon response}.
+}
+\]
+
+The first arrow is now the principal technical bottleneck.
+
+---
+
+## v0.16 — local heat-kernel / effective-action bridge — ACTIVE
+
+Start from an explicit elliptic/Dirac-type operator \(D\) on a physical spacetime/background and use its heat kernel to construct the determinant effective action.
+
+### Gate BC — explicit operator/background map
+
+Specify the physical background, field content, operator \(D\), bundle, connection, signature/Euclidean continuation, and the map from FCIG data to that operator family.
+
+### Gate BD — heat-kernel coefficient audit
+
+For a Laplace-type operator, audit
+
+\[
+\operatorname{Tr}(e^{-tD})
+\sim
+(4\pi t)^{-n/2}
+\sum_{r\ge0} t^r A_{2r}(D),
+\]
+
+and identify which coefficients generate cosmological, Einstein--Hilbert and higher-curvature local terms in the one-loop determinant.
+
+### Gate BE — renormalization split
+
+Separate divergent/scheme-dependent local counterterms from finite or nonlocal terms. Match the former to renormalized gravitational couplings rather than treating them as predictions.
+
+### Gate BF — FCIG-specific finite contribution
+
+Determine whether the previously derived determinant/Bergman structures supply a controlled finite contribution after the physical operator map is fixed.
+
+### Gate BG — metric variation / entropy consequence
+
+Compute the metric variation of the resulting \(W_{\rm FCIG}^{\rm ren}\). If a local diffeomorphism-invariant term is obtained, compute its Wald entropy contribution as a consistency check.
+
+**Pass condition:** an explicit operator-level bridge from FCIG data to a spacetime effective-action term with a controlled renormalization statement. A formal resemblance between heat-kernel coefficients and earlier FCIG curvature coefficients is not sufficient.
 
 ---
 
 ## Gravity Closure gate — NOT ACTIVE
 
-A future gravitational closure still requires:
-
-1. an actual Lorentzian spacetime/base object;
-2. an independently specified frame/tangent connection;
-3. a controlled effective or constitutive dynamical principle;
-4. causal horizons and temperature if a thermodynamic route is chosen;
-5. a justified entropy functional;
-6. a known gravitational limit;
-7. a falsification route.
+The horizon/thermodynamic closure remains inactive until v0.16 or a later model provides an explicit physical spacetime effective-action/entropy realization.
