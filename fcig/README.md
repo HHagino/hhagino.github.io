@@ -35,11 +35,13 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to
 \text{semiclassical closure audit}
 \to
-\text{heat-kernel effective-action bridge}.
+\text{heat-kernel effective-action bridge}
+\to
+\text{realization-map dynamics}.
 }
 \]
 
-Completed milestones: **v0.2–v0.16**. No derivation of Einstein dynamics from FCIG alone is claimed.
+Completed milestones: **v0.2–v0.17**. No derivation of Einstein dynamics from FCIG alone is claimed.
 
 ## Models I–X — geometric / determinant foundation
 
@@ -51,11 +53,7 @@ The elliptic, ppav and curved-curve laboratories establish exact theta/state cou
 
 in the canonical smooth curve-family model.
 
-Main files include `elliptic-model.md`, `modular-holonomy.md`, `abelian-model.md`, `abelian-bergman.md`, `abelian-weil.md`, `hyperbolic-model.md`, `quillen-refinement.md`, `differential-holonomy.md`, `response-transgression.md`, `factorized-pushforward.md`, `kappa1-quillen.md`, and `global-deligne-rr.md`.
-
 ## Model XI — structure-group bridge audit
-
-`structure-group-bridge.md`
 
 \[
 1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1,
@@ -66,8 +64,6 @@ F_{\det E}=\operatorname{Tr}F_E.
 The determinant connection retains trace/Ricci information but cannot reconstruct a generic nonabelian frame connection for \(n>1\).
 
 ## Models XII–XIII — mixed anomaly polynomial and descent
-
-`mixed-characteristic.md`, `descent-inflow.md`.
 
 With independent line and frame connections,
 
@@ -88,15 +84,7 @@ Local descent gives a five-dimensional secondary/inflow form; global fermionic q
 
 ## Model XIV — functional-response no-go
 
-`functional-response.md`, `functional-response.py`, `functional-response.bib`.
-
-For any globally defined invariant functional \(S_{\rm inv}\),
-
-\[
-W'=W+S_{\rm inv}
-\]
-
-has the same anomaly while its first functional derivatives can differ. Hence
+For invariant \(S_{\rm inv}\), \(W'=W+S_{\rm inv}\) has the same anomaly while first functional derivatives may differ:
 
 \[
 \boxed{
@@ -106,38 +94,33 @@ has the same anomaly while its first functional derivatives can differ. Hence
 
 ## Model XV — constitutive / semiclassical closure audit
 
-`semiclassical-closure.md`, `semiclassical-closure.py`, `semiclassical-closure.bib`.
-
-Supplying independent renormalized gravitational and matter/effective actions gives a legitimate conditional variational bridge,
+Supplying independent renormalized gravitational and effective actions gives the conditional variational bridge
 
 \[
 \mathcal E^{\rm grav}_{\mu\nu}=T_{\mu\nu}^{\rm ren},
 \]
 
-but the action principle, renormalized couplings and any Jacobson-style Lorentzian horizon data are extra inputs. Current \(\log h^0\) / Bergman quantities are not yet a canonical local Lorentzian horizon entropy.
+but the action principle, renormalized couplings and any Jacobson-style Lorentzian horizon data are additional inputs.
 
 ## Model XVI — explicit operator / heat-kernel effective-action bridge
 
-- Web: `heat-kernel-bridge.html`
-- Source: `heat-kernel-bridge.md`
-- Checker: `heat-kernel-bridge.py`
-- Milestone bibliography: `heat-kernel-bridge.bib`
+- `heat-kernel-bridge.md`
+- `heat-kernel-bridge.py`
+- `heat-kernel-bridge.bib`
 
-Supply a four-dimensional Euclidean background and an additional realization map
-
-\[
-\boxed{\Phi:M\to\mathcal B_{\rm FCIG}}.
-\]
-
-Pull back an FCIG Hermitian line with connection:
+Supply a four-dimensional Euclidean background and a realization map
 
 \[
-L_M=\Phi^*\mathscr L_{\rm FCIG},
-\qquad
-\Omega=F_{\nabla^M}=\Phi^*F_{\rm FCIG}.
+\Phi:M\to\mathcal B_{\rm FCIG}.
 \]
 
-For the Laplace-type operator
+Pulling back an FCIG line gives
+
+\[
+\Omega=\Phi^*F_{\rm FCIG}.
+\]
+
+For
 
 \[
 P=-\left(g^{\mu\nu}\nabla_\mu\nabla_\nu+E\right),
@@ -146,29 +129,14 @@ P=-\left(g^{\mu\nu}\nabla_\mu\nabla_\nu+E\right),
 standard heat-kernel geometry gives
 
 \[
-\operatorname{Tr}(e^{-tP})
-\sim
-(4\pi t)^{-2}
-\int_M\sqrt g\,\operatorname{tr}(b_0+t b_2+t^2 b_4+\cdots),
-\]
-
-with
-
-\[
 b_0=I,
 \qquad
 b_2=E+\frac16R,
+\qquad
+\boxed{b_4\supset\frac1{12}\Omega_{\mu\nu}\Omega^{\mu\nu}}.
 \]
 
-and
-
-\[
-\boxed{
-b_4\supset\frac1{12}\Omega_{\mu\nu}\Omega^{\mu\nu}.
-}
-\]
-
-Thus, after the explicit pullback realization,
+Thus
 
 \[
 \boxed{
@@ -176,56 +144,117 @@ b_4^{\rm FCIG}\supset
 \frac1{12}(\Phi^*F_{\rm FCIG})_{\mu\nu}(\Phi^*F_{\rm FCIG})^{\mu\nu}.}
 \]
 
-This is the first operator-level local spacetime effective-action invariant built from FCIG line curvature without identifying that curvature with Riemann curvature.
-
-In four dimensions the one-loop proper-time expansion organizes UV local terms as
-
-\[
-b_0\to\text{volume/cosmological},\qquad
-b_2\to\text{Einstein--Hilbert},\qquad
-b_4\to\text{curvature-squared / bundle-curvature}.
-\]
-
-These divergent local coefficients renormalize couplings; they are not parameter-free FCIG predictions.
-
-For the scalar specialization \(E=-\xi R\),
-
-\[
-b_2=\left(\frac16-\xi\right)R,
-\]
-
-and, after dropping integrated total derivatives on a closed manifold,
-
-\[
-\boxed{
- b_4=
-\frac12\left(\xi-\frac16\right)^2R^2
-+\frac1{180}(R_{\mu\nu\rho\sigma}^2-R_{\mu\nu}^2)
-+\frac1{12}\Omega_{\mu\nu}^2.
-}
-\]
-
-The model also preserves the earlier FCIG local/global split: a flat line with nontrivial holonomy has \(\Omega=0\), so local heat coefficients can miss information retained by the global spectrum/determinant.
+This is an operator-level local spacetime effective-action invariant built from FCIG line curvature without identifying it with Riemann curvature. Divergent local coefficients renormalize couplings and are not parameter-free FCIG predictions.
 
 References: Vassilevich (2003); Gilkey (1995); Birrell--Davies (1982); Wald (1993); Iyer--Wald (1994).
 
-## Current controlled frontier
+## Model XVII — realization-map / sigma-model dynamics
 
-The previous missing arrow now has a conditional operator-level realization:
+- Web: `realization-sigma.html`
+- Source: `realization-sigma.md`
+- Checker: `realization-sigma.py`
+- Milestone bibliography: `realization-sigma.bib`
+
+Use the pre-existing elliptic FCIG target
+
+\[
+\mathbb H=\{\tau=u+iY\mid Y>0\},
+\qquad
+ ds^2_{\mathbb H}=\frac{du^2+dY^2}{Y^2}.
+\]
+
+Promote
+
+\[
+\boxed{\Phi(x)=\tau(x)=u(x)+iY(x)}
+\]
+
+to a spacetime field with the standard harmonic-map action
 
 \[
 \boxed{
-(\mathscr L_{\rm FCIG},\nabla^{\rm FCIG})
-+\Phi
-\to
-P_\Phi
-\to
-\text{heat kernel}
-\to
-W_{1\text{-loop}}^{\rm ren}[g,\Phi].
+S_\Phi=\frac{Z_\Phi}{2}
+\int_M\sqrt g\,
+\frac{(\partial u)^2+(\partial Y)^2}{Y^2}.
 }
 \]
 
-The remaining new object is the realization map \(\Phi\). The active target is **v0.17 — realization-map / sigma-model dynamics audit**: determine whether the geometry already present on \(\mathcal B_{\rm FCIG}\) supplies a controlled spacetime action and equation of motion for \(\Phi\), or whether such a sigma-model term is merely another constitutive input.
+The explicit equations are
 
-The Lorentzian horizon/thermodynamic closure remains inactive pending a controlled physical realization.
+\[
+\boxed{
+\Box u-\frac2Y\partial u\cdot\partial Y=0,
+\qquad
+\Box Y+\frac{(\partial u)^2-(\partial Y)^2}{Y}=0.
+}
+\]
+
+and the stress tensor is
+
+\[
+\boxed{
+T^{(\Phi)}_{\mu\nu}
+=\frac{Z_\Phi}{Y^2}
+\left[
+\partial_\mu u\partial_\nu u+
+\partial_\mu Y\partial_\nu Y
+-\frac12g_{\mu\nu}\big((\partial u)^2+(\partial Y)^2\big)
+\right].
+}
+\]
+
+The Hodge line supplies a second target-geometric structure. In the existing elliptic convention,
+
+\[
+\mathfrak f_H:=\frac{i}{2\pi}F_{\lambda_H}
+=\frac{1}{4\pi}\omega_{\rm hyp},
+\qquad
+\omega_{\rm hyp}=\frac{du\wedge dY}{Y^2}.
+\]
+
+Therefore
+
+\[
+\boxed{
+(\Phi^*\mathfrak f_H)_{\mu\nu}
+=\frac{1}{4\pi Y^2}
+(\partial_\mu u\partial_\nu Y-
+\partial_\nu u\partial_\mu Y).
+}
+\]
+
+This feeds the Model-XVI heat-kernel \(\Omega^2\) sector. Crucially, it is quartic in first derivatives after squaring, whereas \(S_\Phi\) is quadratic. Hence
+
+\[
+\boxed{
+\Omega^2\text{ heat-kernel term}
+\not\Rightarrow
+\text{two-derivative sigma normalization }Z_\Phi.
+}
+\]
+
+The normalization \(Z_\Phi\) remains constitutive input unless a further microscopic/determinant calculation derives it.
+
+Two explicit witnesses sharpen the separation:
+
+1. **Vertical geodesic:** \(u=u_0,\ Y=e^\varphi\) reduces to \(\Box\varphi=0\), but \(\Phi^*F_H=0\). Thus nonzero sigma stress can coexist with zero pulled-back line curvature.
+2. **Hyperbolic identity-map sector:** an identity map on a hyperbolic two-dimensional factor is harmonic and has \(\Phi^*\omega_{\rm hyp}\neq0\), activating the curvature-squared determinant coupling.
+
+On the true modular target \([\mathbb H/SL(2,\mathbf Z)]\), the local Poincare sigma density descends, while Hodge/theta lines can retain modular/metaplectic holonomy. Global nontrivial sectors require orbifold/stack patching.
+
+References: Eells--Sampson (1964); Mumford (1983); Birkenhake--Lange (2004); Vassilevich (2003) for the heat-kernel insertion.
+
+## Current controlled frontier
+
+The realization map is now typed and dynamical, but its two-derivative normalization is not yet derived. The active target is **v0.18 — induced realization-map dynamics from determinants**.
+
+The key question is whether an explicit slowly varying operator family \(P(\Phi)\) generates
+
+\[
+\frac12\int_M\sqrt g\,G^{\rm ind}_{AB}(\Phi)
+\partial_\mu\Phi^A\partial^\mu\Phi^B
+\]
+
+inside \(\tfrac12\log\det P(\Phi)\), and whether the induced spectral metric \(G^{\rm ind}\) coincides with, is proportional to, or differs from the pre-existing Fisher/Hodge/Poincare metric.
+
+Only such a calculation can turn \(Z_\Phi\) from external constitutive data into a derived quantity. Lorentzian/horizon closure remains separate.
