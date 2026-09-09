@@ -6,7 +6,7 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 
 - `RESEARCH_POLICY.md` — research and citation policy
 - `ROADMAP.md` — milestone gates
-- `references.bib` — canonical bibliography
+- `references.bib` — general bibliography
 - milestone `.bib` files — source sets for individual models
 - `citation-map.md` — citation provenance map
 - `cited-synthesis.md` — citation-audited synthesis
@@ -31,77 +31,41 @@ The repository separates **Established**, **Derived here**, **FCIG interpretatio
 \to
 \text{descent / inflow}
 \to
-\text{functional-response no-go}.
+\text{functional-response no-go}
+\to
+\text{semiclassical closure audit}.
 }
 \]
 
-Completed milestones: **v0.2–v0.14**. No Lorentzian/gravitational closure is claimed.
+Completed milestones: **v0.2–v0.15**. No derivation of Einstein dynamics from FCIG alone is claimed.
 
 ## Models I–III — flat theta / abelian laboratories
 
-The elliptic and ppav models establish exact theta-state counting, determinant/Hodge response, Poisson-resummed Bergman lattice sectors, and finite Weil/metaplectic holonomy. Main files: `elliptic-model.md`, `modular-holonomy.md`, `abelian-model.md`, `abelian-bergman.md`, `abelian-weil.md` and their Python checkers.
+Exact theta-state counting, determinant/Hodge response, Poisson-resummed Bergman lattice sectors, and finite Weil/metaplectic holonomy. Main files: `elliptic-model.md`, `modular-holonomy.md`, `abelian-model.md`, `abelian-bergman.md`, `abelian-weil.md`.
 
-## Model IV — compact hyperbolic curves
+## Models IV–VI — curved Bergman / Quillen / differential cohomology
 
-`hyperbolic-model.md` / `hyperbolic-loop.py`
+`hyperbolic-model.md`, `quillen-refinement.md`, `differential-holonomy.md`.
 
-The curved model separates local Bergman-curvature data from global geodesic/holonomy data. The Mumford determinant relation blocks a universal extrapolation of the flat-ppav determinant coefficient.
-
-## Model V — Quillen / analytic torsion
-
-`quillen-refinement.md` / `quillen-refinement.py`
+These models separate local curvature, global geodesic/holonomy data, Quillen versus elementary \(L^2\) determinant metrics, and package a unitary line with connection as
 
 \[
-\boxed{
-h_Q=e^{\mathcal T_k}h_{L^2},
-\qquad
-F_Q-F_{L^2}=-\partial\bar\partial\mathcal T_k.
-}
+\widehat c_1(L,\nabla)\in\widehat H^2(B;\mathbf Z).
 \]
 
-## Model VI — differential cohomology / determinant holonomy
+## Models VII–X — transgression, pushforward, and Deligne--RR closure
 
-`differential-holonomy.md` / `differential-holonomy.py`
+`response-transgression.md`, `factorized-pushforward.md`, `kappa1-quillen.md`, `global-deligne-rr.md`.
 
-A unitary line with connection defines
+Loop transgression is a genuine response operation; factorized degree restoration cannot generate a new degree-two direction; and for smooth curve families the fixed metrized Deligne-pairing convention gives
 
 \[
-\widehat c_1(L,\nabla)\in\widehat H^2(B;\mathbf Z),
+\boxed{\widehat\kappa_1=12\widehat\lambda_Q}.
 \]
 
-carrying topology, curvature, and loop holonomy in one object.
+## Model XI — structure-group bridge audit
 
-## Models VII–VIII — transgression and pushforward no-go
-
-`response-transgression.md` / `factorized-pushforward.md`
-
-Loop transgression is a genuine standard response operation, while factorized degree restoration satisfies
-
-\[
-\boxed{
-p_!\bigl(p^*\widehat{\mathcal A}\cup\widehat u\bigr)=n\widehat{\mathcal A}
-}
-\]
-
-on connected components and therefore cannot create an independent degree-two response direction.
-
-## Models IX–X — \(\widehat\kappa_1\), Quillen, and global Deligne--RR
-
-`kappa1-quillen.md` / `global-deligne-rr.md`
-
-For \(\omega=K_{X/B}\),
-
-\[
-\widehat\kappa_1:=\pi_!\bigl(\widehat c_1(\omega)^2\bigr),
-\qquad
-\boxed{\widehat\kappa_1=12\widehat\lambda_Q}
-\]
-
-in the fixed metrized Deligne-pairing convention. Topology, local curvature, and holonomy obey the same connection-level identity.
-
-## Model XI — determinant trace / Spin\(^c\) / reconstruction no-go
-
-`structure-group-bridge.md` / `structure-group-bridge.py`
+`structure-group-bridge.md`
 
 \[
 1\to SU(n)\to U(n)\xrightarrow{\det}U(1)\to1,
@@ -109,19 +73,19 @@ in the fixed metrized Deligne-pairing convention. Topology, local curvature, and
 F_{\det E}=\operatorname{Tr}F_E.
 \]
 
-Fixing the determinant connection leaves an affine space over \(\Omega^1(M;\mathfrak{su}(E))\). Thus determinant data fixes the trace/Ricci sector but not a generic nonabelian frame connection for \(n>1\). K3 and Spin\(^c\) provide explicit tests.
+The determinant connection retains the trace/Ricci sector but cannot reconstruct a generic nonabelian frame connection for \(n>1\).
 
-## Model XII — mixed characteristic classes / anomaly polynomial
+## Models XII–XIII — mixed anomaly polynomial and descent
 
-`mixed-characteristic.md` / `mixed-characteristic.py` / `mixed-characteristic.bib`
+`mixed-characteristic.md`, `descent-inflow.md`.
 
 With independent line and frame connections,
 
 \[
-\widehat c_1(L)\cup\widehat p_1(TM)\in\widehat H^6(M;\mathbf Z)
+\widehat c_1(L)\cup\widehat p_1(TM)\in\widehat H^6(M;\mathbf Z),
 \]
 
-is a legitimate mixed invariant. The line-twisted Dirac index has degree-six piece
+and the line-twisted Dirac index has
 
 \[
 \boxed{
@@ -130,90 +94,113 @@ is a legitimate mixed invariant. The line-twisted Dirac index has degree-six pie
 }
 \]
 
-## Model XIII — five-dimensional descent / global anomaly inflow
-
-`descent-inflow.md` / `descent-inflow.py` / `descent-inflow.bib`
-
-Locally, with \(da=c\),
+Locally this admits the five-dimensional secondary form
 
 \[
 I_5^{(0)}=a\wedge\left(\frac16c^2-\frac1{24}p_1\right),
-\qquad
-dI_5^{(0)}=I_6,
+\qquad dI_5^{(0)}=I_6,
 \]
 
-and under \(a\mapsto a+d\alpha\),
+with four-dimensional boundary descent under \(a\mapsto a+d\alpha\). Global fermionic quantization is controlled by the Dirac index / Dai--Freed anomaly theory.
 
-\[
-\delta I_5^{(0)}
-=d\left[\alpha\left(\frac16c^2-\frac1{24}p_1\right)\right].
-\]
+## Model XIV — functional-response no-go
 
-The rational fermion polynomial is globally quantized through the Dirac index / Dai--Freed anomaly theory, not by treating each fractional term as an arbitrary integral differential character.
+`functional-response.md`, `functional-response.py`, `functional-response.bib`.
 
-## Model XIV — background-field functional response no-go
-
-- Web: `functional-response.html`
-- Source: `functional-response.md`
-- Checker: `functional-response.py`
-- Milestone bibliography: `functional-response.bib`
-
-Let \(\mathcal B\) be the background-field space, \((\mathscr L_{\rm an},\nabla^{\rm an})\to\mathcal B\) the anomaly line, and \(Z\) a section. In a local trivialization, \(Z=e^{-W}\).
-
-For any globally defined gauge/diffeomorphism-invariant functional \(S_{\rm inv}\),
+For any globally defined invariant functional \(S_{\rm inv}\),
 
 \[
 W'=W+S_{\rm inv}
 \]
 
-has the same gauge/diffeomorphism anomaly, while
-
-\[
-\boxed{
-J'^\mu-J^\mu
-=\frac1{\sqrt{|g|}}\frac{\delta S_{\rm inv}}{\delta A_\mu},
-\qquad
-T'_{\mu\nu}-T_{\mu\nu}
-=-\frac2{\sqrt{|g|}}\frac{\delta S_{\rm inv}}{\delta g^{\mu\nu}}.
-}
-\]
-
-Hence
+has the same gauge/diffeomorphism anomaly while its first functional derivatives change. Hence
 
 \[
 \boxed{
 \text{same anomaly class}
 \not\Rightarrow
-\text{same }W,\ J,\ T_{\mu\nu}.
+\text{same }W,J,T_{\mu\nu}.
 }
 \]
 
-An explicit 4D witness is
+This closes the direct anomaly-to-dynamics route.
+
+## Model XV — constitutive / semiclassical closure audit
+
+- Web: `semiclassical-closure.html`
+- Source: `semiclassical-closure.md`
+- Checker: `semiclassical-closure.py`
+- Milestone bibliography: `semiclassical-closure.bib`
+
+### Semiclassical variational track
+
+Supply independently
 
 \[
-S_\beta=-\frac\beta4\int\sqrt{|g|}\,F_{\mu\nu}F^{\mu\nu},
+S_{\rm grav}^{\rm ren}[g]
+\quad\text{and}\quad
+W_{\rm ren}[A,g].
 \]
 
-which preserves gauge/diffeomorphism invariance and classical Weyl invariance but shifts both current and stress tensor. In four dimensions the stress shift is traceless.
+With
 
-The model also separates the consistent current \(\delta W/\delta A\) from the Bardeen--Zumino covariant current and records that anomaly-line curvature/holonomy constrain obstruction/integrability data on background space but do not select a section or its first functional derivatives.
+\[
+\mathcal E^{\rm grav}_{\mu\nu}
+:=\frac{2}{\sqrt{|g|}}\frac{\delta S_{\rm grav}^{\rm ren}}{\delta g^{\mu\nu}},
+\qquad
+T_{\mu\nu}^{\rm ren}
+:=-\frac{2}{\sqrt{|g|}}\frac{\delta W_{\rm ren}}{\delta g^{\mu\nu}},
+\]
 
-References: Wess--Zumino (1971); Bardeen--Zumino (1984); Osborn (1991); Freed (2014); Dai--Freed (1994); Birrell--Davies (1982).
+stationarity gives
+
+\[
+\boxed{\mathcal E^{\rm grav}_{\mu\nu}=T_{\mu\nu}^{\rm ren}}.
+\]
+
+This is a valid **conditional bridge**, but the gravitational action and variational principle are additional input.
+
+Finite local counterterms shift the renormalized stress tensor and gravitational couplings. A prediction is meaningful only after renormalization conditions/couplings are fixed.
+
+The exact FCIG insertion point is therefore a derived spacetime functional
+
+\[
+\boxed{W_{\rm FCIG}^{\rm ren}[A,g]},
+\]
+
+not the anomaly class by itself.
+
+### Local-horizon track
+
+Jacobson's route independently requires Lorentzian local Rindler horizons, Unruh temperature, matter heat flux, an area-proportional entropy variation and the Clausius relation.
+
+The current FCIG quantities
+
+\[
+S_k^{\rm cap}=\log h^0(X,L^k),
+\qquad
+s_k=\log B_k-d\log k
+\]
+
+do **not yet** supply a canonical Lorentz-covariant codimension-two horizon entropy density. A new horizon map/local limit would be required.
+
+A legitimate positive horizon bridge remains available if FCIG first derives a local diffeomorphism-invariant spacetime term \(\Delta L_{\rm FCIG}\): metric variation gives its dynamical correction and Wald/Iyer--Wald Noether charge gives its stationary-horizon entropy correction.
+
+References: Jacobson (1995); Wald (1993); Iyer--Wald (1994); Wald (1978); Hollands--Wald (2001, 2005); Birrell--Davies (1982).
 
 ## Current controlled frontier
 
-The direct anomaly-to-dynamics route is now closed:
+The dynamical bottleneck is now sharply located at
 
 \[
 \boxed{
-\text{anomaly geometry}
-\not\Rightarrow
-\text{unique effective action}
-\not\Rightarrow
-\text{unique stress tensor or Einstein dynamics}.
+\text{FCIG geometric/determinant data}
+\xrightarrow{\ ?\ }
+W_{\rm FCIG}^{\rm ren}[A,g]
+\text{ or }\Delta L_{\rm FCIG}.
 }
 \]
 
-The next controlled target is **v0.15 — constitutive / semiclassical closure audit**. It must supply an additional dynamical principle explicitly — e.g. a gravitational functional plus variational principle, or a separately justified local horizon/thermodynamic closure — and then test exactly where FCIG state-count/anomaly data can enter.
+The next target is **v0.16 — local heat-kernel / effective-action bridge**: start from an explicit physical elliptic/Dirac-type operator, derive the local heat-kernel/Seeley--DeWitt contributions to the determinant effective action, separate scheme-dependent gravitational counterterms from controlled finite pieces, and then vary the resulting action.
 
-No Lorentzian metric, causal structure, horizon entropy law, or Einstein equation has yet been derived from FCIG alone.
+The horizon/thermodynamic track remains inactive until such a spacetime realization exists.
