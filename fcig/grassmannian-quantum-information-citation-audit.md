@@ -24,9 +24,24 @@ The purpose of this file is to prevent an FCIG synthesis from being mistaken for
 | For a position measurement, `I_Q = I_pos + 4 Var(a)` | **Derived here from pure-state formula** | background [BC94] | Direct amplitude/phase decomposition; exact for real tangent directions after projective centering. |
 | Classical position Fisher saturates WP iff phase variance is `o(q)` | **Conditional corollary** | previous line + Grassmannian asymptotic | The condition is not proved. |
 | Quantized finite-dimensional metrics can converge to WP on polarized Calabi–Yau moduli | **Established in a different setting** | [KL15] | Used only as structural precedent; it does not prove the hyperbolic-curve formula here. |
+| Universal Teichmüller space has a holomorphic inclusion into a Segal–Wilson Grassmannian and carries WP geometry | **Established prior art** | [TT06] | This is highly relevant prior art for any broad “Grassmannian = WP” novelty claim. It does **not** by itself identify the finite-dimensional `H^0(K^q)` minimal-solution metric or prove the 50–50 high-power law. |
 | DPPs can form curved exponential families | **Established in finite/discrete setting** | [HY24] | Context only; not used to prove continuous Bergman DPP statements. |
 | Full Quillen curvature equals the quantum Fisher/Grassmannian KS metric | **Explicitly NOT claimed** | [FRZ20] shows total curvature scale | Full curvature is `O(q^2)` while the isolated KS normal/resolvent channels here are `O(q)`. |
 | Lorentzian gravity follows | **Not claimed** | — | Outside this note. |
+
+## Prior-art collision check
+
+A broad claim that “Teichmüller/WP geometry embeds into a Grassmannian” would be old: Takhtajan–Teo prove a holomorphic inclusion of the Weil–Petersson component of universal Teichmüller space into the Segal–Wilson universal Grassmannian [TT06]. Keller–Lukic also prove convergence of a finite-dimensional quantized sequence of Kähler metrics to WP in polarized Calabi–Yau moduli [KL15].
+
+Therefore the potentially distinctive FCIG statement must stay narrow:
+
+\[
+\boxed{
+\text{for the }H^0(K^q)\text{ family, the FRZ minimal-solution energy and the Berndtsson resolvent energy split the KS source 50--50 at leading order.}
+}
+\]
+
+The quantum-Fisher interpretation is then attached to the minimal-solution/Plücker channel with a specified connection and normalization. No novelty claim is made until a dedicated literature review checks equivalent formulations.
 
 ## Primary-source checks
 
@@ -38,6 +53,7 @@ Metadata and mathematical statements were checked against publisher or primary p
 - Samuel L. Braunstein, Carlton M. Caves, *Physical Review Letters* **72** (1994), 3439–3443, DOI `10.1103/PhysRevLett.72.3439`.
 - Yuri Alexandre Aoto, Marcio Fabiano da Silva, *Physical Review A* **102** (2020), 052803, DOI `10.1103/PhysRevA.102.052803`.
 - Julien Keller, Sergio Lukic, *Journal of Geometry and Physics* **92** (2015), 252–270, DOI `10.1016/j.geomphys.2015.02.018`.
+- Leon A. Takhtajan, Lee-Peng Teo, *Memoirs of the American Mathematical Society* **183** no. 861 (2006), 1–119, DOI `10.1090/memo/0861`.
 - Hideitsu Hino, Keisuke Yano, *Information Geometry* **7** (2024), 523–542, DOI `10.1007/s41884-024-00156-x`.
 
 ## Normalization firewall
