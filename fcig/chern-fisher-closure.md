@@ -1,111 +1,101 @@
 # FCIG: Chern–Fisher Closure on a Statistical Hilbert Bundle
 
-**Status:** exact abstract identity + application to the hyperbolic \(H^0(K^q)\) family  
+**Status:** exact abstract identity + connection-model application  
 **Date:** 2026-09-10  
 **Depends on:** [`grassmannian-quantum-information.md`](grassmannian-quantum-information.md), [`kodaira-spencer-information.md`](kodaira-spencer-information.md).
 
-> **Terminology warning.** “Chern–Fisher” is an **FCIG definition**, not a standard replacement name for classical Fisher information. It retains complex amplitude/phase data and is therefore a projective-Hilbert/quantum information tensor. Ordinary Fisher information of the position DPP remains a measurement/coarse-graining of this object.
+> **Terminology warning.** “Chern–Fisher” is an **FCIG definition**, not a standard name for classical Fisher information. It retains complex amplitude/phase data together with a chosen Hermitian connection, so it is a projective-Hilbert / quantum-information tensor. Ordinary Fisher information of the Bergman position process is a measurement of this richer object.
 
 ---
 
-## 1. Why introduce a covariant score?
+## 1. Motivation: a moving sample space needs a connection
 
-For a probability law \(p_b\) on a fixed sample space, the ordinary score
+For a fixed probability space the ordinary score is
 
 \[
-S_\xi=\partial_\xi\log p_b
+S_\xi=\partial_\xi\log p_b.
 \]
 
-is unambiguous. For a family of sample fibers, the preceding FCIG note proved that changing the fiber transport by a vertical vector field \(V_\xi\) changes the pulled-back score by
+For moving fibers, [`kodaira-spencer-information.md`](kodaira-spencer-information.md) proves that changing the local fiber transport by an infinitesimal vertical field \(V_\xi\) changes the pulled-back classical score by
 
 \[
 S_\xi\mapsto S_\xi+\operatorname{div}_{P}V_\xi.
 \]
 
-Thus a raw moving-fiber classical Fisher tensor is not intrinsic.
+Thus raw moving-fiber classical Fisher information is not intrinsic before a transport is chosen.
 
-A quantum/holomorphic family comes with more structure than a probability density: it comes with a Hermitian Hilbert bundle and a connection. Instead of differentiating only the norm square, we can differentiate the state covariantly and remove its projective gauge direction.
-
-This produces an exact information metric.
+A holomorphic quantization family carries more data: a Hermitian Hilbert bundle and a connection. The natural covariant operation is therefore to differentiate the **state** and remove the component tangent to its complex ray.
 
 ---
 
-# Part I. Abstract projective identity
+# Part I. Exact projective identity
 
-## 2. Hermitian Hilbert bundle
-
-Let
-
-\[
-(\mathscr H,h,\nabla)\to B
-\]
-
-be a Hermitian Hilbert bundle with unitary connection. Let \(\Psi_b\in\mathscr H_b\) be a smooth nonzero state family and write
-
-\[
-\widehat\Psi_b
-=
-\frac{\Psi_b}{\|\Psi_b\|}.
-\]
+## 2. Hermitian Hilbert bundle and projective derivative
 
 Let
 
 \[
-Q_\Psi
-=
-1-|\widehat\Psi\rangle\langle\widehat\Psi|
+(\mathscr H,h,\nabla)\longrightarrow B
 \]
 
-be the projector normal to the state ray.
-
-Define the projective covariant derivative
+be a Hermitian Hilbert bundle with unitary connection. Let \(\Psi_b\in\mathscr H_b\setminus\{0\}\) be a smooth state family and set
 
 \[
-D_\xi^{\perp}\widehat\Psi
-:=
-Q_\Psi\nabla_\xi\widehat\Psi.
+\widehat\Psi_b=\frac{\Psi_b}{\|\Psi_b\|}.
+\]
+
+Let
+
+\[
+Q_\Psi=1-|\widehat\Psi\rangle\langle\widehat\Psi|
+\]
+
+be the orthogonal projector normal to the state ray. Define
+
+\[
+D_\xi^\perp\widehat\Psi
+:=Q_\Psi\nabla_\xi\widehat\Psi.
 \tag{2.1}
 \]
 
-The associated projective Hermitian metric is
+The connection-dependent projective Hermitian metric is
 
 \[
 \boxed{
-g_{\rm proj}^{\nabla}(\xi,\bar\eta)
-=
-\left\langle
-D_\xi^{\perp}\widehat\Psi,
-D_\eta^{\perp}\widehat\Psi
-\right\rangle.
+ g_{\rm proj}^{\nabla}(\xi,\bar\eta)
+ =
+ \left\langle
+ D_\xi^\perp\widehat\Psi,
+ D_\eta^\perp\widehat\Psi
+ \right\rangle .
 }
 \tag{2.2}
 \]
 
-For a fixed Hilbert space this is the ordinary Fubini–Study pullback. With a Hilbert-bundle connection it is its covariant analogue.
+For a constant Hilbert bundle with its trivial connection this is the usual pullback of the Fubini–Study metric.
 
 ---
 
-## 3. Projective Chern score
+## 3. FCIG projective Chern score
 
-Suppose locally the Hilbert norm has a configuration-space realization. Away from the nodal set of \(\widehat\Psi\), define
+Suppose locally the Hilbert norm is represented on a configuration space by a unitary realization. Away from the nodal set of \(\widehat\Psi\), define
 
 \[
 \boxed{
 \mathscr S_\xi^{\nabla}(y)
 :=
-\frac{(D_\xi^{\perp}\widehat\Psi)(y)}
-{\widehat\Psi(y)}.
+\frac{(D_\xi^\perp\widehat\Psi)(y)}{\widehat\Psi(y)}.
 }
 \tag{3.1}
 \]
 
-Let
+At the same parameter value let
 
 \[
-dP_\Psi(y)=|\widehat\Psi(y)|^2d\nu(y)
+dP_\Psi(y)=|\widehat\Psi(y)|^2d\nu(y).
 \]
 
-in a unitary local realization. Then define the **Chern–Fisher Hermitian tensor**
+Define the **Chern–Fisher Hermitian tensor**
 
 \[
 \boxed{
@@ -120,11 +110,9 @@ in a unitary local realization. Then define the **Chern–Fisher Hermitian tenso
 \tag{3.2}
 \]
 
-The ratio in (3.1) is only a local expression; the expectation below extends through the nodal set because multiplication by \(|\widehat\Psi|^2\) cancels the denominator in the \(L^2\) identity.
+The ratio in (3.1) is only local. The quadratic expression is nevertheless well-defined across the nodal set in the \(L^2\) sense because the factor \(|\widehat\Psi|^2\) cancels the denominator.
 
----
-
-## 4. Theorem 4.1 — exact Chern–Fisher/Fubini–Study identity
+### Theorem 3.1 — exact Chern–Fisher/Fubini–Study identity
 
 \[
 \boxed{
@@ -132,33 +120,26 @@ The ratio in (3.1) is only a local expression; the expectation below extends thr
 =
 g_{\rm proj}^{\nabla}.
 }
-\tag{4.1}
+\tag{3.3}
 \]
 
 ### Proof
 
-By definition,
+Directly,
 
 \[
 \begin{aligned}
 \mathcal I_{\rm CF}^{\nabla}(\xi,\bar\eta)
 &=
 \int
-\frac{D_\xi^{\perp}\widehat\Psi}{\widehat\Psi}
-\frac{\overline{D_\eta^{\perp}\widehat\Psi}}
-{\overline{\widehat\Psi}}
+\frac{D_\xi^\perp\widehat\Psi}{\widehat\Psi}
+\frac{\overline{D_\eta^\perp\widehat\Psi}}{\overline{\widehat\Psi}}
 |\widehat\Psi|^2d\nu
 \\
 &=
 \int
-(D_\xi^{\perp}\widehat\Psi)
-\overline{(D_\eta^{\perp}\widehat\Psi)}d\nu
-\\
-&=
-\langle
-D_\xi^{\perp}\widehat\Psi,
-D_\eta^{\perp}\widehat\Psi
-\rangle
+(D_\xi^\perp\widehat\Psi)
+\overline{(D_\eta^\perp\widehat\Psi)}d\nu
 \\
 &=
 g_{\rm proj}^{\nabla}(\xi,\bar\eta).
@@ -167,106 +148,116 @@ g_{\rm proj}^{\nabla}(\xi,\bar\eta).
 
 \(\square\)
 
-**Derived here.** The identity is elementary. Its purpose is to make explicit which “Fisher-like” object is genuinely connection-covariant.
+**Derived here.** This is an elementary identity. Its role is to state exactly which Fisher-like quantity is covariant once a Hermitian connection is part of the data.
 
-### Gauge covariance
+A unitary change of Hilbert-bundle frame transforms state and connection together and leaves (3.3) invariant. A local phase change of \(\widehat\Psi\) changes only the ray direction removed by \(Q_\Psi\).
 
-Under a unitary change of Hilbert-bundle frame, the connection and state transform together. The norm in (2.2) is unchanged. Under a local phase change
+**Slogan:**
 
 \[
-\widehat\Psi\mapsto e^{i\vartheta(b)}\widehat\Psi,
+\boxed{
+\text{differentiate amplitudes covariantly, then quotient the ray.}
+}
 \]
-
-the projector \(Q_\Psi\) removes the vertical ray component. Hence \(\mathcal I_{\rm CF}^\nabla\) is projective-gauge invariant.
-
-This is the precise sense in which the connection cures the arbitrary-transport problem: the connection is not discarded; it is part of the geometric datum.
 
 ---
 
-# Part II. Slater/Grassmannian specialization
+# Part II. Moving subspaces and Slater states
 
-## 5. Moving \(N\)-plane
+## 4. Abstract Grassmannian lemma
 
-Let \(E\subset\mathscr H\) be a rank-\(N\) Hermitian subbundle. With \(P_E\) the orthogonal projector and \(Q_E=1-P_E\), define its second fundamental form relative to \(
-abla\) by
+Let \(E\subset\mathscr H\) be a rank-\(N\) Hermitian subbundle. Write \(P_E\) for the orthogonal projector onto \(E\), \(Q_E=1-P_E\), and define the second fundamental form relative to \(\nabla\) by
 
 \[
-\mathbb B_\xi
-=
-Q_E\nabla_\xi|_E.
-\tag{5.1}
+\boxed{
+\mathbb B_\xi:=Q_E\nabla_\xi|_E.
+}
+\tag{4.1}
 \]
 
-For an orthonormal frame \(u_1,\ldots,u_N\), form the normalized Slater ray
+Choose an orthonormal frame \(u_1,\ldots,u_N\) at a point and form the normalized Slater/Plücker ray
 
 \[
 \Psi_E=u_1\wedge\cdots\wedge u_N.
 \]
 
-The wedge derivative gives
+In a gauge whose tangential connection matrix vanishes at the point,
+
+\[
+D_\xi^\perp\Psi_E
+=
+\sum_{a=1}^{N}
+ u_1\wedge\cdots\wedge(\mathbb B_\xi u_a)\wedge\cdots\wedge u_N.
+\]
+
+The summands are mutually orthogonal. Therefore
 
 \[
 \boxed{
-g_{\rm proj}^{\nabla}(\xi,\bar\eta)
-=
-\operatorname{Tr}_E
-(\mathbb B_\eta^*\mathbb B_\xi).
+ g_{\rm Gr}^{\nabla}(\xi,\bar\eta)
+ =
+ \operatorname{Tr}_E(\mathbb B_\eta^*\mathbb B_\xi).
 }
-\tag{5.2}
+\tag{4.2}
 \]
 
-Thus
+By Theorem 3.1,
 
 \[
 \boxed{
 \mathcal I_{\rm CF}^{\nabla}
 =
-\operatorname{Tr}_E
-(\mathbb B_\eta^*\mathbb B_\xi).
+g_{\rm Gr}^{\nabla}
 }
-\tag{5.3}
+\tag{4.3}
 \]
 
-The Slater/Grassmannian interpretation of such rays is standard; see Aoto–da Silva [AS20] in the bibliography of the companion note.
+for the Slater ray.
+
+**Established background / derived formula.** Slater determinant rays are Plücker points in a Grassmannian; see [AS20] in the companion bibliography. Equation (4.2) is the standard second-fundamental-form calculation written explicitly here.
 
 ---
 
 # Part III. Hyperbolic \(q\)-differentials
 
-## 6. Minimal-solution connection model
+## 5. Minimal-solution connection model
 
-Take
+Let
 
 \[
-E_q=\pi_*K_{\mathcal X/B}^q
+E_q=\pi_*K_{\mathcal X/B}^{q}
 \]
 
-over Teichmüller space. For a harmonic Kodaira–Spencer tensor \(\mu_\xi\) and \(u_a\in H^0(K^q)\), put
+over a smooth hyperbolic Teichmüller family. For a harmonic Kodaira–Spencer tensor \(\mu_\xi\) and \(u_a\in H^0(X_b,K_{X_b}^q)\), set
 
 \[
 \eta_{a,\xi}=-\mu_\xi\cdot u_a.
 \]
 
-Fedosova–Rowlett–Zhang use the \(L^2\)-minimal solution
+Fedosova–Rowlett–Zhang use the \(L^2\)-minimal solution \(\chi_{a,\xi}\) of
 
 \[
+\boxed{
 \bar\partial\chi_{a,\xi}
 =-\nabla'\eta_{a,\xi}
-\tag{6.1}
+}
+\tag{5.1}
 \]
 
-in the direct-image curvature formula [FRZ20]. Berndtsson's Hilbert-subbundle discussion identifies the relevant negative curvature contribution with the norm of a minimal \(ar\partial\)-solution [Bern09].
+in the direct-image curvature formula [FRZ20]. Berndtsson's Hilbert-subbundle discussion identifies the negative second-fundamental contribution with a minimal \(\bar\partial\)-solution [Bern09].
 
-Accordingly, in the local Hilbert realization whose normal covariant derivative is selected by (6.1),
+We therefore make the following **connection-model definition**:
 
 \[
-\mathbb B_\xi u_a=\chi_{a,\xi}.
-\tag{6.2}
+\boxed{
+\mathbb B_\xi u_a:=\chi_{a,\xi}.
+}
+\tag{5.2}
 \]
 
-Equation (6.2) is the **minimal-solution connection model**. Globalizing that ambient connection is a publication-level obligation; arbitrary other transports are not silently identified with it.
+This should not be read as a proof that every natural global trivialization of the moving \(L^2\) spaces produces (5.2). Global construction and naturality of the ambient connection remain publication-level obligations.
 
-Then
+With (5.2),
 
 \[
 \boxed{
@@ -274,25 +265,64 @@ Then
 =
 \sum_a
 \langle\chi_{a,\xi},\chi_{a,\eta}\rangle
-=
-\mathfrak B_q.
+=:
+\mathfrak B_q(\xi,\bar\eta).
 }
-\tag{6.3}
+\tag{5.3}
 \]
 
 ---
 
-## 7. Theorem 7.1 — Chern–Fisher/Weil–Petersson high-power closure
+## 6. The 50–50 input
 
-The companion note proves
+The companion note [`grassmannian-quantum-information.md`](grassmannian-quantum-information.md) starts from the exact Fedosova–Rowlett–Zhang statewise identity and defines
 
 \[
+\mathfrak A_q
+=
+\mathfrak B_q+
+\mathfrak R_q,
+\tag{6.1}
+\]
+
+where \(\mathfrak A_q\) is the total Kodaira–Spencer source energy and \(\mathfrak R_q\) is the positive Berndtsson resolvent response.
+
+In the convention crosswalk adopted there,
+
+\[
+\mathfrak A_q
+=
+\frac{q-1}{2\pi}G_{\rm WP}+O(1),
+\tag{6.2}
+\]
+
+and
+
+\[
+\mathfrak R_q
+=
+\frac{q-1}{4\pi}G_{\rm WP}+O(1).
+\tag{6.3}
+\]
+
+Thus
+
+\[
+\boxed{
 \mathfrak B_q
 =
 \frac{q-1}{4\pi}G_{\rm WP}+O(1).
+}
+\tag{6.4}
 \]
 
-Therefore, in the minimal-solution connection model,
+The equality of the two leading halves is called the **50–50 Kodaira–Spencer law** in this project. It remains labelled **Derived here**, with a dedicated normalization and prior-art audit.
+
+---
+
+## 7. Theorem 7.1 — covariant information/WP closure in the model
+
+Combining (5.3) and (6.4),
 
 \[
 \boxed{
@@ -303,7 +333,7 @@ Therefore, in the minimal-solution connection model,
 \tag{7.1}
 \]
 
-and
+Hence
 
 \[
 \boxed{
@@ -315,48 +345,89 @@ G_{\rm WP}.
 \tag{7.2}
 \]
 
-**Status:** exact identity (4.1) + the derived 50–50 asymptotic from the companion note. This is **not** a claim that “Chern–Fisher” is a standard theorem name.
+**Status:** Theorem 3.1 is exact for any connection-equipped Hilbert bundle. Equation (7.2) is its application inside the explicitly chosen minimal-solution connection model, using the separately audited 50–50 asymptotic. It is not a claim that “Chern–Fisher” is a standard theorem name or that the global connection problem has been solved.
 
-With the standard real pure-state quantum Fisher normalization,
+With the Braunstein–Caves real pure-state convention
 
 \[
 I_Q=4g_{FS},
 \]
 
-one instead writes
+one may equivalently write
 
 \[
+\boxed{
 I_{Q,q}^{\rm min}
 =
 \frac{q-1}{\pi}G_{\rm WP}+O(1).
+}
 \tag{7.3}
 \]
 
 ---
 
-# Part IV. Relation to ordinary classical Fisher
+# Part IV. Ordinary classical Fisher is a measurement of the covariant state
 
-## 8. Classical position measurement forgets phase
+## 8. Amplitude/phase decomposition
 
-The configuration-position measurement of the Slater state produces the Bergman DPP. For a real tangent direction, write the normalized state locally as
+For a real parameter direction, in a position representation transported by the same connection write
 
 \[
 \widehat\Psi=\sqrt p\,e^{i\theta}.
 \]
 
-The companion note derives
+Let
+
+\[
+s_\xi=D_\xi\log p
+\]
+
+be the classical probability score and let
+
+\[
+a_\xi
+=D_\xi\theta-\mathbb E_p[D_\xi\theta]
+\]
+
+be the centered phase score. In projective gauge,
+
+\[
+D_\xi^\perp\widehat\Psi
+=
+\widehat\Psi
+\left(
+\frac12s_\xi+i a_\xi
+\right).
+\]
+
+Therefore
 
 \[
 \boxed{
-I_Q
-=
-I_{\rm pos}
-+4\operatorname{Var}(a),
+ g_{FS}(\xi,\xi)
+ =
+ \frac14 I_{\rm pos}(\xi,\xi)
+ +
+ \operatorname{Var}_p(a_\xi).
 }
 \tag{8.1}
 \]
 
-where \(a\) is the centered phase score. Hence
+or, with \(I_Q=4g_{FS}\),
+
+\[
+\boxed{
+ I_Q
+ =
+ I_{\rm pos}
+ +4\operatorname{Var}_p(a).
+}
+\tag{8.2}
+\]
+
+This is the pure-state measurement decomposition in the present convention; Braunstein–Caves [BC94] gives the standard operational quantum-information background.
+
+Thus the geometrically aligned **quarter-Fisher** metric is
 
 \[
 \boxed{
@@ -366,31 +437,78 @@ where \(a\) is the centered phase score. Hence
 -
 \operatorname{Var}(a)
 }
-\tag{8.2}
-\]
-
-when the same connection is used.
-
-Thus there is no contradiction between exact Chern–Fisher closure and the previous classical transport no-go:
-
-\[
-\boxed{
-\text{Chern--Fisher keeps amplitude + phase + connection;}
-\\
-\text{classical DPP Fisher keeps only the probability measurement.}
-}
 \tag{8.3}
 \]
 
-Braunstein–Caves characterize the quantum statistical metric operationally through optimization over measurements [BC94]. Equation (8.1) is the explicit pure-state position-measurement decomposition in the present convention.
+when both sides use the same connection.
+
+The distinction is now sharp:
+
+\[
+\boxed{
+\begin{array}{c}
+\text{Chern--Fisher: amplitude + phase + connection},\\
+\text{classical DPP Fisher: probability of one chosen measurement}.
+\end{array}
+}
+\tag{8.4}
+\]
 
 ---
 
-# Part V. A fixed-measure holomorphic model as a consistency check
+## 9. Exact criterion for classical leading closure
 
-## 9. Proposition 9.1 — holomorphic square-root Fisher identity
+For the hyperbolic minimal-solution model, (7.1) and (8.3) give
 
-Let \(B\ni z\mapsto F_z\in L^2(Y,\nu)\) be a holomorphic nonzero Hilbert-space-valued map over a **fixed** measure space. Set
+\[
+\boxed{
+\frac14I_{{\rm pos},q}^{\rm min}
+=
+\frac{q-1}{4\pi}G_{\rm WP}
+-
+\operatorname{Cov}_{P_q}(a_q,a_q)
++O(1).
+}
+\tag{9.1}
+\]
+
+Therefore, if
+
+\[
+\boxed{
+\operatorname{Cov}_{P_q}(a_{q,\xi},a_{q,\eta})=o(q)
+}
+\tag{9.2}
+\]
+
+on compact subsets for fixed tangent directions, then
+
+\[
+\boxed{
+\frac{\pi}{q-1}
+I_{{\rm pos},q}^{\rm min}
+\longrightarrow G_{\rm WP}.
+}
+\tag{9.3}
+\]
+
+**Open:** (9.2) is not proved. If the phase covariance is of order \(q\), a finite fraction of the projective quantum information is invisible to the position DPP measurement.
+
+This is now the smallest unresolved classical-Fisher problem in the chain.
+
+---
+
+# Part V. Fixed-measure holomorphic consistency check
+
+## 10. Proposition 10.1 — complex Fisher equals Fubini–Study in the holomorphic fixed-measure model
+
+Let
+
+\[
+B\ni z\longmapsto F_z\in L^2(Y,\nu)
+\]
+
+be a holomorphic nonzero Hilbert-space-valued map over a **fixed** measure space. Put
 
 \[
 Z(z)=\|F_z\|^2,
@@ -407,7 +525,7 @@ I_{\alpha\bar\beta}
 (\partial_\alpha\log p_z)
 (\partial_{\bar\beta}\log p_z)
 p_zd\nu.
-\tag{9.1}
+\tag{10.1}
 \]
 
 Then
@@ -420,7 +538,7 @@ I_{\alpha\bar\beta}
 =
 g_{FS,\alpha\bar\beta}.
 }
-\tag{9.2}
+\tag{10.2}
 \]
 
 ### Proof
@@ -435,73 +553,82 @@ Holomorphicity gives
 \partial_\alpha\log Z.
 \]
 
-Moreover,
+The expectation of the first term is \(\partial_\alpha\log Z\), while its Hermitian second moment is \(\langle\partial_\beta F,\partial_\alpha F\rangle/Z\). Subtracting the mean product gives the standard Fubini–Study formula, which is also \(\partial\bar\partial\log Z\). \(\square\)
 
-\[
-\mathbb E_p\left[\frac{\partial_\alpha F}{F}\right]
-=
-\frac{\langle F,\partial_\alpha F\rangle}{Z}
-=
-\partial_\alpha\log Z,
-\]
-
-and
-
-\[
-\mathbb E_p
-\left[
-\frac{\partial_\alpha F}{F}
-\overline{\frac{\partial_\beta F}{F}}
-\right]
-=
-\frac{\langle\partial_\beta F,\partial_\alpha F\rangle}{Z}.
-\]
-
-Subtracting the mean term gives exactly the Fubini–Study expression, which is also \(\partial\bar\partial\log Z\). \(\square\)
-
-**Derived here.** This is a useful normalization check, closely analogous to the Fisher–Bergman identities discussed in the main FCIG information note.
-
-### Why the moving hyperbolic case is harder
-
-In the hyperbolic family, the \(L^2\) weight, volume form, and type decomposition move. A marking alone does not turn the problem into the fixed-measure hypothesis of Proposition 9.1. The Chern/minimal-solution connection is precisely the extra geometric datum needed to formulate a covariant analogue without pretending that the measure is fixed.
+**Derived here.** This proposition is a consistency check for the Fisher–Bergman theme. The moving hyperbolic family is harder precisely because its \(L^2\) measure and complex type decomposition vary; the connection is the additional datum needed for a covariant formulation.
 
 ---
 
-# 10. What has and has not been solved
+# 11. Relation to Quillen: filtered, not equal
 
-### Closed in the connection-equipped model
+For the hyperbolic \(H^0(K^q)\) family, the full direct-image/Quillen curvature has leading order \(q^2\), while
+
+\[
+\mathfrak B_q,
+\mathfrak R_q
+=O(q).
+\]
+
+Thus
 
 \[
 \boxed{
-\text{projective Chern score covariance}
+\text{Chern--Fisher / Grassmannian KS response}
+\neq
+\text{full Quillen curvature}.
+}
+\tag{11.1}
+\]
+
+The correct research language is a **filtered Fisher–Bergman–Quillen correspondence**: the \(O(q)\) Kodaira–Spencer information channel is a subleading component inside a determinant geometry whose total response is \(O(q^2)\).
+
+The companion audit records the relevant FRZ, Berndtsson, Wan–Zhang, Takhtajan–Teo, and Braunstein–Caves prior art.
+
+---
+
+# 12. What is solved, and what remains
+
+### Exact
+
+\[
+\boxed{
+\mathcal I_{\rm CF}^{\nabla}
 =
-\text{Fubini--Study/Grassmannian metric}
+g_{\rm proj}^{\nabla}
 }
 \]
 
-exactly, and for the hyperbolic \(H^0(K^q)\) minimal-solution model,
+for any connection-equipped state family, and
 
 \[
 \boxed{
-\frac{4\pi}{q-1}\mathcal I_{{\rm CF},q}^{\rm min}
+\mathcal I_{\rm CF}^{\nabla}
+=
+\operatorname{Tr}(\mathbb B^*\mathbb B)
+}
+\]
+
+for its Slater/Grassmannian realization.
+
+### Derived in the hyperbolic minimal-solution model
+
+\[
+\boxed{
+\frac{4\pi}{q-1}
+\mathcal I_{{\rm CF},q}^{\rm min}
 \to G_{\rm WP}.
 }
 \]
 
 ### Still open
 
-1. global construction and uniqueness/naturality of the ambient minimal-solution Hilbert connection on the marked family;
-2. comparison of that connection with a concrete Kähler–Einstein/Chern horizontal transport on configuration space;
-3. asymptotics of the classical phase-information defect;
-4. relation of the \(O(q)\) Chern–Fisher/KS sector to the \(O(q^2)\) full Quillen determinant curvature beyond the already known direct-image decomposition.
+1. global construction and naturality/uniqueness of the ambient minimal-solution Hilbert connection on the marked Teichmüller family;
+2. line-by-line FRZ/Wan–Zhang normalization crosswalk for publication;
+3. the phase-score covariance asymptotics (9.2);
+4. comparison of the \(O(q)\) information channel with the \(O(q^2)\) Quillen expansion beyond leading scale separation;
+5. a dedicated prior-art search before any standalone novelty claim.
 
----
-
-# 11. FCIG interpretation
-
-The information-geometric moral is not that a probability manifold must be globally dually flat. It is that a **bundle of statistical state spaces may carry a connection, and information response should then be differentiated covariantly**.
-
-The resulting slogan is
+The current mathematical slogan is therefore
 
 \[
 \boxed{
@@ -509,12 +636,12 @@ The resulting slogan is
 }
 \]
 
-and, in the hyperbolic high-power model,
+and, conditionally on the specified minimal-solution connection model,
 
 \[
 \boxed{
-\textbf{the normal quantum information of the moving holomorphic state space converges to Weil--Petersson geometry.}
+\textbf{the normal quantum information of the moving holomorphic state space has Weil--Petersson as its semiclassical limit.}
 }
 \]
 
-This is the currently most promising mathematical version of FCIG Information Closure. It remains entirely on the Kähler/Teichmüller side; no Lorentzian gravity statement is activated.
+No Lorentzian or gravitational conclusion is asserted here.
