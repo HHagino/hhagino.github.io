@@ -1,6 +1,6 @@
 # FCIG: BLS Position Transport and Intrinsic Bergman-DPP Fisher Closure
 
-**Status:** exact ambient transport theorem + exact compression-defect theorem + KE/BLS Hermitian Fisher closure + high-power WP corollary  
+**Status:** exact ambient transport theorem + exact compression-defect theorem + local KE/BLS Hermitian Fisher closure + high-power WP corollary  
 **Date:** 2026-09-10  
 **Scope:** BLS Hilbert fields, Kähler--Einstein horizontal lift, position observables, Bergman compression, Slater determinants, determinantal point processes, Fisher information, and Weil--Petersson asymptotics.  
 **Depends on:** [`hermitian-born-fisher.md`](hermitian-born-fisher.md), [`grassmannian-quantum-information.md`](grassmannian-quantum-information.md), [`kodaira-spencer-information.md`](kodaira-spencer-information.md).
@@ -120,7 +120,7 @@ E=K_{\mathcal X/B}^{q-1},
 \qquad q\ge2.
 \]
 
-The KE lift gives the harmonic Kodaira--Spencer representative [Sch12], while the BLS connection gives the ambient covariant realization [Var24]. The determinant/Slater line of \(\mathscr H_q\) is projectively holomorphic, and the ambient \(N_q\)-particle position measurement is parallel under the induced product transport. Therefore the exact Hermitian Born--Fisher theorem applies:
+The KE lift gives the harmonic Kodaira--Spencer representative [Sch12], while the BLS connection gives the ambient covariant realization [Var24]. Locally on the base, the determinant/Slater line of \(\mathscr H_q\) is projectively holomorphic, and the ambient \(N_q\)-particle position measurement is parallel under the induced product transport. Therefore the exact Hermitian Born--Fisher theorem applies in this local covariant realization:
 
 \[
 \boxed{
@@ -774,9 +774,9 @@ For the holomorphic determinant/Slater line
 \bigwedge^{N_q}\mathscr L_q,
 \]
 
-the BLS Chern connection induces the Chern connection of the determinant line. A local holomorphic determinant frame therefore defines a projectively holomorphic ray in the ambient covariant realization.
+the BLS Chern connection induces the Chern connection of the determinant line. Locally, a holomorphic determinant frame therefore defines a projectively holomorphic ray in the ambient covariant realization.
 
-By Theorem 8.1, the many-body position measurement transported by \(\theta_{KE}\) is parallel. Hence the hypotheses of the exact Hermitian Born--Fisher theorem are satisfied, and
+By the many-body covariance identity (8.1), the position measurement transported by \(\theta_{KE}\) is parallel. Hence, locally on the base and with the same BLS/Chern realization used on both the state and measurement sides, the hypotheses of the exact Hermitian Born--Fisher theorem are satisfied, and
 
 \[
 \boxed{
@@ -789,7 +789,7 @@ I_q^{KE}(JX,JY)
 \tag{12.1}
 \]
 
-**Status:** **Derived here from established BLS/Chern machinery plus the exact Hermitian Born--Fisher identity of the companion note.** The important improvement over the preceding formulation is that no parallelism assumption on the compressed Toeplitz POVM is needed.
+**Status:** **Derived here from established BLS/Chern machinery plus the exact Hermitian Born--Fisher identity of the companion note.** Equation (12.1) is exact in this local KE/BLS covariant realization. It does not assert that the ambient BLS field is a globally trivial holomorphic Hilbert bundle, nor does it require parallelism of the compressed Toeplitz POVM.
 
 ### Proof sketch with the transport issue exposed
 
@@ -863,7 +863,7 @@ and
 \tag{13.5}
 \]
 
-This is the intrinsic moving-fiber classical statistical closure in the KE/BLS realization.
+This is the intrinsic moving-fiber classical statistical closure in the local KE/BLS realization; it is invariantly defined from the distinguished KE transport, although the proof is carried out in local covariant charts.
 
 ---
 
@@ -997,7 +997,7 @@ This is stronger than merely choosing a convenient trivialization: the transport
 
 The main transport obstruction is removed, but several publication-level tasks remain.
 
-### Open A — finite-​\(q\) coefficient beyond the WP leading term
+### Open A — finite-\(q\) coefficient beyond the WP leading term
 
 Compute the full expansion of
 
