@@ -18,6 +18,13 @@ Sources:
 - `kodaira-spencer-information.html`
 - `kodaira-spencer-information.bib`
 - `kodaira-spencer-information-citation-audit.md`
+- `grassmannian-quantum-information.md`
+- `chern-fisher-closure.md`
+- `born-slater-information.md`
+- `hermitian-born-fisher.md`
+- `bls-position-transport.md`
+- `bls-position-transport.bib`
+- `bls-position-transport-citation-audit.md`
 
 This track does **not** replace the v0.27 charged/Jacobi program. It isolates the mathematical relation among Fisher response, Bergman determinantal processes, direct-image curvature, Kodaira--Spencer deformation, Weil--Petersson geometry and Quillen determinant geometry.
 
@@ -198,29 +205,98 @@ Consequently the Fisher covariance changes by the corresponding cross terms and 
 
 This replaces the earlier over-strong version of the Information Closure Conjecture.
 
-### Gate FI-H — canonical statistical transport closure — OPEN
+### Gate FI-H — canonical statistical transport closure — PASS WITH BLS/KE TYPING
 
-The next statistical problem is now precise: use a geometrically distinguished transport, with the Kähler--Einstein/Chern horizontal lift as the first candidate, and compute
+The transport ambiguity is resolved by distinguishing the ambient position measurement from its Bergman compression. For the ambient BLS Hilbert field
+
+\[
+\mathscr L_t=L^2(X_t,K_{X_t}\otimes E_t),
+\]
+
+Varolin's twisted-Lie BLS--Chern connection gives, for multiplication by a smooth observable \(\varphi\),
 
 \[
 \boxed{
-I_q^{\tau^{\rm KE}}-\mathfrak K_q
+\nabla_X^{\operatorname{End}\mathscr L}M_\varphi
+=M_{V_X^\theta\varphi}.
 }
 \]
 
-to leading order.
+Thus horizontally advected position observables, and equivalently the ambient position PVM under the finite horizontal flow, are parallel.
 
-A pass means either
+For the Bergman projection \(P\), however, the compressed Toeplitz observable obeys the exact defect formula
 
 \[
-\frac{4\pi}{q-1}I_q^{\tau^{\rm KE}}\to G_{\rm WP}
+\boxed{
+\nabla_X^{\operatorname{End}\mathscr H}(PM_\varphi P)
+=
+\mathbb B_X^*QM_\varphi P
++PM_\varphi Q\mathbb B_X
+}
 \]
 
-or an explicit nonzero defect tensor. A gauge-quotient or intrinsic Hilbert/Grassmannian information metric is an alternative if no canonical classical transport exists.
+when \(V_X^\theta\varphi=0\). Therefore the compressed POVM is generally not parallel; its defect is controlled by the same second fundamental form \(\mathbb B\) that produces the Grassmannian information metric.
+
+The Bergman DPP itself is the Born law of a Slater state measured by the **ambient many-body position PVM**, so the first, parallel object is the relevant one. Choosing Schumacher's Kähler--Einstein horizontal lift and the corresponding BLS/Chern realization gives the exact Hermitian Born--Fisher identity
+
+\[
+\boxed{
+I_q^{KE}(X,Y)+I_q^{KE}(JX,JY)
+=4g_{\rm Pl,q}^{KE}(X,Y).
+}
+\]
+
+With the audited Grassmannian asymptotic,
+
+\[
+\boxed{
+\frac{\pi}{q-1}
+\left(I_q^{KE}+J^*I_q^{KE}\right)
+\to G_{\rm WP}.
+}
+\]
+
+Equivalently,
+
+\[
+I_{\rm HBF,q}^{KE}
+:=\frac14(I_q^{KE}+J^*I_q^{KE})
+\]
+
+satisfies
+
+\[
+\boxed{
+I_{\rm HBF,q}^{KE}
+=\frac{q-1}{4\pi}G_{\rm WP}+O(1).
+}
+\]
+
+Comparing with the intrinsic KS resolvent channel,
+
+\[
+\boxed{
+I_{\rm HBF,q}^{KE}-\mathfrak K_q=O(1),
+\qquad
+\frac{4\pi}{q-1}
+\left(I_{\rm HBF,q}^{KE}-\mathfrak K_q\right)\to0.
+}
+\]
+
+**Source / proof location:** `bls-position-transport.md`. The ambient BLS machinery is established literature; the multiplication covariance, compression-defect identity and assembled DPP/WP closure are marked **Derived here**, not literature-novelty claims.
 
 ### Gate FI-I — Quillen/WP normalization crosswalk — OPEN TECHNICAL AUDIT
 
 Wan--Zhang's Hermitian pairing convention and the Zograf--Takhtajan \(\omega_{\rm WP}\) first-Chern-form convention must be crosswalked explicitly before numerical coefficients are compared. No factor of \(2\), \(i\), or \(2\pi\) is to be inferred by notation matching alone.
+
+**Next information-closure target:** compute the full finite-\(q\) expansion of
+
+\[
+I_{\rm HBF,q}^{KE}-\mathfrak K_q
+=\mathfrak B_q-\mathfrak K_q,
+\]
+
+currently controlled only as \(O(1)\), and quantify the anisotropic split between the individual real Fisher channels \(X\) and \(JX\).
 
 **Scope rule:** the entire Information Closure track remains Euclidean/Kähler. It does not activate the Lorentzian Gravity Closure gate.
 
