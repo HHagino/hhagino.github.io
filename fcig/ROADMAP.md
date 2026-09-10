@@ -7,15 +7,19 @@ The roadmap is ordered so that each mechanism is tested before any gravitational
 
 ---
 
-## Parallel mathematical track — Fisher–Bergman–Quillen Information Closure — ACTIVE RESEARCH NOTE
+## Parallel mathematical track — Fisher–Bergman–Quillen Information Closure — ACTIVE
 
 Sources:
 
 - `fisher-bergman-quillen.md`
 - `fisher-bergman-quillen.html`
 - `fisher-bergman-quillen.bib`
+- `kodaira-spencer-information.md`
+- `kodaira-spencer-information.html`
+- `kodaira-spencer-information.bib`
+- `kodaira-spencer-information-citation-audit.md`
 
-This track does **not** replace the v0.27 charged/Jacobi program. It isolates a mathematical question that was previously implicit in the phrase “information geometry”: how the Fisher response of the Bergman determinantal process is related to direct-image and Quillen determinant geometry.
+This track does **not** replace the v0.27 charged/Jacobi program. It isolates the mathematical relation among Fisher response, Bergman determinantal processes, direct-image curvature, Kodaira--Spencer deformation, Weil--Petersson geometry and Quillen determinant geometry.
 
 ### Gate FI-A — event/probability typing — PASS WITH CORRECTION
 
@@ -64,7 +68,7 @@ Using the standard covariance identity for projection DPPs,
 }
 \]
 
-This is the current exact Fisher–Bergman side of the triangle.
+This is the exact fixed-complex Fisher–Bergman side.
 
 ### Gate FI-D — moving-Kähler Hessian defect — DERIVED HERE
 
@@ -92,8 +96,6 @@ i\partial\bar\partial\eta\rangle dV.
 }
 \]
 
-This explicit defect replaces the earlier over-strong expectation of exact Hessian closure.
-
 ### Gate FI-E — Quillen bookkeeping — PASS AS A TYPED IDENTITY
 
 Using the Quillen convention already fixed in `quillen-refinement.md`,
@@ -118,37 +120,109 @@ so on the real Kähler-potential space
 }
 \]
 
-This is a functional-Hessian identity, not yet a Chern-form equality on a complex base. Dualization and curvature signs must remain explicit.
+This is a functional-Hessian identity, not a convention-free Chern-form equality.
 
-### Gate FI-F — moving complex structure / Kodaira--Spencer channel — OPEN
+### Gate FI-F — intrinsic moving-complex-structure / Kodaira--Spencer channel — PASS
 
-Berndtsson direct-image curvature and the Wan--Zhang high-power expansion already contain the geodesic-curvature and Kodaira--Spencer sectors on the determinant side. The missing statistical statement is to define a canonical fiber-to-fiber transport of the Bergman DPP and derive its complex-structure score.
+For a compact hyperbolic curve family set
 
-**Information Closure Conjecture:** after conventions and horizontal transport are fixed, the fibered Fisher response decomposes schematically as
+\[
+E_q=\pi_*K_{\mathcal X/B}^{q},
+\qquad
+m=q-1.
+\]
+
+Tracing the Kodaira--Spencer resolvent summand in Berndtsson's curvature formula defines the canonical positive Hermitian tensor
 
 \[
 \boxed{
-\mathcal I_k
+\mathfrak K_q(\xi,\bar\eta)
 =
-\mathcal R_k^Q
-+
-\mathfrak D_k^{\rm met}
-+
-\mathfrak D_k^{KS}
-+
-\mathfrak D_k^{\rm tors}.
+m\sum_a
+\left\langle
+(m+\Delta')^{-1}i_{\mu_\xi}u_a,
+ i_{\mu_\eta}u_a
+\right\rangle.
 }
 \]
 
-No exact formula for \(\mathfrak D_k^{KS}\) is claimed yet.
+Specializing the Wan--Zhang high-power expansion to complex dimension one gives, without fitting a coefficient,
 
-### Gate FI-G — genus \(g\ge2\) Weil--Petersson test — OPEN
+\[
+\boxed{
+\mathfrak K_q
+=
+\frac{q-1}{4\pi}G_{\rm WP}+O(1),
+\qquad
+\frac{4\pi}{q-1}\mathfrak K_q\to G_{\rm WP}.
+}
+\]
 
-The first falsifiable moving-family laboratory is a compact hyperbolic curve family. Determine, without fitting constants, whether the leading normalized Fisher form of the Bergman DPP in complex-structure directions is proportional to the Weil--Petersson form.
+The factor is the product
 
-**Pass condition:** define the statistical transport, derive the Kodaira--Spencer score, determine the leading coefficient, and reconcile it with the already established Quillen/Weil--Petersson formulas.
+\[
+\boxed{
+\frac12\times\frac{q-1}{2\pi}
+=
+\frac{q-1}{4\pi},
+}
+\]
 
-**Scope rule:** this track remains Euclidean/Kähler. It does not activate the Lorentzian Gravity Closure gate.
+where \(1/2\) is the leading Kodaira--Spencer resolvent coefficient and \((q-1)/(2\pi)\) is the leading curve Bergman density.
+
+**Status:** derived in `kodaira-spencer-information.md` from established Berndtsson/Wan--Zhang formulas; no literature-novelty claim.
+
+### Gate FI-G — moving-fiber classical Fisher transport — PASS AS A NO-GO
+
+A moving-fiber classical Fisher tensor is not canonical before one fixes how neighboring configuration spaces are identified. If two transports differ infinitesimally by a vector field \(V_\xi\), then with the pullback convention
+
+\[
+\boxed{
+S_\xi^{\tau'}
+=
+S_\xi^\tau
++
+\operatorname{div}_{P}V_\xi.
+}
+\]
+
+Consequently the Fisher covariance changes by the corresponding cross terms and probability-divergence norm. Therefore
+
+\[
+\boxed{
+\text{arbitrary moving-fiber classical Fisher}
+\neq
+\text{canonical moduli tensor}.
+}
+\]
+
+This replaces the earlier over-strong version of the Information Closure Conjecture.
+
+### Gate FI-H — canonical statistical transport closure — OPEN
+
+The next statistical problem is now precise: use a geometrically distinguished transport, with the Kähler--Einstein/Chern horizontal lift as the first candidate, and compute
+
+\[
+\boxed{
+I_q^{\tau^{\rm KE}}-\mathfrak K_q
+}
+\]
+
+to leading order.
+
+A pass means either
+
+\[
+\frac{4\pi}{q-1}I_q^{\tau^{\rm KE}}\to G_{\rm WP}
+\]
+
+or an explicit nonzero defect tensor. A gauge-quotient or intrinsic Hilbert/Grassmannian information metric is an alternative if no canonical classical transport exists.
+
+### Gate FI-I — Quillen/WP normalization crosswalk — OPEN TECHNICAL AUDIT
+
+Wan--Zhang's Hermitian pairing convention and the Zograf--Takhtajan \(\omega_{\rm WP}\) first-Chern-form convention must be crosswalked explicitly before numerical coefficients are compared. No factor of \(2\), \(i\), or \(2\pi\) is to be inferred by notation matching alone.
+
+**Scope rule:** the entire Information Closure track remains Euclidean/Kähler. It does not activate the Lorentzian Gravity Closure gate.
 
 ---
 
