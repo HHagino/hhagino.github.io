@@ -12,9 +12,9 @@ The repository distinguishes **Established**, **Derived here**, **FCIG interpret
 
 ## Status
 
-Completed milestones: **v0.2–v0.26**.
+Completed numbered milestones: **v0.2–v0.26**. The charged/Jacobi program continues toward **v0.27**, while a parallel hyperbolic information-closure track now runs through Kodaira--Spencer/Born--Fisher closure, finite-\(q\) offsets, Chern-holonomy orbital cancellation, Casimir transmutation, cyclic Fourier profiles, Sun--Selberg unfolding, and the Orbital--Character Closure problem.
 
-The controlled chain is
+The controlled numbered chain is
 
 \[
 \boxed{
@@ -178,9 +178,44 @@ is not determined by the quadratic Jacobi curvature.
 
 The common \(\sum q^2\) is a shared microscopic invariant, not an equality between anomaly and spectral observables.
 
-## Current frontier
+## Parallel frontier — hyperbolic information / Orbital--Character Closure
 
-The active target is **v0.27 — full charged multiplet / quartic holonomy response**.
+For a primitive class \(c\), the cyclic-cover calculation diagonalizes the deformation in coefficients \(|b_{n,c}|^2\). The Selberg length Hessian and the weighted Bergman/Fisher orbital are distinct spectral filters of those same data. The Casimir-transmutation identity converts the surface resolvent into a differential operator in conjugacy length, while the holomorphic discrete-series character gives the exact Selberg descendant factor
+
+\[
+\boxed{
+\Theta_{2q-1}^{+}(a_{L/2})
+=\frac{e^{-qL}}{1-e^{-L}}.
+}
+\]
+
+The current representation-theory target is **not** to equate the weighted orbital with the ordinary character. It is to construct, or rule out, a canonical deformation insertion \(\mathcal A_{c,\mu}\) such that classwise
+
+\[
+\boxed{
+\mathfrak T_{q,c}[\mu]
+=\operatorname{Tr}_{D_{2q-1}^{+}}
+\bigl(\mathcal A_{c,\mu}\,\pi_q(a_{\ell_c/2})\bigr)
+}
+\]
+
+reproduces the cyclic-mode Bergman/Fisher transform with all centralizer, orientation and winding normalizations. This is the **Orbital--Character Closure (OCC)** problem; see `orbital-character-closure.md`.
+
+The firewall is
+
+\[
+\boxed{
+\text{kernel match}
+\not\Rightarrow
+\text{classwise coefficient match}
+\not\Rightarrow
+\text{global determinant identity}.
+}
+\]
+
+## Current numbered frontier
+
+The active numbered target remains **v0.27 — full charged multiplet / quartic holonomy response**.
 
 The next task is to compute charged vector/hyper/tensor multiplet determinants on the same \((\tau,z)\) background and separate
 
@@ -196,7 +231,7 @@ The rule remains
 
 \[
 \boxed{
-\text{common charge invariant}
+\text{common invariant or asymptotic scale}
 \neq
 \text{physical identification of observables}.
 }
