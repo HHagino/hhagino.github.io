@@ -24,8 +24,9 @@ This audit separates Sun's new exact Bergman-loop formula, classical Selberg/unf
 | Exponentially small constant-curvature Bergman errors | **Established** | [Ber12; MM15] | Supports the safe exponential bound; does not determine the signed first coefficient. |
 | Selberg-zeta Hessian is controlled at leading order by systole variations | **Established** | [FRZ20] | If first systole variation is nonzero, leading scale is \(q^2e^{-q\ell_0}\); a different \(qe^{-q\ell_0}\) law holds on the kernel of first systole variation. |
 | \(f_\mu=(1+\square_0)^{-1}|\mu|^2\) occurs in the second variation of geodesic length | **Established** | [AS12; FRZ20] | This is the structural overlap with the leading \(O(q)\) part of the FCIG weight \(W_q\). |
-| Weighted Bergman orbital can already be written solely in terms of \(\partial\ell\) and \(ar\partial\partial\ell\) | **Open problem** | — | This is the next theorem target, not established here. |
-| Canonical Bergman projector is exactly an Euler--Poincaré / holomorphic-discrete-series test function in the standard trace-formula sense | **Interpretation / open representation-theory identification** | background [Mar75; McK72] | A precise representation, test function and Harish-Chandra orbital normalization remain to be supplied. |
+| Euler--Poincaré / pseudo-coefficient functions on real reductive groups have vanishing orbital integrals on semisimple non-elliptic elements | **Established representation-theory analogue** | [CR10] | This supports the *analogy* with the Bergman cancellation, not the identification of Sun's kernel with an EP function. |
+| Weighted Bergman orbital can already be written solely in terms of \(\partial\ell\) and \(\bar\partial\partial\ell\) | **Open problem** | — | This is the next theorem target, not established here. |
+| Canonical Bergman projector is exactly an Euler--Poincaré / holomorphic-discrete-series test function in the standard trace-formula sense | **Interpretation / open representation-theory identification** | background [Mar75; McK72; CR10] | A precise representation, test function and Harish-Chandra orbital normalization remain to be supplied. |
 
 ## Primary-source checks
 
@@ -38,6 +39,7 @@ The following metadata/results were checked against primary or publisher pages o
 - Zhiqin Lu, Steve Zelditch, *Szegő Kernels and Poincaré Series*, Journal d'Analyse Mathématique 130 (2016), 167--184, DOI `10.1007/s11854-016-0033-9`.
 - Xiaonan Ma, George Marinescu, *Exponential Estimate for the Asymptotics of Bergman Kernels*, Mathematische Annalen 362 (2015), 1327--1347, DOI `10.1007/s00208-014-1137-0`.
 - Susan Martens, *The Characters of the Holomorphic Discrete Series*, PNAS 72 (1975), 3275--3276, DOI `10.1073/pnas.72.9.3275`.
+- Gaëtan Chenevier, David Renard, *On the Vanishing of Some Non-Semisimple Orbital Integrals*, Expositiones Mathematicae 28 (2010), 276--289, DOI `10.1016/j.exmath.2009.12.003`.
 
 ## Normalization firewall
 
@@ -63,6 +65,10 @@ F_q(z,\gamma z)\,dA(z).
 \]
 
 One must check absolute convergence, orientation counting, the primitive generator of each centralizer, and powers \(\delta^m\). The cylinder integral is already zero once this lemma is justified.
+
+## Representation-theory firewall
+
+For archimedean real reductive groups, the literature on Euler--Poincaré functions/pseudo-coefficients includes vanishing of orbital integrals on semisimple non-elliptic elements. Hyperbolic elements of \(PSL(2,\mathbb R)\) are non-elliptic, so this is a strong structural analogue of the cylinder cancellation found here. It is **not yet a proof that the Bergman loop kernel is the standard Euler--Poincaré function or pseudo-coefficient**. That identification requires a precise group-level kernel/test-function construction.
 
 ## Novelty firewall
 
