@@ -1,349 +1,275 @@
 # FCIG: Toeplitz Orbital Insertion for the Weighted Discrete-Series Trace
 
-**Status:** exact operator-typing observation + conjectural cyclic trace closure  
+**Status:** geometric Toeplitz-orbital closure established; representation-theoretic relative-character closure open  
 **Date:** 2026-09-10  
-**Depends on:** [`bls-position-transport.md`](bls-position-transport.md), [`systolic-bergman-orbital.md`](systolic-bergman-orbital.md), [`orbital-character-closure.md`](orbital-character-closure.md).
+**Depends on:** [`bls-position-transport.md`](bls-position-transport.md), [`systolic-bergman-orbital.md`](systolic-bergman-orbital.md), [`disk-transported-bergman.md`](disk-transported-bergman.md), [`centralizer-spectral-window.md`](centralizer-spectral-window.md), [`cyclic-relative-trace.md`](cyclic-relative-trace.md), [`character-trace-firewall.md`](character-trace-firewall.md).
 
-> **Claim firewall.** The compact Bergman trace identity below is elementary operator theory. Its promotion to a trace on the full noncompact discrete-series realization is **not** automatic: trace-class, centralizer-volume and regularization issues must be handled on the cyclic quotient/orbital side.
+> **Claim firewall.** The compact Bergman trace identity is elementary operator theory. On the universal-cover discrete-series model, the object below is a **centralizer-reduced kernel trace**, not an ordinary Hilbert-space trace of `pi_q(a_L)`. The latter is forbidden by the character-trace firewall.
 
 ---
 
 ## 0. Main observation
 
-Let \(P_q\) be the Bergman projection onto the holomorphic \(q\)-differential Hilbert space and let \(M_W\) be multiplication by a geometric weight \(W\). The canonical quantization of \(W\) already present in the BLS/Bergman formalism is the Toeplitz operator
+Let `P_q` be the Bergman projection and `M_W` multiplication by a geometric weight. The canonical quantization already present in the BLS/Bergman formalism is
 
 \[
-\boxed{
-T_W^{(q)}:=P_qM_WP_q.
-}
-\tag{0.1}
+\boxed{T_W^{(q)}=P_qM_WP_q.}
 \]
 
-For the FCIG deformation weight
+For
 
 \[
-\boxed{
-W_q
-=|\mu|^2+2(q-1)(1+\square_0)^{-1}|\mu|^2,
-}
-\tag{0.2}
+W_q=|\mu|^2+2(q-1)(1+\square_0)^{-1}|\mu|^2,
 \]
 
-the first candidate for the unknown Orbital--Character Closure insertion is therefore
+the FCIG insertion is therefore the Toeplitz observable `T_{W_q}^{(q)}`. More economically, after Casimir transmutation one may use
 
 \[
-\boxed{
-\mathcal A_\mu^{(q)}=T_{W_q}^{(q)}.
-}
-\tag{0.3}
-\]
-
-More economically, after the Casimir-transmutation step one may use
-
-\[
-T_{f_\mu}^{(q)},
-\qquad
 f_\mu=(1+\square_0)^{-1}|\mu|^2,
-\tag{0.4}
+\qquad T_{f_\mu}^{(q)},
 \]
 
-and let the differential operator \(\mathscr D_{q,L}\) act on the conjugacy-length parameter.
+and let `D_{q,L}` act on the conjugacy-length variable.
 
-The slogan is
+The structural map is
 
 \[
 \boxed{
-\text{deformation weight on the surface}
-\xrightarrow{\;PMP\;}
-\text{operator insertion in the discrete-series trace}.
+\text{deformation weight}
+\xrightarrow{PMP}
+\text{Toeplitz observable}
+\xrightarrow{\text{centralizer-reduced transported kernel}}
+\text{hyperbolic information orbital}.
 }
-\tag{0.5}
 \]
 
 ---
 
-# Part I. Why Toeplitz insertion is forced by the Bergman side
+# Part I. Compact trace identity
 
-## 1. Weighted diagonal Bergman trace
-
-On a compact surface, if \(K_q(x,y)\) is the Bergman kernel and \(B_q(x)=K_q(x,x)\) its diagonal density in the fixed convention, then
+On a compact surface,
 
 \[
 \boxed{
 \operatorname{Tr}(T_W^{(q)})
-=
-\int_X W(x)B_q(x)\,dA(x).
+=\int_XW(x)B_q(x)dA(x).
 }
-\tag{1.1}
 \]
 
-Indeed \(P_q^2=P_q\), so cyclicity of the finite-dimensional trace gives
+Likewise, whenever the product is trace class,
 
 \[
-\operatorname{Tr}(P_qM_WP_q)
-=
-\operatorname{Tr}(M_WP_q),
+\operatorname{Tr}(T_W^{(q)}U_g^{(q)})
+=\operatorname{Tr}(M_WP_qU_g^{(q)}P_q),
 \]
 
-and the diagonal kernel of \(M_WP_q\) is \(W(x)K_q(x,x)\).
+whose diagonal is a weighted transported Bergman kernel.
 
-Thus whenever the Fisher/Kodaira--Spencer curvature produces a weighted Bergman density, its operator-theoretic meaning is already Toeplitz.
-
-No representation-theory guess is needed for this statement.
-
-## 2. Insert a deck/group action
-
-Let \(U_g^{(q)}\) denote the unitary action of a hyperbolic group element \(g\) on the holomorphic \(q\)-differential Hilbert space. Whenever the product is trace class (automatically on the compact finite-dimensional quotient),
-
-\[
-\boxed{
-\operatorname{Tr}\!\left(T_W^{(q)}U_g^{(q)}\right)
-=
-\operatorname{Tr}\!\left(M_WP_qU_g^{(q)}P_q\right).
-}
-\tag{1.2}
-\]
-
-The right-hand side is the integral of the diagonal of the **transported Bergman kernel**, multiplied by \(W\). In local coordinates it has the schematic form
-
-\[
-\boxed{
-\operatorname{Tr}\!\left(T_W^{(q)}U_g^{(q)}\right)
-=
-\int W(x)\,\mathcal K_q(g;x,x)\,dA(x),
-}
-\tag{1.3}
-\]
-
-where \(\mathcal K_q(g;x,x)\) includes the automorphy/Chern phase dictated by the chosen realization.
-
-Equation (1.3) is the exact **type** of the Sun/FCIG weighted loop term.
-
-The convention-dependent task is to prove that \(\mathcal K_q(g;x,x)\) is exactly the oriented kernel used in `systolic-bergman-orbital.md`, including all bundle factors.
+This fixes the operator **type** of the FCIG insertion without representation-theory guesswork.
 
 ---
 
-# Part II. Cyclic quotient and the trace-class firewall
+# Part II. Exact hyperbolic kernel
 
-## 3. Why the full representation trace is dangerous
-
-The holomorphic discrete series \(D_{2q-1}^{+}\) is infinite-dimensional. On its noncompact model, neither
-
-\[
-T_{W_q}^{(q)}
-\quad\text{nor}\quad
-T_{W_q}^{(q)}\pi_q(a_{L/2})
-\]
-
-is automatically trace class for an arbitrary lifted periodic weight.
-
-Therefore the notation
-
-\[
-\operatorname{Tr}_{D_{2q-1}^{+}}
-\left(T_{W_q}^{(q)}\pi_q(a_{L/2})\right)
-\]
-
-must be regarded as **provisional** until one chooses the correct relative/orbital trace functional.
-
-The geometric calculation already tells us what that functional should reduce to: unfold by the centralizer of the primitive class and integrate one fundamental cylinder.
-
-Thus the safer target is
+The disk calculation in [`disk-transported-bergman.md`](disk-transported-bergman.md) proves that, in the stated orientation convention,
 
 \[
 \boxed{
-\operatorname{Tr}^{\rm orb}_{c,m}
-\left(T_{W_q}^{(q)}\pi_q(a_{m\ell_c/2})\right)
+\mathcal K_q(g_L;u)
+=C_q\kappa_{q,L}(u),
+\qquad
+C_q=\frac{2q-1}{4\pi},
+}
+\]
+
+where
+
+\[
+\boxed{
+\kappa_{q,L}(u)
+=\left(\cosh\frac L2-iu\sinh\frac L2\right)^{-2q}.
+}
+\]
+
+The automorphy/Chern phase is essential; orientation reversal complex-conjugates the kernel.
+
+Therefore:
+
+\[
+\boxed{\textbf{TOI-A: PASS.}}
+\]
+
+---
+
+# Part III. Exact cyclic relative trace
+
+Let `delta` be primitive of length `ell`, let `L=m ell`, and set
+
+\[
+Y_\delta=\langle\delta\rangle\backslash\mathbb H.
+\]
+
+Define the geometric cyclic relative trace by
+
+\[
+\boxed{
+\operatorname{Tr}^{\rm cyc}_{\delta,m,q}
+[T_W^{(q)}U_{\delta^m}^{(q)}]
 :=
-\text{centralizer-normalized cyclic-cylinder diagonal integral}.
+\Re\int_{Y_\delta}W(x)\mathcal K_q(\delta^m;x,x)dA(x).
 }
-\tag{2.1}
 \]
 
-This is a definition template, not yet an invariant construction.
-
-## 4. Expected geometric reduction
-
-With the conventions of the existing Sun--Selberg unfolding note, the desired identity is
+In Fermi coordinates `dA=dt du` and the transported diagonal is independent of `t`. Hence
 
 \[
 \boxed{
-\operatorname{Tr}^{\rm orb}_{c,m}
-\left(T_{W_q}^{(q)}\pi_q(a_{m\ell_c/2})\right)
-\stackrel{?}{=}
-\mathcal N_{c,m,q}\,
-\mathcal J_{q,m\ell_c}[W_q],
+\operatorname{Tr}^{\rm cyc}_{\delta,m,q}
+[T_W^{(q)}U_{\delta^m}^{(q)}]
+=C_q\ell\,\mathcal J_{q,m\ell}[W].
 }
-\tag{2.2}
 \]
 
-where \(\mathcal N_{c,m,q}\) denotes the already-audited orientation/centralizer/prefactor normalization from the Sun unfolding.
-
-No value for \(\mathcal N_{c,m,q}\) is asserted here; it must be imported from the exact unfolding convention rather than guessed.
-
-Combining with Casimir transmutation gives
+Thus the previously unknown normalization is exactly
 
 \[
-\boxed{
-\operatorname{Tr}^{\rm orb}_{c,m}
-\left(T_{W_q}^{(q)}\pi_q(a_{m\ell_c/2})\right)
-\stackrel{?}{=}
-\mathcal N_{c,m,q}\,
-\mathscr D_{q,L}
-\mathcal J_{q,L}[f_\mu]
-\big|_{L=m\ell_c}.
-}
-\tag{2.3}
+\boxed{\mathcal N_{c,m,q}=C_q\ell_c}
 \]
 
-Equation (2.3) is a much more concrete OCC target than an unspecified inserted character.
+for one orientation, and `2 C_q ell_c` after pairing orientations.
 
----
+The primitive length, not `m ell`, occurs because the centralizer of `delta^m` is the primitive cyclic group `\langle\delta\rangle`.
 
-# Part III. Relation to the cyclic Fourier modes
-
-## 5. Toeplitz insertion sees the same mode data
-
-The cylinder decomposition gives
+Therefore:
 
 \[
-\overline f_\mu(u)
-=
-\sum_{n\in\mathbb Z}|b_{n,c}|^2F_{n,c}(u).
-\tag{3.1}
-\]
-
-Therefore
-
-\[
-\mathcal J_{q,m\ell_c}[f_\mu]
-=
-\sum_n|b_{n,c}|^2\Lambda_{n,c}^{(q,m)}.
-\tag{3.2}
-\]
-
-If (2.3) holds, the matrix of the Toeplitz insertion in the basis naturally adapted to the cyclic subgroup must have diagonal trace data satisfying
-
-\[
-\boxed{
-\sum_n
-\langle e_n,T_{f_\mu}^{(q)}\pi_q(a_{m\ell_c/2})e_n\rangle
-\sim
-\sum_n|b_{n,c}|^2\Lambda_{n,c}^{(q,m)},
-}
-\tag{3.3}
-\]
-
-where the left side is interpreted through the orbital/relative trace rather than an unjustified absolute trace.
-
-This exposes the next calculation: compute the Toeplitz matrix elements in a standard disk/upper-half-plane realization of \(D_{2q-1}^{+}\) and compare them with the explicit \(F_{n,c}\) multipliers.
-
----
-
-# Part IV. Why this improves the character conjecture
-
-## 6. Ordinary character is recovered by the identity insertion
-
-Formally, setting \(T_W=I\) in an inserted trace recovers the ordinary character:
-
-\[
-\operatorname{Tr}(I\,\pi_q(g))=\Theta_q(g).
-\]
-
-The Sun/FCIG unweighted orbital nevertheless vanishes after transverse orbital integration because that operation is not the same functional as evaluation of the character on \(g\). This remains consistent with the previous normalization firewall.
-
-The weighted response replaces the identity insertion by a Toeplitz observable carrying \(\mu\).
-
-Thus the Selberg denominator and the information response are related without being identified:
-
-\[
-\boxed{
-\begin{array}{rcl}
-\Theta_q(g)&:&\text{trace of group transport},\\
-T_{W_q}&:&\text{quantized deformation observable},\\
-\operatorname{Tr}^{\rm orb}(T_{W_q}\pi_q(g))&:&\text{candidate FCIG class response}.
-\end{array}
-}
-\tag{4.1}
-\]
-
-## 7. Information-geometric meaning
-
-This candidate is especially natural because the BLS track already interprets multiplication by a position observable and its Bergman compression as the ambient/compressed measurement pair. The same compression now appears in the nonperturbative orbital sector.
-
-So the emerging operator slogan is
-
-\[
-\boxed{
-\text{Born/Fisher observable}
-\quad\text{and}\quad
-\text{Selberg/Bergman orbital insertion}
-\quad\text{are two uses of the same Toeplitz quantization map }W\mapsto P_qM_WP_q.
-}
-\tag{4.2}
-\]
-
-This is an FCIG structural synthesis. It does not imply equality of the corresponding global observables.
-
----
-
-# Part V. New gates
-
-## TOI-A — transported Bergman kernel crosswalk
-
-**OPEN, exact target.** In a fixed \(D_{2q-1}^{+}\) realization, compute the diagonal kernel of
-
-\[
-P_q\pi_q(a_{L/2})P_q
-\]
-
-and prove that it reproduces the oriented Sun cylinder kernel
-
-\[
-\left(\cosh\frac L2-iu\sinh\frac L2\right)^{-2q}
-\]
-
-with the exact automorphy/Chern phase and measure convention.
-
-## TOI-B — relative/orbital trace construction
-
-**OPEN.** Define \(\operatorname{Tr}^{\rm orb}_{c,m}\) invariantly and prove that its centralizer normalization agrees with `sun-selberg-unfolding.md`.
-
-## TOI-C — resolvent Toeplitz matrix elements
-
-**OPEN / computational.** Compute the matrix elements of
-
-\[
-T_{f_\mu}^{(q)}=P_qM_{(1+\square_0)^{-1}|\mu|^2}P_q
-\]
-
-in the cyclic-mode basis and identify the exact relation to \(\Lambda_{n,c}^{(q,m)}\).
-
-## TOI-D — descendant recurrence
-
-**OPEN / falsifiable.** Test whether the resulting diagonal/orbital coefficients obey the \(\mathfrak{sl}_2\) raising/lowering recurrence required to produce the discrete-series descendant factor
-
-\[
-\frac{1}{1-e^{-L}}.
+\boxed{\textbf{TOI-B: PASS at the geometric cyclic-kernel level.}}
 \]
 
 ---
 
-## 8. Current best theorem target
+# Part IV. Exact meaning of the cyclic multipliers
 
-The representation-theoretic frontier can now be stated without a free placeholder operator:
+The holomorphic deformation has longitudinal Fourier coefficients `b_n`. Its quadratic source contains terms
+
+\[
+b_n\overline{b_r}e^{i(\nu_n-\nu_r)t}.
+\]
+
+The zero centralizer character selected by the ordinary cyclic trace imposes `n=r`. Therefore
+
+\[
+\overline f_\mu(u)=\sum_n|b_n|^2F_{n,\ell}(u)
+\]
+
+and
 
 \[
 \boxed{
-\textbf{Toeplitz Orbital Closure:}\qquad
-\mathcal J_{q,L}[W_q]
-\text{ is the cyclic/orbital trace of }
-P_qM_{W_q}P_q\,\pi_q(a_{L/2}),
+\operatorname{Tr}^{\rm cyc}_{\delta,m,q}
+[T_{f_\mu}^{(q)}U_{\delta^m}^{(q)}]
+=C_q\ell\sum_n|b_n|^2\Lambda_n^{(q,m)}(\ell),
 }
 \]
 
-with all bundle phases, Haar measures, centralizer factors and trace regularizations explicitly fixed.
+with
 
-If true, the remaining finite-\(q\) FCIG information term is not merely “character-like.” It is a **deformation-inserted discrete-series orbital trace**.
+\[
+\Lambda_n^{(q,m)}(\ell)
+=\Re\int_{\mathbb R}F_{n,\ell}(u)\kappa_{q,m\ell}(u)du.
+\]
 
-That is now the sharpest nonperturbative target.
+This corrects the provisional idea that `Lambda_n` should be a `k=n` projected trace of the quadratic symbol: it is instead the `n=r` diagonal deformation summand inside the **zero-character** cyclic relative trace.
+
+The companion spectral-window note further proves that each `Lambda_n` is an exact Gamma-windowed transverse spectral moment.
+
+Therefore:
+
+\[
+\boxed{\textbf{TOI-C: PASS at the geometric kernel level.}}
+\]
+
+---
+
+# Part V. Global reconstruction
+
+The exact Sun--Selberg unfolding can now be written directly as a sum of relative traces:
+
+\[
+\boxed{
+\mathcal B_q[W]
+=\sum_{[\delta]\in\mathcal P_{\rm or}}\sum_{m\ge1}
+\operatorname{Tr}^{\rm cyc}_{\delta,m,q}
+[T_W^{(q)}U_{\delta^m}^{(q)}].
+}
+\]
+
+Equivalently, summing over primitive unoriented geodesics gives twice the chosen-orientation cyclic trace.
+
+Thus the nonidentity Bergman correction is literally a sum of deformation-inserted cyclic relative traces at the geometric kernel level.
+
+---
+
+# Part VI. What remains open
+
+The old TOI-D proposal attempted to recover
+
+\[
+\frac{e^{-qL}}{1-e^{-L}}
+\]
+
+from a literal descendant Hilbert-space trace. This is rejected: `pi_q(a_L)` is unitary on an infinite-dimensional discrete-series Hilbert space and is not trace class. The Harish--Chandra character is distributional.
+
+The correct next gate is therefore not another cylinder integral.
+
+## RC-A — relative-distribution identification
+
+Identify the cyclic kernel functional
+
+\[
+W\mapsto
+\operatorname{Tr}^{\rm cyc}_{\delta,m,q}
+[T_W^{(q)}U_{\delta^m}^{(q)}]
+\]
+
+as a canonical relative distribution for the pair `(G,A)`, with `G=PSL(2,R)` and `A` the split Cartan.
+
+## RC-B — invariant transform
+
+Construct the corresponding test function/operator-valued distribution on `G` and compute its invariant Harish--Chandra/Selberg transform.
+
+## RC-C — Weyl denominator
+
+Show that the standard hyperbolic Weyl/Jacobian machinery produces the Selberg/discrete-series denominator rather than inserting it by hand.
+
+---
+
+## Current theorem target
+
+The geometric part can now be stated as an exact closure:
+
+\[
+\boxed{
+\textbf{Geometric Toeplitz Orbital Closure:}\quad
+\mathcal J_{q,L}[W]
+\text{ is, up to the exact primitive centralizer factor }C_q\ell,
+\text{ the cyclic relative kernel trace of }
+P_qM_WP_q\,U_{a_L}.
+}
+\]
+
+The remaining frontier is representation-theoretic:
+
+\[
+\boxed{
+\text{Toeplitz observable}
+\to
+\text{cyclic relative kernel trace}
+\to
+\text{relative }(G,A)\text{ distribution}
+\to
+\text{Harish--Chandra/Selberg transform}.
+}
+\]
+
+That is now the sharpest nonperturbative FCIG target.
