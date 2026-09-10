@@ -2,9 +2,11 @@
 
 ## Status
 
-This note sharpens KOI-A2. The scalar pseudo-coefficient argument controls only the trace of the discrete-series Fourier block. For the full FCIG Toeplitz block one needs operator-valued corrections.
+**OKI-A1: PASS.**  
+**OKI-A2: PASS in the finite-rank, smooth K-finite sector.**  
+**Universal Schwartz completion: OPEN; see SC-A in `cuspidal-projection-closure.md`.**
 
-The key observation is that square-integrability of the discrete series gives such corrections explicitly at the level of finite-rank operators, while the hyperbolic-orbital-null condition requires a separate cuspidality input. Keeping these two ingredients typed separately prevents a false identification.
+This note records the operator-valued interpolation needed to merge the FCIG Toeplitz/Fourier branch with the hyperbolic orbital branch. The earlier conditional status has now been superseded by `cuspidal-projection-closure.md`: discrete-series K-finite matrix coefficients are themselves Harish--Chandra cusp forms, so the finite-rank Fourier interpolants already lie in the regular split-hyperbolic orbital kernel.
 
 ## 1. Setup
 
@@ -14,131 +16,76 @@ Let
 G=PSL(2,\mathbb R),\qquad \pi_q=D^+_{2q-1},
 \]
 
-and let \(d_q\) denote the formal degree in the Haar normalization used throughout the FCIG hyperbolic notes. Use the Fourier convention
+with formal degree \(d_q\), and use
 
 \[
 \widehat f(\pi)=\int_G f(g)\pi(g^{-1})\,dg.
 \]
 
-For \(u,v\in\mathcal H_{\pi_q}\), define the matrix coefficient
+For smooth K-finite \(u,v\in\mathcal H_{\pi_q}\), put
 
 \[
 m_{u,v}(g)=\langle u,\pi_q(g)v\rangle.
 \]
 
-For \(a,b\in\mathcal H_{\pi_q}\), Schur orthogonality for the square-integrable representation gives
-
-\[
-\int_G
-\langle u,\pi_q(g)v\rangle
-\overline{\langle a,\pi_q(g)b\rangle}\,dg
-=
-\frac1{d_q}\langle u,a\rangle\langle b,v\rangle,
-\]
-
-up to the harmless interchange of rank-one conventions induced by the chosen inner-product convention.
-
-Equivalently, after fixing the convention once and for all,
+Schur orthogonality gives, with the FCIG rank-one convention,
 
 \[
 \boxed{
-\widehat{m_{u,v}}(\pi_q)
-=
-\frac1{d_q}|v\rangle\langle u|.
+\widehat{m_{u,v}}(\pi_q)=d_q^{-1}|v\rangle\langle u|.
 }
 \]
 
-Thus
+Hence
 
 \[
 \boxed{
-h_{u,v}:=d_q m_{u,v}
+h_{u,v}:=d_qm_{u,v}
 \quad\Longrightarrow\quad
 \widehat h_{u,v}(\pi_q)=|v\rangle\langle u|.
 }
 \]
 
-This is the operator-valued analogue of the coherent-state computation in `discrete-series-invariant-inversion.md`.
+## 2. Finite-rank interpolation
 
-## 2. Finite-rank Fourier interpolation
-
-Let
+For
 
 \[
 A=\sum_{j=1}^N c_j|v_j\rangle\langle u_j|
 \]
 
-be a finite-rank operator with smooth \(K\)-finite vectors. Define
+with smooth K-finite vectors, define
 
 \[
 \boxed{
-h_A(g)=d_q\sum_{j=1}^N c_jm_{u_j,v_j}(g).}
+h_A(g)=d_q\sum_{j=1}^Nc_jm_{u_j,v_j}(g).}
 \]
 
 Then exactly
 
 \[
+\boxed{\widehat h_A(\pi_q)=A.}
+\]
+
+Therefore the discrete-series matrix-coefficient space is Fourier-surjective onto finite-rank K-finite operators.
+
+## 3. Cuspidality closes the orbital condition
+
+Harish--Chandra's cusp-form theorem identifies the group cuspidal Schwartz space with the closed span of K-finite discrete-series matrix coefficients. Thus every summand \(m_{u_j,v_j}\), and hence \(h_A\), is cuspidal.
+
+For rank-one \(PSL(2,\mathbb R)\), the regular split semisimple classes are represented by \(a_L\), \(L\ne0\), and the cuspidal/discrete-series sector has vanishing split-hyperbolic orbital transform. Therefore
+
+\[
 \boxed{
+O_{a_L}(h_A)=0,
+\qquad
 \widehat h_A(\pi_q)=A.
 }
 \]
 
-Hence the group Fourier transform restricted to the discrete-series coefficient space is already surjective onto finite-rank \(K\)-finite operators.
+This is the simultaneous operator interpolation required by OKI-A2.
 
-This closes the purely operator-theoretic part of OKI-A.
-
-## 3. Why this does not yet imply orbital nullity
-
-It would be incorrect to infer from square-integrability alone that
-
-\[
-O_{a_L}(h_A)=0.
-\]
-
-A generic matrix coefficient is not automatically a pseudo-coefficient, and ordinary orbital integrals are not determined solely by the \(\pi_q\)-Fourier block.
-
-The missing condition is **cuspidality / vanishing of the split constant term**.
-
-For real rank one, a cuspidal test function has vanishing constant term along the proper parabolic. Standard trace-formula theory then forces its regular split-hyperbolic orbital integrals to vanish. Discrete-series pseudo-coefficients are the scalar example of this phenomenon.
-
-Therefore the correct target is not the full coefficient space but a cuspidal matrix-coefficient completion
-
-\[
-\mathcal C_{q}^{\mathrm{cusp}}
-\subset
-\mathcal K_{\mathrm{hyp}}
-:=
-\{f:O_{a_L}(f)=0\text{ for every regular }L\ne0\}.
-\]
-
-## 4. The finite-rank cuspidal interpolation theorem target
-
-The precise theorem needed by FCIG is:
-
-> **OKI finite-rank theorem.** For every finite-rank \(K\)-finite operator \(A\) on \(D^+_{2q-1}\), there exists a cuspidal Harish--Chandra-Schwartz test function \(h_A\) such that
-> \[
-> O_{a_L}(h_A)=0\quad(L\ne0),
-> \qquad
-> \widehat h_A(\pi_q)=A.
-> \]
-
-The matrix-coefficient calculation above proves the second condition constructively. Standard cuspidal projection / discrete-series Paley--Wiener theory is the natural mechanism for imposing the first while preserving the chosen discrete-series block.
-
-Accordingly:
-
-\[
-\boxed{\textbf{OKI-A1: PASS — finite-rank Fourier interpolation.}}
-\]
-
-The stronger simultaneous statement is recorded conservatively as
-
-\[
-\boxed{\textbf{OKI-A2: CONDITIONAL PASS — pending explicit cuspidal projection preserving the }\pi_q\textbf{ block.}}
-\]
-
-No claim is made here that an arbitrary raw matrix coefficient already has zero hyperbolic orbital integrals.
-
-## 5. Application to the FCIG Toeplitz defect
+## 4. FCIG merger
 
 Let
 
@@ -146,32 +93,27 @@ Let
 f_0=\mathcal L_q^{\rm orb}W
 \]
 
-be an orbital lift with
+be an orbital lift satisfying
 
 \[
 O_{a_L}(f_0)=d_q\mathcal J_{q,L}[W].
 \]
 
-Define the operator defect
+Define
 
 \[
 \boxed{
-A_W
-:=
- d_q^{-1}T_W^{(q)}-\widehat f_0(\pi_q).
+A_W=d_q^{-1}T_W^{(q)}-\widehat f_0(\pi_q).
 }
 \]
 
-If \(A_W\) is finite rank, or is approximated in the relevant smoothing topology by finite-rank \(K\)-finite operators, the preceding construction gives Fourier corrections with the exact desired \(\pi_q\) block.
-
-If the cuspidal projection can be chosen to preserve that block, then
+Whenever \(A_W\) lies in the finite-rank smooth K-finite sector, put
 
 \[
-\boxed{
-f_{q,W}=f_0+h_{A_W}}
+\boxed{f_{q,W}=f_0+h_{A_W}.}
 \]
 
-satisfies simultaneously
+Then
 
 \[
 \boxed{
@@ -179,7 +121,7 @@ O_{a_L}(f_{q,W})=d_q\mathcal J_{q,L}[W]
 }
 \]
 
-and
+and simultaneously
 
 \[
 \boxed{
@@ -187,110 +129,55 @@ and
 }
 \]
 
-This is exactly the operator-level merger of the FCIG orbital and Toeplitz branches.
+Thus the orbital and Toeplitz/Fourier branches are represented by one group test kernel in the finite-rank K-finite sector.
 
-## 6. Smoothing completion
+## 5. Remaining completion issue
 
-For the compact quotient relevant to FCIG, Toeplitz operators with smooth symbols are smoothing in the semiclassical finite-dimensional holomorphic space at fixed \(q\). On the universal discrete-series model, however, one must distinguish finite-rank, trace-class, Hilbert--Schmidt, and Harish--Chandra-Schwartz operator topologies.
-
-Thus the infinite-rank completion should be formulated as continuity of
+The unresolved point is no longer algebraic interpolation. It is topological completion: extend
 
 \[
-A\longmapsto h_A
+A\mapsto h_A
 \]
 
-from a specified smoothing operator class into the cuspidal Schwartz algebra. This is a topological Paley--Wiener question, not an algebraic consequence of the rank-one formula.
+continuously from finite-rank K-finite operators to an appropriate smoothing operator ideal while retaining convergence in Harish--Chandra's cuspidal Schwartz topology.
 
-## 7. Updated architecture
+For fixed \(q\) on a compact Riemann surface, the geometric Toeplitz space \(H^0(X,K_X^q)\) is finite-dimensional, so the finite-rank statement already covers the compact fixed-q FCIG block. A universal-cover or uniform \(q\to\infty\) theorem requires the stronger completion.
 
-We now have
+## 6. Gate status
 
 \[
-\boxed{
-\begin{array}{rcl}
-W
-&\longmapsto&
-T_W^{(q)},\\
-W
-&\longmapsto&
-\mathcal J_{q,L}[W],\\
-\mathcal L_q^{\rm orb}W
-&\longmapsto&
-O_{a_L}=d_q\mathcal J_{q,L}[W],\\
-A
-&\longmapsto&
-h_A,
-\quad \widehat h_A(\pi_q)=A.
-\end{array}}
+\boxed{\textbf{OKI-A1: PASS.}}
 \]
-
-The remaining compatibility condition is exactly
 
 \[
-\boxed{
-h_A\in\ker O_{\rm hyp}}
+\boxed{\textbf{OKI-A2: PASS (finite-rank smooth K-finite).}}
 \]
 
-while preserving its prescribed \(\pi_q\)-Fourier block.
-
-This isolates the final representation-theoretic obstruction much more sharply than the earlier scalar pseudo-coefficient formulation.
-
-## 8. Next gate
-
-Define
+Next:
 
 \[
-\boxed{\textbf{CP-A — Cuspidal Projection Closure}.}
+\boxed{\textbf{SC-A — Schwartz Completion of Operator Interpolation: OPEN.}}
 \]
 
-Construct or cite an explicit continuous projection
+## 7. Claim firewall
 
-\[
-P_{q}^{\rm cusp}:\mathcal S(G)_{K\text{-finite}}
-\longrightarrow
-\mathcal S(G)_{\rm cusp}
-\]
-
-such that on the target discrete-series block
-
-\[
-\boxed{
-\widehat{P_q^{\rm cusp}f}(\pi_q)=\widehat f(\pi_q)
-}
-\]
-
-and
-
-\[
-\boxed{
-O_{a_L}(P_q^{\rm cusp}f)=0.
-}
-\]
-
-If CP-A passes, then OKI-A2 passes and the FCIG hyperbolic orbital and Toeplitz Fourier branches admit a single operator-valued test kernel.
-
-## 9. Claim firewall
-
-- Matrix coefficients, characters, pseudo-coefficients, and orbital integrals remain distinct typed objects.
-- Schur orthogonality proves finite-rank Fourier interpolation; it does **not** by itself prove hyperbolic orbital vanishing.
-- Pseudo-coefficients prove a scalar trace interpolation direction, not arbitrary operator interpolation.
-- Cuspidal projection is the remaining mechanism to verify, not an assumption to hide.
-- No novelty claim is made.
+- Matrix coefficient \(\neq\) character \(\neq\) pseudo-coefficient \(\neq\) orbital integral.
+- Schur orthogonality supplies the prescribed Fourier operator block.
+- Cuspidality, not Schur orthogonality alone, supplies regular split-hyperbolic orbital vanishing.
+- The full infinite-rank Schwartz completion is not claimed here.
+- No literature-novelty claim is made.
 
 ## References
 
-1. Harish-Chandra, *Discrete series for semisimple Lie groups. II. Explicit determination of the characters*, Acta Math. **116** (1966), 1–111.
-2. Harish-Chandra, foundational work on harmonic analysis and the Schwartz space of real reductive groups.
-3. A. W. Knapp, *Representation Theory of Semisimple Groups*, Princeton University Press, 1986 — square-integrable representations, formal degree, matrix coefficients, Plancherel theory.
-4. J.-P. Labesse, work on pseudo-coefficients and the trace formula — cuspidal test functions isolating discrete series.
-5. R. A. Herb, harmonic analysis and Fourier transforms of orbital/weighted orbital integrals on \(SL(2,\mathbb R)\).
-6. R. J. Stanton and P. A. Tomas, *L^p Harmonic Analysis on SL(2,R)*, Memoirs AMS **76** (1988), no. 393.
+- Harish--Chandra, work on cusp forms, discrete series, orbital integrals, and Schwartz harmonic analysis.
+- Nolan R. Wallach, *Real Reductive Groups I*, Academic Press, 1988, Chapter 7.
+- A. W. Knapp, *Representation Theory of Semisimple Groups*, Princeton University Press, 1986.
+- James Arthur, *The characters of discrete series as orbital integrals*, Invent. Math. 32 (1976), 205--261.
 
 ## FCIG cross-references
 
-- `coherent-state-discrete-series-closure.md`
-- `discrete-series-invariant-inversion.md`
-- `relative-invariantization.md`
-- `orbital-lift-closure.md`
+- `cuspidal-projection-closure.md`
 - `k-type-orbital-interpolation.md`
-- `character-trace-firewall.md`
+- `orbital-lift-closure.md`
+- `discrete-series-invariant-inversion.md`
+- `coherent-state-discrete-series-closure.md`
