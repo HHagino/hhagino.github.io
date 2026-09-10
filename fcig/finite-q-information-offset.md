@@ -47,9 +47,15 @@ The previous FCIG result only used
 \frac{q-1}{4\pi}G_{\rm WP}+O(1)
 \]
 
-at leading order. The constant term can in fact be determined.
+at leading order. The constant term can be determined.
 
-Wan--Zhang's Bergman expansion for \(K_X\otimes L^k\), specialized to complex dimension one with \(L=K_X\), \(k=q-1\), and hyperbolic scalar curvature \(\rho=-1\), gives
+Wan--Zhang's Bergman expansion for \(K_X\otimes L^k\), specialized to complex dimension one with
+
+\[
+L=K_X,\qquad k=q-1,
+\]
+
+and hyperbolic scalar curvature \(\rho=-1\), gives
 
 \[
 \boxed{
@@ -60,7 +66,7 @@ B_q(x)
 \tag{0.3}
 \]
 
-The potential \(q^{-1}\) coefficient vanishes because their \(A_2\) coefficient is zero on a constant-curvature complex curve. Therefore
+The potential \(q^{-1}\) term vanishes because their \(A_2\) coefficient vanishes on a constant-curvature complex curve. Hence
 
 \[
 \boxed{
@@ -88,10 +94,10 @@ f(\mu)=(1+\square_0)^{-1}|\mu|^2,
 \tag{0.6}
 \]
 
-and \(II^{(q)}\) is exactly \(\mathfrak K_q\) in the present norm convention. Since
+and \(II^{(q)}=\mathfrak K_q\) in the present norm convention. Since
 
 \[
-\int_Xf(\mu)dA
+\int_X f(\mu)dA
 =
 \int_X|\mu|^2dA
 =G_{\rm WP}(\mu,\mu),
@@ -108,7 +114,7 @@ I^{(q)}
 \tag{0.8}
 \]
 
-FRZ also prove the full curvature asymptotic
+FRZ also prove
 
 \[
 \boxed{
@@ -120,21 +126,19 @@ FRZ also prove the full curvature asymptotic
 \tag{0.9}
 \]
 
-where \(\ell_0\) is the length of the shortest closed hyperbolic geodesic on the fixed surface.
-
-Subtracting (0.8) from (0.9) yields the first refinement:
+where \(\ell_0\) is the shortest closed hyperbolic geodesic length of the fixed surface. Therefore
 
 \[
 \boxed{
 \mathfrak K_q
 =
 \frac{3q-2}{12\pi}G_{\rm WP}
-+O(q^{-1}).
++O(q^{-1}),
 }
 \tag{0.10}
 \]
 
-Using the exact source decomposition (0.2) then gives
+and the exact source decomposition gives
 
 \[
 \boxed{
@@ -146,7 +150,7 @@ Using the exact source decomposition (0.2) then gives
 \tag{0.11}
 \]
 
-Hence the former \(O(1)\) Fisher--KS mismatch has a definite constant term:
+Hence
 
 \[
 \boxed{
@@ -158,7 +162,7 @@ Hence the former \(O(1)\) Fisher--KS mismatch has a definite constant term:
 \tag{0.12}
 \]
 
-In the KE/BLS position-transport realization established in the companion note,
+In the KE/BLS position-transport realization,
 
 \[
 I_{\rm HBF,q}^{KE}=\mathfrak B_q,
@@ -176,7 +180,7 @@ I_{\rm HBF,q}^{KE}-\mathfrak K_q
 \tag{0.13}
 \]
 
-Thus the two information channels do not merely share the same normalized WP limit. Their first finite-quantization separation is a universal WP-direction offset in the fixed hyperbolic normalization.
+Thus the two information channels not only have the same normalized Weil--Petersson limit; their first finite-quantization separation is a definite WP-direction offset.
 
 ---
 
@@ -184,28 +188,28 @@ Thus the two information channels do not merely share the same normalized WP lim
 
 ## 1. The adjoint-power indexing
 
-Wan--Zhang write the Bergman kernel for
+Wan--Zhang write the Bergman expansion for
 
 \[
-H^0(X,L^k\otimes K_X).
+H^0(X,L^k\otimes K_X),
 \]
 
-Our state space is
+whereas our state space is
 
 \[
 H^0(X,K_X^q).
 \]
 
-Therefore the correct specialization is
+Therefore
 
 \[
 \boxed{L=K_X,\qquad k=q-1.}
 \tag{1.1}
 \]
 
-This shift is essential for the constant coefficient.
+This shift is essential: missing it changes exactly the constant term being computed.
 
-For the canonical-bundle coefficient metric, Wan--Zhang give
+For the canonical-bundle coefficient metric Wan--Zhang give
 
 \[
 B_k
@@ -217,7 +221,7 @@ B_k
 \tag{1.2}
 \]
 
-where
+with
 
 \[
 A_2
@@ -235,7 +239,7 @@ This is an established TYZ coefficient formula in their normalization [WZ21].
 
 ## 2. Hyperbolic cancellation of \(A_2\)
 
-Set \(n=1\) and use the hyperbolic Kähler metric normalized by
+Set \(n=1\) and normalize the hyperbolic metric by
 
 \[
 \operatorname{Ric}(\omega)=-\omega,
@@ -243,34 +247,34 @@ Set \(n=1\) and use the hyperbolic Kähler metric normalized by
 \tag{2.1}
 \]
 
-Since \(\rho\) is constant,
+Then
 
 \[
 \Delta''\rho=0.
 \tag{2.2}
 \]
 
-In complex dimension one every Kähler curvature contraction is determined by the scalar curvature. In an orthonormal complex frame,
+In complex dimension one the Kähler curvature tensor is determined by its scalar contraction. In an orthonormal complex frame,
 
 \[
 |R|^2=|\operatorname{Ric}|^2=\rho^2,
 \]
 
-so
+and hence
 
 \[
 |R|^2-4|\operatorname{Ric}|^2+3\rho^2=0.
 \tag{2.3}
 \]
 
-Therefore
+Thus
 
 \[
 \boxed{A_2=0.}
 \tag{2.4}
 \]
 
-Apply the full Bergman expansion with enough terms retained. From \(k=q-1\),
+Using the full Bergman expansion with \(R=3\) in the asymptotic estimate,
 
 \[
 \begin{aligned}
@@ -282,17 +286,17 @@ B_q(x)
 \tag{2.5}
 \]
 
-**Status:** **Derived here from the established coefficient formula.** The vanishing of \(A_2\) is special to the constant-curvature curve specialization.
+**Status:** **Derived here from [WZ21].** The vanishing of \(A_2\) is special to the constant-curvature curve specialization.
 
 ### Remark 2.1 — possible exponential strengthening
 
-Berman proves exponentially small Bergman-kernel errors for canonical determinantal processes in constant-curvature Riemann-surface settings [Ber12]. This strongly suggests a sharper remainder is available after the exact convention and uniformity crosswalk is completed. The theorem in this note deliberately keeps the conservative TYZ consequence \(O(q^{-2})\); no exponential remainder is needed for the constant term.
+Berman proves exponentially small Bergman-kernel errors for canonical determinantal processes in constant-curvature Riemann-surface settings [Ber12]. This strongly suggests a sharper remainder after the exact normalization and family-uniformity crosswalk is completed. The theorem here deliberately keeps the conservative TYZ consequence \(O(q^{-2})\).
 
 ---
 
 ## 3. Source energy
 
-By definition,
+By the Bergman trace identity,
 
 \[
 \begin{aligned}
@@ -303,7 +307,7 @@ By definition,
 \tag{3.1}
 \]
 
-With the repository convention
+With
 
 \[
 G_{\rm WP}(\mu,\bar\nu)
@@ -311,7 +315,7 @@ G_{\rm WP}(\mu,\bar\nu)
 \tag{3.2}
 \]
 
-(2.5) gives, by Hermitian polarization,
+we obtain by Hermitian polarization
 
 \[
 \boxed{
@@ -323,7 +327,7 @@ G_{\rm WP}(\mu,\bar\nu)
 \tag{3.3}
 \]
 
-The remainder is to be read on a fixed surface and fixed tangent vectors; uniformity over moduli requires the usual bounded-geometry/thick-part hypotheses.
+The remainder is safest as a fixed-surface/fixed-tangent-vector statement. Uniformity over moduli requires bounded geometry, for example restriction to thick compact subsets.
 
 ---
 
@@ -331,14 +335,14 @@ The remainder is to be read on a fixed surface and fixed tangent vectors; unifor
 
 ## 4. Exact curvature splitting
 
-FRZ Proposition 1 states, for \(q\ge2\),
+FRZ Proposition 1 gives, for \(q\ge2\),
 
 \[
 \operatorname{Chern}^{(q)}=I^{(q)}+II^{(q)},
 \tag{4.1}
 \]
 
-with
+where
 
 \[
 \boxed{
@@ -363,34 +367,34 @@ II^{(q)}
 \tag{4.3}
 \]
 
-Their
+Here
 
 \[
 f(\mu)=(1+\square_0)^{-1}|\mu|^2.
 \tag{4.4}
 \]
 
-Our intrinsic KS resolvent tensor is exactly
+We identify
 
 \[
 \boxed{\mathfrak K_q:=II^{(q)}}
 \tag{4.5}
 \]
 
-in this FRZ norm convention. It is the quantity denoted \(\mathfrak R_q\) in `grassmannian-quantum-information.md`.
+in the FRZ norm convention. This is the same channel denoted \(\mathfrak R_q\) in `grassmannian-quantum-information.md`.
 
 ---
 
 ## 5. Integral of the Schumacher potential
 
-Equation (4.4) is equivalent to
+Equation (4.4) implies
 
 \[
 (1+\square_0)f=|\mu|^2.
 \tag{5.1}
 \]
 
-On compact \(X\), integration kills the scalar Laplacian term, hence
+On compact \(X\), the integrated Laplacian vanishes. Therefore
 
 \[
 \boxed{
@@ -402,7 +406,7 @@ On compact \(X\), integration kills the scalar Laplacian term, hence
 \tag{5.2}
 \]
 
-Consequently the pointwise-constant part of the Bergman kernel factors out of \(I^{(q)}\):
+Substitute (2.5) into (4.2):
 
 \[
 \begin{aligned}
@@ -424,7 +428,7 @@ I^{(q)}
 
 ## 6. FRZ full Chern polynomial
 
-FRZ prove, on a fixed compact hyperbolic surface,
+FRZ prove on a fixed compact hyperbolic surface
 
 \[
 \boxed{
@@ -437,15 +441,12 @@ G_{\rm WP}(\mu,\mu)
 \tag{6.1}
 \]
 
-This is an established theorem [FRZ20]. The exponential remainder comes from the Selberg-zeta/hyperbolic contribution; it is much smaller than the conservative \(O(q^{-1})\) Bergman remainder used in (5.3).
-
-Subtract (5.3) from (6.1):
+This is an established theorem [FRZ20]. Subtract (5.3):
 
 \[
 \begin{aligned}
 \mathfrak K_q
-&=
-\operatorname{Chern}^{(q)}-I^{(q)}\\
+&=\operatorname{Chern}^{(q)}-I^{(q)}\\
 &=
 \left[
 \frac{6q(q-1)+1}{12\pi}
@@ -453,19 +454,12 @@ Subtract (5.3) from (6.1):
 \frac{(q-1)(2q-1)}{4\pi}
 \right]G_{\rm WP}
 +O(q^{-1})\\
-&=
-\boxed{
+&=\boxed{
 \frac{3q-2}{12\pi}G_{\rm WP}
 +O(q^{-1}).
 }
 \end{aligned}
 \tag{6.2}
-\]
-
-This upgrades the earlier leading-only estimate
-
-\[
-\mathfrak K_q=\frac{q-1}{4\pi}G_{\rm WP}+O(1).
 \]
 
 ---
@@ -474,35 +468,26 @@ This upgrades the earlier leading-only estimate
 
 ## 7. Theorem — refined second-fundamental and resolvent channels
 
-Combine the exact relation
+The exact source relation is
 
 \[
-\mathfrak B_q=\mathfrak A_q-\mathfrak K_q
+\mathfrak B_q=\mathfrak A_q-\mathfrak K_q.
 \tag{7.1}
 \]
 
-with (3.3) and (6.2). Then
+Using (3.3) and (6.2),
 
 \[
-\begin{aligned}
-\mathfrak B_q
-&=
-\left[
-\frac{2q-1}{4\pi}
--
-\frac{3q-2}{12\pi}
-\right]G_{\rm WP}
-+O(q^{-1})\\
-&=
 \boxed{
+\mathfrak B_q
+=
 \frac{3q-1}{12\pi}G_{\rm WP}
 +O(q^{-1}).
 }
-\end{aligned}
 \tag{7.2}
 \]
 
-Therefore
+Consequently
 
 \[
 \boxed{
@@ -514,11 +499,9 @@ Therefore
 \tag{7.3}
 \]
 
-**Status:** **Derived here from [WZ21] + [FRZ20] + the exact source decomposition already established in the companion note.** No claim is made that equation (7.3) is absent from all prior literature.
+**Status:** **Derived here from [WZ21] + [FRZ20] + the exact source decomposition established in the companion note.** No claim is made that (7.3) is absent from all prior literature.
 
-### Hermitian polarization
-
-The derivation above is written on a diagonal \((\mu,\mu)\), matching the source statements. Because all terms are Hermitian quadratic forms, polarization gives the tensor identity
+The source formulas are usually stated on diagonal directions. All quantities are Hermitian quadratic forms, so polarization gives
 
 \[
 \boxed{
@@ -527,26 +510,18 @@ The derivation above is written on a diagonal \((\mu,\mu)\), matching the source
 \mathfrak K_q(\mu,\bar\nu)
 =
 \frac{1}{12\pi}G_{\rm WP}(\mu,\bar\nu)
-+O(q^{-1}).
++O(q^{-1})
 }
 \tag{7.4}
 \]
 
-on fixed tangent vectors.
+for fixed tangent vectors.
 
 ---
 
 ## 8. Refined 50--50 law
 
-Since
-
-\[
-\mathfrak A_q
-=
-\frac{2q-1}{4\pi}G_{\rm WP}+O(q^{-2}),
-\]
-
-we can divide on a nonzero diagonal direction. From (6.2) and (7.2),
+On a nonzero diagonal direction,
 
 \[
 \boxed{
@@ -568,7 +543,7 @@ and
 \tag{8.2}
 \]
 
-Thus “50--50” is the semiclassical limit, but at first finite order the second-fundamental/Grassmannian side carries a small excess and the resolvent side an equal deficit.
+Thus the 50--50 law is the semiclassical limit. At first finite order the second-fundamental/Grassmannian channel carries a small excess, while the resolvent channel carries the matching deficit.
 
 Equivalently,
 
@@ -582,7 +557,7 @@ Equivalently,
 \tag{8.3}
 \]
 
-while
+whereas
 
 \[
 \mathfrak K_q
@@ -594,15 +569,13 @@ while
 \tag{8.4}
 \]
 
-Their difference is the positive offset (7.3).
-
 ---
 
 # Part IV. Statistical meaning
 
 ## 9. BLS/KE Hermitian Born--Fisher consequence
 
-The BLS position-transport note established, in the local KE/BLS covariant realization,
+The BLS position-transport note establishes, in the local KE/BLS covariant realization,
 
 \[
 \boxed{
@@ -611,7 +584,7 @@ I_{\rm HBF,q}^{KE}=g_{\rm Pl,q}^{KE}=\mathfrak B_q.
 \tag{9.1}
 \]
 
-Therefore Theorem 7 becomes
+Therefore
 
 \[
 \boxed{
@@ -635,9 +608,13 @@ I_{\rm HBF,q}^{KE}-\mathfrak K_q
 \tag{9.3}
 \]
 
-The previous result only showed that the left-hand side was \(O(1)\). Equation (9.3) identifies its leading finite-quantization value.
+This replaces the previous stopping point
 
-The raw J-paired Fisher tensor consequently has
+\[
+I_{\rm HBF,q}^{KE}-\mathfrak K_q=O(1).
+\]
+
+The raw J-paired Fisher tensor is four times (9.2):
 
 \[
 \boxed{
@@ -649,15 +626,13 @@ I_q^{KE}+J^*I_q^{KE}
 \tag{9.4}
 \]
 
-This is just four times (9.2); the factor \(1/4\) convention must not be dropped.
-
 ---
 
 # Part V. Index/Bernoulli interpretation
 
-## 10. Why the coefficient 1/(12π) is suggestive
+## 10. Why 1/(12π) is suggestive
 
-The FRZ polynomial is
+FRZ's coefficient is
 
 \[
 \frac{6q(q-1)+1}{12\pi}
@@ -667,47 +642,30 @@ The FRZ polynomial is
 \tag{10.1}
 \]
 
-Since
+The second Bernoulli number is
 
 \[
-B_2=\frac16
+B_2=\frac16,
 \]
 
-is the second Bernoulli number, the constant part is
+so its constant part is
 
 \[
 \frac{B_2}{2\pi}=\frac1{12\pi}.
 \tag{10.2}
 \]
 
-The same quadratic polynomial \(6q^2-6q+1\) is the familiar coefficient in local-index/Quillen formulas for powers of the canonical bundle on moduli of curves [TZ; FRZ20].
+The polynomial \(6q^2-6q+1\) is also the standard coefficient occurring in local-index/Quillen formulas for powers of the canonical bundle over moduli of curves [TZ87; FRZ20].
 
-**Interpretation, not an additional theorem:** the finite Fisher--KS mismatch can therefore be viewed as an **index/Bernoulli offset** surviving after the leading semiclassical 50--50 split. This observation does not by itself prove a new topological derivation of (7.3); equation (7.3) was obtained analytically by the subtraction above.
+**Interpretation, not an additional theorem:** the finite Fisher--KS mismatch can therefore be viewed as an **index/Bernoulli offset** left after the leading semiclassical 50--50 split. The analytic proof of (7.3) is still the explicit subtraction above; no new topological derivation is asserted.
 
 ---
 
 # Part VI. What this changes in FCIG
 
-## 11. Before and after
+## 11. Two resolved asymptotic layers
 
-Previously the information closure stopped at
-
-\[
-I_{\rm HBF,q}^{KE}-\mathfrak K_q=O(1).
-\]
-
-It now reads
-
-\[
-\boxed{
-I_{\rm HBF,q}^{KE}-\mathfrak K_q
-=
-\frac1{12\pi}G_{\rm WP}+O(q^{-1}).
-}
-\tag{11.1}
-\]
-
-Thus the first two levels are separated cleanly:
+The information closure now separates into
 
 \[
 \boxed{
@@ -720,20 +678,20 @@ O(1):&&
 I_{\rm HBF,q}^{KE}-\mathfrak K_q
 \sim\dfrac1{12\pi}G_{\rm WP}.
 \end{array}}
-\tag{11.2}
+\tag{11.1}
 \]
 
-The remaining analytic problem has therefore moved one order lower: determine the \(q^{-1}\) coefficient (or prove a sharper constant-curvature remainder after convention matching).
+The next analytic target has moved one order lower: determine the \(q^{-1}\) coefficient, or obtain a fully audited exponential improvement in the constant-curvature setting.
 
 ---
 
 # 12. Remaining proof obligations
 
-1. **Uniformity on moduli.** The displayed asymptotics are safest on a fixed surface or uniformly on compact/thick subsets. Degenerating families require separate cusp/short-geodesic estimates.
+1. **Uniformity on moduli.** The displayed asymptotics are safest on a fixed surface or on thick compact subsets. Degenerating families require separate short-geodesic/cusp analysis.
 2. **FRZ/BLS operator sign.** The metric-level identification \(I_{\rm HBF}=\mathfrak B_q\) is sign-insensitive, but a submission version should finish the local-coordinate sign crosswalk for the second fundamental form.
 3. **WP/Quillen normalization.** All coefficients here use the repository's Hermitian WP convention. Conversion to first-Chern-form conventions must preserve the appropriate \(i\) and \(2\pi\) factors.
-4. **Exponential improvement.** Berman's constant-curvature result suggests a much sharper Bergman remainder. Promote it only after matching his normalization and establishing the desired family-uniform statement.
-5. **Novelty audit.** The coefficient follows naturally by combining known formulas. A broad MathSciNet/zbMATH/reference-chain search is required before making any originality claim about the packaged identity.
+4. **Exponential improvement.** Berman's constant-curvature result suggests a sharper Bergman remainder; promote it only after matching normalization and the desired family-uniform statement.
+5. **Novelty audit.** The coefficient follows naturally by combining known formulas. A broad MathSciNet/zbMATH/reference-chain search is required before any originality claim about the packaged identity.
 
 ---
 
@@ -742,7 +700,7 @@ The remaining analytic problem has therefore moved one order lower: determine th
 - **FRZ direct-image curvature splitting and complete hyperbolic curvature polynomial:** [FRZ20].
 - **TYZ coefficient formula for \(K_X\otimes L^k\):** [WZ21], with background [Lu00; MM07].
 - **Exponentially accurate constant-curvature Bergman asymptotics:** [Ber12].
-- **Local-index coefficient \(6q^2-6q+1\) and Weil--Petersson/Quillen context:** [TZ91] and the references discussed in [FRZ20].
+- **Local-index coefficient \(6q^2-6q+1\) and Weil--Petersson/Quillen context:** [TZ87] and [FRZ20].
 - **BLS/KE statistical identification \(I_{\rm HBF}=\mathfrak B_q\):** derived in the preceding FCIG notes from Varolin/Schumacher/direct-image machinery.
 
 No reference is cited as proving the full FCIG statistical interpretation of the offset.
