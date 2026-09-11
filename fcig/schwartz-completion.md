@@ -1,27 +1,28 @@
 # Schwartz Completion of Discrete-Series Operator Interpolation
 
-## Status
+## Status revision — 2026-09-11
 
-The finite-rank, K-finite interpolation problem is closed in `cuspidal-projection-closure.md`: for
-\(\pi_q=D^+_{2q-1}\), finite sums of discrete-series matrix coefficients simultaneously realize prescribed finite-rank Fourier blocks and vanish on the regular split-hyperbolic orbital side.
+This note proves a universal discrete-series statement on
 
-This note identifies the natural completion. The correct operator space is not merely trace class or Hilbert--Schmidt: it is the **smooth/rapid operator ideal** for the derived representation. In a K-type basis this is equivalent to rapid decay of matrix entries. Under the discrete-series Fourier transform this space is topologically equivalent to the \(\pi_q\)-isotypic cuspidal Harish--Chandra-Schwartz space.
+\[
+\mathcal H_q:=\mathcal H_{D^+_{2q-1}}.
+\]
 
-Within this standard Schwartz-space formulation, the finite-rank interpolation extends continuously.
+The result remains valid exactly as a Harish--Chandra-Schwartz/Fourier theorem. A previous paragraph incorrectly suggested that finite-dimensionality of \(H^0(X,K_X^q)\) was enough to apply this theorem directly to compact Toeplitz matrices. The later automorphic multiplicity audit shows that this is false: the compact Toeplitz operator lives on the automorphic multiplicity factor, not on \(\mathcal H_q\).
+
+Thus
+
+\[
+\boxed{\textbf{SC-A: PASS — universal discrete-series Schwartz operator completion.}}
+\]
+
+with compact descent handled separately by `automorphic-multiplicity-firewall.md` and `automorphic-two-point-kernel-closure.md`.
 
 ---
 
-## 1. Representation and smooth operator ideal
+## 1. Smooth operator ideal
 
-Let
-
-\[
-G=PSL(2,\mathbb R),\qquad \pi_q=D^+_{2q-1}
-\]
-
-with Hilbert space \(\mathcal H_q\). Let \(\mathcal H_q^\infty\) be the smooth vectors and \(d\pi_q\) the derived representation of \(U(\mathfrak g_\mathbb C)\).
-
-Define the rapid/smoothing operator space
+Let \(d\pi_q\) be the derived representation. Define
 
 \[
 \boxed{
@@ -34,33 +35,17 @@ Define the rapid/smoothing operator space
 }
 \]
 
-Equip it with seminorms
+With seminorms
 
 \[
 p_{D_1,D_2}(A)
 =
-\|d\pi_q(D_1)A\,d\pi_q(D_2)\|_1.
+\|d\pi_q(D_1)A\,d\pi_q(D_2)\|_1,
 \]
 
-This is stronger than bare trace class. It records rapid regularity in both representation variables.
+this is the rapid/smoothing operator ideal for the universal discrete-series representation.
 
----
-
-## 2. K-type matrix characterization
-
-Choose the standard orthonormal K-type basis
-
-\[
-e_0,e_1,e_2,\ldots
-\]
-
-of the holomorphic discrete series, with K-weights increasing linearly with \(n\). Write
-
-\[
-A_{mn}=\langle e_m,Ae_n\rangle.
-\]
-
-The compact generator acts diagonally with eigenvalues affine in \(n\), while the raising and lowering operators change \(n\) by one with coefficients of polynomial growth. Consequently the derived-representation seminorms above are equivalent to rapid matrix decay:
+In the standard K-type basis \(e_0,e_1,\ldots\), it is equivalently described by rapid decay of the matrix entries:
 
 \[
 \boxed{
@@ -72,111 +57,51 @@ A\in\mathscr S(\mathcal H_q)
 }
 \]
 
-One may equivalently use weighted \(\ell^1\) or Hilbert--Schmidt seminorms; for rapidly decreasing matrices these define the same nuclear Fréchet topology.
+Finite-rank K-finite matrices are dense.
 
-Thus finite-rank K-finite matrices are dense in \(\mathscr S(\mathcal H_q)\).
+---
 
-Let
+## 2. Matrix-coefficient synthesis
+
+For
 
 \[
-A^{(N)}=P_NAP_N,
-\qquad
-P_N=\sum_{n=0}^N|e_n\rangle\langle e_n|.
+A=\sum_{m,n}A_{mn}|e_m\rangle\langle e_n|
 \]
 
-Then
+with rapid matrix decay, define
 
 \[
 \boxed{
-A^{(N)}\longrightarrow A
-\quad\text{in }\mathscr S(\mathcal H_q).
+h_A(g)=d_q\sum_{m,n\ge0}A_{mn}\,m_{n,m}^{(q)}(g),}
+\]
+
+where
+
+\[
+d_q=\frac{2q-1}{4\pi}.
+\]
+
+The series converges in the cuspidal Harish--Chandra-Schwartz topology. Schur orthogonality and continuity of the Fourier transform give
+
+\[
+\boxed{
+\widehat h_A(\pi_q)=A.
 }
+\tag{2.1}
 \]
 
----
-
-## 3. Matrix-coefficient synthesis
-
-For a finite matrix \(A^{(N)}\), CP-A gave
-
-\[
-h_{A^{(N)}}(g)
-=
-d_q\sum_{m,n\le N}A_{mn}\,m_{n,m}(g),
-\]
-
-with convention chosen so that
-
-\[
-\widehat{h_{A^{(N)}}}(\pi_q)=A^{(N)}.
-\]
-
-For \(A\in\mathscr S(\mathcal H_q)\), define formally
-
-\[
-\boxed{
-h_A(g)
-:=
-d_q\sum_{m,n\ge0}A_{mn}\,m_{n,m}(g).}
-\]
-
-The rapid decay of \(A_{mn}\), together with the standard Harish--Chandra-Schwartz estimates for K-finite discrete-series matrix coefficients and their left/right derivatives, gives convergence in the cuspidal Harish--Chandra-Schwartz topology.
-
-Hence
-
-\[
-\boxed{
-h_{A^{(N)}}\to h_A
-\quad\text{in }\mathcal C(G)_{\mathrm{cusp}}.}
-\]
-
----
-
-## 4. Fourier inversion on the discrete-series block
-
-Continuity of the group Fourier transform on Harish--Chandra's Schwartz algebra and Schur orthogonality imply
-
-\[
-\widehat h_A(\pi_q)
-=
-\lim_{N\to\infty}\widehat h_{A^{(N)}}(\pi_q)
-=
-\lim_{N\to\infty}A^{(N)}
-=A.
-\]
-
-Therefore
-
-\[
-\boxed{
-\widehat h_A(\pi_q)=A
-\qquad(A\in\mathscr S(\mathcal H_q)).
-}
-\]
-
-This is the continuous extension of OKI-A1.
-
----
-
-## 5. Hyperbolic orbital nullity survives completion
-
-Each finite partial sum belongs to the discrete-series cuspidal Schwartz sector and satisfies
-
-\[
-O_{a_L}(h_{A^{(N)}})=0,
-\qquad L\ne0.
-\]
-
-Regular orbital integrals are continuous distributions on the Harish--Chandra-Schwartz space. Passing to the limit gives
+Because the synthesis lies in the discrete-series cuspidal summand,
 
 \[
 \boxed{
 O_{a_L}(h_A)=0,
 \qquad L\ne0.
 }
+\tag{2.2}
 \]
 
-Thus the two required conditions survive simultaneously:
+Therefore
 
 \[
 \boxed{
@@ -184,185 +109,164 @@ A\in\mathscr S(\mathcal H_q)
 \Longrightarrow
 \begin{cases}
 \widehat h_A(\pi_q)=A,\\
-O_{a_L}(h_A)=0\quad(L\ne0).
+O_{a_L}(h_A)=0.
 \end{cases}}
 \]
 
+This is the universal Schwartz interpolation theorem.
+
 ---
 
-## 6. Topological isomorphism statement
+## 3. Fourier-side identification
 
-Let \(\mathcal C(G)_{\pi_q}\) denote the \(\pi_q\)-isotypic discrete-series summand of the cuspidal Harish--Chandra-Schwartz algebra. Then the preceding construction is the concrete rank-one realization of the standard Fourier-side identification
+Let \(\mathcal C(G)_{\pi_q}\) be the \(\pi_q\)-isotypic discrete-series summand of the cuspidal Harish--Chandra-Schwartz algebra. Then
 
 \[
 \boxed{
 \mathcal C(G)_{\pi_q}
 \simeq
-\mathscr S(\mathcal H_q).
+\mathscr S(\mathcal H_q),
 }
 \]
 
-Under this correspondence,
+with
 
 \[
-\boxed{
-A\longmapsto h_A
-}
+A\mapsto h_A,
+\qquad
+f\mapsto\widehat f(\pi_q).
 \]
 
-is continuous, and its inverse is
-
-\[
-\boxed{
-f\longmapsto\widehat f(\pi_q).}
-\]
-
-Normalization by the formal degree \(d_q\) is fixed by Schur orthogonality.
-
-This is the appropriate meaning of a discrete-series Schwartz Fourier block. It is stronger and cleaner than asking for an arbitrary trace-class completion.
+This is a statement about the **universal representation factor**.
 
 ---
 
-## 7. FCIG operator-level merger
+## 4. Universal FCIG interpolation
 
-Let
-
-\[
-f_0=\mathcal L_q^{\rm orb}W
-\]
-
-satisfy
+Let \(T_W^{\rm univ,q}\) denote the universal disk/Bergman Toeplitz operator acting on \(\mathcal H_q\), and let an orbital lift \(f_0\) satisfy
 
 \[
 O_{a_L}(f_0)=d_q\mathcal J_{q,L}[W].
 \]
 
-Define
+Set
 
 \[
 A_W
 =
-d_q^{-1}T_W^{(q)}-\widehat f_0(\pi_q).
+d_q^{-1}T_W^{\rm univ,q}
+-
+\widehat f_0(\pi_q).
 \]
 
-Whenever
-
-\[
-\boxed{A_W\in\mathscr S(\mathcal H_q),}
-\]
-
-define
+If \(A_W\in\mathscr S(\mathcal H_q)\), then
 
 \[
 \boxed{
-f_{q,W}:=f_0+h_{A_W}.}
+f_{q,W}=f_0+h_{A_W}}
 \]
 
-Then
+satisfies
 
 \[
 \boxed{
-O_{a_L}(f_{q,W})
-=d_q\mathcal J_{q,L}[W]
+O_{a_L}(f_{q,W})=d_q\mathcal J_{q,L}[W]
 }
 \]
 
-because \(h_{A_W}\) is hyperbolic-orbital-null, while
+and
 
 \[
 \boxed{
-\widehat f_{q,W}(\pi_q)
-=d_q^{-1}T_W^{(q)}.
+\widehat f_{q,W}(\pi_q)=d_q^{-1}T_W^{\rm univ,q}.
 }
 \]
 
-Therefore the orbital and Toeplitz/Fourier branches merge at operator level for every FCIG symbol whose defect lies in the smooth operator ideal.
+This is the correct scope of SC-A/OSB-B1.
 
 ---
 
-## 8. Compact quotient consequence
+## 5. Compact quotient correction
 
-For a compact hyperbolic surface \(X\),
+For
+
+\[
+X=\Gamma\backslash\mathbb H,
+\]
+
+automorphic multiplicity theory gives
 
 \[
 H^0(X,K_X^q)
+\simeq
+\mathcal M_q\otimes\ell_q^{\rm low}.
 \]
 
-is finite-dimensional at each fixed \(q\). Hence the compact FCIG Toeplitz block is automatically finite rank. After identifying it with the relevant automorphic discrete-series multiplicity block, the finite-rank CP-A/OKI construction already applies.
+A compact Toeplitz operator
 
-The Schwartz completion is needed primarily for:
+\[
+T_W^{X,q}
+\in
+\operatorname{End}(\mathcal M_q\otimes\ell_q^{\rm low})
+\simeq
+\operatorname{End}(\mathcal M_q)
+\]
 
-- the universal-cover representation model;
-- uniform families as \(q\to\infty\);
-- infinite-rank smoothing symbols;
-- a genuine Plancherel/Harish--Chandra formulation independent of a finite-dimensional quotient.
+acts on the multiplicity factor.
+
+By contrast a scalar group convolution acts on the \(\pi_q\)-isotypic summand as
+
+\[
+I_{\mathcal M_q}\otimes\pi_q(f).
+\]
+
+Thus finite rank of \(T_W^{X,q}\) does **not** put it inside the operator ideal \(\mathscr S(\mathcal H_q)\). The factors are different.
+
+The previous claim that compact fixed-q Toeplitz matrices were automatically covered by finite-rank OKI is therefore withdrawn.
+
+The correct compact object is the automorphic two-point kernel
+
+\[
+\mathbb K_W^{X,q}(x,y)
+=
+\int_XB_{X,q}(x,z)W(z)B_{X,q}(z,y)\,dA(z),
+\]
+
+which is treated in AM-B.
 
 ---
 
-## 9. Gate status
-
-We record
+## 6. Gate status
 
 \[
-\boxed{\textbf{SC-A: PASS — discrete-series Schwartz operator completion.}}
+\boxed{\textbf{SC-A: PASS — universal smoothing operator completion.}}
 \]
-
-More precisely, the pass is in the standard smooth operator ideal
 
 \[
-\mathscr S(\mathcal H_q),
+\boxed{\textbf{OKI-A2: PASS — universal smoothing sector.}}
 \]
-
-not in the whole trace-class ideal.
-
-Together with CP-A this gives
 
 \[
-\boxed{\textbf{OKI-A2: PASS in the Schwartz smoothing sector.}}
+\boxed{\textbf{AM-A2: PASS — direct scalar-convolution realization of generic compact Toeplitz matrices is obstructed.}}
 \]
-
-The next nontrivial question is no longer existence of a common test kernel. It is **uniform semiclassical control in \(q\)**.
-
-Define the next gate
 
 \[
-\boxed{\textbf{UQ-A — Uniform-}q\textbf{ Schwartz Control}.}
+\boxed{\textbf{AM-B1/B2: PASS — compact two-point kernel and scalar trace descent.}}
 \]
 
-The target is to estimate the seminorms of
+## Claim firewall
 
-\[
-h_{A_W,q}
-\]
-
-uniformly or asymptotically as \(q\to\infty\), and compare them with the already derived Bergman/Toeplitz and Selberg-scale asymptotics.
-
----
-
-## 10. Claim firewall
-
-- SC-A concerns the rapid/smoothing operator ideal, not arbitrary bounded, Hilbert--Schmidt, or trace-class operators.
-- The equivalence with rapidly decreasing K-type matrices is with respect to the smooth derived-representation topology.
-- Hyperbolic orbital nullity follows from membership in the cuspidal discrete-series Schwartz summand plus continuity of regular orbital integrals; it is not a pointwise statement about arbitrary coefficients.
-- Compact-quotient Toeplitz operators and the universal-cover discrete-series operator model remain distinct objects until an automorphic multiplicity identification is specified.
-- No novelty claim is made.
-
----
+- \(\mathscr S(\mathcal H_q)\) is an operator ideal on the universal discrete-series Hilbert space.
+- Compact automorphic Toeplitz matrices live on the multiplicity factor \(\mathcal M_q\), not on \(\mathcal H_q\).
+- Finite dimensionality does not remove a tensor-factor mismatch.
+- The universal interpolation theorem is not retracted; only its former compact-quotient extrapolation is retracted.
+- No novelty claim is made for standard discrete-series Schwartz theory or automorphic multiplicity theory.
 
 ## References
 
-1. Harish-Chandra, foundational papers on harmonic analysis, cusp forms, and the Schwartz algebra of real reductive groups.
-2. A. W. Knapp, *Representation Theory of Semisimple Groups*, Princeton University Press, 1986.
-3. N. R. Wallach, *Real Reductive Groups I/II*, Academic Press, 1988/1992.
-4. R. J. Stanton and P. A. Tomas, *L^p Harmonic Analysis on SL(2,R)*, Memoirs AMS **76** (1988), no. 393.
-5. J. Dixmier, standard results on smooth vectors and operator ideals for unitary representations.
-6. J.-P. Labesse, pseudo-coefficients and cuspidal test functions for discrete series.
-
-## FCIG cross-references
-
-- `operator-kernel-interpolation.md`
-- `cuspidal-projection-closure.md`
-- `k-type-orbital-interpolation.md`
-- `orbital-lift-closure.md`
-- `discrete-series-invariant-inversion.md`
-- `coherent-state-discrete-series-closure.md`
+1. Harish-Chandra, harmonic analysis, cusp forms, and the Schwartz algebra of real reductive groups.
+2. A. W. Knapp, *Representation Theory of Semisimple Groups*.
+3. N. R. Wallach, *Real Reductive Groups I/II*.
+4. R. J. Stanton and P. A. Tomas, *L^p Harmonic Analysis on SL(2,R)*.
+5. A. Borel and N. Wallach, *Continuous Cohomology, Discrete Subgroups, and Representations of Reductive Groups*.
+6. FCIG notes `automorphic-multiplicity-firewall.md` and `automorphic-two-point-kernel-closure.md`.
