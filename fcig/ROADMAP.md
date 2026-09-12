@@ -621,3 +621,20 @@ Source: oriented-dirichlet-dolbeault-bridge.md.
 - **ODD-H OPEN:** select orientation from statistical or physical axioms.
 
 The exact-sector scalar no-go is not contradicted: the nontrivial family topology appears only after the full Dolbeault cokernel \(H^{0,1}\) is restored.
+
+---
+
+## Antisymmetric response chirality selector — PASS / CONDITIONAL
+
+Source: antisymmetric-response-chirality-selector.md.
+
+- **ARC-A NO-GO:** pure gradient descent is collinear and cannot select orientation.
+- **ARC-B PASS:** on a Fisher surface, nonzero \(\Omega_{\rm resp}\) uniquely selects compatible \(J\).
+- **ARC-C PASS:** the selected \(J\) is automatically integrable.
+- **ARC-D PASS:** \([\Omega_{\rm resp}/2\pi]\in H^2(B;\mathbb Z)\) is exactly the line-bundle curvature gate.
+- **ARC-E NO-GO:** curvature leaves an \(H^1(B;U(1))\) flat-holonomy ambiguity.
+- **ARC-F CONDITIONAL:** stochastic-pump curvature can supply the antisymmetric response but need not be nondegenerate or integral.
+- **ARC-G OPEN:** compute the response differential character in the Bergman/BLS model.
+- **ARC-H OPEN:** test whether level structure fixes its flat character.
+
+The revised slogan is: gradient gives an arrow, antisymmetric curvature gives orientation, and differential cohomology gives phase.

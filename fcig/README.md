@@ -21,6 +21,8 @@ The next enriched selector is dirichlet-hodge-operator-selector.md: a reversible
 
 The dimension-two repair is oriented-dirichlet-dolbeault-bridge.md: reflection symmetry forbids a natural \(J\) without orientation, while an orientation selects an integrable Riemann-surface structure and the full scalar Dolbeault family recovers the Hodge line.
 
+The orientation-source audit is antisymmetric-response-chirality-selector.md: gradient descent alone cannot select chirality, whereas a nondegenerate antisymmetric response selects \(J\); integrality selects a Chern class but flat holonomy remains independent.
+
 ## Status
 
 Completed numbered milestones: **v0.2–v0.26**. The charged/Jacobi program continues toward **v0.27**, while a parallel hyperbolic information-closure track now runs through Kodaira--Spencer/Born--Fisher closure, finite-\(q\) offsets, Chern-holonomy orbital cancellation, Casimir transmutation, cyclic Fourier profiles, Sun--Selberg unfolding, and the Orbital--Character Closure problem.

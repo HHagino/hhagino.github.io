@@ -581,6 +581,8 @@ In the hyperbolic FCIG family, the BLS/KE transport theorem supplies the additio
 }
 \]
 
+**Update:** [antisymmetric-response-chirality-selector.md](antisymmetric-response-chirality-selector.md) proves that pure gradient inference cannot select \(\mathfrak o\), while a nowhere-zero antisymmetric response two-form on a Fisher surface does. Integral response curvature selects a Chern class, but not the residual flat holonomy.
+
 ---
 
 ## References
