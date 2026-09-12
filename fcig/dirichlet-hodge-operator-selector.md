@@ -448,6 +448,8 @@ This is where Čech data re-enter: local coefficient frames and their transition
 }
 \]
 
+**Update:** [oriented-dirichlet-dolbeault-bridge.md](oriented-dirichlet-dolbeault-bridge.md) closes the smooth real-dimension-two step. Orientation uniquely selects an integrable complex structure, and the full scalar Dolbeault family restores the Hodge determinant line. The corresponding selector cannot descend through orientation-forgetting because of reflection symmetry.
+
 ---
 
 ## References
