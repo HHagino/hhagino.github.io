@@ -587,3 +587,20 @@ Source: `probability-only-bergman-selector-no-go.md`.
 - **PBS-F OPEN:** derive or axiomatize the polarization from richer statistical locality data.
 
 DNS-G is therefore closed as a no-go on the bare probability groupoid and replaced by the enriched reconstruction problem.
+
+---
+
+## Dirichlet–Hodge operator selector — ANALYTIC PASS / TOPOLOGY NO-GO
+
+Source: dirichlet-hodge-operator-selector.md.
+
+- **DHS-A PASS:** \((p,\mathcal E)\) produces a Hilbert module and derivation \(\partial\).
+- **DHS-B PASS:** \(\mathscr D_{\mathcal E}\) is self-adjoint and squares to the scalar/exact-form Laplacians.
+- **DHS-C PASS:** compact resolvent, irreducibility and a gap give the \(0,\pm\sqrt{\lambda_n}\) spectrum.
+- **DHS-D PASS:** naturality under energy-preserving probability isomorphisms.
+- **DHS-E NO-GO:** the scalar exact determinant line is canonically trivialized by \(\mathbf1\).
+- **DHS-F NO-GO:** Fisher–Quillen equality needs a parameter/sample coupling.
+- **DHS-G OPEN:** reconstruct an integrable complex polarization on the cotangent module.
+- **DHS-H OPEN:** select a twisted coefficient line with nonzero differential Chern data.
+
+The corrected ladder is \(p\to(p,\mathcal E)\to\mathscr D_{\rm real}\to D_{\bar\partial,L}\to\det D\); each arrow requires distinct input.
