@@ -541,3 +541,17 @@ Track the cocharacter lattice and Weyl quotient explicitly so global gauge-group
 ## Gravity Closure gate — NOT ACTIVE
 
 Lorentzian gravitational/horizon closure remains separate until an independently justified causal/dynamical bridge is supplied.
+
+---
+
+## Normalization Topology audit — PASS / NO-GO / OPEN
+
+Source: `normalization-topology-literature-audit.md`.
+
+- **NT-A PASS:** positive finite measures modulo \(\mathbb R_{>0}\) have a global probability slice.
+- **NT-B PASS:** equally transforming weights and partition functions descend and define the standard Chern curvature of a chosen lift.
+- **NT-C NO-GO:** the descended probability does not determine the lift; the same \(p\) admits arbitrary Hermitian holomorphic line-bundle decorations.
+- **NT-D CONDITIONAL:** \(\partial\bar\partial\log Z\) agrees with Fisher only under affine-exponential or equivalent hypotheses.
+- **NT-E OPEN:** construct an intrinsic, functorial selector from determinant/direct-image, projective-amplitude, or probabilistic-morphism data.
+
+No novelty claim is made for the elementary gluing theorem. Novelty assessment is deferred to the selector/classification problem.
