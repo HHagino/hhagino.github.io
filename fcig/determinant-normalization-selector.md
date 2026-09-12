@@ -341,6 +341,8 @@ The selector chooses the abelian normalization/anomaly channel, not full operato
 \boxed{\text{Next: which intrinsic statistical or quantum construction assigns }D_p?}
 \]
 
+**Update:** [`probability-only-bergman-selector-no-go.md`](probability-only-bergman-selector-no-go.md) proves that DNS-G is impossible for nontrivial finite-rank Bergman/projection-DPP selectors if the input is only a standard atomless probability space and naturality is required under every measure-preserving isomorphism. Polarized complex geometry gives an enriched relative selector through the Dolbeault operator. The remaining target is therefore reconstruction of the polarization, not selection from \(p\) alone.
+
 ---
 
 ## References

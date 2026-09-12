@@ -13,6 +13,10 @@ The repository distinguishes **Established**, **Derived here**, **FCIG interpret
 
 Additional normalization-selector note: determinant-normalization-selector.md — operator-relative lift, functoriality, monoidality, and residual no-gos.
 
+Probability-only selector boundary: probability-only-bergman-selector-no-go.md — full-symmetry no-go for finite-rank projection/DPP selectors and the polarized Dolbeault--Bergman repair.
+
+Its claim-by-claim source boundary is recorded in probability-only-bergman-selector-no-go-citation-audit.md.
+
 ## Status
 
 Completed numbered milestones: **v0.2–v0.26**. The charged/Jacobi program continues toward **v0.27**, while a parallel hyperbolic information-closure track now runs through Kodaira--Spencer/Born--Fisher closure, finite-\(q\) offsets, Chern-holonomy orbital cancellation, Casimir transmutation, cyclic Fourier profiles, Sun--Selberg unfolding, and the Orbital--Character Closure problem.
