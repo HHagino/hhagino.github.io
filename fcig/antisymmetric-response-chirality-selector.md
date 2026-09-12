@@ -455,6 +455,8 @@ D_{\bar\partial,L}
 
 Only the middle algebraic arrows are closed here. The first and final curvature comparison remain model-dependent.
 
+**Concrete update:** [bergman-bls-response-reconstruction.md](bergman-bls-response-reconstruction.md) constructs \(\Omega_q\) as the Berry/Chern curvature of the BLS Slater determinant line. This closes response existence and exact integrality in that model, but also proves that projective holomorphicity merely reconstructs the already supplied moduli \(J\), and that the \(L^2\) determinant connection must not be silently identified with the Quillen connection.
+
 ---
 
 ## 9. Gate ledger
