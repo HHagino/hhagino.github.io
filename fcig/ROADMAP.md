@@ -555,3 +555,20 @@ Source: `normalization-topology-literature-audit.md`.
 - **NT-E OPEN:** construct an intrinsic, functorial selector from determinant/direct-image, projective-amplitude, or probabilistic-morphism data.
 
 No novelty claim is made for the elementary gluing theorem. Novelty assessment is deferred to the selector/classification problem.
+
+---
+
+## Determinant Normalization Selector — RELATIVE PASS
+
+Source: determinant-normalization-selector.md.
+
+- **DNS-A PASS:** an operator-enhanced model \((p,D)\) selects \((\lambda_D,h_Q,\nabla^Q)\).
+- **DNS-B PASS:** \(q_i=\|\sigma_i\|_Q^2p\) descends to \(p\), while \(-\partial\bar\partial\log Z_i\) is determinant curvature.
+- **DNS-C PASS:** naturality under compatible unitary equivalence.
+- **DNS-D PASS:** symmetric monoidality under orthogonal direct sums.
+- **DNS-E NO-GO:** canonical relative to \(D\), not from \(p\) alone.
+- **DNS-F NO-GO:** positive weights forget flat phase/holonomy; retain the full line with connection.
+- **DNS-G OPEN:** construct a non-tautological assignment \(p\mapsto D_p\).
+- **DNS-H OPEN:** prove Fisher compatibility in a Bergman-DPP, likelihood-operator, or coherent-state realization.
+
+The next target is assignment of the operator enhancement, not another arbitrary line bundle.

@@ -11,6 +11,8 @@ The repository distinguishes **Established**, **Derived here**, **FCIG interpret
 - `citation-map.md` / `cited-synthesis.md` — citation provenance and audited synthesis
 - `normalization-topology-literature-audit.md` — normalization-lift theorem, reconstruction no-go, and prior-art matrix
 
+Additional normalization-selector note: determinant-normalization-selector.md — operator-relative lift, functoriality, monoidality, and residual no-gos.
+
 ## Status
 
 Completed numbered milestones: **v0.2–v0.26**. The charged/Jacobi program continues toward **v0.27**, while a parallel hyperbolic information-closure track now runs through Kodaira--Spencer/Born--Fisher closure, finite-\(q\) offsets, Chern-holonomy orbital cancellation, Casimir transmutation, cyclic Fourier profiles, Sun--Selberg unfolding, and the Orbital--Character Closure problem.
@@ -38,6 +40,8 @@ No derivation of Einstein dynamics or horizon thermodynamics from FCIG alone is 
 ## Normalization topology audit
 
 The same global probability model admits lifts by arbitrary Hermitian holomorphic line bundles. Thus positive-measure normalization is globally trivial, a chosen holomorphic lift may be topologically nontrivial, and its topology is not determined by \(p\). The next publishable target is an **intrinsic selector**, not the elementary gluing identity. See [`normalization-topology-literature-audit.md`](normalization-topology-literature-audit.md).
+
+The first selector is now constructed relative to an operator-enhanced model \((p,D)\): the Fredholm/elliptic family selects its determinant line, Quillen metric, and Bismut--Freed connection, while \(q_i=\|\sigma_i\|_Q^2p\) supplies compatible normalization weights. This is canonical relative to \(D\), not from \(p\) alone. See determinant-normalization-selector.md.
 
 ## Models I–XVIII — determinant, cohomological and response foundation
 
