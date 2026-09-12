@@ -9,6 +9,7 @@ The repository distinguishes **Established**, **Derived here**, **FCIG interpret
 - `references.bib` — general bibliography
 - milestone `.bib` files — source sets for individual models
 - `citation-map.md` / `cited-synthesis.md` — citation provenance and audited synthesis
+- `normalization-topology-literature-audit.md` — normalization-lift theorem, reconstruction no-go, and prior-art matrix
 
 ## Status
 
@@ -33,6 +34,10 @@ The controlled numbered chain is
 \]
 
 No derivation of Einstein dynamics or horizon thermodynamics from FCIG alone is claimed.
+
+## Normalization topology audit
+
+The same global probability model admits lifts by arbitrary Hermitian holomorphic line bundles. Thus positive-measure normalization is globally trivial, a chosen holomorphic lift may be topologically nontrivial, and its topology is not determined by \(p\). The next publishable target is an **intrinsic selector**, not the elementary gluing identity. See [`normalization-topology-literature-audit.md`](normalization-topology-literature-audit.md).
 
 ## Models I–XVIII — determinant, cohomological and response foundation
 
