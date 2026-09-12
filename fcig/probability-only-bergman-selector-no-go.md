@@ -359,6 +359,8 @@ Fisher compatibility then remains a separate condition. In the current hyperboli
 }
 \]
 
+**Update:** [dirichlet-hodge-operator-selector.md](dirichlet-hodge-operator-selector.md) closes the first enriched step. A reversible Dirichlet form \(\mathcal E\) canonically selects a real exact Hodge–Dirac operator. Its scalar determinant line is nevertheless canonically trivial, so complex polarization and twisting remain independent reconstruction data.
+
 ---
 
 ## References
