@@ -572,3 +572,18 @@ Source: determinant-normalization-selector.md.
 - **DNS-H OPEN:** prove Fisher compatibility in a Bergman-DPP, likelihood-operator, or coherent-state realization.
 
 The next target is assignment of the operator enhancement, not another arbitrary line bundle.
+
+---
+
+## Probability-only Bergman selector — NO-GO / ENRICHED PASS
+
+Source: `probability-only-bergman-selector-no-go.md`.
+
+- **PBS-A PASS:** formalize finite-rank projection selectors natural under probability-space isomorphisms.
+- **PBS-B PASS:** on a standard atomless probability space, full Koopman invariance leaves only the constant finite-dimensional sector.
+- **PBS-C NO-GO:** a bare probability law cannot naturally select a nontrivial projection DPP or Bergman mode space.
+- **PBS-D PASS:** polarized complex data canonically select the Dolbeault operator, Bergman projector, Slater state and DPP.
+- **PBS-E PASS:** the family construction feeds the determinant/Quillen selector and BLS transport.
+- **PBS-F OPEN:** derive or axiomatize the polarization from richer statistical locality data.
+
+DNS-G is therefore closed as a no-go on the bare probability groupoid and replaced by the enriched reconstruction problem.
