@@ -638,3 +638,18 @@ Source: antisymmetric-response-chirality-selector.md.
 - **ARC-H OPEN:** test whether level structure fixes its flat character.
 
 The revised slogan is: gradient gives an arrow, antisymmetric curvature gives orientation, and differential cohomology gives phase.
+
+---
+
+## Bergman–BLS response reconstruction — PASS / OPEN
+
+Source: bergman-bls-response-reconstruction.md.
+
+- **BBR-A PASS:** the BLS Slater QGT supplies both Plücker metric and Berry two-form.
+- **BBR-B PASS:** Berry response is the exact \(L^2\) determinant-line curvature, hence integral.
+- **BBR-C PASS:** projective holomorphicity reconstructs the moduli \(J\).
+- **BBR-D PASS (asymptotic):** response is nondegenerate at large \(q\) on positive-WP compact loci.
+- **BBR-E NO-GO:** Bergman-DPP probabilities alone forget Berry holonomy.
+- **BBR-F NO-GO:** projective holomorphicity recovers an existing \(J\); it does not generate its sign orientation-free.
+- **BBR-G OPEN:** construct an orientation-free dynamical protocol for the response sign.
+- **BBR-H OPEN:** compare the \(L^2\) Berry and Quillen differential characters.
