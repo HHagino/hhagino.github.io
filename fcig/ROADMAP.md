@@ -604,3 +604,20 @@ Source: dirichlet-hodge-operator-selector.md.
 - **DHS-H OPEN:** select a twisted coefficient line with nonzero differential Chern data.
 
 The corrected ladder is \(p\to(p,\mathcal E)\to\mathscr D_{\rm real}\to D_{\bar\partial,L}\to\det D\); each arrow requires distinct input.
+
+---
+
+## Oriented Dirichlet–Dolbeault bridge — DIMENSION-TWO PASS
+
+Source: oriented-dirichlet-dolbeault-bridge.md.
+
+- **ODD-A NO-GO:** reflection symmetry forbids a natural orthogonal \(J\) on unoriented energy surfaces.
+- **ODD-B PASS:** orientation uniquely selects the Hodge star and compatible \(J\).
+- **ODD-C PASS:** in real dimension two this \(J\) is automatically integrable.
+- **ODD-D PASS:** \(d=\partial_J+\bar\partial_J\) and \(\Delta_d=2\Delta_{\bar\partial}\) on functions.
+- **ODD-E PASS:** for a holomorphic curve family, \(\det R\pi_*\mathcal O\cong\det\pi_*K_{\mathcal X/B}\).
+- **ODD-F PASS:** the Hodge line feeds the Quillen normalization selector.
+- **ODD-G OPEN:** intrinsic orientation/integrability on singular rank-two Dirichlet modules.
+- **ODD-H OPEN:** select orientation from statistical or physical axioms.
+
+The exact-sector scalar no-go is not contradicted: the nontrivial family topology appears only after the full Dolbeault cokernel \(H^{0,1}\) is restored.
