@@ -23,6 +23,8 @@ The dimension-two repair is oriented-dirichlet-dolbeault-bridge.md: reflection s
 
 The orientation-source audit is antisymmetric-response-chirality-selector.md: gradient descent alone cannot select chirality, whereas a nondegenerate antisymmetric response selects \(J\); integrality selects a Chern class but flat holonomy remains independent.
 
+The concrete response reconstruction is bergman-bls-response-reconstruction.md: the BLS Slater quantum geometric tensor supplies Fisher/Plücker metric and Berry curvature as symmetric/antisymmetric partners, while the finite-dimensional \(L^2\) determinant connection remains distinct from the Quillen connection.
+
 ## Status
 
 Completed numbered milestones: **v0.2–v0.26**. The charged/Jacobi program continues toward **v0.27**, while a parallel hyperbolic information-closure track now runs through Kodaira--Spencer/Born--Fisher closure, finite-\(q\) offsets, Chern-holonomy orbital cancellation, Casimir transmutation, cyclic Fourier profiles, Sun--Selberg unfolding, and the Orbital--Character Closure problem.
