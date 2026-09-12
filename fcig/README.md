@@ -17,6 +17,8 @@ Probability-only selector boundary: probability-only-bergman-selector-no-go.md â
 
 Its claim-by-claim source boundary is recorded in probability-only-bergman-selector-no-go-citation-audit.md.
 
+The next enriched selector is dirichlet-hodge-operator-selector.md: a reversible Dirichlet form canonically supplies a first-order calculus and exact Hodge--Dirac operator, while scalar determinant-line triviality isolates the need for complex twisting.
+
 ## Status
 
 Completed numbered milestones: **v0.2â€“v0.26**. The charged/Jacobi program continues toward **v0.27**, while a parallel hyperbolic information-closure track now runs through Kodaira--Spencer/Born--Fisher closure, finite-\(q\) offsets, Chern-holonomy orbital cancellation, Casimir transmutation, cyclic Fourier profiles, Sun--Selberg unfolding, and the Orbital--Character Closure problem.
