@@ -253,6 +253,9 @@ em{font-style:italic}
 .door li a .t{font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
 .door li a:hover .t{text-decoration-thickness:2px}
 .door li a .sub{color:var(--muted);font-size:.9375rem;line-height:1.6}
+.door li.off{display:flex;flex-direction:column;justify-content:center;min-height:var(--tap);padding:var(--s1) 0}
+.door li.off .t{font-weight:700}
+.door li.off .sub{color:var(--muted);font-size:.9375rem;line-height:1.6}
 
 /* ---- 論文（正本の文はそのまま。見た目だけ合わせる） ---- */
 .paper{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s1)}
@@ -301,7 +304,7 @@ footer{border-top:1px solid var(--line);padding-top:var(--s2)}
     <p class="for">In English</p>
     <ul>
       <li><a href="#research"><span class="t">Research and papers</span><span class="sub">Conditional expectations, Galois norms, filtration towers</span></a></li>
-      <li><a href="https://hhagino.github.io/math-garden/教科書/en/iwasawa.html" hreflang="en"><span class="t">Textbook: From Cyclotomic Galois Theory to Iwasawa Theory</span><span class="sub">18 chapters, appendices A–F</span></a></li>
+      <li class="off"><span class="t">Textbook: From Cyclotomic Galois Theory to Iwasawa Theory</span><span class="sub">Under renovation (will reopen)</span></li>
       <li><a href="#contact"><span class="t">Contact and ORCID</span><span class="sub">Email, ORCID, GitHub</span></a></li>
     </ul>
   </section>
@@ -309,9 +312,7 @@ footer{border-top:1px solid var(--line);padding-top:var(--s2)}
     <h2 id="door-ja">日本語で読む</h2>
     <p class="for">数学の解説と、それをどう作っているか</p>
     <ul>
-      <li><a href="https://hhagino.github.io/math-garden/" hreflang="ja"><span class="t">数学解説の庭</span><span class="sub">ひとつの定理を、別の景色から見直す解説記事</span></a></li>
-      <li><a href="https://hhagino.github.io/math-garden/教科書/" hreflang="ja"><span class="t">教科書の棚</span><span class="sub">3冊：岩澤理論（日本語・英語）・超対称性と Morse 理論・KPZ普遍性への手紙</span></a></li>
-      <li><a href="https://hhagino.github.io/math-garden/この庭の作り方.html" hreflang="ja"><span class="t">この庭の作り方</span><span class="sub">AI で書き、別の AI と人で確かめてから出す工程と、確かめていないこと</span></a></li>
+      <li class="off"><span class="t">数学解説の庭（改装中・再開予定）</span><span class="sub">記事・教科書・この庭の作り方は、作り直しのあいだお休みしています</span></li>
     </ul>
   </section>
 </nav>
@@ -375,10 +376,7 @@ footer{border-top:1px solid var(--line);padding-top:var(--s2)}
       conjecture, elliptic Iwasawa theory and the ± theory at supersingular primes — in 18 chapters, with
       interludes and appendices A–F.
     </p>
-    <p class="links">
-      <a href="https://hhagino.github.io/math-garden/教科書/en/iwasawa.html" hreflang="en">Read in English</a>
-      <a href="https://hhagino.github.io/math-garden/教科書/ja/iwasawa.html" hreflang="ja" lang="ja">日本語で読む</a>
-    </p>
+    <p>Under renovation; the textbook is offline for now and will reopen. / 改装中（再開予定）。</p>
   </div>
 </section>
 
@@ -387,12 +385,11 @@ footer{border-top:1px solid var(--line);padding-top:var(--s2)}
   <p>
     I keep a garden of expository essays in Japanese — number theory, geometry, probability, category
     theory — written to see one theorem from a second landscape:
-    <a href="https://hhagino.github.io/math-garden/">数学解説の庭 (A garden of mathematical exposition)</a>.
+    数学解説の庭 (A garden of mathematical exposition), which is under renovation and will reopen.
   </p>
   <p>
     The essays are written with AI and checked by a second AI and by me before they are published; they have
-    not been reviewed by human mathematicians. How this is done, and what has not been checked, is described
-    in Japanese: <a href="https://hhagino.github.io/math-garden/この庭の作り方.html" hreflang="ja" lang="ja">この庭の作り方</a>.
+    not been reviewed by human mathematicians.
   </p>
 </section>
 
